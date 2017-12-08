@@ -9,20 +9,23 @@
 namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Core\app\Models\User;
 use LaravelEnso\TrackWho\app\Traits\CreatedBy;
-use LaravelEnso\TrackWho\app\Traits\UpdatedBy;
 
 class Address extends Model
 {
-    use CreatedBy, UpdatedBy;
+    use CreatedBy;
 
-    protected $fillable = ['country_id', 'type', 'priority', 'apartment', 'floor', 'entry', 'building', 'number', 'street',
+    protected $fillable = ['country_id', 'type', 'is_default', 'apartment', 'floor', 'entry', 'building', 'number', 'street',
         'sub_administrative_area', 'city', 'administrative_area', 'postal_area', 'obs', ];
 
     public function user()
     {
         return $this->belongsTo(config('auth.providers.users.model'), 'created_by', 'id');
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class );
     }
 
     public function addresable()

@@ -10,7 +10,7 @@ namespace LaravelEnso\AddressesManager\app\Traits;
 
 use LaravelEnso\AddressesManager\app\Models\Address;
 
-trait Addresable
+trait Addressable
 {
     public function addresses()
     {

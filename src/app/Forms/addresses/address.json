@@ -11,16 +11,15 @@
     "submitDelete": "Delete",
     "attributes": [
         {
-            "label": "Priority",
-            "column": "priority",
-            "value": null,
+            "label": "Street Type",
+            "column": "street_type",
+            "value": "",
             "config": {
-                "custom": false,
-                "type": "input",
-                "content": "number",
-                "step": 1,
-                "min": 0,
-                "disabled": false
+                "type": "select",
+                "multiple": false,
+                "source": null,
+                "keyMap": "string",
+                "options": {}
             }
         },
         {
@@ -32,18 +31,6 @@
                 "type": "input",
                 "content": "text",
                 "disabled": false
-            }
-        },
-        {
-            "label": "St.Type",
-            "column": "street_type",
-            "value": "",
-            "config": {
-                "type": "select",
-                "multiple": false,
-                "source": null,
-                "keyMap": "string",
-                "options": {}
             }
         },
         {
@@ -152,7 +139,7 @@
             "config": {
                 "type": "select",
                 "multiple": false,
-                "source": "countries/getOptionList",
+                "source": "/countries/getOptionList",
                 "options": {}
             }
         },
@@ -165,6 +152,17 @@
                 "type": "input",
                 "content": "text",
                 "disabled": false
+            }
+        },
+        {
+            "label": "Is Default",
+            "column": "is_default",
+            "value": true,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "checkbox",
+                "disabled": true
             }
         }
     ]

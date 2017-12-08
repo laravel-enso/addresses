@@ -12,20 +12,12 @@ return [
         'owner' => \App\Owner::class,
         'user'  => \App\User::class,
     ],
-    'streetTypes' => [
+    'streetTypes'  => [
         'Street' => 'Street',
     ],
-    'validations' => [
-        'update' => [
-            'street'     => 'required',
-            'number'     => 'required',
-            'country_id' => 'required',
-        ],
-        'create' => [
-            'street'     => 'required',
-            'number'     => 'required',
-            'country_id' => 'required',
-        ],
+    'validations'  => [
+        'street'     => 'required',
+        'city'     => 'required',
+        'country_id' => 'required',
     ],
-
 ];

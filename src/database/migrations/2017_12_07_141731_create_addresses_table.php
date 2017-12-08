@@ -22,7 +22,7 @@ class CreateAddressesTable extends Migration
             $table->foreign('country_id')->references('id')->on('countries')->onUpdate('restrict')->onDelete('restrict');
 
             $table->smallInteger('type')->default(0);
-            $table->smallInteger('priority')->default(1);
+            $table->boolean('is_default')->default(true);
 
             $table->string('apartment')->nullable();
             $table->string('floor')->nullable();
@@ -42,8 +42,6 @@ class CreateAddressesTable extends Migration
 
             $table->integer('created_by')->unsigned()->index()->nullable();
             $table->foreign('created_by')->references('id')->on('users')->onUpdate('restrict')->onDelete('restrict');
-            $table->integer('updated_by')->unsigned()->index()->nullable();
-            $table->foreign('updated_by')->references('id')->on('users')->onUpdate('restrict')->onDelete('restrict');
 
             $table->timestamps();
         });

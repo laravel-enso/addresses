@@ -25,10 +25,6 @@ class ValidateAddressRequest extends FormRequest
     {
         $address = $this->route('address');
 
-        if (request()->getMethod() == 'PATCH') {
-            return config('addresses.validations.update');
-        }
-
-        return config('addresses.validations.create');
+        return config('addresses.validations');
     }
 }
