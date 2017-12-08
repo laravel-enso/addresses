@@ -8,6 +8,7 @@ Route::middleware(['web', 'auth', 'core'])
             Route::get('getEditForm/{address}', 'AddressesController@getEditForm')->name('getEditForm');
             Route::get('getCreateForm', 'AddressesController@getCreateForm')->name('getCreateForm');
             Route::get('list', 'AddressesController@list')->name('list');
+            Route::get('setDefault/{address}', 'AddressesController@setDefault')->name('setDefault');
             Route::post('/{type}/{id}', 'AddressesController@store')->name('store');
         });
 

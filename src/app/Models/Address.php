@@ -28,7 +28,7 @@ class Address extends Model
         return $this->belongsTo(Country::class );
     }
 
-    public function addresable()
+    public function addressable()
     {
         return $this->morphTo();
     }
