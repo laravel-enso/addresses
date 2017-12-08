@@ -35,7 +35,6 @@ class AddressesManagerServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'laravel-enso/addressesmanager');
     }
 
-
     public function register()
     {
         //
