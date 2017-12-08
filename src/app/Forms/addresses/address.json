@@ -1,0 +1,171 @@
+{
+    "title": null,
+    "action": null,
+    "url": null,
+    "icon": "fa fa-location-arrow",
+    "wrapperClass": "col-md-4",
+    "theme": "success",
+    "solid": false,
+    "submitStore": "Create",
+    "submitUpdate": "Save",
+    "submitDelete": "Delete",
+    "attributes": [
+        {
+            "label": "Priority",
+            "column": "priority",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "number",
+                "step": 1,
+                "min": 0,
+                "disabled": false
+            }
+        },
+        {
+            "label": "Street",
+            "column": "street",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        },
+        {
+            "label": "St.Type",
+            "column": "street_type",
+            "value": "",
+            "config": {
+                "type": "select",
+                "multiple": false,
+                "source": null,
+                "keyMap": "string",
+                "options": {}
+            }
+        },
+        {
+            "label": "Number",
+            "column": "number",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        },
+        {
+            "label": "Building",
+            "column": "building",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        },
+        {
+            "label": "Entry",
+            "column": "entry",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        },
+        {
+            "label": "Floor",
+            "column": "floor",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        },
+        {
+            "label": "Apartment",
+            "column": "apartment",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        },
+        {
+            "label": "Sub Administrative Area",
+            "column": "sub_administrative_area",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        },
+        {
+            "label": "City",
+            "column": "city",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        },
+        {
+            "label": "Administrative Area",
+            "column": "administrative_area",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        },
+        {
+            "label": "Postal Area",
+            "column": "postal_area",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        },
+        {
+            "label": "Country",
+            "column": "country_id",
+            "value": null,
+            "config": {
+                "type": "select",
+                "multiple": false,
+                "source": "countries/getOptionList",
+                "options": {}
+            }
+        },
+        {
+            "label": "Observations",
+            "column": "obs",
+            "value": null,
+            "config": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        }
+    ]
+}
