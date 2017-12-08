@@ -12,19 +12,16 @@ use LaravelEnso\FormBuilder\app\Classes\FormBuilder;
 
 class AddressesController extends Controller
 {
-
     public function index()
     {
-
         return view('laravel-enso/addressesmanager::index');
     }
 
     public function store(ValidateAddressRequest $request, string $type, int $id)
     {
-
         $address = new Address($request->all());
         $address->addressable_id = $id;
-        $address->addressable_type = config('addresses.addressables.' . $type);;
+        $address->addressable_type = config('addresses.addressables.'.$type);
         $address->save();
 
         return [
@@ -35,24 +32,23 @@ class AddressesController extends Controller
 
     public function update(ValidateAddressRequest $request, Address $address)
     {
-
         $address->fill($request->all());
         $address->save();
 
         return [
-            'message' => __("The Changes have been saved!"),
+            'message' => __('The Changes have been saved!'),
         ];
     }
 
     /**
      * @param Address $address
      *
-     * @return array
      * @throws \Exception
+     *
+     * @return array
      */
     public function destroy(Address $address)
     {
-
         $address->delete();
 
         return [
@@ -63,11 +59,10 @@ class AddressesController extends Controller
 
     public function getEditForm(Address $address)
     {
-
         $editForm = (new FormBuilder($this->getFormPath(), $address))
             ->setTitle('Edit')
             ->setAction('PATCH')
-            ->setUrl('/addresses/' . $address->id)
+            ->setUrl('/addresses/'.$address->id)
             ->setSelectOptions('street_type', (object) (new StreetTypes())->getData())
             ->getData();
 
@@ -76,7 +71,6 @@ class AddressesController extends Controller
 
     public function getCreateForm(Request $request)
     {
-
         $postUrl = sprintf('/addresses/%s/%s',
             $request->get('addressable_type'), $request->get('addressable_id'));
 
@@ -91,39 +85,39 @@ class AddressesController extends Controller
     }
 
     /**
-     * @return mixed
      * @throws EnsoException
+     *
+     * @return mixed
      */
     public function list()
     {
-
         $addressable = $this->getAddressable();
 
         return $addressable->addresses()->get();
     }
 
     /**
-     * @return mixed
      * @throws EnsoException
+     *
+     * @return mixed
      */
     private function getAddressable()
     {
-
         return $this->getAddressableClass()::find(request()->get('id'));
     }
 
     /**
-     * @return \Illuminate\Config\Repository|mixed
      * @throws EnsoException
+     *
+     * @return \Illuminate\Config\Repository|mixed
      */
     private function getAddressableClass()
     {
-
-        $class = config('addresses.addressables.' . request()->get('type'));
+        $class = config('addresses.addressables.'.request()->get('type'));
 
         if (!$class) {
             throw new EnsoException(
-                __('Current entity does not exist in contacts.php config file: ') . request()->get('type')
+                __('Current entity does not exist in contacts.php config file: ').request()->get('type')
             );
         }
 
@@ -137,7 +131,7 @@ class AddressesController extends Controller
     {
         $publishedForm = app_path('Forms/vendor/addresses/address.json');
 
-        if(file_exists($publishedForm)) {
+        if (file_exists($publishedForm)) {
             return $publishedForm;
         }
 

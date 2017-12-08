@@ -8,10 +8,7 @@ use LaravelEnso\Select\app\Traits\SelectListBuilder;
 
 class CountriesSelectController extends Controller
 {
-
     use SelectListBuilder;
 
     protected $selectSourceClass = Country::class;
-
-
 }

@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: mihai
  * Date: 12/5/17
- * Time: 1:36 PM
+ * Time: 1:36 PM.
  */
 
 namespace LaravelEnso\AddressesManager\app\Models;
-
 
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Core\app\Models\User;
@@ -16,12 +15,10 @@ use LaravelEnso\TrackWho\app\Traits\UpdatedBy;
 
 class Address extends Model
 {
-
     use CreatedBy, UpdatedBy;
 
-    protected $fillable = ['country_id','type','priority','apartment','floor','entry','building','number','street',
-        'sub_administrative_area','city','administrative_area','postal_area','obs'];
-
+    protected $fillable = ['country_id', 'type', 'priority', 'apartment', 'floor', 'entry', 'building', 'number', 'street',
+        'sub_administrative_area', 'city', 'administrative_area', 'postal_area', 'obs', ];
 
     public function user()
     {

@@ -3,18 +3,16 @@
  * Created by PhpStorm.
  * User: mihai
  * Date: 12/5/17
- * Time: 2:59 PM
+ * Time: 2:59 PM.
  */
 
 namespace LaravelEnso\AddressesManager\app\DataTable;
-
 
 use LaravelEnso\AddressesManager\app\Enums\StreetTypes;
 use LaravelEnso\DataTable\app\Classes\TableStructure;
 
 class AddressesTableStructure extends TableStructure
 {
-
     public function __construct()
     {
         $this->data = [
@@ -24,10 +22,10 @@ class AddressesTableStructure extends TableStructure
             'customActionButtons' => [
                 ['class' => 'btn-warning fa fa-pencil-square-o', 'event' => 'edit-address', 'route' => 'addresses.update'],
             ],
-            'headerAlign'         => 'center',
-            'bodyAlign'           => 'center',
+            'headerAlign'              => 'center',
+            'bodyAlign'                => 'center',
             'enumMappings'             => [
-                'street_type' => StreetTypes::class
+                'street_type' => StreetTypes::class,
             ],
             'columns'             => [
                 0 => [

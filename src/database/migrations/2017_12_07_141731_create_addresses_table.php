@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateAddressesTable extends Migration
 {
@@ -37,8 +37,8 @@ class CreateAddressesTable extends Migration
             $table->string('postal_area')->nullable();
             $table->string('obs')->nullable();
 
-            $table->float('lat',10,6)->nullable();
-            $table->float('long',10,6)->nullable();
+            $table->float('lat', 10, 6)->nullable();
+            $table->float('long', 10, 6)->nullable();
 
             $table->integer('created_by')->unsigned()->index()->nullable();
             $table->foreign('created_by')->references('id')->on('users')->onUpdate('restrict')->onDelete('restrict');

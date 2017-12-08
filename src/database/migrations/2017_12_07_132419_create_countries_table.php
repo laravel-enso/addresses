@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateCountriesTable extends Migration
 {
@@ -15,8 +15,8 @@ class CreateCountriesTable extends Migration
     {
         Schema::create('countries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('isocode_2',2)->unique();
-            $table->string('isocode_3',3)->unique();
+            $table->string('isocode_2', 2)->unique();
+            $table->string('isocode_3', 3)->unique();
             $table->string('name');
             $table->timestamps();
         });
