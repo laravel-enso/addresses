@@ -17,7 +17,7 @@ return [
     ],
     'validations'  => [
         'street'     => 'required',
-        'city'     => 'required',
+        'city'       => 'required',
         'country_id' => 'required',
     ],
 ];
