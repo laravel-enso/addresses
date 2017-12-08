@@ -3,7 +3,6 @@
 Route::middleware(['web', 'auth', 'core'])
     ->namespace('LaravelEnso\AddressesManager\app\Http\Controllers')
     ->group(function () {
-
         Route::prefix('addresses')->as('addresses.')->group(function () {
             Route::get('getEditForm/{address}', 'AddressesController@getEditForm')->name('getEditForm');
             Route::get('getCreateForm', 'AddressesController@getCreateForm')->name('getCreateForm');
