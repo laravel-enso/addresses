@@ -16,4 +16,9 @@ trait Addressable
     {
         return $this->morphMany(Address::class, 'addressable');
     }
+
+    public function defaultAddress()
+    {
+        return $this->addresses()->where('is_default', true)->first();
+    }
 }
