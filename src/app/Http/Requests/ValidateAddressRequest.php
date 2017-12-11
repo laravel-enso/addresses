@@ -23,8 +23,6 @@ class ValidateAddressRequest extends FormRequest
      */
     public function rules()
     {
-        $address = $this->route('address');
-
         return config('addresses.validations');
     }
 }
