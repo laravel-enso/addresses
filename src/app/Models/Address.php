@@ -18,6 +18,8 @@ class Address extends Model
     protected $fillable = ['country_id', 'type', 'is_default', 'apartment', 'floor', 'entry', 'building', 'number', 'street',
         'sub_administrative_area', 'city', 'administrative_area', 'postal_area', 'obs', ];
 
+    protected $appends = ['country_name'];
+
     public function user()
     {
         return $this->belongsTo(config('auth.providers.users.model'), 'created_by', 'id');
@@ -31,6 +33,12 @@ class Address extends Model
     public function addressable()
     {
         return $this->morphTo();
+    }
+
+    /* getters and setters */
+    public function getCountryNameAttribute()
+    {
+        return $this->country->name;
     }
 
     public function getOwnerAttribute()
