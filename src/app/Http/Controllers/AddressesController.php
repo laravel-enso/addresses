@@ -13,10 +13,8 @@ use LaravelEnso\FormBuilder\app\Classes\FormBuilder;
 
 class AddressesController extends Controller
 {
-
     public function store(ValidateAddressRequest $request)
     {
-
         $params = (object) $request->get('_params');
 
         $address = new Address($request->all());
@@ -92,11 +90,11 @@ class AddressesController extends Controller
         $editForm = (new FormBuilder($this->getFormPath(), $address))
             ->setTitle('Edit')
             ->setMethod('PATCH')
-            ->setActions(['update','destroy'])
+            ->setActions(['update', 'destroy'])
             ->setSelectOptions('street_type', StreetTypes::object())
             ->getData();
 
-        return compact('editForm');;
+        return compact('editForm');
     }
 
     public function getCreateForm(Request $request)
