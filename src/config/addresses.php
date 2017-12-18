@@ -14,6 +14,16 @@ return [
     ],
     'streetTypes'  => [
         'Street' => 'Street',
+        'Avenue' => 'Avenue',
+        'Boulevard' => 'Boulevard',
+        'Parade' => 'Parade',
+        'Road' => 'Road',
+        'Lane' => 'Lane',
+        'Route' => 'Route',
+        'Row' => 'Row',
+        'Vista' => 'Vista',
+        'Bend' => 'Bend',
+        'Square' => 'Square',
     ],
     'validations'  => [
         'street'     => 'required',

@@ -13,16 +13,15 @@ use LaravelEnso\FormBuilder\app\Classes\FormBuilder;
 
 class AddressesController extends Controller
 {
-    public function index()
-    {
-        return view('laravel-enso/addressesmanager::index');
-    }
 
-    public function store(ValidateAddressRequest $request, string $type, int $id)
+    public function store(ValidateAddressRequest $request)
     {
+
+        $params = (object) $request->get('_params');
+
         $address = new Address($request->all());
-        $address->addressable_id = $id;
-        $address->addressable_type = config('addresses.addressables.'.$type);
+        $address->addressable_id = $params->id;
+        $address->addressable_type = config('addresses.addressables.'.$params->type);
         $address->is_default = $this->isTheFirst($address) ?: false;
 
         $address->save();
@@ -92,27 +91,23 @@ class AddressesController extends Controller
     {
         $editForm = (new FormBuilder($this->getFormPath(), $address))
             ->setTitle('Edit')
-            ->setAction('PATCH')
-            ->setUrl('/addresses/'.$address->id)
-            ->setSelectOptions('street_type', (object) (new StreetTypes())->getData())
+            ->setMethod('PATCH')
+            ->setActions(['update','destroy'])
+            ->setSelectOptions('street_type', StreetTypes::object())
             ->getData();
 
-        return $editForm;
+        return compact('editForm');;
     }
 
     public function getCreateForm(Request $request)
     {
-        $postUrl = sprintf('/addresses/%s/%s',
-            $request->get('addressable_type'), $request->get('addressable_id'));
-
         $createForm = (new FormBuilder($this->getFormPath()))
             ->setTitle('Insert')
-            ->setAction('POST')
-            ->setUrl($postUrl)
-            ->setSelectOptions('street_type', (object) (new StreetTypes())->getData())
+            ->setMethod('POST')
+            ->setSelectOptions('street_type', StreetTypes::object())
             ->getData();
 
-        return $createForm;
+        return compact('createForm');
     }
 
     /**
@@ -171,7 +166,7 @@ class AddressesController extends Controller
 
     private function isTheFirst(Address $address)
     {
-        $count = $address->addressable()->addresses()->count();
+        $count = $address->addressable->addresses()->count();
 
         return $count === 0;
     }

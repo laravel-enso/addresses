@@ -8,11 +8,11 @@
 
 namespace LaravelEnso\AddressesManager\app\Enums;
 
-use LaravelEnso\Helpers\Classes\AbstractEnum;
+use LaravelEnso\Helpers\Classes\Enum;
 
-class StreetTypes extends AbstractEnum
+class StreetTypes extends Enum
 {
-    public $data = [];
+    public static $config = 'addresses.streetTypes';
 
     public function __construct()
     {
