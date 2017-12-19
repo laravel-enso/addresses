@@ -10,7 +10,6 @@ use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 use LaravelEnso\AddressesManager\app\Models\Address;
 use LaravelEnso\Core\app\Exceptions\EnsoException;
 use LaravelEnso\FormBuilder\app\Classes\FormBuilder;
-use Symfony\Component\Translation\Exception\InvalidResourceException;
 
 class AddressesController extends Controller
 {
@@ -78,9 +77,9 @@ class AddressesController extends Controller
      */
     public function destroy(Address $address)
     {
-
-        if($address->is_default) throw new EnsoException(__('The default address cannot be deleted'));
-
+        if ($address->is_default) {
+            throw new EnsoException(__('The default address cannot be deleted'));
+        }
         $address->delete();
 
         return [
