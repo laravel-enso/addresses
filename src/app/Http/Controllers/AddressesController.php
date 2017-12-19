@@ -10,6 +10,7 @@ use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 use LaravelEnso\AddressesManager\app\Models\Address;
 use LaravelEnso\Core\app\Exceptions\EnsoException;
 use LaravelEnso\FormBuilder\app\Classes\FormBuilder;
+use Symfony\Component\Translation\Exception\InvalidResourceException;
 
 class AddressesController extends Controller
 {
@@ -77,6 +78,9 @@ class AddressesController extends Controller
      */
     public function destroy(Address $address)
     {
+
+        if($address->is_default) throw new EnsoException(__('The default address cannot be deleted'));
+
         $address->delete();
 
         return [
@@ -137,11 +141,11 @@ class AddressesController extends Controller
      */
     private function getAddressableClass()
     {
-        $class = config('addresses.addressables.'.request()->get('type'));
+        $class = config('enso.addresses.addressables.'.request()->get('type'));
 
         if (!$class) {
             throw new EnsoException(
-                __('Current entity does not exist in contacts.php config file: ').request()->get('type')
+                __('Current entity does not exist in enso/addresses.php config file: ').request()->get('type')
             );
         }
 

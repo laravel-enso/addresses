@@ -23,6 +23,6 @@ class ValidateAddressRequest extends FormRequest
      */
     public function rules()
     {
-        return config('addresses.validations');
+        return config('enso.addresses.validations');
     }
 }

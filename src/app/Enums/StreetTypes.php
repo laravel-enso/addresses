@@ -12,14 +12,5 @@ use LaravelEnso\Helpers\Classes\Enum;
 
 class StreetTypes extends Enum
 {
-    public static $config = 'addresses.streetTypes';
-
-    public function __construct()
-    {
-        $types = collect(config('addresses.streetTypes'));
-
-        $this->data = $types->map(function ($k, $v) {
-            return __($v);
-        });
-    }
+    public static $config = 'enso.addresses.streetTypes';
 }
