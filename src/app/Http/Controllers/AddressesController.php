@@ -19,7 +19,7 @@ class AddressesController extends Controller
 
         $address = new Address($request->all());
         $address->addressable_id = $params->id;
-        $address->addressable_type = config('addresses.addressables.'.$params->type);
+        $address->addressable_type = config('enso.addresses.addressables.'.$params->type);
         $address->is_default = $this->isTheFirst($address) ?: false;
 
         $address->save();

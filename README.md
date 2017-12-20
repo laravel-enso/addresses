@@ -9,6 +9,10 @@
 
 Free-form addresses manager for [Laravel Enso](https://github.com/laravel-enso/Enso)
 
+[![Screenshot](https://laravel-enso.github.io/addressesmanager/screenshots/bulma_041_thumb.png)](https://laravel-enso.github.io/addressesmanager/screenshots/bulma_041.png)
+
+[![Screenshot](https://laravel-enso.github.io/addressesmanager/screenshots/bulma_042_thumb.png)](https://laravel-enso.github.io/addressesmanager/screenshots/bulma_042.png)
+
 ### Features
 
 - can be used to attach addresses to any entity, via using a polymorphic relationship
