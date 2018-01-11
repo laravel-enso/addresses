@@ -3,11 +3,11 @@
     "icon": "fa fa-location-arrow",
     "columns": 4,
     "method": null,
-    "prefix": "addresses",
+    "routePrefix": "addresses",
     "fields": [
         {
             "label": "Street Type",
-            "column": "street_type",
+            "name": "street_type",
             "value": "",
             "meta": {
                 "type": "select",
@@ -19,7 +19,7 @@
         },
         {
             "label": "Street",
-            "column": "street",
+            "name": "street",
             "value": null,
             "meta": {
                 "custom": false,
@@ -30,7 +30,7 @@
         },
         {
             "label": "Number",
-            "column": "number",
+            "name": "number",
             "value": null,
             "meta": {
                 "custom": false,
@@ -41,7 +41,7 @@
         },
         {
             "label": "Building",
-            "column": "building",
+            "name": "building",
             "value": null,
             "meta": {
                 "custom": false,
@@ -52,7 +52,7 @@
         },
         {
             "label": "Entry",
-            "column": "entry",
+            "name": "entry",
             "value": null,
             "meta": {
                 "custom": false,
@@ -63,7 +63,7 @@
         },
         {
             "label": "Floor",
-            "column": "floor",
+            "name": "floor",
             "value": null,
             "meta": {
                 "custom": false,
@@ -74,7 +74,7 @@
         },
         {
             "label": "Apartment",
-            "column": "apartment",
+            "name": "apartment",
             "value": null,
             "meta": {
                 "custom": false,
@@ -85,7 +85,7 @@
         },
         {
             "label": "Sub Administrative Area",
-            "column": "sub_administrative_area",
+            "name": "sub_administrative_area",
             "value": null,
             "meta": {
                 "custom": false,
@@ -96,7 +96,7 @@
         },
         {
             "label": "City",
-            "column": "city",
+            "name": "city",
             "value": null,
             "meta": {
                 "custom": false,
@@ -107,7 +107,7 @@
         },
         {
             "label": "Administrative Area",
-            "column": "administrative_area",
+            "name": "administrative_area",
             "value": null,
             "meta": {
                 "custom": false,
@@ -118,7 +118,7 @@
         },
         {
             "label": "Postal Area",
-            "column": "postal_area",
+            "name": "postal_area",
             "value": null,
             "meta": {
                 "custom": false,
@@ -129,7 +129,7 @@
         },
         {
             "label": "Country",
-            "column": "country_id",
+            "name": "country_id",
             "value": null,
             "meta": {
                 "type": "select",
@@ -140,7 +140,7 @@
         },
         {
             "label": "Observations",
-            "column": "obs",
+            "name": "obs",
             "value": null,
             "meta": {
                 "custom": false,
@@ -151,7 +151,7 @@
         },
         {
             "label": "Is Default",
-            "column": "is_default",
+            "name": "is_default",
             "value": true,
             "meta": {
                 "custom": false,

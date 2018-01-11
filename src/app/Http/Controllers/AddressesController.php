@@ -9,7 +9,8 @@ use LaravelEnso\AddressesManager\app\Enums\StreetTypes;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 use LaravelEnso\AddressesManager\app\Models\Address;
 use LaravelEnso\Core\app\Exceptions\EnsoException;
-use LaravelEnso\FormBuilder\app\Classes\FormBuilder;
+use LaravelEnso\FormBuilder\app\Classes\Form;
+
 
 class AddressesController extends Controller
 {
@@ -90,23 +91,23 @@ class AddressesController extends Controller
 
     public function getEditForm(Address $address)
     {
-        $editForm = (new FormBuilder($this->getFormPath(), $address))
-            ->setTitle('Edit')
-            ->setMethod('PATCH')
-            ->setActions(['update', 'destroy'])
-            ->setSelectOptions('street_type', StreetTypes::object())
-            ->getData();
+        $editForm = (new Form($this->getFormPath()))
+            ->edit($address)
+            ->title('Edit')
+            ->actions(['update', 'destroy'])
+            ->options('street_type', StreetTypes::object())
+            ->get();
 
         return compact('editForm');
     }
 
     public function getCreateForm(Request $request)
     {
-        $createForm = (new FormBuilder($this->getFormPath()))
-            ->setTitle('Insert')
-            ->setMethod('POST')
-            ->setSelectOptions('street_type', StreetTypes::object())
-            ->getData();
+        $createForm = (new Form($this->getFormPath()))
+            ->create()
+            ->title('Insert')
+            ->options('street_type', StreetTypes::object())
+            ->get();
 
         return compact('createForm');
     }
