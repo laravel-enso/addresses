@@ -11,7 +11,6 @@ use LaravelEnso\AddressesManager\app\Models\Address;
 use LaravelEnso\Core\app\Exceptions\EnsoException;
 use LaravelEnso\FormBuilder\app\Classes\Form;
 
-
 class AddressesController extends Controller
 {
     public function store(ValidateAddressRequest $request)
