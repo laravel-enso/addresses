@@ -21,6 +21,8 @@ class Address extends Model
 
     protected $appends = ['country_name'];
 
+    protected $casts = ['is_default' => 'boolean'];
+
     public function user()
     {
         return $this->belongsTo(config('auth.providers.users.model'), 'created_by', 'id');
