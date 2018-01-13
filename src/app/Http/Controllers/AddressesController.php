@@ -24,7 +24,7 @@ class AddressesController extends Controller
         $address->save();
 
         return [
-            'message' => __('Created Address'),
+            'message'  => __('Created Address'),
             'redirect' => '',
         ];
     }
@@ -55,7 +55,7 @@ class AddressesController extends Controller
         $address->delete();
 
         return [
-            'message' => __('Operation was successful'),
+            'message'  => __('Operation was successful'),
             'redirect' => '',
         ];
     }
