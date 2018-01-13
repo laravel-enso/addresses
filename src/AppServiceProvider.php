@@ -4,7 +4,7 @@ namespace LaravelEnso\AddressesManager;
 
 use Illuminate\Support\ServiceProvider;
 
-class AddressesManagerServiceProvider extends ServiceProvider
+class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -15,7 +15,7 @@ class AddressesManagerServiceProvider extends ServiceProvider
     private function publishesAll()
     {
         $this->publishes([
-            __DIR__.'/config' => config_path(),
+            __DIR__.'/config' => config_path('enso'),
         ], 'addresses-config');
 
         $this->publishes([
@@ -23,7 +23,7 @@ class AddressesManagerServiceProvider extends ServiceProvider
         ], 'addresses-form');
 
         $this->publishes([
-            __DIR__.'/config' => config_path(),
+            __DIR__.'/config' => config_path('enso'),
         ], 'enso-config');
     }
 

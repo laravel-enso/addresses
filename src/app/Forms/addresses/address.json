@@ -6,6 +6,17 @@
     "routePrefix": "addresses",
     "fields": [
         {
+            "label": "Country",
+            "name": "country_id",
+            "value": null,
+            "meta": {
+                "type": "select",
+                "multiple": false,
+                "source": "countries.getOptionList",
+                "options": {}
+            }
+        },
+        {
             "label": "Street Type",
             "name": "street_type",
             "value": "",
@@ -128,17 +139,6 @@
             }
         },
         {
-            "label": "Country",
-            "name": "country_id",
-            "value": null,
-            "meta": {
-                "type": "select",
-                "multiple": false,
-                "source": "countries.getOptionList",
-                "options": {}
-            }
-        },
-        {
             "label": "Observations",
             "name": "obs",
             "value": null,
@@ -152,7 +152,7 @@
         {
             "label": "Is Default",
             "name": "is_default",
-            "value": true,
+            "value": false,
             "meta": {
                 "custom": false,
                 "type": "input",

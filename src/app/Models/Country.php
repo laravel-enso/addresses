@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mihai
- * Date: 12/7/17
- * Time: 3:51 PM.
- */
 
 namespace LaravelEnso\AddressesManager\app\Models;
 

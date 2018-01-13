@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mihai
- * Date: 12/5/17
- * Time: 1:36 PM.
- */
 
 namespace LaravelEnso\AddressesManager\app\Models;
 
@@ -15,9 +9,11 @@ class Address extends Model
 {
     use CreatedBy;
 
-    protected $fillable = ['country_id', 'type', 'is_default',
-        'street', 'street_type', 'number', 'building', 'entry', 'floor', 'apartment',
-        'sub_administrative_area', 'city', 'administrative_area', 'postal_area', 'obs', ];
+    protected $fillable = [
+        'country_id', 'type', 'is_default', 'street', 'street_type', 'number', 'building',
+        'entry', 'floor', 'apartment', 'sub_administrative_area', 'city', 'administrative_area',
+        'postal_area', 'obs',
+    ];
 
     protected $appends = ['country_name'];
 
@@ -38,7 +34,6 @@ class Address extends Model
         return $this->morphTo();
     }
 
-    /* getters and setters */
     public function getCountryNameAttribute()
     {
         return $this->country->name;
@@ -47,8 +42,8 @@ class Address extends Model
     public function getOwnerAttribute()
     {
         $owner = [
-            'fullName'  => $this->user->fullName,
-            'avatarId'  => $this->user->avatarId,
+            'fullName' => $this->user->fullName,
+            'avatarId' => $this->user->avatarId,
         ];
 
         unset($this->user);

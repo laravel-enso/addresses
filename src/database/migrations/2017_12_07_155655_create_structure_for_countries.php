@@ -9,8 +9,6 @@ class CreateStructureForCountries extends StructureMigration
     ];
 
     protected $permissions = [
-
         ['name' => 'countries.getOptionList', 'description' => 'Get countries for the select', 'type' => 0, 'default' => false],
-
     ];
 }

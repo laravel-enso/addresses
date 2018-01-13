@@ -4,11 +4,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class InsertAllCountries extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         $sql = "INSERT INTO countries (name, isocode_2, isocode_3, created_at, updated_at) VALUES 
@@ -266,11 +261,6 @@ class InsertAllCountries extends Migration
         DB::connection()->getPdo()->exec($sql);
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         $sql = 'DELETE FROM countries WHERE 1=1;';

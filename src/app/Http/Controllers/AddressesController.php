@@ -4,7 +4,6 @@ namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use LaravelEnso\AddressesManager\app\Enums\StreetTypes;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 use LaravelEnso\AddressesManager\app\Models\Address;
@@ -20,61 +19,34 @@ class AddressesController extends Controller
         $address = new Address($request->all());
         $address->addressable_id = $params->id;
         $address->addressable_type = config('enso.addresses.addressables.'.$params->type);
-        $address->is_default = $this->isTheFirst($address) ?: false;
+        $address->is_default = $this->isTheFirst($address);
 
         $address->save();
 
         return [
-            'message'  => __('Created Address'),
+            'message' => __('Created Address'),
             'redirect' => '',
         ];
     }
 
     public function update(ValidateAddressRequest $request, Address $address)
     {
-        $address->fill($request->all());
-        $address->save();
+        $address->update($request->all());
 
         return [
             'message' => __('The Changes have been saved!'),
         ];
     }
 
-    /**
-     * @param Address $address
-     *
-     * @throws \Exception
-     * @throws \Throwable
-     *
-     * @return array
-     */
     public function setDefault(Address $address)
     {
-        DB::transaction(function () use ($address) {
-
-            //first set all addresses as not default
-            $address->addressable->addresses()->where('is_default', true)->get()
-                ->each(function (Address $item) {
-                    $item->is_default = false;
-                    $item->save();
-                });
-
+        \DB::transaction(function () use ($address) {
+            $this->unsetDefaultAddress($address);
             $address->is_default = true;
             $address->save();
         });
-
-        return [
-            'message' => __('Address set as default'),
-        ];
     }
 
-    /**
-     * @param Address $address
-     *
-     * @throws \Exception
-     *
-     * @return array
-     */
     public function destroy(Address $address)
     {
         if ($address->is_default) {
@@ -83,61 +55,46 @@ class AddressesController extends Controller
         $address->delete();
 
         return [
-            'message'  => __('Operation was successful'),
+            'message' => __('Operation was successful'),
             'redirect' => '',
         ];
     }
 
-    public function getEditForm(Address $address)
+    public function edit(Address $address)
     {
-        $editForm = (new Form($this->getFormPath()))
+        $form = (new Form($this->getFormPath()))
             ->edit($address)
             ->title('Edit')
             ->actions(['update', 'destroy'])
             ->options('street_type', StreetTypes::object())
             ->get();
 
-        return compact('editForm');
+        return compact('form');
     }
 
-    public function getCreateForm(Request $request)
+    public function create(Request $request)
     {
-        $createForm = (new Form($this->getFormPath()))
+        $form = (new Form($this->getFormPath()))
             ->create()
             ->title('Insert')
             ->options('street_type', StreetTypes::object())
             ->get();
 
-        return compact('createForm');
+        return compact('form');
     }
 
-    /**
-     * @throws EnsoException
-     *
-     * @return mixed
-     */
-    public function list()
+    public function index()
     {
         $addressable = $this->getAddressable();
 
         return $addressable->addresses()->get();
     }
 
-    /**
-     * @throws EnsoException
-     *
-     * @return mixed
-     */
     private function getAddressable()
     {
         return $this->getAddressableClass()::find(request()->get('id'));
     }
 
-    /**
-     * @throws EnsoException
-     *
-     * @return \Illuminate\Config\Repository|mixed
-     */
     private function getAddressableClass()
     {
         $class = config('enso.addresses.addressables.'.request()->get('type'));
@@ -151,9 +108,6 @@ class AddressesController extends Controller
         return $class;
     }
 
-    /**
-     * @return string
-     */
     private function getFormPath(): string
     {
         $publishedForm = app_path('Forms/vendor/addresses/address.json');
@@ -165,7 +119,19 @@ class AddressesController extends Controller
         return __DIR__.'/../../Forms/addresses/address.json';
     }
 
-    private function isTheFirst(Address $address)
+    private function unsetDefaultAddress(Address $address)
+    {
+        $defaultAddress = $address->addressable->addresses()
+            ->whereIsDefault(true)
+            ->first();
+
+        if (!is_null($defaultAddress)) {
+            $defaultAddress->is_default = false;
+            $defaultAddress->save();
+        }
+    }
+
+    private function isTheFirst(Address $address): bool
     {
         $count = $address->addressable->addresses()->count();
 
