@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use LaravelEnso\AddressesManager\app\Models\Country;
 
 class InsertAllCountries extends Migration
 {
@@ -259,7 +258,7 @@ class InsertAllCountries extends Migration
             ['name' => 'Western Sahara', 'isocode_2' => 'EH', 'isocode_3' => 'ESH', 'created_at' => $now, 'updated_at' => $now],
             ['name' => 'Yemen', 'isocode_2' => 'YE', 'isocode_3' => 'YEM', 'created_at' => $now, 'updated_at' => $now],
             ['name' => 'Zambia', 'isocode_2' => 'ZM', 'isocode_3' => 'ZMB', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Zimbabwe', 'isocode_2' => 'ZW', 'isocode_3' => 'ZWE', 'created_at' => $now, 'updated_at' => $now]
+            ['name' => 'Zimbabwe', 'isocode_2' => 'ZW', 'isocode_3' => 'ZWE', 'created_at' => $now, 'updated_at' => $now],
         ]);
 
         if (config('app.env') === 'testing') {
@@ -269,7 +268,6 @@ class InsertAllCountries extends Migration
         }
 
         \DB::table('countries')->insert($countries->all());
-
     }
 
     public function down()
