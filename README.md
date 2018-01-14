@@ -34,7 +34,7 @@ so you could create a custom versions for specific countries
 the essential ones.
 
 ```
-<addresses :id="modelId" type="model_alias">
+<addresses :id="modelId" type="modelAlias">
 </addresses>
 ```
 

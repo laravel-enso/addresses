@@ -10,9 +10,9 @@ class Address extends Model
     use CreatedBy;
 
     protected $fillable = [
-        'country_id', 'type', 'is_default', 'street', 'street_type', 'number', 'building',
-        'entry', 'floor', 'apartment', 'sub_administrative_area', 'city', 'administrative_area',
-        'postal_area', 'obs',
+        'country_id', 'type', 'is_default', 'street', 'street_type', 'number',
+        'building', 'entry', 'floor', 'apartment', 'sub_administrative_area',
+        'city', 'administrative_area', 'postal_area', 'obs',
     ];
 
     protected $appends = ['country_name'];
