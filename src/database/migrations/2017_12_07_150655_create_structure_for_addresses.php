@@ -16,5 +16,6 @@ class CreateStructureForAddresses extends StructureMigration
         ['name' => 'addresses.setDefault', 'description' => 'Set Address as default', 'type' => 1, 'default' => false],
         ['name' => 'addresses.edit', 'description' => 'Get Edit Form', 'type' => 0, 'default' => false],
         ['name' => 'addresses.create', 'description' => 'Get Create Form', 'type' => 0, 'default' => false],
+        ['name' => 'addresses.getCountryList', 'description' => 'Get countries option list for select', 'type' => 0, 'default' => false],
     ];
 }
