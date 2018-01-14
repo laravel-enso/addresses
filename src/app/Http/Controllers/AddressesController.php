@@ -2,13 +2,13 @@
 
 namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use LaravelEnso\AddressesManager\app\Enums\StreetTypes;
-use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
-use LaravelEnso\AddressesManager\app\Models\Address;
-use LaravelEnso\Core\app\Exceptions\EnsoException;
+use App\Http\Controllers\Controller;
 use LaravelEnso\FormBuilder\app\Classes\Form;
+use LaravelEnso\AddressesManager\app\Models\Address;
+use LaravelEnso\AddressesManager\app\Enums\StreetTypes;
+use LaravelEnso\AddressesManager\app\Exceptions\AddressException;
+use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 
 class AddressesController extends Controller
 {
@@ -50,7 +50,7 @@ class AddressesController extends Controller
     public function destroy(Address $address)
     {
         if ($address->is_default) {
-            throw new EnsoException(__('The default address cannot be deleted'));
+            throw new AddressException(__('The default address cannot be deleted'));
         }
         $address->delete();
 
@@ -100,9 +100,10 @@ class AddressesController extends Controller
         $class = config('enso.addresses.addressables.'.request()->get('type'));
 
         if (!$class) {
-            throw new EnsoException(
-                __('Current entity does not exist in enso/addresses.php config file: ').request()->get('type')
-            );
+            throw new AddressException(__(
+                'Entity :entity does not exist in enso/addresses.php config file',
+                ['entity' => request()->get('type')]
+            ));
         }
 
         return $class;

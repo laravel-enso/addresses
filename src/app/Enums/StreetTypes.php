@@ -2,7 +2,7 @@
 
 namespace LaravelEnso\AddressesManager\app\Enums;
 
-use LaravelEnso\Helpers\Classes\Enum;
+use LaravelEnso\Helpers\app\Classes\Enum;
 
 class StreetTypes extends Enum
 {
