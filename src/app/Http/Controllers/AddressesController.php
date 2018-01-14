@@ -2,13 +2,13 @@
 
 namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use LaravelEnso\FormBuilder\app\Classes\Form;
-use LaravelEnso\AddressesManager\app\Models\Address;
+use Illuminate\Http\Request;
 use LaravelEnso\AddressesManager\app\Enums\StreetTypes;
 use LaravelEnso\AddressesManager\app\Exceptions\AddressException;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
+use LaravelEnso\AddressesManager\app\Models\Address;
+use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class AddressesController extends Controller
 {
