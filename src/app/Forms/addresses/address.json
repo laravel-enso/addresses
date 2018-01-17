@@ -3,7 +3,7 @@
     "icon": "fa fa-location-arrow",
     "columns": 4,
     "method": null,
-    "routePrefix": "addresses",
+    "routePrefix": "core.addresses",
     "fields": [
         {
             "label": "Country",
@@ -12,7 +12,7 @@
             "meta": {
                 "type": "select",
                 "multiple": false,
-                "source": "addresses.getCountryList",
+                "source": "core.addresses.getCountryList",
                 "options": {}
             }
         },
