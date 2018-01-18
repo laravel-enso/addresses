@@ -139,7 +139,7 @@
             "config": {
                 "type": "select",
                 "multiple": false,
-                "source": "/countries/getOptionList",
+                "source": "/addresses/countriesSelectOptions",
                 "options": {}
             }
         },

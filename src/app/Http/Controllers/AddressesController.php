@@ -15,11 +15,13 @@ use LaravelEnso\FormBuilder\app\Classes\FormBuilder;
 class AddressesController extends Controller
 {
 
-    public function store(ValidateAddressRequest $request, string $type, int $id)
+    public function store(ValidateAddressRequest $request)
     {
+        $params = (object) $request->get('_params');
+
         $address = new Address($request->all());
-        $address->addressable_id = $id;
-        $address->addressable_type = config('addresses.addressables.'.$type);
+        $address->addressable_id = $params->id;
+        $address->addressable_type = config('addresses.addressables.'.$params->type);
         $address->is_default = $this->isTheFirst($address);
 
         $address->save();
@@ -94,13 +96,10 @@ class AddressesController extends Controller
 
     public function create(Request $request)
     {
-        $postUrl = sprintf('/addresses/%s/%s',
-            $request->get('addressable_type'), $request->get('addressable_id'));
-
         $createForm = (new FormBuilder($this->getFormPath()))
             ->setTitle('Insert')
             ->setAction('POST')
-            ->setUrl($postUrl)
+            ->setUrl('/addresses')
             ->setSelectOptions('street_type', (object) (new StreetTypes())->getData())
             ->getData();
 
@@ -112,7 +111,7 @@ class AddressesController extends Controller
      *
      * @return mixed
      */
-    public function list()
+    public function index()
     {
         $addressable = $this->getAddressable();
 
