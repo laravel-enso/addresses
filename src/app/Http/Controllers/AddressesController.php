@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use LaravelEnso\AddressesManager\app\Enums\StreetTypes;
+use LaravelEnso\AddressesManager\app\Exceptions\AddressException;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 use LaravelEnso\AddressesManager\app\Models\Address;
 use LaravelEnso\Core\app\Exceptions\EnsoException;
@@ -13,17 +14,13 @@ use LaravelEnso\FormBuilder\app\Classes\FormBuilder;
 
 class AddressesController extends Controller
 {
-    public function index()
-    {
-        return view('laravel-enso/addressesmanager::index');
-    }
 
     public function store(ValidateAddressRequest $request, string $type, int $id)
     {
         $address = new Address($request->all());
         $address->addressable_id = $id;
         $address->addressable_type = config('addresses.addressables.'.$type);
-        $address->is_default = $this->isTheFirst($address) ?: false;
+        $address->is_default = $this->isTheFirst($address);
 
         $address->save();
 
@@ -35,8 +32,7 @@ class AddressesController extends Controller
 
     public function update(ValidateAddressRequest $request, Address $address)
     {
-        $address->fill($request->all());
-        $address->save();
+        $address->update($request->all());
 
         return [
             'message' => __('The Changes have been saved!'),
@@ -54,14 +50,7 @@ class AddressesController extends Controller
     public function setDefault(Address $address)
     {
         DB::transaction(function () use ($address) {
-
-            //first set all addresses as not default
-            $address->addressable->addresses()->where('is_default', true)->get()
-                ->each(function (Address $item) {
-                    $item->is_default = false;
-                    $item->save();
-                });
-
+            $this->unsetDefaultAddress($address);
             $address->is_default = true;
             $address->save();
         });
@@ -80,6 +69,9 @@ class AddressesController extends Controller
      */
     public function destroy(Address $address)
     {
+        if ($address->is_default) {
+            throw new AddressException(__('The default address cannot be deleted'));
+        }
         $address->delete();
 
         return [
@@ -88,7 +80,7 @@ class AddressesController extends Controller
         ];
     }
 
-    public function getEditForm(Address $address)
+    public function edit(Address $address)
     {
         $editForm = (new FormBuilder($this->getFormPath(), $address))
             ->setTitle('Edit')
@@ -100,7 +92,7 @@ class AddressesController extends Controller
         return $editForm;
     }
 
-    public function getCreateForm(Request $request)
+    public function create(Request $request)
     {
         $postUrl = sprintf('/addresses/%s/%s',
             $request->get('addressable_type'), $request->get('addressable_id'));
@@ -124,7 +116,7 @@ class AddressesController extends Controller
     {
         $addressable = $this->getAddressable();
 
-        return $addressable->addresses()->get();
+        return $addressable->addresses()->orderBy('is_default', 'desc')->get();
     }
 
     /**
@@ -169,9 +161,21 @@ class AddressesController extends Controller
         return __DIR__.'/../../Forms/addresses/address.json';
     }
 
+    private function unsetDefaultAddress(Address $address)
+    {
+        $defaultAddress = $address->addressable->addresses()
+            ->whereIsDefault(true)
+            ->first();
+
+        if (!is_null($defaultAddress)) {
+            $defaultAddress->is_default = false;
+            $defaultAddress->save();
+        }
+    }
+
     private function isTheFirst(Address $address)
     {
-        $count = $address->addressable()->addresses()->count();
+        $count = $address->addressable->addresses()->count();
 
         return $count === 0;
     }
