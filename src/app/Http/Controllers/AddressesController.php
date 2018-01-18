@@ -14,7 +14,6 @@ use LaravelEnso\FormBuilder\app\Classes\FormBuilder;
 
 class AddressesController extends Controller
 {
-
     public function store(ValidateAddressRequest $request)
     {
         $params = (object) $request->get('_params');
