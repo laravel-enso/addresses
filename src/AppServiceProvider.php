@@ -25,6 +25,14 @@ class AppServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config' => config_path('enso'),
         ], 'enso-config');
+
+        $this->publishes([
+            __DIR__.'/resources/assets/js' => resource_path('assets/js'),
+        ], 'addresses-assets');
+
+        $this->publishes([
+            __DIR__.'/resources/assets/js' => resource_path('assets/js'),
+        ], 'enso-assets');
     }
 
     private function loadDependencies()
