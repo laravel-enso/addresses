@@ -2,13 +2,13 @@
 
 namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use LaravelEnso\FormBuilder\app\Classes\Form;
-use LaravelEnso\AddressesManager\app\Models\Address;
-use LaravelEnso\AddressesManager\app\Handlers\ConfigMapper;
+use Illuminate\Http\Request;
 use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
+use LaravelEnso\AddressesManager\app\Handlers\ConfigMapper;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
+use LaravelEnso\AddressesManager\app\Models\Address;
+use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class AddressesController extends Controller
 {
@@ -30,7 +30,7 @@ class AddressesController extends Controller
         $address->store($request->all(), $request->get('_params'));
 
         return [
-            'message' => __('Created Address'),
+            'message'  => __('Created Address'),
             'redirect' => '',
         ];
     }
@@ -59,7 +59,7 @@ class AddressesController extends Controller
         $address->delete();
 
         return [
-            'message' => __('Operation was successful'),
+            'message'  => __('Operation was successful'),
             'redirect' => '',
         ];
     }
