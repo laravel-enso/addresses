@@ -3,9 +3,9 @@
 namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\TrackWho\app\Traits\CreatedBy;
-use LaravelEnso\AddressesManager\app\Handlers\ConfigMapper;
 use LaravelEnso\AddressesManager\app\Exceptions\AddressException;
+use LaravelEnso\AddressesManager\app\Handlers\ConfigMapper;
+use LaravelEnso\TrackWho\app\Traits\CreatedBy;
 
 class Address extends Model
 {
@@ -14,7 +14,7 @@ class Address extends Model
     protected $fillable = [
         'addressable_id', 'addressable_type', 'country_id', 'type', 'is_default', 'street',
         'street_type', 'number', 'building', 'entry', 'floor', 'apartment',
-        'sub_administrative_area', 'city', 'administrative_area', 'postal_area', 'obs'
+        'sub_administrative_area', 'city', 'administrative_area', 'postal_area', 'obs',
     ];
 
     protected $appends = ['country_name'];
@@ -70,8 +70,8 @@ class Address extends Model
         $addressable = (new ConfigMapper($params['type']))->class();
         $this->fill(
             $attributes + [
-                'addressable_id' => $params['id'],
-                'addressable_type' => $addressable
+                'addressable_id'   => $params['id'],
+                'addressable_type' => $addressable,
             ]
         );
 

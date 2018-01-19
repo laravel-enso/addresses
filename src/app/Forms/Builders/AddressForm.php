@@ -2,9 +2,9 @@
 
 namespace LaravelEnso\AddressesManager\app\Forms\Builders;
 
-use LaravelEnso\FormBuilder\app\Classes\Form;
-use LaravelEnso\AddressesManager\app\Models\Address;
 use LaravelEnso\AddressesManager\app\Enums\StreetTypes;
+use LaravelEnso\AddressesManager\app\Models\Address;
+use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class AddressForm
 {
