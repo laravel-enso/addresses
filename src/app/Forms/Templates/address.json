@@ -12,7 +12,7 @@
             "meta": {
                 "type": "select",
                 "multiple": false,
-                "source": "core.addresses.getCountryList",
+                "source": "core.addresses.countriesSelectOptions",
                 "options": {}
             }
         },

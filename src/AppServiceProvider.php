@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
         ], 'addresses-config');
 
         $this->publishes([
-            __DIR__.'/app/Forms' => app_path().'/Forms/vendor/',
+            __DIR__.'/app/Forms/Templates' => app_path().'/Forms/vendor/',
         ], 'addresses-form');
 
         $this->publishes([

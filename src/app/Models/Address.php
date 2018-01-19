@@ -4,15 +4,17 @@ namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\TrackWho\app\Traits\CreatedBy;
+use LaravelEnso\AddressesManager\app\Handlers\ConfigMapper;
+use LaravelEnso\AddressesManager\app\Exceptions\AddressException;
 
 class Address extends Model
 {
     use CreatedBy;
 
     protected $fillable = [
-        'country_id', 'type', 'is_default', 'street', 'street_type', 'number',
-        'building', 'entry', 'floor', 'apartment', 'sub_administrative_area',
-        'city', 'administrative_area', 'postal_area', 'obs',
+        'addressable_id', 'addressable_type', 'country_id', 'type', 'is_default', 'street',
+        'street_type', 'number', 'building', 'entry', 'floor', 'apartment',
+        'sub_administrative_area', 'city', 'administrative_area', 'postal_area', 'obs'
     ];
 
     protected $appends = ['country_name'];
@@ -49,5 +51,42 @@ class Address extends Model
         unset($this->user);
 
         return $owner;
+    }
+
+    public function setDefault()
+    {
+        \DB::transaction(function () {
+            $this->addressable->addresses()
+                ->whereIsDefault(true)
+                ->first()
+                ->update(['is_default' => false]);
+
+            $this->update(['is_default' => true]);
+        });
+    }
+
+    public function store(array $attributes, array $params)
+    {
+        $addressable = (new ConfigMapper($params['type']))->class();
+        $this->fill(
+            $attributes + [
+                'addressable_id' => $params['id'],
+                'addressable_type' => $addressable
+            ]
+        );
+
+        $this->is_default = !$addressable::find($params['id'])
+            ->addresses()->count();
+        \Log::info($this);
+        $this->save();
+    }
+
+    public function delete()
+    {
+        if ($this->is_default) {
+            throw new AddressException(__('The default address cannot be deleted'));
+        }
+
+        parent::delete();
     }
 }

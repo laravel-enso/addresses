@@ -2,31 +2,42 @@
 
 namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use LaravelEnso\AddressesManager\app\Enums\StreetTypes;
-use LaravelEnso\AddressesManager\app\Exceptions\AddressException;
-use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
-use LaravelEnso\AddressesManager\app\Models\Address;
+use App\Http\Controllers\Controller;
 use LaravelEnso\FormBuilder\app\Classes\Form;
+use LaravelEnso\AddressesManager\app\Models\Address;
+use LaravelEnso\AddressesManager\app\Handlers\ConfigMapper;
+use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
+use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 
 class AddressesController extends Controller
 {
-    public function store(ValidateAddressRequest $request)
+    public function index(Request $request)
     {
-        $params = (object) $request->get('_params');
+        return Address::whereAddressableId($request->get('id'))
+            ->whereAddressableType(
+                (new ConfigMapper($request->get('type')))->class()
+            )->get();
+    }
 
-        $address = new Address($request->all());
-        $address->addressable_id = $params->id;
-        $address->addressable_type = config('enso.addresses.addressables.'.$params->type);
-        $address->is_default = $this->isTheFirst($address);
+    public function create(AddressForm $form)
+    {
+        return ['form' => $form->create()];
+    }
 
-        $address->save();
+    public function store(ValidateAddressRequest $request, Address $address)
+    {
+        $address->store($request->all(), $request->get('_params'));
 
         return [
-            'message'  => __('Created Address'),
+            'message' => __('Created Address'),
             'redirect' => '',
         ];
+    }
+
+    public function edit(Address $address, AddressForm $form)
+    {
+        return ['form' => $form->edit($address)];
     }
 
     public function update(ValidateAddressRequest $request, Address $address)
@@ -40,102 +51,16 @@ class AddressesController extends Controller
 
     public function setDefault(Address $address)
     {
-        \DB::transaction(function () use ($address) {
-            $this->unsetDefaultAddress($address);
-            $address->is_default = true;
-            $address->save();
-        });
+        $address->setDefault();
     }
 
     public function destroy(Address $address)
     {
-        if ($address->is_default) {
-            throw new AddressException(__('The default address cannot be deleted'));
-        }
         $address->delete();
 
         return [
-            'message'  => __('Operation was successful'),
+            'message' => __('Operation was successful'),
             'redirect' => '',
         ];
-    }
-
-    public function edit(Address $address)
-    {
-        $form = (new Form($this->getFormPath()))
-            ->edit($address)
-            ->title('Edit')
-            ->actions(['update', 'destroy'])
-            ->options('street_type', StreetTypes::object())
-            ->get();
-
-        return compact('form');
-    }
-
-    public function create(Request $request)
-    {
-        $form = (new Form($this->getFormPath()))
-            ->create()
-            ->title('Insert')
-            ->options('street_type', StreetTypes::object())
-            ->get();
-
-        return compact('form');
-    }
-
-    public function index()
-    {
-        $addressable = $this->getAddressable();
-
-        return $addressable->addresses()->get();
-    }
-
-    private function getAddressable()
-    {
-        return $this->getAddressableClass()::find(request()->get('id'));
-    }
-
-    private function getAddressableClass()
-    {
-        $class = config('enso.addresses.addressables.'.request()->get('type'));
-
-        if (!$class) {
-            throw new AddressException(__(
-                'Entity :entity does not exist in enso/addresses.php config file',
-                ['entity' => request()->get('type')]
-            ));
-        }
-
-        return $class;
-    }
-
-    private function getFormPath(): string
-    {
-        $publishedForm = app_path('Forms/vendor/addresses/address.json');
-
-        if (file_exists($publishedForm)) {
-            return $publishedForm;
-        }
-
-        return __DIR__.'/../../Forms/addresses/address.json';
-    }
-
-    private function unsetDefaultAddress(Address $address)
-    {
-        $defaultAddress = $address->addressable->addresses()
-            ->whereIsDefault(true)
-            ->first();
-
-        if (!is_null($defaultAddress)) {
-            $defaultAddress->is_default = false;
-            $defaultAddress->save();
-        }
-    }
-
-    private function isTheFirst(Address $address): bool
-    {
-        $count = $address->addressable->addresses()->count();
-
-        return $count === 0;
     }
 }

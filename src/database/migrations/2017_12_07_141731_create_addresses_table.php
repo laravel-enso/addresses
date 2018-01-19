@@ -14,12 +14,10 @@ class CreateAddressesTable extends Migration
             $table->morphs('addressable');
 
             $table->integer('country_id')->unsigned()->index();
-            $table->foreign('country_id')->references('id')->on('countries')
-                ->onUpdate('restrict')->onDelete('restrict');
+            $table->foreign('country_id')->references('id')->on('countries');
 
             $table->smallInteger('type')->default(0);
             $table->boolean('is_default')->default(true);
-
             $table->string('apartment')->nullable();
             $table->string('floor')->nullable();
             $table->string('entry')->nullable();
@@ -32,13 +30,11 @@ class CreateAddressesTable extends Migration
             $table->string('administrative_area')->nullable();
             $table->string('postal_area')->nullable();
             $table->string('obs')->nullable();
-
             $table->float('lat', 10, 6)->nullable();
             $table->float('long', 10, 6)->nullable();
 
             $table->integer('created_by')->unsigned()->index()->nullable();
-            $table->foreign('created_by')->references('id')->on('users')
-                ->onUpdate('restrict')->onDelete('restrict');
+            $table->foreign('created_by')->references('id')->on('users');
 
             $table->timestamps();
         });

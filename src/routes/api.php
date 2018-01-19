@@ -6,5 +6,5 @@ Route::middleware(['web', 'auth', 'core'])
     ->group(function () {
         Route::resource('addresses', 'AddressesController', ['except' => ['show']]);
         Route::patch('addresses.setDefault/{address}', 'AddressesController@setDefault')->name('addresses.setDefault');
-        Route::get('addresses.countriesSelectOptions', 'CountriesSelectController@getOptionList')->name('addresses.countriesSelectOptions');
+        Route::get('addresses.countriesSelectOptions', 'CountriesSelectController@options')->name('addresses.countriesSelectOptions');
     });
