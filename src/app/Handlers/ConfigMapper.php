@@ -6,7 +6,6 @@ use LaravelEnso\AddressesManager\app\Exceptions\AddressConfigException;
 
 class ConfigMapper
 {
-    protected $commentable;
     private $type;
 
     public function __construct(string $type)

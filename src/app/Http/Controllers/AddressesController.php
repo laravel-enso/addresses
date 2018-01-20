@@ -29,10 +29,7 @@ class AddressesController extends Controller
     {
         $address->store($request->all(), $request->get('_params'));
 
-        return [
-            'message'  => __('Created Address'),
-            'redirect' => '',
-        ];
+        return ['message' => __('Created Address')];
     }
 
     public function edit(Address $address, AddressForm $form)
@@ -44,9 +41,7 @@ class AddressesController extends Controller
     {
         $address->update($request->all());
 
-        return [
-            'message' => __('The Changes have been saved!'),
-        ];
+        return ['message' => __('The Changes have been saved!')];
     }
 
     public function setDefault(Address $address)
@@ -58,9 +53,6 @@ class AddressesController extends Controller
     {
         $address->delete();
 
-        return [
-            'message'  => __('Operation was successful'),
-            'redirect' => '',
-        ];
+        return ['message' => __('Operation was successful')];
     }
 }

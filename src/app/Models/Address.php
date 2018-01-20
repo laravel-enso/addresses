@@ -70,14 +70,14 @@ class Address extends Model
         $addressable = (new ConfigMapper($params['type']))->class();
         $this->fill(
             $attributes + [
-                'addressable_id'   => $params['id'],
+                'addressable_id' => $params['id'],
                 'addressable_type' => $addressable,
             ]
         );
 
         $this->is_default = !$addressable::find($params['id'])
             ->addresses()->count();
-        \Log::info($this);
+
         $this->save();
     }
 
