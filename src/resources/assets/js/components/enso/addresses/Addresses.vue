@@ -1,6 +1,6 @@
 <template>
 
-    <card icon="fa fa-map-signs"
+    <card icon="fas fa-map-signs"
         refresh
         :search="addresses.length > 1"
         :title="title || __('Addresses')"
@@ -14,7 +14,7 @@
         <a slot="control-1" class="card-header-icon">
             <span class="icon is-small"
                   @click="create()">
-                <i class="fa fa-plus-square"></i>
+                <i class="fas fa-plus-square"></i>
             </span>
         </a>
         <div class="has-padding-medium addresses-wrapper">
