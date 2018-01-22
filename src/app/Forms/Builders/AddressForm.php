@@ -34,7 +34,7 @@ class AddressForm
 
     private function form()
     {
-        $form = app_path('Forms/vendor/addresses/address.json');
+        $form = app_path('Forms/vendor/address.json');
 
         if (\File::exists($form)) {
             return $form;
