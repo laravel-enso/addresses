@@ -58,7 +58,7 @@ class Address extends Model
         \DB::transaction(function () {
             $this->addressable->addresses()
                 ->whereIsDefault(true)
-                ->first()
+                ->get()->each
                 ->update(['is_default' => false]);
 
             $this->update(['is_default' => true]);
