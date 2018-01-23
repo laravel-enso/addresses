@@ -6,12 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAddressesTable extends Migration
 {
-
     public function up()
     {
-
         Schema::create('addresses', function (Blueprint $table) {
-
             $table->increments('id');
 
             $table->morphs('addressable');
@@ -46,7 +43,6 @@ class CreateAddressesTable extends Migration
 
     public function down()
     {
-
         Schema::dropIfExists('addresses');
     }
 }
