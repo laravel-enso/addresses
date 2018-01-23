@@ -6,9 +6,12 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAddressesTable extends Migration
 {
+
     public function up()
     {
+
         Schema::create('addresses', function (Blueprint $table) {
+
             $table->increments('id');
 
             $table->morphs('addressable');
@@ -22,6 +25,7 @@ class CreateAddressesTable extends Migration
             $table->string('floor')->nullable();
             $table->string('entry')->nullable();
             $table->string('building')->nullable();
+            $table->string('building_type')->nullable();
             $table->string('number')->nullable();
             $table->string('street')->nullable();
             $table->string('street_type')->nullable();
@@ -42,6 +46,7 @@ class CreateAddressesTable extends Migration
 
     public function down()
     {
+
         Schema::dropIfExists('addresses');
     }
 }

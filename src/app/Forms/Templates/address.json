@@ -51,6 +51,18 @@
             }
         },
         {
+            "label": "Building Type",
+            "name": "building_type",
+            "value": "",
+            "meta": {
+                "multiple": false,
+                "type": "select",
+                "keyMap": "string",
+                "source": null,
+                "options": {}
+            }
+        },
+        {
             "label": "Building",
             "name": "building",
             "value": null,

@@ -12,12 +12,12 @@
                 <slot name="address" :address="address">
                     <span v-if="address.number">{{ address.number }}</span>
                     <span v-if="address.street">{{ address.street }}</span>
-                    <span v-if="address.street_type">{{ address.street_type }},</span>
+                    <span v-if="address.street_type">{{ __(address.street_type) }},</span>
                     <br>
-                    <span v-if="address.building"><span class="has-text-grey">{{__('Building')}}: </span>{{ address.building }},</span>
-                    <span v-if="address.entry"><span class="has-text-grey">{{__('Entry')}}: </span>{{ address.entry }},</span>
-                    <span v-if="address.floor"><span class="has-text-grey">{{__('Floor')}}: </span>{{ address.floor }},</span>
-                    <span v-if="address.apartment"><span class="has-text-grey">{{__('Apartment')}}: </span>{{ address.apartment }},</span>
+                    <span v-if="address.building"><span class="has-text-grey">{{__(address.building_type)}} </span>{{ address.building }},</span>
+                    <span v-if="address.entry"><span class="has-text-grey">{{__('Entry')}} </span>{{ address.entry }},</span>
+                    <span v-if="address.floor"><span class="has-text-grey">{{__('Floor')}} </span>{{ address.floor }},</span>
+                    <span v-if="address.apartment"><span class="has-text-grey">{{__('Apartment')}} </span>{{ address.apartment }},</span>
                     <br>
                     <span v-if="address.sub_administrative_area">{{ address.sub_administrative_area }},</span>
                     <span v-if="address.city">{{ address.city }},</span>
@@ -90,3 +90,9 @@ export default {
 };
 
 </script>
+
+<style scoped>
+    .media-content {
+        min-height: 148px;
+    }
+</style>
