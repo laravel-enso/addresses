@@ -13,7 +13,7 @@ class Address extends Model
 
     protected $fillable = [
         'addressable_id', 'addressable_type', 'country_id', 'type', 'is_default', 'street',
-        'street_type', 'number', 'building', 'entry', 'floor', 'apartment',
+        'street_type', 'number', 'building_type', 'building', 'entry', 'floor', 'apartment',
         'sub_administrative_area', 'city', 'administrative_area', 'postal_area', 'obs',
     ];
 

@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'addressables' => [
+    'addressables'   => [
         'owner' => \App\Owner::class,
     ],
-    'streetTypes' => [
+    'streetTypes'    => [
         'Street'    => 'Street',
         'Avenue'    => 'Avenue',
         'Boulevard' => 'Boulevard',
@@ -17,7 +17,12 @@ return [
         'Bend'      => 'Bend',
         'Square'    => 'Square',
     ],
-    'validations' => [
+    'buildingTypes' => [
+        'House'   => 'House',
+        'Bloc'    => 'Bloc',
+        'Offices' => 'Offices',
+    ],
+    'validations'    => [
         'street'     => 'required',
         'city'       => 'required',
         'country_id' => 'required',
