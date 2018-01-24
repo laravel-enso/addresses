@@ -1,6 +1,6 @@
 {
     "title": null,
-    "icon": "fas fa-location-arrow",
+    "icon": "location-arrow",
     "columns": 4,
     "method": null,
     "routePrefix": "core.addresses",
@@ -48,6 +48,18 @@
                 "type": "input",
                 "content": "text",
                 "disabled": false
+            }
+        },
+        {
+            "label": "Building Type",
+            "name": "building_type",
+            "value": "",
+            "meta": {
+                "multiple": false,
+                "type": "select",
+                "keyMap": "string",
+                "source": null,
+                "options": {}
             }
         },
         {
