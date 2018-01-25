@@ -8,12 +8,10 @@ class InsertAllCountries extends Migration
 {
     public function up()
     {
-
         $cd = new CountriesDirectory();
 
-
         if (config('app.env') === 'testing') {
-            $countries = collect( $cd->all() );
+            $countries = collect($cd->all());
             \DB::table('countries')->insert($countries->slice(0, 10)->all());
 
             return;
