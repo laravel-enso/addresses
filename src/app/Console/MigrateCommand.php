@@ -50,7 +50,7 @@ class MigrateCommand extends Command
 
     private function migrateCountries()
     {
-        if($this->isCountriesTableMigrated()) {
+        if ($this->isCountriesTableMigrated()) {
             $this->info('The countries table appears to have already been migrated.');
             $this->info('No changes have been made.');
 
