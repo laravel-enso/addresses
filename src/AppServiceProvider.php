@@ -2,7 +2,6 @@
 
 namespace LaravelEnso\AddressesManager;
 
-use Illuminate\Database\Console\Migrations\MigrateCommand;
 use Illuminate\Support\ServiceProvider;
 use LaravelEnso\AddressesManager\App\Console;
 
@@ -49,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
     private function loadCommands()
     {
         $this->commands([
-            Console\MigrateCommand::class
+            Console\MigrateCommand::class,
         ]);
     }
 
