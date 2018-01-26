@@ -49,6 +49,11 @@ the essential ones.
 
 Note that the labels are take from the global Store - if needed you may customize them in `config/labels.php`.
 
+### Commands
+The package comes with an artisan command, to help you migrate from previous versions to 2.1.28+, 
+which introduced a new column, `building_type`:
+- `php artisan enso:migrate --buildingType`
+
 ### Publishes
 - `php artisan vendor:publish --tag=addresses-config` - configuration file
 - `php artisan vendor:publish --tag=addresses-form` - form used for creating/editing addresses
