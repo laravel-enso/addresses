@@ -16,4 +16,9 @@ class CountriesDirectory
     {
         return $this->data;
     }
+
+    public function collection()
+    {
+        return collect($this->data);
+    }
 }

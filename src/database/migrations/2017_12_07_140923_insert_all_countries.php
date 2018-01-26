@@ -11,8 +11,7 @@ class InsertAllCountries extends Migration
         $cd = new CountriesDirectory();
 
         if (config('app.env') === 'testing') {
-            $countries = collect($cd->all());
-            \DB::table('countries')->insert($countries->slice(0, 10)->all());
+            \DB::table('countries')->insert($cd->collection()->slice(0, 10)->all());
 
             return;
         }
