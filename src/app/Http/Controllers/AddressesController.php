@@ -17,7 +17,8 @@ class AddressesController extends Controller
         return Address::whereAddressableId($request->get('id'))
             ->whereAddressableType(
                 (new ConfigMapper($request->get('type')))->class()
-            )->get();
+            )->orderBy('is_default', 'desc')
+            ->get();
     }
 
     public function create(AddressForm $form)
