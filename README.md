@@ -24,7 +24,7 @@ Free-form addresses manager for [Laravel Enso](https://github.com/laravel-enso/E
 set custom validations via the Laravel syntax, as well as other options
 - comes with its own VueJS component `addresses` 
 - includes an `Addressable` trait, for defining relationships and attributes
-- the VueJS component as well as the whole package is designed to be extendable, 
+- the VueJS component as well, as the whole package is designed to be extendable, 
 so you could create a custom versions for specific countries 
 
 ### Usage
@@ -40,34 +40,51 @@ the essential ones.
 
 ### Options
 
-- `type` - string, the addressable model alias you set in the config | required
 - `id` - number, the id of the addressable model | required
-- `theme` - string, the class used for setting the styling of the box. Defaults to `primary`.
-- `solid` - boolean, a flag for showing a solid type of a box. Defaults to `false`.
-- `open` - boolean, a flag for the starting style (open/closed) of the box. Defaults to `true`.
-- `title` - string, the text for the box title. Defaults to null.
+- `type` - string, the addressable model alias you set in the config | required
+- `open` - boolean, flag for the starting style (open/closed) of the box | default`true` | (optional)
+- `title` - string, the text for the box title | default `null` | (optional)
 
 Note that the labels are take from the global Store - if needed you may customize them in `config/labels.php`.
 
+### Customization
+
+If you need to customize the form, you may publish it. Also, you may mark any form fields as custom
+and customize them in you page, using slots (like for the VueForm). 
+
+If you need to customize the address card, you may also pass a different template using the 'address' slot, 
+provided for this purpose.
+
+As an example of such customization, you may take a look at the 
+[RoAddresses](https://github.com/laravel-enso/RoAddresses) package
+
+### Configuration
+Inside the `config/enso/addresses.php` file, you'll find several customization options:
+- `addressables`, the mapping of the addressable entities
+- `streetTypes`, the list of street types shown in the form's street type select
+- `buildingTypes`, same as above, for buildings
+- `validations`, in Laravel Request Validation format, they are used for the store/update operations  
+
 ### Commands
-The package comes with an artisan command, to help you migrate from previous versions to 2.1.28+, 
-which introduced a new column, `building_type`:
-- `php artisan enso:migrate --buildingType`
+The package comes with the following artisan commands, to help you migrate from previous versions to 2.1.28+, 
+- `php artisan enso:migrate --buildingType`, introduces a new column, `addresses.building_type`
+- `php artisan enso:migrate --countries`, introduces new columns to the `countries` table and re-populates data. 
+Note this is a breaking change!
+
+Both these changes are run automatically after the package install. 
 
 ### Publishes
 - `php artisan vendor:publish --tag=addresses-config` - configuration file
 - `php artisan vendor:publish --tag=addresses-form` - form used for creating/editing addresses
 - `php artisan vendor:publish --tag=enso-config` - a common alias for when wanting to update the config,
-once a newer version is released
-
+once a newer version is released, usually used with `--force`
+- `php artisan vendor:publish --tag=addresses-assets` - the VueJS components
+- `php artisan vendor:publish --tag=enso-assets` - a common alias for when wanting to update the VueJS components,
+once a newer version is released, usually used with `--force`
  
 ### Notes
 
 The [Laravel Enso Core](https://github.com/laravel-enso/Core) package comes with this package included.
-
-
-For an example of extending this package, you may take a look at 
-[RoAddresses](https://github.com/laravel-enso/RoAddresses) the Romanian Addresses extension.
 
 <!--h-->
 ### Contributions
