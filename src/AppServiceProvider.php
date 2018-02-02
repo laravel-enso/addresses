@@ -3,7 +3,6 @@
 namespace LaravelEnso\AddressesManager;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelEnso\AddressesManager\App\Console;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,7 +10,6 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->publishesAll();
         $this->loadDependencies();
-        $this->loadCommands();
     }
 
     private function publishesAll()
@@ -43,13 +41,6 @@ class AppServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadViewsFrom(__DIR__.'/resources/views', 'laravel-enso/addressesmanager');
-    }
-
-    private function loadCommands()
-    {
-        $this->commands([
-            Console\MigrateCommand::class,
-        ]);
     }
 
     public function register()
