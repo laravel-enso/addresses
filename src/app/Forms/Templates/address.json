@@ -19,7 +19,7 @@
         {
             "label": "Street Type",
             "name": "street_type",
-            "value": "",
+            "value": null,
             "meta": {
                 "type": "select",
                 "multiple": false,
@@ -53,7 +53,7 @@
         {
             "label": "Building Type",
             "name": "building_type",
-            "value": "",
+            "value": null,
             "meta": {
                 "multiple": false,
                 "type": "select",
