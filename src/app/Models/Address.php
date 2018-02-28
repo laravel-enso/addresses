@@ -18,7 +18,7 @@ class Address extends Model
     protected $fillable = ['country_id', 'type', 'is_default', 'apartment', 'floor', 'entry', 'building', 'number',
         'street', 'street_type', 'sub_administrative_area', 'city', 'administrative_area', 'postal_area', 'obs', ];
 
-    protected $appends = ['country_name'];
+    protected $appends = ['country_name', 'label'];
 
     public function user()
     {
@@ -51,5 +51,10 @@ class Address extends Model
         unset($this->user);
 
         return $owner;
+    }
+
+    public function getLabelAttribute()
+    {
+        return $this->city . ' ' . $this->street;
     }
 }
