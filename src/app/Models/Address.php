@@ -55,6 +55,6 @@ class Address extends Model
 
     public function getLabelAttribute()
     {
-        return $this->city . ' ' . $this->street;
+        return $this->city.' '.$this->street;
     }
 }
