@@ -13,7 +13,7 @@
                 "type": "select",
                 "multiple": false,
                 "source": "core.addresses.countriesSelectOptions",
-                "options": {}
+                "options": []
             }
         },
         {
@@ -24,8 +24,7 @@
                 "type": "select",
                 "multiple": false,
                 "source": null,
-                "keyMap": "string",
-                "options": {}
+                "options": []
             }
         },
         {
@@ -57,9 +56,8 @@
             "meta": {
                 "multiple": false,
                 "type": "select",
-                "keyMap": "string",
                 "source": null,
-                "options": {}
+                "options": []
             }
         },
         {
