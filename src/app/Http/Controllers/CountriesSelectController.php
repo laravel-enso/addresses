@@ -10,5 +10,5 @@ class CountriesSelectController extends Controller
 {
     use OptionsBuilder;
 
-    protected $class = Country::class;
+    protected $model = Country::class;
 }
