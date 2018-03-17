@@ -12,7 +12,7 @@
                     :data="form"
                     :params="params"
                     v-on="$listeners">
-                    <template v-for="field in form.fields"
+                    <template v-for="field in customFields"
                         v-if="field.meta.custom"
                         :slot="field.name"
                         slot-scope="{ field, errors}">
@@ -59,6 +59,11 @@ export default {
                 id: this.id,
                 type: this.type,
             };
+        },
+        customFields() {
+            return this.form.sections
+                .reduce((fields, section) => fields
+                    .concat(section.fields.filter(field => field.meta.custom)), []);
         },
     },
 };

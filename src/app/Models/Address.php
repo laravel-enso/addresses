@@ -3,7 +3,6 @@
 namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\AddressesManager\app\Exceptions\AddressException;
 use LaravelEnso\AddressesManager\app\Handlers\ConfigMapper;
 use LaravelEnso\TrackWho\app\Traits\CreatedBy;
 
@@ -70,7 +69,7 @@ class Address extends Model
         $addressable = (new ConfigMapper($params['type']))->class();
         $this->fill(
             $attributes + [
-                'addressable_id'   => $params['id'],
+                'addressable_id' => $params['id'],
                 'addressable_type' => $addressable,
             ]
         );
@@ -79,14 +78,5 @@ class Address extends Model
             ->addresses()->count();
 
         $this->save();
-    }
-
-    public function delete()
-    {
-        if ($this->is_default) {
-            throw new AddressException(__('The default address cannot be deleted'));
-        }
-
-        parent::delete();
     }
 }

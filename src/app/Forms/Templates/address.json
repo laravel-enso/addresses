@@ -1,11 +1,11 @@
 {
     "title": null,
     "icon": "location-arrow",
-    "columns": 4,
     "method": null,
     "routePrefix": "core.addresses",
-    "fields": [
-        {
+    "sections": [{
+        "columns": 4,
+        "fields": [{
             "label": "Country",
             "name": "country_id",
             "value": null,
@@ -15,8 +15,7 @@
                 "source": "core.addresses.countriesSelectOptions",
                 "options": []
             }
-        },
-        {
+        }, {
             "label": "Street Type",
             "name": "street_type",
             "value": null,
@@ -26,8 +25,7 @@
                 "source": null,
                 "options": []
             }
-        },
-        {
+        }, {
             "label": "Street",
             "name": "street",
             "value": null,
@@ -37,8 +35,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "Number",
             "name": "number",
             "value": null,
@@ -48,8 +45,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "Building Type",
             "name": "building_type",
             "value": null,
@@ -59,8 +55,7 @@
                 "source": null,
                 "options": []
             }
-        },
-        {
+        }, {
             "label": "Building",
             "name": "building",
             "value": null,
@@ -70,8 +65,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "Entry",
             "name": "entry",
             "value": null,
@@ -81,8 +75,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "Floor",
             "name": "floor",
             "value": null,
@@ -92,8 +85,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "Apartment",
             "name": "apartment",
             "value": null,
@@ -103,8 +95,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "Sub Administrative Area",
             "name": "sub_administrative_area",
             "value": null,
@@ -114,8 +105,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "City",
             "name": "city",
             "value": null,
@@ -125,8 +115,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "Administrative Area",
             "name": "administrative_area",
             "value": null,
@@ -136,8 +125,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "Postal Area",
             "name": "postal_area",
             "value": null,
@@ -147,8 +135,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "Observations",
             "name": "obs",
             "value": null,
@@ -158,8 +145,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
             "label": "Is Default",
             "name": "is_default",
             "value": false,
@@ -169,6 +155,6 @@
                 "content": "checkbox",
                 "disabled": true
             }
-        }
-    ]
+        }]
+    }]
 }
