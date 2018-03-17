@@ -1,11 +1,11 @@
 {
     "title": null,
     "icon": "location-arrow",
-    "columns": 4,
     "method": null,
     "routePrefix": "core.addresses",
-    "fields": [
-        {
+    "sections": [{
+        "columns": 3,
+        "fields": [{
             "label": "Country",
             "name": "country_id",
             "value": null,
@@ -15,8 +15,7 @@
                 "source": "core.addresses.countriesSelectOptions",
                 "options": []
             }
-        },
-        {
+        }, {
             "label": "Street Type",
             "name": "street_type",
             "value": null,
@@ -26,8 +25,7 @@
                 "source": null,
                 "options": []
             }
-        },
-        {
+        }, {
             "label": "Street",
             "name": "street",
             "value": null,
@@ -37,8 +35,10 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }]
+        }, {
+        "columns": 6,
+        "fields": [{
             "label": "Number",
             "name": "number",
             "value": null,
@@ -48,96 +48,7 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
-            "label": "Building Type",
-            "name": "building_type",
-            "value": null,
-            "meta": {
-                "multiple": false,
-                "type": "select",
-                "source": null,
-                "options": []
-            }
-        },
-        {
-            "label": "Building",
-            "name": "building",
-            "value": null,
-            "meta": {
-                "custom": false,
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        },
-        {
-            "label": "Entry",
-            "name": "entry",
-            "value": null,
-            "meta": {
-                "custom": false,
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        },
-        {
-            "label": "Floor",
-            "name": "floor",
-            "value": null,
-            "meta": {
-                "custom": false,
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        },
-        {
-            "label": "Apartment",
-            "name": "apartment",
-            "value": null,
-            "meta": {
-                "custom": false,
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        },
-        {
-            "label": "Sub Administrative Area",
-            "name": "sub_administrative_area",
-            "value": null,
-            "meta": {
-                "custom": false,
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        },
-        {
-            "label": "City",
-            "name": "city",
-            "value": null,
-            "meta": {
-                "custom": false,
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        },
-        {
-            "label": "Administrative Area",
-            "name": "administrative_area",
-            "value": null,
-            "meta": {
-                "custom": false,
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        },
-        {
+        }, {
             "label": "Postal Area",
             "name": "postal_area",
             "value": null,
@@ -147,8 +58,93 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }, {
+            "label": "Building",
+            "name": "building",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        }, {
+            "label": "Entry",
+            "name": "entry",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        }, {
+            "label": "Floor",
+            "name": "floor",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        }, {
+            "label": "Apartment",
+            "name": "apartment",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        }]
+    }, {
+        "columns": 4,
+        "fields": [{
+            "label": "Building Type",
+            "name": "building_type",
+            "value": null,
+            "meta": {
+                "multiple": false,
+                "type": "select",
+                "source": null,
+                "options": []
+            }
+        }, {
+            "label": "Sub Administrative Area",
+            "name": "sub_administrative_area",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        }, {
+            "label": "City",
+            "name": "city",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        }, {
+            "label": "Administrative Area",
+            "name": "administrative_area",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "disabled": false
+            }
+        }]
+    }, {
+        "columns": 1,
+        "fields": [{
             "label": "Observations",
             "name": "obs",
             "value": null,
@@ -158,8 +154,10 @@
                 "content": "text",
                 "disabled": false
             }
-        },
-        {
+        }]
+    }, {
+        "columns": 1,
+        "fields": [{
             "label": "Is Default",
             "name": "is_default",
             "value": false,
@@ -169,6 +167,6 @@
                 "content": "checkbox",
                 "disabled": true
             }
-        }
-    ]
+        }]
+    }]
 }
