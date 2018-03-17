@@ -38,14 +38,13 @@
                 </div>
             </div>
         </div>
-        <address-form
-            v-if="form"
+        <address-form v-if="form"
             :id="id"
             :type="type"
             :form="form"
-            @close="form=null"
-            @destroy="get();form=null"
-            @submit="get();form=null"
+            @close="form = null"
+            @destroy="get();form = null"
+            @submit="get();form = null"
             ref="form">
             <template v-for="field in customFields"
                 v-if="field.meta.custom"
