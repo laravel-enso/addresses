@@ -9,7 +9,7 @@
     ],
     "type": "library",
     "require": {
-        "laravel-enso/core": "2.4.*",
+        "laravel-enso/core": "2.5.*",
         "laravel-enso/formbuilder": "2.5.*",
         "laravel-enso/helpers": "1.7.*",
         "laravel-enso/select": "2.4.*",
