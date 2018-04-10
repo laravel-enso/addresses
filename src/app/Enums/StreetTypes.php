@@ -6,5 +6,8 @@ use LaravelEnso\Helpers\app\Classes\Enum;
 
 class StreetTypes extends Enum
 {
-    public static $config = 'enso.addresses.streetTypes';
+    protected static function attributes()
+    {
+        return config('enso.addresses.streetTypes');
+    }
 }
