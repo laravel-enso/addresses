@@ -11,9 +11,9 @@ class Address extends Model
     use CreatedBy;
 
     protected $fillable = [
-        'addressable_id', 'addressable_type', 'country_id', 'type', 'is_default', 'street',
-        'street_type', 'number', 'building_type', 'building', 'entry', 'floor', 'apartment',
-        'sub_administrative_area', 'city', 'administrative_area', 'postal_area', 'obs',
+        'addressable_id', 'addressable_type', 'country_id', 'is_default', 'street', 'street_type',
+        'number', 'building_type', 'building', 'entry', 'floor', 'apartment', 'sub_administrative_area',
+        'city', 'administrative_area', 'postal_area', 'obs',
     ];
 
     protected $appends = ['country_name'];
@@ -69,7 +69,7 @@ class Address extends Model
         $addressable = (new ConfigMapper($params['type']))->class();
         $this->fill(
             $attributes + [
-                'addressable_id'   => $params['id'],
+                'addressable_id' => $params['id'],
                 'addressable_type' => $addressable,
             ]
         );
