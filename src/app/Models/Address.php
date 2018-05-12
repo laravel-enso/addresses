@@ -3,8 +3,8 @@
 namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\TrackWho\app\Traits\CreatedBy;
 use LaravelEnso\AddressesManager\app\Classes\ConfigMapper;
+use LaravelEnso\TrackWho\app\Traits\CreatedBy;
 
 class Address extends Model
 {
@@ -71,7 +71,7 @@ class Address extends Model
 
         $this->fill(
             $attributes + [
-                'addressable_id' => $params['id'],
+                'addressable_id'   => $params['id'],
                 'addressable_type' => $addressable,
             ]
         );
