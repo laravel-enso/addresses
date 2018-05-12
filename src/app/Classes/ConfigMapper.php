@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\AddressesManager\app\Handlers;
+namespace LaravelEnso\AddressesManager\app\Classes;
 
 use LaravelEnso\AddressesManager\app\Exceptions\AddressConfigException;
 

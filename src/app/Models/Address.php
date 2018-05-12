@@ -3,8 +3,8 @@
 namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\AddressesManager\app\Handlers\ConfigMapper;
 use LaravelEnso\TrackWho\app\Traits\CreatedBy;
+use LaravelEnso\AddressesManager\app\Classes\ConfigMapper;
 
 class Address extends Model
 {
@@ -40,7 +40,7 @@ class Address extends Model
         return $this->country->name;
     }
 
-    public function getOwnerAttribute()
+    public function getCreatorAttribute()
     {
         $owner = [
             'fullName' => $this->user->fullName,
@@ -66,17 +66,27 @@ class Address extends Model
 
     public function store(array $attributes, array $params)
     {
-        $addressable = (new ConfigMapper($params['type']))->class();
+        $addressable = (new ConfigMapper($params['type']))
+            ->class();
+
         $this->fill(
             $attributes + [
-                'addressable_id'   => $params['id'],
+                'addressable_id' => $params['id'],
                 'addressable_type' => $addressable,
             ]
         );
 
-        $this->is_default = !$addressable::find($params['id'])
-            ->addresses()->count();
+        $this->is_default = $addressable::find($params['id'])
+            ->addresses()->count() === 0;
 
         $this->save();
+    }
+
+    public function scopeFor($query, array $request)
+    {
+        $query->whereAddressableId($request['id'])
+            ->whereAddressableType(
+                (new ConfigMapper($request['type']))->class()
+            );
     }
 }

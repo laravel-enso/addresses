@@ -13,6 +13,8 @@ trait Addressable
 
     public function defaultAddress()
     {
-        return $this->addresses()->whereIsDefault(true)->first();
+        return $this->addresses()
+            ->whereIsDefault(true)
+            ->first();
     }
 }

@@ -40,7 +40,6 @@ class AppServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/config/addresses.php', 'enso.addresses');
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'laravel-enso/addressesmanager');
     }
 
     public function register()

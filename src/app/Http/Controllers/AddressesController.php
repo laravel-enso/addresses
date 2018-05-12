@@ -5,7 +5,6 @@ namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
-use LaravelEnso\AddressesManager\app\Handlers\ConfigMapper;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 use LaravelEnso\AddressesManager\app\Models\Address;
 use LaravelEnso\FormBuilder\app\Classes\Form;
@@ -14,10 +13,8 @@ class AddressesController extends Controller
 {
     public function index(Request $request)
     {
-        return Address::whereAddressableId($request->get('id'))
-            ->whereAddressableType(
-                (new ConfigMapper($request->get('type')))->class()
-            )->orderBy('is_default', 'desc')
+        return Address::for($request->only(['id', 'type']))
+            ->orderBy('is_default', 'desc')
             ->get();
     }
 
@@ -30,7 +27,7 @@ class AddressesController extends Controller
     {
         $address->store($request->all(), $request->get('_params'));
 
-        return ['message' => __('Created Address')];
+        return ['message' => __('The address was successfully created')];
     }
 
     public function edit(Address $address, AddressForm $form)
@@ -42,7 +39,7 @@ class AddressesController extends Controller
     {
         $address->update($request->all());
 
-        return ['message' => __('The Changes have been saved!')];
+        return ['message' => __('The address have been successfully updated')];
     }
 
     public function setDefault(Address $address)
@@ -54,6 +51,6 @@ class AddressesController extends Controller
     {
         $address->delete();
 
-        return ['message' => __('Operation was successful')];
+        return ['message' => __('The address was deleted')];
     }
 }

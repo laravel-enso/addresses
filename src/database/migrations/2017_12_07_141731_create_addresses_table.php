@@ -10,8 +10,10 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
+
             $table->morphs('addressable');
             $table->integer('country_id')->unsigned()->index();
+
             $table->foreign('country_id')->references('id')->on('countries');
             $table->boolean('is_default')->default(true);
             $table->string('apartment')->nullable();
@@ -29,8 +31,10 @@ class CreateAddressesTable extends Migration
             $table->string('obs')->nullable();
             $table->float('lat', 10, 6)->nullable();
             $table->float('long', 10, 6)->nullable();
+
             $table->integer('created_by')->unsigned()->index()->nullable();
             $table->foreign('created_by')->references('id')->on('users');
+
             $table->timestamps();
         });
     }

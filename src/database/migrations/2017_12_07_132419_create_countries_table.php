@@ -23,7 +23,6 @@ class CreateCountriesTable extends Migration
             $table->string('currency_symbol', 3)->nullable();
             $table->integer('currency_decimals')->nullable();
             $table->string('full_name', 255)->nullable();
-
             $table->string('region_code', 3)->default('');
             $table->string('sub_region_code', 3)->default('');
             $table->boolean('eea')->default(0);
