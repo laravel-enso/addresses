@@ -23,9 +23,9 @@ class AddressesController extends Controller
         return ['form' => $form->create()];
     }
 
-    public function store(ValidateAddressRequest $request, Address $address)
+    public function store(ValidateAddressRequest $request)
     {
-        $address->store($request->all(), $request->get('_params'));
+        Address::store($request->all(), $request->get('_params'));
 
         return ['message' => __('The address was successfully created')];
     }

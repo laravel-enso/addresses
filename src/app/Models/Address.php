@@ -64,22 +64,19 @@ class Address extends Model
         });
     }
 
-    public function store(array $attributes, array $params)
+    public static function store(array $attributes, array $params)
     {
         $addressable = (new ConfigMapper($params['type']))
             ->class();
 
-        $this->fill(
+        self::create(
             $attributes + [
-                'addressable_id'   => $params['id'],
+                'addressable_id' => $params['id'],
                 'addressable_type' => $addressable,
+                'is_default' => $addressable::find($params['id'])
+                    ->addresses()->count() === 0
             ]
         );
-
-        $this->is_default = $addressable::find($params['id'])
-            ->addresses()->count() === 0;
-
-        $this->save();
     }
 
     public function scopeFor($query, array $request)
