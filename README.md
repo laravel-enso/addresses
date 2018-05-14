@@ -45,8 +45,6 @@ the essential ones.
 - `open` - boolean, flag for the starting style (open/closed) of the box | default`true` | (optional)
 - `title` - string, the text for the box title | default `null` | (optional)
 
-Note that the labels are take from the global Store - if needed you may customize them in `config/labels.php`.
-
 ### Customization
 
 If you need to customize the form, you may publish it. Also, you may mark any form fields as custom
