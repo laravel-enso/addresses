@@ -32,9 +32,6 @@ class CreateAddressesTable extends Migration
             $table->float('lat', 10, 6)->nullable();
             $table->float('long', 10, 6)->nullable();
 
-            $table->integer('created_by')->unsigned()->index()->nullable();
-            $table->foreign('created_by')->references('id')->on('users');
-
             $table->timestamps();
         });
     }

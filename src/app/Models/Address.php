@@ -4,12 +4,9 @@ namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\AddressesManager\app\Classes\ConfigMapper;
-use LaravelEnso\TrackWho\app\Traits\CreatedBy;
 
 class Address extends Model
 {
-    use CreatedBy;
-
     protected $fillable = [
         'addressable_id', 'addressable_type', 'country_id', 'is_default', 'street', 'street_type',
         'number', 'building_type', 'building', 'entry', 'floor', 'apartment', 'sub_administrative_area',
@@ -71,9 +68,9 @@ class Address extends Model
 
         self::create(
             $attributes + [
-                'addressable_id'   => $params['id'],
+                'addressable_id' => $params['id'],
                 'addressable_type' => $addressable,
-                'is_default'       => $addressable::find($params['id'])
+                'is_default' => $addressable::find($params['id'])
                     ->addresses()->count() === 0,
             ]
         );

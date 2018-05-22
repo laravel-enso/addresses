@@ -3,11 +3,16 @@
 namespace LaravelEnso\AddressesManager;
 
 use Illuminate\Support\ServiceProvider;
+use LaravelEnso\AddressesManager\app\Commands\DropCreatedBy;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        $this->commands([
+            DropCreatedBy::class,
+        ]);
+
         $this->publishesAll();
         $this->loadDependencies();
     }
