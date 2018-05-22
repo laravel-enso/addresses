@@ -3,8 +3,8 @@
 namespace LaravelEnso\AddressesManager\app\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class DropCreatedBy extends Command
 {

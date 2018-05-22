@@ -68,9 +68,9 @@ class Address extends Model
 
         self::create(
             $attributes + [
-                'addressable_id' => $params['id'],
+                'addressable_id'   => $params['id'],
                 'addressable_type' => $addressable,
-                'is_default' => $addressable::find($params['id'])
+                'is_default'       => $addressable::find($params['id'])
                     ->addresses()->count() === 0,
             ]
         );
