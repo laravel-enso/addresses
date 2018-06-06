@@ -55,10 +55,12 @@ class Address extends Model
 
     public function setDefault()
     {
+        \Log::info($this);
         \DB::transaction(function () {
             $this->addressable->addresses()
                 ->whereIsDefault(true)
-                ->get()->each
+                ->get()
+                ->each
                 ->update(['is_default' => false]);
 
             $this->update(['is_default' => true]);
@@ -72,9 +74,9 @@ class Address extends Model
 
         self::create(
             $attributes + [
-                'addressable_id'   => $params['addressable_id'],
+                'addressable_id' => $params['addressable_id'],
                 'addressable_type' => $addressable,
-                'is_default'       => $addressable::find($params['addressable_id'])
+                'is_default' => $addressable::find($params['addressable_id'])
                     ->addresses()->count() === 0,
             ]
         );
