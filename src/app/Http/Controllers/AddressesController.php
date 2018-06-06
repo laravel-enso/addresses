@@ -31,7 +31,7 @@ class AddressesController extends Controller
         );
 
         return [
-            'message' => __('The address was successfully created')
+            'message' => __('The address was successfully created'),
         ];
     }
 
@@ -45,7 +45,7 @@ class AddressesController extends Controller
         $address->update($request->all());
 
         return [
-            'message' => __('The address have been successfully updated')
+            'message' => __('The address have been successfully updated'),
         ];
     }
 
