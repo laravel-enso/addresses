@@ -84,7 +84,8 @@ class Address extends Model
     {
         $query->whereAddressableId($request['addressable_id'])
             ->whereAddressableType(
-                (new ConfigMapper($request['addressable_type']))->class()
+                (new ConfigMapper($request['addressable_type']))
+                    ->class()
             );
     }
 
