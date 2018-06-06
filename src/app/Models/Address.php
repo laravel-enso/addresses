@@ -55,7 +55,6 @@ class Address extends Model
 
     public function setDefault()
     {
-        \Log::info($this);
         \DB::transaction(function () {
             $this->addressable->addresses()
                 ->whereIsDefault(true)
