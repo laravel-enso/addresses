@@ -15,10 +15,8 @@ class InsertAllCountries extends Migration
             return;
         }
 
-        $this->countries()->each(function ($country) {
-            \DB::table('countries')
-                ->insert($this->countries()->all());
-        });
+        \DB::table('countries')
+            ->insert($this->countries()->all());
     }
 
     public function down()
