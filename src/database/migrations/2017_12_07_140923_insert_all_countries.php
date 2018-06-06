@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use LaravelEnso\AddressesManager\app\Models\Country;
 
 class InsertAllCountries extends Migration
 {
@@ -17,7 +16,8 @@ class InsertAllCountries extends Migration
         }
 
         $this->countries()->each(function ($country) {
-            Country::create($country);
+            \DB::table('countries')
+                ->insert($this->countries()->all());
         });
     }
 

@@ -12,9 +12,10 @@ class CreateAddressesTable extends Migration
             $table->increments('id');
 
             $table->morphs('addressable');
-            $table->integer('country_id')->unsigned()->index();
 
+            $table->integer('country_id')->unsigned()->index();
             $table->foreign('country_id')->references('id')->on('countries');
+
             $table->boolean('is_default')->default(true);
             $table->string('apartment')->nullable();
             $table->string('floor')->nullable();

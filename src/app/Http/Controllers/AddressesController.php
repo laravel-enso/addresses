@@ -14,7 +14,7 @@ class AddressesController extends Controller
     public function index(Request $request)
     {
         return Address::for($request->only(['id', 'type']))
-            ->orderBy('is_default', 'desc')
+            ->ordered()
             ->get();
     }
 
@@ -25,9 +25,14 @@ class AddressesController extends Controller
 
     public function store(ValidateAddressRequest $request)
     {
-        Address::store($request->all(), $request->get('_params'));
+        Address::store(
+            $request->all(),
+            $request->get('_params')
+        );
 
-        return ['message' => __('The address was successfully created')];
+        return [
+            'message' => __('The address was successfully created')
+        ];
     }
 
     public function edit(Address $address, AddressForm $form)
@@ -39,7 +44,9 @@ class AddressesController extends Controller
     {
         $address->update($request->all());
 
-        return ['message' => __('The address have been successfully updated')];
+        return [
+            'message' => __('The address have been successfully updated')
+        ];
     }
 
     public function setDefault(Address $address)

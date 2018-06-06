@@ -24,12 +24,12 @@ class AppServiceProvider extends ServiceProvider
         ], 'addresses-config');
 
         $this->publishes([
-            __DIR__.'/app/Forms/Templates' => app_path().'/Forms/vendor/',
-        ], 'addresses-form');
-
-        $this->publishes([
             __DIR__.'/config' => config_path('enso'),
         ], 'enso-config');
+
+        $this->publishes([
+            __DIR__.'/app/Forms/Templates' => app_path().'/Forms/vendor/',
+        ], 'addresses-form');
 
         $this->publishes([
             __DIR__.'/resources/assets/js' => resource_path('assets/js'),

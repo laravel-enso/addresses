@@ -68,9 +68,9 @@ class Address extends Model
 
         self::create(
             $attributes + [
-                'addressable_id'   => $params['id'],
+                'addressable_id' => $params['id'],
                 'addressable_type' => $addressable,
-                'is_default'       => $addressable::find($params['id'])
+                'is_default' => $addressable::find($params['id'])
                     ->addresses()->count() === 0,
             ]
         );
@@ -82,5 +82,10 @@ class Address extends Model
             ->whereAddressableType(
                 (new ConfigMapper($request['type']))->class()
             );
+    }
+
+    public function scopeOrdered($query)
+    {
+        $query->orderBy('is_default', 'desc');
     }
 }
