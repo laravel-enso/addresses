@@ -34,7 +34,11 @@ class Address extends Model
 
     public function getCountryNameAttribute()
     {
-        return $this->country->name;
+        $country = $this->country->name;
+
+        unset($this->country);
+
+        return $country;
     }
 
     public function getCreatorAttribute()
@@ -63,14 +67,14 @@ class Address extends Model
 
     public static function store(array $attributes, array $params)
     {
-        $addressable = (new ConfigMapper($params['type']))
+        $addressable = (new ConfigMapper($params['addressable_type']))
             ->class();
 
         self::create(
             $attributes + [
-                'addressable_id'   => $params['id'],
+                'addressable_id' => $params['addressable_id'],
                 'addressable_type' => $addressable,
-                'is_default'       => $addressable::find($params['id'])
+                'is_default' => $addressable::find($params['addressable_id'])
                     ->addresses()->count() === 0,
             ]
         );
@@ -78,9 +82,9 @@ class Address extends Model
 
     public function scopeFor($query, array $request)
     {
-        $query->whereAddressableId($request['id'])
+        $query->whereAddressableId($request['addressable_id'])
             ->whereAddressableType(
-                (new ConfigMapper($request['type']))->class()
+                (new ConfigMapper($request['addressable_type']))->class()
             );
     }
 

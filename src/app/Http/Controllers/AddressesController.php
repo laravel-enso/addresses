@@ -13,8 +13,9 @@ class AddressesController extends Controller
 {
     public function index(Request $request)
     {
-        return Address::for($request->only(['id', 'type']))
-            ->ordered()
+        return Address::for($request->only([
+                'addressable_id', 'addressable_type'
+            ]))->ordered()
             ->get();
     }
 
