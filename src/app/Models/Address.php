@@ -7,11 +7,7 @@ use LaravelEnso\AddressesManager\app\Classes\ConfigMapper;
 
 class Address extends Model
 {
-    protected $fillable = [
-        'addressable_id', 'addressable_type', 'country_id', 'is_default', 'street', 'street_type',
-        'number', 'building_type', 'building', 'entry', 'floor', 'apartment', 'sub_administrative_area',
-        'city', 'administrative_area', 'postal_area', 'obs',
-    ];
+    protected $guarded = [];
 
     protected $appends = ['country_name'];
 
