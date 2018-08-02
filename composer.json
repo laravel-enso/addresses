@@ -10,10 +10,10 @@
     "type": "library",
     "require": {
         "laravel-enso/core": "2.11.*",
-        "laravel-enso/formbuilder": "2.6.*",
+        "laravel-enso/formbuilder": "2.7.*",
         "laravel-enso/helpers": "1.7.*",
-        "laravel-enso/select": "2.4.*",
-        "laravel-enso/vuecomponents": "2.2.*",
+        "laravel-enso/select": "2.5.*",
+        "laravel-enso/vuecomponents": "2.3.*",
         "laravel-enso/structuremanager": "2.2.*",
         "php": ">=7.1.0"
     },
