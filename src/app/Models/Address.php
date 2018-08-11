@@ -19,7 +19,7 @@ class Address extends Model
     protected $loggableLabel = 'label';
 
     protected $loggable = [
-        'street', 'number', 'city', 'country_id' => [Country::class, 'name']
+        'street', 'number', 'city', 'country_id' => [Country::class, 'name'],
     ];
 
     public function country()
@@ -37,7 +37,7 @@ class Address extends Model
         return collect([
                 trim($this->number.' '.$this->street),
                 $this->city,
-                $this->country_name]
+                $this->country_name, ]
             )->filter()
             ->implode(', ');
     }
