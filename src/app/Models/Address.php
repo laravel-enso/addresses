@@ -3,20 +3,24 @@
 namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\ActivityLog\app\Traits\LogActivity;
 use LaravelEnso\AddressesManager\app\Classes\ConfigMapper;
 
 class Address extends Model
 {
+    use LogActivity;
+
     protected $guarded = [];
 
     protected $appends = ['country_name'];
 
     protected $casts = ['is_default' => 'boolean'];
 
-    public function user()
-    {
-        return $this->belongsTo(config('auth.providers.users.model'), 'created_by', 'id');
-    }
+    protected $loggableLabel = 'label';
+
+    protected $loggable = [
+        'street', 'number', 'city', 'country_id' => [Country::class, 'name']
+    ];
 
     public function country()
     {
@@ -26,6 +30,16 @@ class Address extends Model
     public function addressable()
     {
         return $this->morphTo();
+    }
+
+    public function getLabelAttribute()
+    {
+        return collect([
+                trim($this->number.' '.$this->street),
+                $this->city,
+                $this->country_name]
+            )->filter()
+            ->implode(', ');
     }
 
     public function getCountryNameAttribute()
