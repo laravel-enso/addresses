@@ -104,4 +104,9 @@ class Address extends Model
     {
         $query->orderBy('is_default', 'desc');
     }
+
+    public function getLoggableMorph()
+    {
+        return config('enso.addresses.loggableMorph');
+    }
 }

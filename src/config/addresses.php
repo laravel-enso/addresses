@@ -1,30 +1,32 @@
 <?php
 
+use App\Owner;
+
 return [
     'addressables' => [
-        'owner' => App\Owner::class,
+        'owner' => Owner::class,
     ],
     'streetTypes' => [
-        'Street'    => 'Street',
-        'Avenue'    => 'Avenue',
+        'Street' => 'Street',
+        'Avenue' => 'Avenue',
         'Boulevard' => 'Boulevard',
-        'Parade'    => 'Parade',
-        'Road'      => 'Road',
-        'Lane'      => 'Lane',
-        'Route'     => 'Route',
-        'Row'       => 'Row',
-        'Vista'     => 'Vista',
-        'Bend'      => 'Bend',
-        'Square'    => 'Square',
-    ],
-    'buildingTypes' => [
-        'House'   => 'House',
-        'Bloc'    => 'Bloc',
-        'Offices' => 'Offices',
+        'Parade' => 'Parade',
+        'Road' => 'Road',
+        'Lane' => 'Lane',
+        'Route' => 'Route',
+        'Row' => 'Row',
+        'Vista' => 'Vista',
+        'Bend' => 'Bend',
+        'Square' => 'Square',
     ],
     'validations' => [
-        'street'     => 'required',
-        'city'       => 'required',
+        'street' => 'required',
+        'city' => 'required',
         'country_id' => 'required',
     ],
+    'loggableMorph' => [
+        'addressable' => [
+            Owner::class => 'name'
+        ]
+    ]
 ];
