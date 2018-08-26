@@ -80,13 +80,13 @@ class Address extends Model
     public static function store(array $attributes, array $params)
     {
         $addressable = (new ConfigMapper($params['addressable_type']))
-            ->model();
+            ->class();
 
         self::create(
             $attributes + [
-                'addressable_id'   => $params['addressable_id'],
+                'addressable_id' => $params['addressable_id'],
                 'addressable_type' => $addressable,
-                'is_default'       => $addressable::find($params['addressable_id'])
+                'is_default' => $addressable::find($params['addressable_id'])
                     ->addresses()->count() === 0,
             ]
         );
@@ -97,7 +97,7 @@ class Address extends Model
         $query->whereAddressableId($request['addressable_id'])
             ->whereAddressableType(
                 (new ConfigMapper($request['addressable_type']))
-                    ->model()
+                    ->class()
             );
     }
 
