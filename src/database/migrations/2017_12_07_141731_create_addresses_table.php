@@ -29,7 +29,9 @@ class CreateAddressesTable extends Migration
             $table->string('city');
             $table->string('administrative_area')->nullable();
             $table->string('postal_area')->nullable();
-            $table->string('obs')->nullable();
+
+            $table->text('obs')->nullable();
+
             $table->float('lat', 10, 6)->nullable();
             $table->float('long', 10, 6)->nullable();
 

@@ -12,8 +12,6 @@ class Address extends Model
 
     protected $guarded = [];
 
-    protected $appends = ['country_name'];
-
     protected $casts = ['is_default' => 'boolean'];
 
     protected $loggableLabel = 'label';
@@ -34,34 +32,14 @@ class Address extends Model
 
     public function getLabelAttribute()
     {
-        return collect(
-            [
+        $label = collect([
                 trim($this->number.' '.$this->street),
                 $this->city,
-                $this->country_name, ]
-            )->filter()
+                $this->country->name,
+            ])->filter()
             ->implode(', ');
-    }
-
-    public function getCountryNameAttribute()
-    {
-        $country = $this->country->name;
 
         unset($this->country);
-
-        return $country;
-    }
-
-    public function getCreatorAttribute()
-    {
-        $owner = [
-            'fullName' => $this->user->fullName,
-            'avatarId' => $this->user->avatarId,
-        ];
-
-        unset($this->user);
-
-        return $owner;
     }
 
     public function setDefault()
@@ -84,9 +62,9 @@ class Address extends Model
 
         self::create(
             $attributes + [
-                'addressable_id'   => $params['addressable_id'],
+                'addressable_id' => $params['addressable_id'],
                 'addressable_type' => $addressable,
-                'is_default'       => $addressable::find($params['addressable_id'])
+                'is_default' => $addressable::find($params['addressable_id'])
                     ->addresses()->count() === 0,
             ]
         );

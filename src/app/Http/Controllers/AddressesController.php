@@ -7,16 +7,18 @@ use Illuminate\Http\Request;
 use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 use LaravelEnso\AddressesManager\app\Models\Address;
-use LaravelEnso\FormBuilder\app\Classes\Form;
+use LaravelEnso\AddressesManager\app\Http\Resources\Address as Resource;
 
 class AddressesController extends Controller
 {
     public function index(Request $request)
     {
-        return Address::for($request->only([
-                'addressable_id', 'addressable_type',
-            ]))->ordered()
-            ->get();
+        return Resource::collection(
+                Address::for($request->only([
+                    'addressable_id', 'addressable_type',
+                ]))->ordered()
+                ->get()
+            );
     }
 
     public function create(AddressForm $form)
