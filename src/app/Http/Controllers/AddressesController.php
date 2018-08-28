@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
-use LaravelEnso\AddressesManager\app\Models\Address;
 use LaravelEnso\AddressesManager\app\Http\Resources\Address as Resource;
+use LaravelEnso\AddressesManager\app\Models\Address;
 
 class AddressesController extends Controller
 {
