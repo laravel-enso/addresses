@@ -35,11 +35,11 @@ class AppServiceProvider extends ServiceProvider
         ], 'addresses-form');
 
         $this->publishes([
-            __DIR__.'/resources/assets/js' => resource_path('assets/js'),
+            __DIR__.'/resources/js' => resource_path('js'),
         ], 'addresses-assets');
 
         $this->publishes([
-            __DIR__.'/resources/assets/js' => resource_path('assets/js'),
+            __DIR__.'/resources/js' => resource_path('js'),
         ], 'enso-assets');
     }
 
