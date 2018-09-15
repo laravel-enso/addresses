@@ -178,6 +178,7 @@ export default {
             axios.get(route('core.addresses.edit', address.id))
                 .then(({ data }) => {
                     this.form = data.form;
+                    this.$emit('form-loaded', this.form);
                     this.loading = false;
                 }).catch(error => this.handleError(error));
         },
@@ -186,6 +187,7 @@ export default {
 
             axios.get(route('core.addresses.create', this.params)).then(({ data }) => {
                 this.form = data.form;
+                this.$emit('form-loaded', this.form);
                 this.loading = false;
                 this.$emit('update');
             }).catch(error => this.handleError(error));
