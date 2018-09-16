@@ -41,6 +41,15 @@ class AppServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/resources/js' => resource_path('js'),
         ], 'enso-assets');
+
+        $this->publishes([
+            __DIR__.'/database/seeds' => database_path('seeds'),
+        ], 'addresses-seeder');
+
+        $this->publishes([
+            __DIR__.'/database/seeds' => database_path('seeds'),
+        ], 'enso-seeders');
+
     }
 
     public function register()
