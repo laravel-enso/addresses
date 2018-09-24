@@ -2,9 +2,9 @@
 
 namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use LaravelEnso\AddressesManager\app\Models\Country;
+use Illuminate\Routing\Controller;
 use LaravelEnso\Select\app\Traits\OptionsBuilder;
+use LaravelEnso\AddressesManager\app\Models\Country;
 
 class CountriesSelectController extends Controller
 {

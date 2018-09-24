@@ -2,15 +2,18 @@
 
 namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
-use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
-use LaravelEnso\AddressesManager\app\Http\Resources\Address as Resource;
+use Illuminate\Routing\Controller;
 use LaravelEnso\AddressesManager\app\Models\Address;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
+use LaravelEnso\AddressesManager\app\Http\Resources\Address as Resource;
+use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 
 class AddressesController extends Controller
 {
+    use ValidatesRequests;
+
     public function index(Request $request)
     {
         return Resource::collection(
