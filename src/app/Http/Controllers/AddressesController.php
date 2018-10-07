@@ -2,24 +2,20 @@
 
 namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\AddressesManager\app\Models\Address;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
 use LaravelEnso\AddressesManager\app\Http\Resources\Address as Resource;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
+use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressIndexRequest;
 
 class AddressesController extends Controller
 {
-    use ValidatesRequests;
-
-    public function index(Request $request)
+    public function index(ValidateAddressIndexRequest $request)
     {
         return Resource::collection(
-                Address::for($request->only([
-                    'addressable_id', 'addressable_type',
-                ]))->ordered()
+                Address::for($request->validated())
+                ->ordered()
                 ->get()
             );
     }
@@ -31,10 +27,7 @@ class AddressesController extends Controller
 
     public function store(ValidateAddressRequest $request)
     {
-        Address::store(
-            $request->all(),
-            $request->get('_params')
-        );
+        Address::create($request->all());
 
         return [
             'message' => __('The address was successfully created'),

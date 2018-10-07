@@ -13,6 +13,9 @@ class ValidateAddressRequest extends FormRequest
 
     public function rules()
     {
-        return config('enso.addresses.validations');
+        return [
+            'addressable_id' => 'required',
+            'addressable_type' => 'required|string',
+        ] + config('enso.addresses.validations');
     }
 }

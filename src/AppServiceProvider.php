@@ -3,11 +3,15 @@
 namespace LaravelEnso\AddressesManager;
 
 use Illuminate\Support\ServiceProvider;
+use LaravelEnso\AddressesManager\app\Models\Address;
+use LaravelEnso\AddressesManager\app\Observers\Observer;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        Address::observe(Observer::class);
+
         $this->load();
 
         $this->publish();
@@ -22,6 +26,14 @@ class AppServiceProvider extends ServiceProvider
 
     private function publish()
     {
+        $this->publishes([
+            __DIR__.'/database/seeds' => database_path('seeds'),
+        ], 'addresses-seeder');
+
+        $this->publishes([
+            __DIR__.'/database/seeds' => database_path('seeds'),
+        ], 'enso-seeders');
+
         $this->publishes([
             __DIR__.'/config' => config_path('enso'),
         ], 'addresses-config');
@@ -41,14 +53,6 @@ class AppServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/resources/js' => resource_path('js'),
         ], 'enso-assets');
-
-        $this->publishes([
-            __DIR__.'/database/seeds' => database_path('seeds'),
-        ], 'addresses-seeder');
-
-        $this->publishes([
-            __DIR__.'/database/seeds' => database_path('seeds'),
-        ], 'enso-seeders');
     }
 
     public function register()

@@ -12,7 +12,7 @@
             "meta": {
                 "type": "select",
                 "multiple": false,
-                "source": "core.addresses.countriesSelectOptions",
+                "source": "core.addresses.countryOptions",
                 "options": []
             }
         }, {
@@ -22,8 +22,7 @@
             "meta": {
                 "type": "select",
                 "multiple": false,
-                "source": null,
-                "options": []
+                "options": "LaravelEnso\\AddressesManager\\app\\Enums\\StreetTypes"
             }
         }, {
             "label": "Street",
@@ -108,8 +107,7 @@
             "meta": {
                 "multiple": false,
                 "type": "select",
-                "source": null,
-                "options": []
+                "options": "LaravelEnso\\AddressesManager\\app\\Enums\\BuildingTypes"
             }
         }, {
             "label": "Sub Administrative Area",
@@ -166,6 +164,26 @@
                 "type": "input",
                 "content": "checkbox",
                 "disabled": true
+            }
+        }, {
+            "label": "",
+            "name": "addressable_id",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "hidden": true
+            }
+        }, {
+            "label": "",
+            "name": "addressable_type",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "input",
+                "content": "text",
+                "hidden": true
             }
         }]
     }]
