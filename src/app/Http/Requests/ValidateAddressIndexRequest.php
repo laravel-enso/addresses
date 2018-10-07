@@ -16,7 +16,7 @@ class ValidateAddressIndexRequest extends FormRequest
     public function rules()
     {
         return [
-            'addressable_id' => 'required',
+            'addressable_id'   => 'required',
             'addressable_type' => 'required|string',
         ];
     }
@@ -25,7 +25,7 @@ class ValidateAddressIndexRequest extends FormRequest
     {
         $validator->after(function ($validator) {
             if (!class_exists($this->addressable_type)
-                || !new $this->addressable_type instanceof Model) {
+                || !new $this->addressable_type() instanceof Model) {
                 throw new AddressException(
                     'The "addressable_type" property must be a valid model class'
                 );
