@@ -2,7 +2,7 @@
 
     <modal v-on="$listeners"
         :show="true">
-        <vue-form class="box"
+        <vue-form class="box has-background-light"
             :data="form"
             v-on="$listeners">
             <template v-for="field in customFields"
