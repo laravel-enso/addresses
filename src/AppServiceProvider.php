@@ -12,19 +12,22 @@ class AppServiceProvider extends ServiceProvider
     {
         Address::observe(Observer::class);
 
-        $this->load();
-
-        $this->publish();
+        $this->loadDependencies()
+            ->publishDependencies();
     }
 
-    private function load()
+    private function loadDependencies()
     {
         $this->mergeConfigFrom(__DIR__.'/config/addresses.php', 'enso.addresses');
+
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
+
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+
+        return $this;
     }
 
-    private function publish()
+    private function publishDependencies()
     {
         $this->publishes([
             __DIR__.'/database/seeds' => database_path('seeds'),
@@ -41,10 +44,6 @@ class AppServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config' => config_path('enso'),
         ], 'enso-config');
-
-        $this->publishes([
-            __DIR__.'/app/Forms/Templates' => app_path().'/Forms/vendor/',
-        ], 'addresses-form');
 
         $this->publishes([
             __DIR__.'/resources/js' => resource_path('js'),

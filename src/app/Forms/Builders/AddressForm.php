@@ -7,13 +7,13 @@ use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class AddressForm
 {
-    private const FormPath = __DIR__.'/../Templates/address.json';
+    private const TemplatePath = __DIR__.'/../Templates/address.json';
 
     private $form;
 
     public function __construct()
     {
-        $this->form = (new Form($this->form()));
+        $this->form = (new Form($this->templatePath()));
     }
 
     public function create()
@@ -29,14 +29,13 @@ class AddressForm
             ->edit($address);
     }
 
-    private function form()
+    private function templatePath()
     {
-        $form = app_path('Forms/vendor/address.json');
+        $file = config('enso.addresses.formTemplate');
+        $templatePath = base_path($file);
 
-        if (\File::exists($form)) {
-            return $form;
-        }
-
-        return self::FormPath;
+        return $file && \File::exists($templatePath)
+            ? $templatePath
+            : self::TemplatePath;
     }
 }

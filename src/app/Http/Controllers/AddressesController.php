@@ -25,8 +25,10 @@ class AddressesController extends Controller
         return ['form' => $form->create()];
     }
 
-    public function store(ValidateAddressRequest $request)
+    public function store()
     {
+        $request = app()->make($this->requestValidator());
+
         Address::create($request->all());
 
         return [
@@ -39,9 +41,9 @@ class AddressesController extends Controller
         return ['form' => $form->edit($address)];
     }
 
-    public function update(ValidateAddressRequest $request, Address $address)
+    public function update(Address $address)
     {
-        $address->update($request->all());
+        $request = app()->make($this->requestValidator());
 
         return [
             'message' => __('The address have been successfully updated'),
@@ -58,5 +60,12 @@ class AddressesController extends Controller
         $address->delete();
 
         return ['message' => __('The address was deleted')];
+    }
+
+    private function requestValidator()
+    {
+        return class_exists(config('enso.addresses.requestValidator'))
+            ? config('enso.addresses.requestValidator')
+            : ValidateAddressRequest::class;
     }
 }
