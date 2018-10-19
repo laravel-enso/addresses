@@ -45,6 +45,8 @@ class AddressesController extends Controller
     {
         $request = app()->make($this->requestValidator());
 
+        $address->update();
+
         return [
             'message' => __('The address have been successfully updated'),
         ];
