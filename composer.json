@@ -40,7 +40,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelEnso\\AddressesManager\\AppServiceProvider"
+                "LaravelEnso\\AddressesManager\\AppServiceProvider",
+                "LaravelEnso\\AddressesManager\\RequestValidationProvider"
             ],
             "aliases": {}
         }

@@ -18,7 +18,9 @@ class AppServiceProvider extends ServiceProvider
 
     private function loadDependencies()
     {
-        $this->mergeConfigFrom(__DIR__.'/config/addresses.php', 'enso.addresses');
+        $this->mergeConfigFrom(
+            __DIR__.'/config/addresses.php', 'enso.addresses'
+        );
 
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
 

@@ -18,13 +18,16 @@ class AddressForm
 
     public function create()
     {
-        return $this->form->title('Create')
+        return $this->form
+            ->title('Create')
+            ->actions(['store'])
             ->create();
     }
 
     public function edit(Address $address)
     {
-        return $this->form->title('Edit')
+        return $this->form
+            ->title('Edit')
             ->actions(['update'])
             ->edit($address);
     }

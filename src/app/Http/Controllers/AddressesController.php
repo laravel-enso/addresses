@@ -4,19 +4,18 @@ namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
-use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressIndexRequest;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 use LaravelEnso\AddressesManager\app\Http\Resources\Address as Resource;
 use LaravelEnso\AddressesManager\app\Models\Address;
 
 class AddressesController extends Controller
 {
-    public function index(ValidateAddressIndexRequest $request)
+    public function index(ValidateAddressRequest $request)
     {
         return Resource::collection(
                 Address::for($request->validated())
-                ->ordered()
-                ->get()
+                    ->ordered()
+                    ->get()
             );
     }
 
@@ -25,10 +24,8 @@ class AddressesController extends Controller
         return ['form' => $form->create()];
     }
 
-    public function store()
+    public function store(ValidateAddressRequest $request)
     {
-        $request = app()->make($this->requestValidator());
-
         Address::create($request->all());
 
         return [
@@ -41,11 +38,9 @@ class AddressesController extends Controller
         return ['form' => $form->edit($address)];
     }
 
-    public function update(Address $address)
+    public function update(ValidateAddressRequest $request, Address $address)
     {
-        $request = app()->make($this->requestValidator());
-
-        $address->update();
+        $address->update($request->all());
 
         return [
             'message' => __('The address have been successfully updated'),
@@ -62,12 +57,5 @@ class AddressesController extends Controller
         $address->delete();
 
         return ['message' => __('The address was deleted')];
-    }
-
-    private function requestValidator()
-    {
-        return class_exists(config('enso.addresses.requestValidator'))
-            ? config('enso.addresses.requestValidator')
-            : ValidateAddressRequest::class;
     }
 }
