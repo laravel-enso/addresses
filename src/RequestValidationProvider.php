@@ -19,7 +19,7 @@ class RequestValidationProvider extends ServiceProvider
         $this->app->bind(ValidateAddressRequest::class, function () {
             return config('enso.addresses.requestValidator')
                 ? $this->app->make(config('enso.addresses.requestValidator'))
-                : new ValidateAddressRequest;
+                : new ValidateAddressRequest();
         });
     }
 
