@@ -3,6 +3,7 @@
 namespace LaravelEnso\AddressesManager;
 
 use Illuminate\Support\ServiceProvider;
+use LaravelEnso\AddressesManager\app\Contracts\ValidatesAddressRequest;
 use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 
 class RequestValidationProvider extends ServiceProvider
@@ -16,15 +17,15 @@ class RequestValidationProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->bind(ValidateAddressRequest::class, function () {
-            return config('enso.addresses.requestValidator')
-                ? $this->app->make(config('enso.addresses.requestValidator'))
-                : new ValidateAddressRequest();
-        });
+        $this->app->bind(ValidatesAddressRequest::class,
+            config('enso.addresses.requestValidator')
+                ? config('enso.addresses.requestValidator')
+                : ValidateAddressRequest::class
+        );
     }
 
     public function provides()
     {
-        return [ValidateAddressRequest::class];
+        return [ValidatesAddressRequest::class];
     }
 }

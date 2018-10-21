@@ -3,14 +3,14 @@
 namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
-use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
-use LaravelEnso\AddressesManager\app\Http\Resources\Address as Resource;
 use LaravelEnso\AddressesManager\app\Models\Address;
+use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
+use LaravelEnso\AddressesManager\app\Contracts\ValidatesAddressRequest;
+use LaravelEnso\AddressesManager\app\Http\Resources\Address as Resource;
 
 class AddressesController extends Controller
 {
-    public function index(ValidateAddressRequest $request)
+    public function index(ValidatesAddressRequest $request)
     {
         return Resource::collection(
                 Address::for($request->validated())
@@ -24,7 +24,7 @@ class AddressesController extends Controller
         return ['form' => $form->create()];
     }
 
-    public function store(ValidateAddressRequest $request)
+    public function store(ValidatesAddressRequest $request)
     {
         Address::create($request->all());
 
@@ -38,7 +38,7 @@ class AddressesController extends Controller
         return ['form' => $form->edit($address)];
     }
 
-    public function update(ValidateAddressRequest $request, Address $address)
+    public function update(ValidatesAddressRequest $request, Address $address)
     {
         $address->update($request->all());
 
