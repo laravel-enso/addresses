@@ -3,10 +3,10 @@
 namespace LaravelEnso\AddressesManager\app\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\AddressesManager\app\Models\Address;
-use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
 use LaravelEnso\AddressesManager\app\Contracts\ValidatesAddressRequest;
+use LaravelEnso\AddressesManager\app\Forms\Builders\AddressForm;
 use LaravelEnso\AddressesManager\app\Http\Resources\Address as Resource;
+use LaravelEnso\AddressesManager\app\Models\Address;
 
 class AddressesController extends Controller
 {
