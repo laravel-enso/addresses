@@ -20,7 +20,7 @@ class AddressForm
     {
         return $this->form
             ->title('Create')
-            ->actions(['store'])
+            ->actions('store')
             ->create();
     }
 
@@ -28,7 +28,7 @@ class AddressForm
     {
         return $this->form
             ->title('Edit')
-            ->actions(['update'])
+            ->actions('update')
             ->edit($address);
     }
 
