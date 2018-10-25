@@ -4,10 +4,6 @@ use LaravelEnso\StructureManager\app\Classes\StructureMigration;
 
 class CreateStructureForAddresses extends StructureMigration
 {
-    protected $permissionGroup = [
-        'name' => 'core.addresses', 'description' => 'Addresses group',
-    ];
-
     protected $permissions = [
         ['name' => 'core.addresses.update', 'description' => 'Update edited address', 'type' => 1, 'is_default' => false],
         ['name' => 'core.addresses.store', 'description' => 'Store newly created address', 'type' => 1, 'is_default' => false],
