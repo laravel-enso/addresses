@@ -11,11 +11,11 @@
     "require": {
         "laravel-enso/activitylog": "1.1.*",
         "laravel-enso/core": "3.2.*",
-        "laravel-enso/formbuilder": "2.9.*",
+        "laravel-enso/formbuilder": "2.10.*",
         "laravel-enso/helpers": "1.9.*",
         "laravel-enso/select": "2.7.*",
         "laravel-enso/vuecomponents": "2.5.*",
-        "laravel-enso/structuremanager": "2.3.*",
+        "laravel-enso/structuremanager": "2.4.*",
         "php": ">=7.1.0"
     },
     "license": "MIT",
