@@ -8,8 +8,6 @@ use LaravelEnso\AddressesManager\App\Http\Requests\ValidateAddressRequest;
 
 class RequestValidationProvider extends ServiceProvider
 {
-    protected $defer = true;
-
     public function boot()
     {
         //
@@ -18,12 +16,8 @@ class RequestValidationProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            ValidatesAddressRequest::class, ValidateAddressRequest::class
+            ValidatesAddressRequest::class,
+            ValidateAddressRequest::class
         );
-    }
-
-    public function provides()
-    {
-        return [ValidatesAddressRequest::class];
     }
 }
