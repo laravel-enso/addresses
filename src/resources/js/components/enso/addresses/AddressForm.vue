@@ -53,6 +53,11 @@ export default {
                 ? this.$refs.form.field(field)
                 : null;
         },
+        param(param) {
+            return this.ready
+                ? this.$refs.form.param(param)
+                : null;
+        },
     },
 };
 
