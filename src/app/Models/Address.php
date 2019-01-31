@@ -4,10 +4,11 @@ namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\ActivityLog\app\Traits\LogsActivity;
+use LaravelEnso\Multitenancy\app\Traits\SystemConnection;
 
 class Address extends Model
 {
-    use LogsActivity;
+    use LogsActivity, SystemConnection;
 
     protected $guarded = [];
 
