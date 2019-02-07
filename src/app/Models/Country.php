@@ -3,12 +3,9 @@
 namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Multitenancy\app\Traits\SystemConnection;
 
 class Country extends Model
 {
-    use SystemConnection;
-
     protected $fillable = [
         'name', 'iso_3166_2', 'iso_3166_3', 'capital', 'citizenship', 'country_code', 'currency',
         'currency_code', 'currency_sub_unit', 'currency_symbol', 'currency_decimals', 'full_name',
