@@ -9,7 +9,7 @@
     ],
     "type": "library",
     "require": {
-        "laravel-enso/activitylog": "1.1.*",
+        "laravel-enso/activitylog": "2.0.*",
         "laravel-enso/core": "3.7.*",
         "laravel-enso/formbuilder": "2.12.*",
         "laravel-enso/helpers": "1.10.*",
@@ -40,8 +40,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelEnso\\AddressesManager\\AppServiceProvider",
-                "LaravelEnso\\AddressesManager\\RequestValidationProvider"
+                "LaravelEnso\\AddressesManager\\AppServiceProvider"
             ],
             "aliases": {}
         }
