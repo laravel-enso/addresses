@@ -18,12 +18,9 @@ class AppServiceProvider extends ServiceProvider
 
     private function loadDependencies()
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/config/addresses.php', 'enso.addresses'
-        );
+        $this->mergeConfigFrom(__DIR__.'/config/addresses.php', 'enso.addresses');
 
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
-
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
         return $this;
@@ -46,14 +43,6 @@ class AppServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config' => config_path('enso'),
         ], 'enso-config');
-
-        $this->publishes([
-            __DIR__.'/resources/js' => resource_path('js'),
-        ], 'addresses-assets');
-
-        $this->publishes([
-            __DIR__.'/resources/js' => resource_path('js'),
-        ], 'enso-assets');
     }
 
     public function register()
