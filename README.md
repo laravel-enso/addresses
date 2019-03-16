@@ -27,7 +27,7 @@ so you could create custom versions for specific countries
 
 ### Configuration & Usage
 
-Be sure to check out the full documentation for this package available at [docs.laravel-enso.com](https://docs.laravel-enso.com/packages/addresses-manager.html)
+Be sure to check out the full documentation for this package available at [docs.laravel-enso.com](https://docs.laravel-enso.com/backend/addresses-manager.html)
 
 ### Contributions
 
