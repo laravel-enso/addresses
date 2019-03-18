@@ -1,29 +1,37 @@
-# AddressesManager
+# Addresses Manager
+
 [![StyleCI](https://styleci.io/repos/113445673/shield?branch=master)](https://styleci.io/repos/113445673)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1bd97370791b452f977c70e9ae39c72c)](https://www.codacy.com/app/mihai-ocneanu/AddressesManager?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=laravel-enso/AddressesManager&amp;utm_campaign=Badge_Grade)
-[![License](https://poser.pugx.org/laravel-enso/addressesmanager/license)](https://https://packagist.org/packages/laravel-enso/addressesmanager)
+[![License](https://poser.pugx.org/laravel-enso/addressesmanager/license)](https://packagist.org/packages/laravel-enso/addressesmanager)
 [![Total Downloads](https://poser.pugx.org/laravel-enso/addressesmanager/downloads)](https://packagist.org/packages/laravel-enso/addressesmanager)
 [![Latest Stable Version](https://poser.pugx.org/laravel-enso/addressesmanager/version)](https://packagist.org/packages/laravel-enso/addressesmanager)
 
 Free-form addresses manager for [Laravel Enso](https://github.com/laravel-enso/Enso)
 
+This package works exclusively within the [Enso](https://github.com/laravel-enso/Enso) ecosystem.
+
+There is a front end implementation for this this api in the [accessories](https://github.com/enso-ui/accessories) package.
+
+For live examples and demos, you may visit [laravel-enso.com](https://www.laravel-enso.com)
+
 [![Screenshot](https://laravel-enso.github.io/addressesmanager/screenshots/bulma_041_thumb.png)](https://laravel-enso.github.io/addressesmanager/screenshots/bulma_041.png)
 
 [![Screenshot](https://laravel-enso.github.io/addressesmanager/screenshots/bulma_042_thumb.png)](https://laravel-enso.github.io/addressesmanager/screenshots/bulma_042.png)
 
-### Features
+## Installation
+
+Comes pre-installed in Enso.
+
+## Features
 
 - can be used to attach addresses to any entity, via a polymorphic relationship
 - allows saving of multiple addresses for an addresable entity
-- features and easy flow for setting the default address 
+- features an easy flow for setting the default address 
 - comes with an additional table for Countries, with all the countries pre-populated
 - brings its own free-form form for the edit and creation of addresses
-- has a publishable configuration file, where you can define the addresable models, 
-set custom validations via the Laravel syntax, as well as other options
-- comes with its own VueJS component `addresses` 
+- has a publishable configuration file where you can customize the module to your liking 
 - includes an `Addressable` trait, for defining relationships and attributes
-- the VueJS component as well as the whole package is designed to be extendable, 
-so you could create custom versions for specific countries 
+- the package as whole is designed to be extendable, so you could create custom versions for specific countries
 
 ### Configuration & Usage
 
