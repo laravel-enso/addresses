@@ -34,7 +34,7 @@ class Address extends Model
         $label = collect([
                 trim($this->number.' '.$this->street),
                 $this->city,
-                $this->country->name,
+                optional($this->country)->name,
             ])->filter()
             ->implode(', ');
 
