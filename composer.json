@@ -10,7 +10,7 @@
     "type": "library",
     "require": {
         "laravel-enso/activitylog": "2.0.*",
-        "laravel-enso/core": "4.0.*",
+        "laravel-enso/core": "4.1.*",
         "laravel-enso/formbuilder": "3.0.*",
         "laravel-enso/helpers": "1.10.*",
         "laravel-enso/select": "3.0.*",
