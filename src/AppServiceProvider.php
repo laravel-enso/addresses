@@ -43,9 +43,4 @@ class AppServiceProvider extends ServiceProvider
             __DIR__.'/config' => config_path('enso'),
         ], 'enso-config');
     }
-
-    public function register()
-    {
-        //
-    }
 }
