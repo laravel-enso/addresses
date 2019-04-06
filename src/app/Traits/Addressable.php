@@ -33,7 +33,7 @@ trait Addressable
     public function defaultAddress()
     {
         return $this->addresses()
-            ->whereIsDefault(true)
+            ->default()
             ->first();
     }
 }

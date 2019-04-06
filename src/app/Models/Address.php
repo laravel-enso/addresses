@@ -32,11 +32,11 @@ class Address extends Model
     public function getLabelAttribute()
     {
         $label = collect([
-                trim($this->number.' '.$this->street),
-                $this->city,
-                optional($this->country)->name,
-            ])->filter()
-            ->implode(', ');
+            trim($this->number.' '.$this->street),
+            $this->city,
+            optional($this->country)->name,
+        ])->filter()
+        ->implode(', ');
 
         unset($this->country);
 
@@ -48,12 +48,15 @@ class Address extends Model
         \DB::transaction(function () {
             $this->addressable->addresses()
                 ->whereIsDefault(true)
-                ->get()
-                ->each
                 ->update(['is_default' => false]);
 
             $this->update(['is_default' => true]);
         });
+    }
+
+    public function scopeDefault($query)
+    {
+        $query->whereIsDefault(true);
     }
 
     public function scopeFor($query, array $params)
@@ -64,7 +67,7 @@ class Address extends Model
 
     public function scopeOrdered($query)
     {
-        $query->orderBy('is_default', 'desc');
+        $query->orderByDesc('is_default');
     }
 
     public function getLoggableMorph()

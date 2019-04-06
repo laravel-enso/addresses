@@ -10,9 +10,10 @@ class Observer
 {
     public function creating(Address $address)
     {
-        $address->is_default = $address->addressable_type::query()
-            ->find($address->addressable_id)
+        $address->is_default = $address
+            ->addressable_type::find($address->addressable_id)
             ->addresses()
-            ->count() === 0;
+            ->default()
+            ->first() === null;
     }
 }
