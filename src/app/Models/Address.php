@@ -3,21 +3,12 @@
 namespace LaravelEnso\AddressesManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\ActivityLog\app\Traits\LogsActivity;
 
 class Address extends Model
 {
-    use LogsActivity;
-
     protected $guarded = [];
 
     protected $casts = ['is_default' => 'boolean'];
-
-    protected $loggableLabel = 'label';
-
-    protected $loggable = [
-        'street', 'number', 'city', 'country_id' => [Country::class => 'name'],
-    ];
 
     public function country()
     {
