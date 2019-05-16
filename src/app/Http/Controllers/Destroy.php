@@ -3,8 +3,8 @@
 namespace LaravelEnso\Addresses\app\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Addresses\app\Models\Address;
 use LaravelEnso\Addresses\app\Exceptions\AddressException;
+use LaravelEnso\Addresses\app\Models\Address;
 
 class Destroy extends Controller
 {

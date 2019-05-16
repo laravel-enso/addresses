@@ -2,8 +2,8 @@
 
 namespace LaravelEnso\Addresses\app\Models;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Address extends Model
 {
