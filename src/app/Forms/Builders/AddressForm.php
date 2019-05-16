@@ -1,8 +1,9 @@
 <?php
 
-namespace LaravelEnso\AddressesManager\app\Forms\Builders;
+namespace LaravelEnso\Addresses\app\Forms\Builders;
 
-use LaravelEnso\AddressesManager\app\Models\Address;
+use Illuminate\Support\Facades\File;
+use LaravelEnso\Addresses\app\Models\Address;
 use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class AddressForm
@@ -35,9 +36,10 @@ class AddressForm
     private function templatePath()
     {
         $file = config('enso.addresses.formTemplate');
+
         $templatePath = base_path($file);
 
-        return $file && \File::exists($templatePath)
+        return $file && File::exists($templatePath)
             ? $templatePath
             : self::TemplatePath;
     }

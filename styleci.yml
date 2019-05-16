@@ -8,6 +8,7 @@ enabled:
 
 disabled:
   - short_array_syntax
+  - alpha_ordered_imports
 
 finder:
   exclude:

@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\AddressesManager\app\Models;
+namespace LaravelEnso\Addresses\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
