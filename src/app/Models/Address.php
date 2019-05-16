@@ -1,14 +1,22 @@
 <?php
 
-namespace LaravelEnso\AddressesManager\app\Models;
+namespace LaravelEnso\Addresses\app\Models;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        'addressable_id', 'addressable_type', 'country_id', 'is_default',
+        'apartment', 'floor', 'entry', 'building', 'building_type',
+        'number', 'street', 'street_type', 'sub_administrative_area', 'city',
+        'administrative_area', 'postal_area', 'obs', 'lat', 'long',
+    ];
 
     protected $casts = ['is_default' => 'boolean'];
+
+    protected $touches = ['addressable'];
 
     public function country()
     {
@@ -36,7 +44,7 @@ class Address extends Model
 
     public function setDefault()
     {
-        \DB::transaction(function () {
+        DB::transaction(function () {
             $this->addressable->addresses()
                 ->whereIsDefault(true)
                 ->update(['is_default' => false]);
@@ -45,20 +53,30 @@ class Address extends Model
         });
     }
 
+    public function isDefault()
+    {
+        return $this->is_default;
+    }
+
     public function scopeDefault($query)
     {
-        $query->whereIsDefault(true);
+        return $query->whereIsDefault(true);
+    }
+    
+    public function scopeNotDefault($query)
+    {
+        return $query->whereIsDefault(false);
     }
 
     public function scopeFor($query, array $params)
     {
-        $query->whereAddressableId($params['addressable_id'])
+        return $query->whereAddressableId($params['addressable_id'])
             ->whereAddressableType($params['addressable_type']);
     }
 
     public function scopeOrdered($query)
     {
-        $query->orderByDesc('is_default');
+        return $query->orderByDesc('is_default');
     }
 
     public function getLoggableMorph()
