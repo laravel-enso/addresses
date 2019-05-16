@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\AddressesManager\app\Traits;
+namespace LaravelEnso\Addresses\app\Traits;
 
-use LaravelEnso\AddressesManager\app\Models\Address;
+use LaravelEnso\Addresses\app\Models\Address;
 
 trait Addresses
 {

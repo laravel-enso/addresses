@@ -5,9 +5,11 @@ enabled:
   - unalign_double_arrow
   - phpdoc_order
   - phpdoc_separation
+  - length_ordered_imports
 
 disabled:
   - short_array_syntax
+  - alpha_ordered_imports
 
 finder:
   exclude:
