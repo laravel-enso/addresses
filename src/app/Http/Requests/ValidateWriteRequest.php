@@ -7,8 +7,8 @@ class ValidateWriteRequest extends ValidateIndexRequest
     public function rules()
     {
         return parent::rules() + [
-            'street'     => 'required',
-            'city'       => 'required',
+            'street' => 'required',
+            'city' => 'required',
             'country_id' => 'required',
             'is_default' => 'nullable|boolean',
             'apartment' => 'nullable',
