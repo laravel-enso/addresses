@@ -2,8 +2,8 @@
 
 namespace LaravelEnso\Addresses\app\Models;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Address extends Model
 {
@@ -62,7 +62,7 @@ class Address extends Model
     {
         return $query->whereIsDefault(true);
     }
-    
+
     public function scopeNotDefault($query)
     {
         return $query->whereIsDefault(false);
