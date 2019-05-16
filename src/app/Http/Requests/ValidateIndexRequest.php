@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelEnso\AddressesManager\App\Http\Requests;
+namespace LaravelEnso\Addresses\App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use LaravelEnso\AddressesManager\app\Exceptions\AddressException;
+use LaravelEnso\Addresses\app\Exceptions\AddressException;
 
-class ValidateAddressRequest extends FormRequest
+class ValidateIndexRequest extends FormRequest
 {
     public function authorize()
     {
@@ -16,18 +16,10 @@ class ValidateAddressRequest extends FormRequest
 
     public function rules()
     {
-        $rules = [
+        return [
             'addressable_id'   => 'required',
             'addressable_type' => 'required|string',
         ];
-
-        return $this->method() === 'GET'
-            ? $rules
-            : $rules + [
-                'street'     => 'required',
-                'city'       => 'required',
-                'country_id' => 'required',
-            ];
     }
 
     private function checkParams()

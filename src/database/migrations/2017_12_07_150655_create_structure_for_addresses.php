@@ -1,8 +1,8 @@
 <?php
 
-use LaravelEnso\StructureManager\app\Classes\StructureMigration;
+use LaravelEnso\Migrator\app\Database\Migration;
 
-class CreateStructureForAddresses extends StructureMigration
+class CreateStructureForAddresses extends Migration
 {
     protected $permissions = [
         ['name' => 'core.addresses.update', 'description' => 'Update edited address', 'type' => 1, 'is_default' => false],
