@@ -10,7 +10,6 @@ class Observer
 {
     public function creating(Address $address)
     {
-        \Log::info($address->addressable_type);
         $address->is_default = $address
             ->addressable_type::find($address->addressable_id)
             ->addresses()
