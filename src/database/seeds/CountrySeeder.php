@@ -9,21 +9,26 @@ class CountrySeeder extends Seeder
 
     public function run()
     {
-        if (app()->environment() === 'testing') {
-            Country::createMany(
-                $this->countries()->slice(0, 10)
-            );
+        if (config('app.env') === 'testing') {
+            $this->countries()
+                ->slice(0, 10)
+                ->each(function ($country) {
+                    Country::create($country);
+                });
 
             return;
         }
 
-        Country::createMany($this->countries());
+        $this->countries()
+            ->each(function ($country) {
+                Country::create($country);
+            });
     }
 
     public function countries()
     {
-        return collect(
-            json_decode(\File::get(self::CountriesJSON), true)
-        );
+        $countries = json_decode(\File::get(self::CountriesJSON), true);
+
+        return collect($countries);
     }
 }
