@@ -16,7 +16,6 @@ class CreateAddressesTable extends Migration
             $table->integer('country_id')->unsigned()->index();
             $table->foreign('country_id')->references('id')->on('countries');
 
-            $table->boolean('is_default')->default(true);
             $table->string('apartment')->nullable();
             $table->string('floor')->nullable();
             $table->string('entry')->nullable();
@@ -34,6 +33,8 @@ class CreateAddressesTable extends Migration
 
             $table->float('lat', 10, 6)->nullable();
             $table->float('long', 10, 6)->nullable();
+
+            $table->boolean('is_default')->default();
 
             $table->timestamps();
         });

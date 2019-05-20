@@ -2,7 +2,7 @@
 
 namespace LaravelEnso\Addresses\App\Http\Requests;
 
-class ValidateCommentWrite extends ValidateCommentFetch
+class ValidateAddressRequest extends ValidateAddressFetch
 {
     public function rules()
     {
