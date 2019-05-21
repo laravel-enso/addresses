@@ -9,7 +9,7 @@ class AddressForm
 {
     private const TemplatePath = __DIR__.'/../Templates/address.json';
 
-    private $form;
+    protected $form;
 
     public function __construct()
     {
@@ -32,7 +32,7 @@ class AddressForm
             ->edit($address);
     }
 
-    private function templatePath()
+    protected function templatePath()
     {
         $file = config('enso.addresses.formTemplate');
 
@@ -40,6 +40,6 @@ class AddressForm
 
         return $file && File::exists($templatePath)
             ? $templatePath
-            : self::TemplatePath;
+            : static::TemplatePath;
     }
 }
