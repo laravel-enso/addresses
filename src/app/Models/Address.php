@@ -4,9 +4,12 @@ namespace LaravelEnso\Addresses\app\Models;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Helpers\app\Traits\UpdateOnTouch;
 
 class Address extends Model
 {
+    use UpdateOnTouch;
+
     protected $fillable = [
         'addressable_id', 'addressable_type', 'country_id', 'is_default',
         'apartment', 'floor', 'entry', 'building', 'building_type',
