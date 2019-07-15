@@ -52,6 +52,8 @@ class Address extends Model
                 ->whereIsDefault(true)
                 ->update(['is_default' => false]);
 
+            $this->refresh();
+
             $this->update(['is_default' => true]);
         });
     }
