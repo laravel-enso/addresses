@@ -4,6 +4,7 @@ use Faker\Factory;
 use Tests\TestCase;
 use LaravelEnso\Core\app\Models\User;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Addresses\app\Models\Address;
 use \LaravelEnso\Addresses\app\Models\Country;
@@ -23,7 +24,7 @@ class AddressTest extends TestCase
     {
         parent::setUp();
 
-//         $this->withoutExceptionHandling();
+//      $this->withoutExceptionHandling();
 
         $this->seed()
             ->actingAs($this->user = User::first());
@@ -179,7 +180,7 @@ class AddressTest extends TestCase
 
         try {
             TestModel::destroy([$this->testModel->id]);
-            
+
             $this->fail("should throw ConflictHttpException");
         } catch (ConflictHttpException $e) {
         }
