@@ -147,7 +147,7 @@
         "fields": [{
             "label": "Is Default",
             "name": "is_default",
-            "value": "",
+            "value": false,
             "meta": {
                 "type": "input",
                 "content": "checkbox",

@@ -9,6 +9,8 @@ class DefaultAddress extends Controller
 {
     public function __invoke(Address $address)
     {
-        $address->setDefault();
+        if (! $address->isDefault()) {
+            $address->setDefault();
+        }
     }
 }
