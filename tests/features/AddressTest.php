@@ -24,7 +24,7 @@ class AddressTest extends TestCase
     {
         parent::setUp();
 
-//      $this->withoutExceptionHandling();
+        // $this->withoutExceptionHandling();
 
         $this->seed()
             ->actingAs($this->user = User::first());
@@ -34,31 +34,31 @@ class AddressTest extends TestCase
         $this->faker = Factory::create();
 
         $this->testModel = factory(Address::class)->create([
-            'addressable_id' => TestModel::create(['name' => 'addressable'])->id,
+            'addressable_id' => AddressableTestModel::create(['name' => 'addressable'])->id,
             'country_id' => Country::first()->id,
-            'addressable_type' => TestModel::class,
+            'addressable_type' => AddressableTestModel::class,
         ]);
     }
 
     /** @test */
     public function can_create_address()
     {
-        $params = $this->postParams()->toArray();
-        
-        $this->post(
-            route('core.addresses.store'),
-            $params)->assertStatus(200)
+        $params = $this->postParams();
+
+        $this->post(route('core.addresses.store'), $params)
+            ->assertStatus(200)
             ->assertJsonStructure(['message']);
-        
-        $this->assertTrue($this->isAddressExists($params));
+
+        $this->assertTrue($this->addressExists($params));
     }
 
     /** @test */
     public function can_get_addresses_index()
     {
-        $this->get(route('core.addresses.index', $this->testModel->toArray(), false))
-            ->assertStatus(200)
-            ->assertJsonFragment(['street' => $this->testModel->street]);
+        $this->get(
+            route('core.addresses.index', $this->testModel->toArray(), false)
+        )->assertStatus(200)
+        ->assertJsonFragment(['street' => $this->testModel->street]);
     }
 
     /** @test */
@@ -68,8 +68,9 @@ class AddressTest extends TestCase
 
         $this->patch(
             route('core.addresses.update', $this->testModel->id, false),
-            $this->testModel->toArray())->assertStatus(200)
-            ->assertJsonStructure(['message' => 'message']);
+            $this->testModel->toArray()
+        )->assertStatus(200)
+        ->assertJsonStructure(['message' => 'message']);
 
         $this->assertEquals(
             $this->testModel->street,
@@ -83,8 +84,8 @@ class AddressTest extends TestCase
         $secondaryAddress = $this->createSecondaryAddress();
 
         $this->patch(
-            route('core.addresses.setDefault', $secondaryAddress->id, false))
-            ->assertStatus(200);
+            route('core.addresses.setDefault', $secondaryAddress->id, false)
+        )->assertStatus(200);
 
         $this->assertFalse(
             $this->testModel->fresh()->is_default
@@ -96,39 +97,23 @@ class AddressTest extends TestCase
     }
 
     /** @test */
-    public function can_set_default_a_default_address()
-    {
-        $this->assertTrue(
-            $this->testModel->fresh()->is_default
-        );
-
-        $this->patch(
-            route('core.addresses.setDefault', $this->testModel->id, false))
-            ->assertStatus(200);
-
-        $this->assertTrue(
-            $this->testModel->fresh()->is_default
-        );
-    }
-
-    /** @test */
-    public function can_get_edit_address()
-    {
-        $this->get(
-            route('core.addresses.edit', $this->testModel->id, false),
-            $this->testModel->toArray())
-            ->assertStatus(200)
-            ->assertJsonStructure(['form' => 'form']);
-    }
-
-    /** @test */
-    public function can_get_create_address()
+    public function can_get_create_address_form()
     {
         $this->get(
             route('core.addresses.create', $this->testModel->id, false),
-            $this->testModel->toArray())
-            ->assertStatus(200)
-            ->assertJsonStructure(['form' => 'form']);
+            $this->testModel->toArray()
+        )->assertStatus(200)
+        ->assertJsonStructure(['form' => 'form']);
+    }
+
+    /** @test */
+    public function can_get_edit_address_form()
+    {
+        $this->get(
+            route('core.addresses.edit', $this->testModel->id, false),
+            $this->testModel->toArray()
+        )->assertStatus(200)
+        ->assertJsonStructure(['form' => 'form']);
     }
 
     /** @test */
@@ -136,8 +121,9 @@ class AddressTest extends TestCase
     {
         $this->assertNotNull($this->testModel);
 
-        $this->delete(route('core.addresses.destroy', $this->testModel->id, false))
-            ->assertStatus(200);
+        $this->delete(
+            route('core.addresses.destroy', $this->testModel->id, false)
+        )->assertStatus(200);
 
         $this->assertNull($this->testModel->fresh());
     }
@@ -145,11 +131,10 @@ class AddressTest extends TestCase
     /** @test */
     public function can_get_label_attribute()
     {
-        $this->testModel->street = "street";
-        $this->testModel->number = "number";
-        $this->testModel->city = "city";
-        $country = $this->testModel->country;
-        $country->name = "country";
+        $this->testModel->street = 'street';
+        $this->testModel->number = 'number';
+        $this->testModel->city = 'city';
+        $this->testModel->country->name = 'country';
 
         $this->assertEquals(
             'number street, city, country',
@@ -162,46 +147,41 @@ class AddressTest extends TestCase
     {
         $secondaryAddress = $this->createSecondaryAddress();
 
-        $this->delete(route('core.addresses.destroy', $this->testModel->id, false))
-            ->assertStatus(555)
-            ->assertJsonStructure(["message"]);
+        $this->delete(
+            route('core.addresses.destroy', $this->testModel->id, false)
+        )->assertStatus(555)
+        ->assertJsonStructure(['message']);
 
         $this->assertNotNull($this->testModel->fresh());
-        
+
         $this->assertNotNull($secondaryAddress->fresh());
     }
 
-    /**
-     * @test
-     */
-    public function cannot_delete_a_addressable_while_having_restrict_address()
+    /** @test */
+    public function cannot_delete_an_addressable_while_having_restrict_address()
     {
         Config::set('enso.addresses.onDelete', 'restrict');
 
-        try {
-            TestModel::destroy([$this->testModel->id]);
+        $this->expectException(ConflictHttpException::class);
 
-            $this->fail("should throw ConflictHttpException");
-        } catch (ConflictHttpException $e) {
-        }
+        AddressableTestModel::destroy([$this->testModel->id]);
 
         $this->assertNotNull($this->testModel->fresh());
     }
-    /**
-     * @test
-     */
-    public function can_delete_a_addressable_while_having_cascade_address()
+
+    /** @test */
+    public function can_delete_an_addressable_while_having_cascade_address()
     {
         Config::set('enso.addresses.onDelete', 'cascade');
 
-        TestModel::destroy([$this->testModel->id]);
+        AddressableTestModel::destroy([$this->testModel->id]);
 
         $this->assertNull($this->testModel->fresh());
     }
 
     private function createTestTable()
     {
-        Schema::create('test_models', function ($table) {
+        Schema::create('addressable_test_models', function ($table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
@@ -211,34 +191,27 @@ class AddressTest extends TestCase
     private function postParams()
     {
         return factory(Address::class)->make([
-            'addressable_id' => TestModel::create(['name' => 'addressable'])->id,
-            'addressable_type' => TestModel::class,
-        ]);
+            'addressable_id' => $this->testModel->addressable_id,
+            'addressable_type' => AddressableTestModel::class,
+        ])->toArray();
     }
 
-    /**
-     * @param $params
-     * @return mixed
-     */
-    private function isAddressExists($params)
+    private function addressExists($params)
     {
-        return Address::whereStreet($params["street"])->exists();
+        return Address::whereStreet($params['street'])->exists();
     }
 
-    /**
-     * @return Address
-     */
     private function createSecondaryAddress()
     {
         return factory(Address::class)->create([
             'addressable_id' => $this->testModel->addressable_id,
-            'addressable_type' => TestModel::class,
+            'addressable_type' => AddressableTestModel::class,
             'is_default' => false
         ]);
     }
 }
 
-class TestModel extends Model
+class AddressableTestModel extends Model
 {
     use Addressable;
 
