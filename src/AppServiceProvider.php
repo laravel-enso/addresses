@@ -3,8 +3,6 @@
 namespace LaravelEnso\Addresses;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelEnso\Addresses\app\Models\Address;
-use LaravelEnso\Addresses\app\Observers\Observer;
 
 class AppServiceProvider extends ServiceProvider
 {
