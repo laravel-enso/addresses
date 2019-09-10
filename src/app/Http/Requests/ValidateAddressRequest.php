@@ -2,6 +2,8 @@
 
 namespace LaravelEnso\Addresses\App\Http\Requests;
 
+use Alphametric\Validation\Rules\LocationCoordinates;
+
 class ValidateAddressRequest extends ValidateAddressFetch
 {
     public function rules()
@@ -22,8 +24,8 @@ class ValidateAddressRequest extends ValidateAddressFetch
             'administrative_area' => 'nullable',
             'postal_area' => 'nullable',
             'obs' => 'nullable',
-            'lat' => 'nullable',
-            'long' => 'nullable',
+            'lat' => ['nullable', new Latitude],
+            'long' => ['nullable', new Longitude],
         ];
     }
 }

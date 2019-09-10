@@ -11,7 +11,7 @@ class Destroy extends Controller
     public function __invoke(Address $address)
     {
         if ($address->isDefault()
-            && $address->addressable->addresses()->notDefault()->count() > 0) {
+            && $address->addressable->addresses()->notDefault()->exists()) {
             throw new AddressException(__(
                 'You cannot delete the default address while having secondary addresses
             '));

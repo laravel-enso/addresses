@@ -5,16 +5,18 @@ namespace LaravelEnso\Addresses\app\Models;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Helpers\app\Traits\UpdatesOnTouch;
+use Illuminate\Database\Eloquent\Relations\Relation;
+use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
 class Address extends Model
 {
-    use UpdatesOnTouch;
+    use AvoidsDeletionConflicts, UpdatesOnTouch;
 
     protected $fillable = [
-        'addressable_id', 'addressable_type', 'country_id', 'is_default',
-        'apartment', 'floor', 'entry', 'building', 'building_type',
-        'number', 'street', 'street_type', 'sub_administrative_area', 'city',
-        'administrative_area', 'postal_area', 'obs', 'lat', 'long',
+        'addressable_id', 'addressable_type', 'country_id', 'is_default', 'apartment', 'floor',
+        'entry', 'building', 'building_type', 'number', 'street', 'street_type',
+        'sub_administrative_area', 'city', 'administrative_area', 'postal_area',
+        'obs', 'lat', 'long',
     ];
 
     protected $casts = ['is_default' => 'boolean'];
@@ -31,34 +33,24 @@ class Address extends Model
         return $this->morphTo();
     }
 
+    public function isDefault()
+    {
+        return $this->is_default;
+    }
+
     public function getLabelAttribute()
     {
-        $label = collect([
+        return $this->label();
+    }
+
+    public function label()
+    {
+        return collect([
             trim($this->number.' '.$this->street),
             $this->city,
             optional($this->country)->name,
         ])->filter()
         ->implode(', ');
-
-        unset($this->country);
-
-        return $label;
-    }
-
-    public function setDefault()
-    {
-        DB::transaction(function () {
-            $this->addressable->addresses()
-                ->whereIsDefault(true)
-                ->update(['is_default' => false]);
-
-            $this->update(['is_default' => true]);
-        });
-    }
-
-    public function isDefault()
-    {
-        return $this->is_default;
     }
 
     public function scopeDefault($query)
@@ -74,12 +66,26 @@ class Address extends Model
     public function scopeFor($query, array $params)
     {
         return $query->whereAddressableId($params['addressable_id'])
-            ->whereAddressableType($params['addressable_type']);
+            ->whereAddressableType(
+                Relation::getMorphedModel($params['addressable_type'])
+                    ?? $params['addressable_type']
+            );
     }
 
     public function scopeOrdered($query)
     {
         return $query->orderByDesc('is_default');
+    }
+
+    public function setDefault()
+    {
+        DB::transaction(function () {
+            $this->addressable->addresses()
+                ->whereIsDefault(true)
+                ->update(['is_default' => false]);
+
+            $this->update(['is_default' => true]);
+        });
     }
 
     public function getLoggableMorph()

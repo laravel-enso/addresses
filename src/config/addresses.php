@@ -2,7 +2,6 @@
 
 return [
     'onDelete' => 'cascade',
-    'formTemplate' => null,
     'loggableMorph' => [
         'addressable' => [],
     ],
@@ -24,11 +23,5 @@ return [
         'Residential' => 'Residential',
         'Commercial' => 'Commercial',
         'Industrial' => 'Industrial',
-    ],
-    'label' => [
-        'separator' => ' - ',
-        'attributes' => [
-            'localityName', 'street', 'number',
-        ],
     ],
 ];

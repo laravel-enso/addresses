@@ -22,11 +22,14 @@ class CreateAddressesTable extends Migration
             $table->string('building')->nullable();
             $table->string('building_type')->nullable();
             $table->string('number')->nullable();
+
             $table->string('street')->nullable();
             $table->string('street_type')->nullable();
+
             $table->string('sub_administrative_area')->nullable();
             $table->string('city');
             $table->string('administrative_area')->nullable();
+
             $table->string('postal_area')->nullable();
 
             $table->text('obs')->nullable();

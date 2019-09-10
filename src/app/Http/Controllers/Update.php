@@ -12,8 +12,6 @@ class Update extends Controller
     {
         $address->update($request->validated());
 
-        return [
-            'message' => __('The address has been successfully updated'),
-        ];
+        return ['message' => __('The address has been successfully updated')];
     }
 }

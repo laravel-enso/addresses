@@ -10,13 +10,11 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Address::observe(Observer::class);
-
-        $this->loadDependencies()
-            ->publishDependencies();
+        $this->load()
+            ->publish();
     }
 
-    private function loadDependencies()
+    private function load()
     {
         $this->mergeConfigFrom(__DIR__.'/config/addresses.php', 'enso.addresses');
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
@@ -25,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
         return $this;
     }
 
-    private function publishDependencies()
+    private function publish()
     {
         $this->publishes([
             __DIR__.'/database/seeds' => database_path('seeds'),

@@ -7,13 +7,13 @@ use LaravelEnso\Forms\app\Services\Form;
 
 class AddressForm
 {
-    private const TemplatePath = __DIR__.'/../Templates/address.json';
+    protected const TemplatePath = __DIR__.'/../Templates/address.json';
 
     protected $form;
 
     public function __construct()
     {
-        $this->form = (new Form($this->templatePath()));
+        $this->form = (new Form(static::TemplatePath));
     }
 
     public function create()
@@ -30,16 +30,5 @@ class AddressForm
             ->title('Edit')
             ->actions('update')
             ->edit($address);
-    }
-
-    protected function templatePath()
-    {
-        $file = config('enso.addresses.formTemplate');
-
-        $templatePath = base_path($file);
-
-        return $file && File::exists($templatePath)
-            ? $templatePath
-            : static::TemplatePath;
     }
 }
