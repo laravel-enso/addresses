@@ -2,8 +2,6 @@
 
 namespace LaravelEnso\Addresses\App\Http\Requests;
 
-use Alphametric\Validation\Rules\LocationCoordinates;
-
 class ValidateAddressRequest extends ValidateAddressFetch
 {
     public function rules()
