@@ -5,7 +5,6 @@ namespace LaravelEnso\Addresses\app\Models;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Helpers\app\Traits\UpdatesOnTouch;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
 class Address extends Model
@@ -66,10 +65,7 @@ class Address extends Model
     public function scopeFor($query, array $params)
     {
         return $query->whereAddressableId($params['addressable_id'])
-            ->whereAddressableType(
-                Relation::getMorphedModel($params['addressable_type'])
-                    ?? $params['addressable_type']
-            );
+            ->whereAddressableType($params['addressable_type']);
     }
 
     public function scopeOrdered($query)
