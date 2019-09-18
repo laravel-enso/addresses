@@ -12,9 +12,7 @@ class Destroy extends Controller
     {
         if ($address->isDefault()
             && $address->addressable->addresses()->notDefault()->exists()) {
-            throw new AddressException(__(
-                'You cannot delete the default address while having secondary addresses
-            '));
+            throw AddressException::removeDefault();
         }
 
         $address->delete();

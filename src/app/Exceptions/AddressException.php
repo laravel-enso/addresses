@@ -6,4 +6,10 @@ use LaravelEnso\Helpers\app\Exceptions\EnsoException;
 
 class AddressException extends EnsoException
 {
+    public static function removeDefault()
+    {
+        throw new static(__(
+            'You cannot delete the default address while having secondary addresses'
+        ));
+    }
 }
