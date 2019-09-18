@@ -8,7 +8,7 @@ class AddressException extends EnsoException
 {
     public static function removeDefault()
     {
-        throw new static(__(
+        return new static(__(
             'You cannot delete the default address while having secondary addresses'
         ));
     }
