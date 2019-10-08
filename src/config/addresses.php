@@ -24,4 +24,10 @@ return [
         'Commercial' => 'Commercial',
         'Industrial' => 'Industrial',
     ],
+    'label' => [
+        'separator' => ' - ',
+        'attributes' => [
+            'localityName', 'street', 'number',
+        ],
+    ],
 ];

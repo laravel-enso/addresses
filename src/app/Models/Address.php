@@ -43,13 +43,12 @@ class Address extends Model
     }
 
     public function label()
-    {
-        return collect([
-            trim($this->number.' '.$this->street),
-            $this->city,
-            optional($this->country)->name,
-        ])->filter()
-        ->implode(', ');
+    {	
+        return collect(config('enso.addresses.label.attributes'))
+            ->map(function ($attribute) {
+                return $this->$attribute;
+            })->filter()
+            ->implode(config('enso.addresses.label.separator'));
     }
 
     public function scopeDefault($query)
