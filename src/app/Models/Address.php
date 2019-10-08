@@ -43,7 +43,7 @@ class Address extends Model
     }
 
     public function label()
-    {	
+    {
         return collect(config('enso.addresses.label.attributes'))
             ->map(function ($attribute) {
                 return $this->$attribute;
