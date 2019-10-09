@@ -138,7 +138,7 @@ class AddressTest extends TestCase
 
         $this->assertEquals(
             $attributes->implode(config('enso.addresses.label.separator')),
-            $this->testModel->getLabelAttribute()
+            $this->testModel->label()
         );
     }
 
