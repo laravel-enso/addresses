@@ -131,14 +131,14 @@ class AddressTest extends TestCase
     /** @test */
     public function can_get_label_attribute()
     {
-        $this->testModel->street = 'street';
-        $this->testModel->number = 'number';
-        $this->testModel->city = 'city';
-        $this->testModel->country->name = 'country';
+        $attributes = collect(config('enso.addresses.label.attributes'));
+        $attributes->each(function ($attribute) {
+            $this->testModel->{$attribute} = $attribute;
+        });
 
         $this->assertEquals(
-            'number street, city, country',
-            $this->testModel->getLabelAttribute()
+            $attributes->implode(config('enso.addresses.label.separator')),
+            $this->testModel->label()
         );
     }
 
