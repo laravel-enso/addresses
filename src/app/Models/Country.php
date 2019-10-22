@@ -3,9 +3,12 @@
 namespace LaravelEnso\Addresses\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Rememberable\app\Traits\Rememberable;
 
 class Country extends Model
 {
+    use Rememberable;
+
     protected $fillable = [
         'name', 'iso_3166_2', 'iso_3166_3', 'capital', 'citizenship', 'country_code',
         'currency', 'currency_code', 'currency_sub_unit', 'currency_symbol',
