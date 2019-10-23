@@ -18,24 +18,9 @@ For live examples and demos, you may visit [laravel-enso.com](https://www.larave
 
 [![Screenshot](https://laravel-enso.github.io/addresses/screenshots/bulma_042_thumb.png)](https://laravel-enso.github.io/addresses/screenshots/bulma_042.png)
 
-## Installation
+### Installation, Configuration & Usage
 
-Comes pre-installed in Enso.
-
-## Features
-
-- can be used to attach addresses to any entity, via a polymorphic relationship
-- allows saving of multiple addresses for an addresable entity
-- features an easy flow for setting the default address 
-- comes with an additional table for Countries, with all the countries pre-populated
-- brings its own free-form form for the edit and creation of addresses
-- has a publishable configuration file where you can customize the module to your liking 
-- includes an `Addressable` trait, for defining relationships and attributes
-- the package as whole is designed to be extendable, so you could create custom versions for specific countries
-
-### Configuration & Usage
-
-Be sure to check out the full documentation for this package available at [docs.laravel-enso.com](https://docs.laravel-enso.com/backend/addresses-manager.html)
+Be sure to check out the full documentation for this package available at [docs.laravel-enso.com](https://docs.laravel-enso.com/backend/addresses.html)
 
 ### Contributions
 
