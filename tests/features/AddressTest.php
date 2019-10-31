@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Addresses\app\Models\Address;
-use \LaravelEnso\Addresses\app\Models\Country;
+use LaravelEnso\Countries\app\Models\Country;
 use LaravelEnso\Addresses\app\Traits\Addressable;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;

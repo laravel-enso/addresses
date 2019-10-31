@@ -12,6 +12,5 @@ class CreateStructureForAddresses extends Migration
         ['name' => 'core.addresses.setDefault', 'description' => 'Set Address as is_default', 'type' => 1, 'is_default' => false],
         ['name' => 'core.addresses.edit', 'description' => 'Get Edit Form', 'type' => 0, 'is_default' => false],
         ['name' => 'core.addresses.create', 'description' => 'Get Create Form', 'type' => 0, 'is_default' => false],
-        ['name' => 'core.addresses.countryOptions', 'description' => 'Get country options for select', 'type' => 0, 'is_default' => false],
     ];
 }

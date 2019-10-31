@@ -4,6 +4,7 @@ namespace LaravelEnso\Addresses\app\Models;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Countries\app\Models\Country;
 use LaravelEnso\Helpers\app\Traits\UpdatesOnTouch;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
 
