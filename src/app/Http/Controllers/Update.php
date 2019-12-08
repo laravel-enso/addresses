@@ -3,8 +3,8 @@
 namespace LaravelEnso\Addresses\app\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Addresses\app\Models\Address;
 use LaravelEnso\Addresses\App\Http\Requests\ValidateAddressRequest;
+use LaravelEnso\Addresses\app\Models\Address;
 
 class Update extends Controller
 {

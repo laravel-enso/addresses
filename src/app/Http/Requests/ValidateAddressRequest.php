@@ -22,8 +22,8 @@ class ValidateAddressRequest extends ValidateAddressFetch
             'administrative_area' => 'nullable',
             'postal_area' => 'nullable',
             'obs' => 'nullable',
-            'lat' => ['nullable', new Latitude],
-            'long' => ['nullable', new Longitude],
+            'lat' => ['nullable', new Latitude()],
+            'long' => ['nullable', new Longitude()],
         ];
     }
 }

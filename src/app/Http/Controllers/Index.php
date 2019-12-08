@@ -3,9 +3,9 @@
 namespace LaravelEnso\Addresses\app\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Addresses\app\Models\Address;
 use LaravelEnso\Addresses\App\Http\Requests\ValidateAddressFetch;
 use LaravelEnso\Addresses\app\Http\Resources\Address as Resource;
+use LaravelEnso\Addresses\app\Models\Address;
 
 class Index extends Controller
 {

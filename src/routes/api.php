@@ -11,5 +11,5 @@ Route::middleware(['web', 'auth', 'core'])
         Route::patch('{address}', 'Update')->name('update');
         Route::delete('{address}', 'Destroy')->name('destroy');
 
-        Route::patch('setDefault/{address}', 'SetDefault')->name('setDefault');
+        Route::patch('makeDefault/{address}', 'MakeDefault')->name('makeDefault');
     });

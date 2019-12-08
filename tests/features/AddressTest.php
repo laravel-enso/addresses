@@ -1,16 +1,16 @@
 <?php
 
 use Faker\Factory;
-use Tests\TestCase;
-use LaravelEnso\Core\app\Models\User;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Addresses\app\Models\Address;
-use LaravelEnso\Countries\app\Models\Country;
 use LaravelEnso\Addresses\app\Traits\Addressable;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use LaravelEnso\Core\app\Models\User;
+use LaravelEnso\Countries\app\Models\Country;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
+use Tests\TestCase;
 
 class AddressTest extends TestCase
 {
@@ -84,7 +84,7 @@ class AddressTest extends TestCase
         $secondaryAddress = $this->createSecondaryAddress();
 
         $this->patch(
-            route('core.addresses.setDefault', $secondaryAddress->id, false)
+            route('core.addresses.makeDefault', $secondaryAddress->id, false)
         )->assertStatus(200);
 
         $this->assertFalse(

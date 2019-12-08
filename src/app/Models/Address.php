@@ -2,11 +2,11 @@
 
 namespace LaravelEnso\Addresses\app\Models;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use LaravelEnso\Countries\app\Models\Country;
-use LaravelEnso\Helpers\app\Traits\UpdatesOnTouch;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Helpers\app\Traits\UpdatesOnTouch;
 
 class Address extends Model
 {
@@ -73,7 +73,7 @@ class Address extends Model
         return $query->orderByDesc('is_default');
     }
 
-    public function setDefault()
+    public function makeDefault()
     {
         DB::transaction(function () {
             $this->addressable->addresses()
