@@ -12,7 +12,7 @@ class Destroy extends Controller
     {
         if ($address->isDefault()
             && $address->addressable->addresses()->notDefault()->exists()) {
-            throw Exception::removeDefault();
+            throw Exception::cannotRemoveDefault();
         }
 
         $address->delete();
