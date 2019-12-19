@@ -132,9 +132,9 @@ class AddressTest extends TestCase
     public function can_get_label_attribute()
     {
         $attributes = collect(config('enso.addresses.label.attributes'));
-        $attributes->each(function ($attribute) {
-            $this->testModel->{$attribute} = $attribute;
-        });
+        $attributes->each(fn ($attribute) => (
+            $this->testModel->{$attribute} = $attribute
+        ));
 
         $this->assertEquals(
             $attributes->implode(config('enso.addresses.label.separator')),
