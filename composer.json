@@ -9,6 +9,7 @@
     ],
     "type": "library",
     "require": {
+        "php": ">=7.4.0",
         "laravel-enso/countries": "1.0.*",
         "laravel-enso/core": "4.6.*",
         "laravel-enso/enums": "1.1.*",
