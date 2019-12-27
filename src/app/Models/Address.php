@@ -46,7 +46,7 @@ class Address extends Model
     public function label()
     {
         return collect(config('enso.addresses.label.attributes'))
-            ->map(fn($attribute) => $this->$attribute)
+            ->map(fn ($attribute) => $this->$attribute)
             ->filter()
             ->implode(config('enso.addresses.label.separator'));
     }
