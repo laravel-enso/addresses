@@ -8,7 +8,7 @@ class AddressForm
 {
     protected const TemplatePath = __DIR__.'/../Templates/address.json';
 
-    protected $form;
+    protected Form $form;
 
     public function __construct()
     {
@@ -17,16 +17,14 @@ class AddressForm
 
     public function create()
     {
-        return $this->form
-            ->title('Create')
+        return $this->form->title('Create')
             ->actions('store')
             ->create();
     }
 
     public function edit($address)
     {
-        return $this->form
-            ->title('Edit')
+        return $this->form->title('Edit')
             ->actions('update')
             ->edit($address);
     }

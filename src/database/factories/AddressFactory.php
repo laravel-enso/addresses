@@ -1,6 +1,5 @@
 <?php
 
-use Generator;
 use Faker\Generator as Faker;
 use LaravelEnso\Addresses\app\Models\Address;
 use LaravelEnso\Countries\app\Models\Country;

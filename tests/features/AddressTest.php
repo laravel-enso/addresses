@@ -1,8 +1,10 @@
 <?php
 
 use Faker\Factory;
+use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use LaravelEnso\Addresses\app\Models\Address;
@@ -16,9 +18,9 @@ class AddressTest extends TestCase
 {
     use RefreshDatabase;
 
-    private $user;
-    private $faker;
-    private $testModel;
+    private User $user;
+    private Faker $faker;
+    private Address $testModel;
 
     protected function setUp(): void
     {
@@ -131,7 +133,7 @@ class AddressTest extends TestCase
     /** @test */
     public function can_get_label_attribute()
     {
-        $attributes = collect(config('enso.addresses.label.attributes'));
+        $attributes = (new Collection(config('enso.addresses.label.attributes')));
         $attributes->each(fn ($attribute) => (
             $this->testModel->{$attribute} = $attribute
         ));

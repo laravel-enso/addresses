@@ -3,6 +3,7 @@
 namespace LaravelEnso\Addresses\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use LaravelEnso\Countries\app\Models\Country;
 use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
@@ -45,8 +46,8 @@ class Address extends Model
 
     public function label()
     {
-        return collect(config('enso.addresses.label.attributes'))
-            ->map(fn($attribute) => $this->$attribute)
+        return (new Collection(config('enso.addresses.label.attributes')))
+            ->map(fn ($attribute) => $this->$attribute)
             ->filter()
             ->implode(config('enso.addresses.label.separator'));
     }
