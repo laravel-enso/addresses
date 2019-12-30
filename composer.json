@@ -8,15 +8,14 @@
     ],
     "type": "library",
     "require": {
-        "php": ">=7.4.0",
         "laravel-enso/core": "4.7.*",
-        "laravel-enso/countries": "1.0.*",
-        "laravel-enso/enums": "1.1.*",
-        "laravel-enso/forms": "3.3.*",
-        "laravel-enso/helpers": "1.14.*",
-        "laravel-enso/migrator": "1.0.*",
-        "laravel-enso/rememberable": "2.1.*",
-        "laravel-enso/select": "3.2.*"
+        "laravel-enso/countries": "1.1.*",
+        "laravel-enso/enums": "1.2.*",
+        "laravel-enso/forms": "3.4.*",
+        "laravel-enso/helpers": "1.15.*",
+        "laravel-enso/migrator": "1.1.*",
+        "laravel-enso/rememberable": "2.2.*",
+        "laravel-enso/select": "3.3.*"
     },
     "license": "MIT",
     "authors": [

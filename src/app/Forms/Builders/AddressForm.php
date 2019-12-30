@@ -2,6 +2,7 @@
 
 namespace LaravelEnso\Addresses\App\Forms\Builders;
 
+use LaravelEnso\Addresses\App\Models\Address;
 use LaravelEnso\Forms\App\Services\Form;
 
 class AddressForm
@@ -22,7 +23,7 @@ class AddressForm
             ->create();
     }
 
-    public function edit($address)
+    public function edit(Address $address)
     {
         return $this->form->title('Edit')
             ->actions('update')
