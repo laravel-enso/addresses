@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Addresses\app\Http\Controllers;
+namespace LaravelEnso\Addresses\App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use LaravelEnso\Addresses\App\Http\Requests\ValidateAddressRequest;
-use LaravelEnso\Addresses\app\Models\Address;
+use LaravelEnso\Addresses\App\Models\Address;
 
 class Store extends Controller
 {

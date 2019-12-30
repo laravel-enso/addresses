@@ -1,13 +1,13 @@
 <?php
 
-namespace LaravelEnso\Addresses\app\Models;
+namespace LaravelEnso\Addresses\App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Countries\app\Models\Country;
-use LaravelEnso\Helpers\app\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Helpers\app\Traits\UpdatesOnTouch;
+use LaravelEnso\Countries\App\Models\Country;
+use LaravelEnso\Helpers\App\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Helpers\App\Traits\UpdatesOnTouch;
 
 class Address extends Model
 {

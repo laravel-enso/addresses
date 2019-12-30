@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Addresses\app\Http\Controllers;
+namespace LaravelEnso\Addresses\App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Addresses\app\Forms\Builders\AddressForm;
+use LaravelEnso\Addresses\App\Forms\Builders\AddressForm;
 
 class Create extends Controller
 {

@@ -1,8 +1,8 @@
 <?php
 
 use Faker\Generator as Faker;
-use LaravelEnso\Addresses\app\Models\Address;
-use LaravelEnso\Countries\app\Models\Country;
+use LaravelEnso\Addresses\App\Models\Address;
+use LaravelEnso\Countries\App\Models\Country;
 
 $factory->define(Address::class, fn (Faker $faker) => [
     'addressable_id' => $faker->randomKey,

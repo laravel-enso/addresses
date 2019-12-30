@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\Addresses\app\Forms\Builders;
+namespace LaravelEnso\Addresses\App\Forms\Builders;
 
-use LaravelEnso\Forms\app\Services\Form;
+use LaravelEnso\Forms\App\Services\Form;
 
 class AddressForm
 {

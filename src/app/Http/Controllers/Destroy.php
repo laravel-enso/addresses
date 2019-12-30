@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Addresses\app\Http\Controllers;
+namespace LaravelEnso\Addresses\App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Addresses\app\Exceptions\Address as Exception;
-use LaravelEnso\Addresses\app\Models\Address;
+use LaravelEnso\Addresses\App\Exceptions\Address as Exception;
+use LaravelEnso\Addresses\App\Models\Address;
 
 class Destroy extends Controller
 {

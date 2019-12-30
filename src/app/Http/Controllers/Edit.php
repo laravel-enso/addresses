@@ -1,10 +1,10 @@
 <?php
 
-namespace LaravelEnso\Addresses\app\Http\Controllers;
+namespace LaravelEnso\Addresses\App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Addresses\app\Forms\Builders\AddressForm;
-use LaravelEnso\Addresses\app\Models\Address;
+use LaravelEnso\Addresses\App\Forms\Builders\AddressForm;
+use LaravelEnso\Addresses\App\Models\Address;
 
 class Edit extends Controller
 {

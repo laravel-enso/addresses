@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\Addresses\app\Enums;
+namespace LaravelEnso\Addresses\App\Enums;
 
-use LaravelEnso\Enums\app\Services\Enum;
+use LaravelEnso\Enums\App\Services\Enum;
 
 class BuildingTypes extends Enum
 {

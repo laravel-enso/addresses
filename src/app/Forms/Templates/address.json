@@ -22,7 +22,7 @@
             "meta": {
                 "type": "select",
                 "multiple": false,
-                "options": "LaravelEnso\\Addresses\\app\\Enums\\StreetTypes"
+                "options": "LaravelEnso\\Addresses\\App\\Enums\\StreetTypes"
             }
         }, {
             "label": "Street",
@@ -100,7 +100,7 @@
             "meta": {
                 "multiple": false,
                 "type": "select",
-                "options": "LaravelEnso\\Addresses\\app\\Enums\\BuildingTypes"
+                "options": "LaravelEnso\\Addresses\\App\\Enums\\BuildingTypes"
             }
         }, {
             "label": "Sub Administrative Area",

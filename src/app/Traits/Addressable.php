@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\Addresses\app\Traits;
+namespace LaravelEnso\Addresses\App\Traits;
 
-use LaravelEnso\Addresses\app\Models\Address;
+use LaravelEnso\Addresses\App\Models\Address;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 trait Addressable

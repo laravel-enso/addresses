@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelEnso\Addresses\app\Exceptions;
+namespace LaravelEnso\Addresses\App\Exceptions;
 
-use LaravelEnso\Helpers\app\Exceptions\EnsoException;
+use LaravelEnso\Helpers\App\Exceptions\EnsoException;
 
 class Address extends EnsoException
 {

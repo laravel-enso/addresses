@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['web', 'auth', 'core'])
     ->prefix('api/core/addresses')->as('core.addresses.')
-    ->namespace('LaravelEnso\Addresses\app\Http\Controllers')
+    ->namespace('LaravelEnso\Addresses\App\Http\Controllers')
     ->group(function () {
         Route::get('', 'Index')->name('index');
         Route::get('create', 'Create')->name('create');
