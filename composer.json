@@ -8,7 +8,7 @@
     ],
     "type": "library",
     "require": {
-        "laravel-enso/core": "4.7.*",
+        "laravel-enso/core": "4.8.*",
         "laravel-enso/countries": "1.1.*",
         "laravel-enso/enums": "1.2.*",
         "laravel-enso/forms": "3.4.*",
