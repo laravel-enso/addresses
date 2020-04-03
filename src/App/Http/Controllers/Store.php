@@ -3,9 +3,9 @@
 namespace LaravelEnso\Addresses\App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
+use LaravelEnso\Addresses\App\Exceptions\Address as Exception;
 use LaravelEnso\Addresses\App\Http\Requests\ValidateAddressRequest;
 use LaravelEnso\Addresses\App\Models\Address;
-use LaravelEnso\Addresses\App\Exceptions\Address as Exception;
 
 class Store extends Controller
 {
