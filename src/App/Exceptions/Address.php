@@ -12,4 +12,11 @@ class Address extends EnsoException
             'You cannot delete the default address while having secondary addresses'
         ));
     }
+
+    public static function cannotHaveMultipleAddresses()
+    {
+        return new static(__(
+            'You cannot add multiple addresses'
+        ));
+    }
 }
