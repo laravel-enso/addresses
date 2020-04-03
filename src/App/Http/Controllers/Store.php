@@ -13,7 +13,7 @@ class Store extends Controller
     {
         $address->fill($request->validated());
 
-        if ($address->hasMultiAddressSupport() && $this->hasAddress($address)) {
+        if (! $address->hasMultiAddressSupport() && $this->hasAddress($address)) {
             throw Exception::cannotHaveMultipleAddresses();
         }
 
