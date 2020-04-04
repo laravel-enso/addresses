@@ -89,7 +89,19 @@ class Address extends Model
         return config('enso.addresses.loggableMorph');
     }
 
-    public function hasMultiAddressSupport(): bool
+    public function shouldBeSingle(): bool
+    {
+        return ! $this->canBeMultiple()
+            && $this->addressable->address()->exists();
+    }
+
+    public function isNotSingle(): bool
+    {
+        return $this->canBeMultiple()
+            && $this->addressable->address()->exists();
+    }
+
+    private function canBeMultiple(): bool
     {
         return method_exists($this->addressable, 'addresses');
     }

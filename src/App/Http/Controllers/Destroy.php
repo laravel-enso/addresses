@@ -10,9 +10,7 @@ class Destroy extends Controller
 {
     public function __invoke(Address $address)
     {
-        if ($address->isDefault()
-            && $address->hasMultiAddressSupport()
-            && $address->addressable->addresses()->notDefault()->exists()) {
+        if ($address->isDefault() && $address->isNotSingle()) {
             throw Exception::cannotRemoveDefault();
         }
 

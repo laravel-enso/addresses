@@ -9,14 +9,14 @@ class Address extends EnsoException
     public static function cannotRemoveDefault()
     {
         return new static(__(
-            'You cannot delete the default address while having secondary addresses'
+            'You cannot delete the default address while having a secondary one'
         ));
     }
 
-    public static function cannotHaveMultipleAddresses()
+    public static function cannotHaveMultiple()
     {
         return new static(__(
-            'You cannot add multiple addresses'
+            'You cannot add multiple addresses to this entity'
         ));
     }
 }

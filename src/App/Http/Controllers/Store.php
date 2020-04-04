@@ -13,19 +13,10 @@ class Store extends Controller
     {
         $address->fill($request->validated());
 
-        if (! $address->hasMultiAddressSupport() && $this->hasAddress($address)) {
-            throw Exception::cannotHaveMultipleAddresses();
+        if ($address->shouldBeSingle()) {
+            throw Exception::cannotHaveMultiple();
         }
 
-        $address->is_default = $address->addressable->address()->doesntExist();
-
-        $address->save();
-
         return ['message' => __('The address was successfully created')];
-    }
-
-    private function hasAddress(Address $address): bool
-    {
-        return $address->addressable->address()->exists();
     }
 }
