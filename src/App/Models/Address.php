@@ -98,7 +98,7 @@ class Address extends Model
     public function isNotSingle(): bool
     {
         return $this->canBeMultiple()
-            && $this->addressable->address()->exists();
+            && $this->addressable->address()->where('id', '<>', $this->id)->exists();
     }
 
     private function canBeMultiple(): bool

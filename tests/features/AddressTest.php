@@ -26,7 +26,7 @@ class AddressTest extends TestCase
     {
         parent::setUp();
 
-        // $this->withoutExceptionHandling();
+        $this->withoutExceptionHandling();
 
         $this->seed()
             ->actingAs($this->user = User::first());
@@ -60,7 +60,7 @@ class AddressTest extends TestCase
         $this->get(
             route('core.addresses.index', $this->testModel->toArray(), false)
         )->assertStatus(200)
-        ->assertJsonFragment(['street' => $this->testModel->street]);
+            ->assertJsonFragment(['street' => $this->testModel->street]);
     }
 
     /** @test */
@@ -72,7 +72,7 @@ class AddressTest extends TestCase
             route('core.addresses.update', $this->testModel->id, false),
             $this->testModel->toArray()
         )->assertStatus(200)
-        ->assertJsonStructure(['message' => 'message']);
+            ->assertJsonStructure(['message' => 'message']);
 
         $this->assertEquals(
             $this->testModel->street,
@@ -105,7 +105,7 @@ class AddressTest extends TestCase
             route('core.addresses.create', $this->testModel->id, false),
             $this->testModel->toArray()
         )->assertStatus(200)
-        ->assertJsonStructure(['form' => 'form']);
+            ->assertJsonStructure(['form' => 'form']);
     }
 
     /** @test */
@@ -115,7 +115,7 @@ class AddressTest extends TestCase
             route('core.addresses.edit', $this->testModel->id, false),
             $this->testModel->toArray()
         )->assertStatus(200)
-        ->assertJsonStructure(['form' => 'form']);
+            ->assertJsonStructure(['form' => 'form']);
     }
 
     /** @test */
@@ -134,9 +134,7 @@ class AddressTest extends TestCase
     public function can_get_label_attribute()
     {
         $attributes = (new Collection(config('enso.addresses.label.attributes')));
-        $attributes->each(fn ($attribute) => (
-            $this->testModel->{$attribute} = $attribute
-        ));
+        $attributes->each(fn ($attribute) => ($this->testModel->{$attribute} = $attribute));
 
         $this->assertEquals(
             $attributes->implode(config('enso.addresses.label.separator')),
@@ -152,7 +150,7 @@ class AddressTest extends TestCase
         $this->delete(
             route('core.addresses.destroy', $this->testModel->id, false)
         )->assertStatus(555)
-        ->assertJsonStructure(['message']);
+            ->assertJsonStructure(['message']);
 
         $this->assertNotNull($this->testModel->fresh());
 
@@ -208,7 +206,7 @@ class AddressTest extends TestCase
         return factory(Address::class)->create([
             'addressable_id' => $this->testModel->addressable_id,
             'addressable_type' => AddressableTestModel::class,
-            'is_default' => false
+            'is_default' => false,
         ]);
     }
 }

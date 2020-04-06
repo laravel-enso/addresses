@@ -17,6 +17,8 @@ class Store extends Controller
             throw Exception::cannotHaveMultiple();
         }
 
+        $address->save();
+
         return ['message' => __('The address was successfully created')];
     }
 }
