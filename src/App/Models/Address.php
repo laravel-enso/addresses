@@ -62,10 +62,10 @@ class Address extends Model
         return $query->whereIsDefault(false);
     }
 
-    public function scopeFor($query, array $params)
+    public function scopeFor($query, int $addressable_id, string $addressable_type)
     {
-        return $query->whereAddressableId($params['addressable_id'])
-            ->whereAddressableType($params['addressable_type']);
+        return $query->whereAddressableId($addressable_id)
+            ->whereAddressableType($addressable_type);
     }
 
     public function scopeOrdered($query)

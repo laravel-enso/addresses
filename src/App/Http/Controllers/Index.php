@@ -12,7 +12,7 @@ class Index extends Controller
     public function __invoke(ValidateAddressFetch $request)
     {
         return Resource::collection(
-            Address::for($request->validated())
+            Address::for($request->get('addressable_id'), $request->get('addressable_type'))
                 ->ordered()
                 ->get()
         );
