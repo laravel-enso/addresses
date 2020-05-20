@@ -15,7 +15,7 @@ class StateSeeder extends Seeder
 
         if ($us) {
             $this->regions()
-                ->each(fn($region) => Region::create($region + ['country_id' => $us->id]));
+                ->each(fn ($region) => Region::create($region + ['country_id' => $us->id]));
         }
     }
 

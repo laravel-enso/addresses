@@ -8,7 +8,7 @@ return [
     'label' => [
         'separator' => ' - ',
         'attributes' => [
-            'locality', 'street'
+            'locality', 'street',
         ],
     ],
     'defaultCountryId' => 184,
