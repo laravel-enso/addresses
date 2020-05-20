@@ -6,6 +6,8 @@ Route::middleware(['web', 'auth', 'core'])
     ->prefix('api/core/addresses')->as('core.addresses.')
     ->namespace('LaravelEnso\Addresses\App\Http\Controllers')
     ->group(function () {
+        Route::get('localitiesOptions', 'LocalityOptions')->name('localitiesOptions');
+        Route::get('regionsOptions', 'CountyOptions')->name('regionsOptions');
         Route::get('', 'Index')->name('index');
         Route::get('create', 'Create')->name('create');
         Route::post('', 'Store')->name('store');

@@ -14,10 +14,8 @@ class Address extends Model
     use AvoidsDeletionConflicts, UpdatesOnTouch;
 
     protected $fillable = [
-        'addressable_id', 'addressable_type', 'country_id', 'is_default', 'apartment', 'floor',
-        'entry', 'building', 'building_type', 'number', 'street', 'street_type',
-        'sub_administrative_area', 'city', 'administrative_area', 'postal_area',
-        'obs', 'lat', 'long',
+        'addressable_id', 'addressable_type', 'country_id', 'region_id', 'locality_id',
+        'city', 'street', 'additional', 'postal_area', 'lat', 'long', 'obs', 'is_default',
     ];
 
     protected $casts = ['is_default' => 'boolean'];
@@ -27,6 +25,16 @@ class Address extends Model
     public function country()
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public function region()
+    {
+        return $this->belongsTo(Region::class);
+    }
+
+    public function locality()
+    {
+        return $this->belongsTo(Locality::class);
     }
 
     public function addressable()
@@ -42,6 +50,16 @@ class Address extends Model
     public function getLabelAttribute()
     {
         return $this->label();
+    }
+
+    public function getLocalityNameAttribute()
+    {
+        return optional($this->locality)->name;
+    }
+
+    public function getCountyNameAttribute()
+    {
+        return optional($this->region)->name;
     }
 
     public function label()
