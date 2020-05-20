@@ -93,7 +93,7 @@
             "fields": [
                 {
                     "label": "Postal Area",
-                    "name": "postal_area",
+                    "name": "postcode",
                     "value": "",
                     "meta": {
                         "type": "input",
@@ -138,7 +138,7 @@
             "fields": [
                 {
                     "label": "Notes",
-                    "name": "obs",
+                    "name": "notes",
                     "value": null,
                     "meta": {
                         "type": "textarea",

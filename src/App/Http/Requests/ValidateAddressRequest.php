@@ -21,8 +21,8 @@ class ValidateAddressRequest extends ValidateAddressFetch
             'street' => 'required|string|max:255',
             'is_default' => 'nullable|boolean',
             'additional' => 'nullable|string|max:255',
-            'postal_area' => 'nullable',
-            'obs' => 'nullable',
+            'postcode' => 'nullable',
+            'notes' => 'nullable',
             'lat' => ['nullable', new Latitude()],
             'long' => ['nullable', new Longitude()],
         ];

@@ -34,12 +34,7 @@ class AddressForm
     public function edit(Address $address, ?int $countryId)
     {
         if ($countryId) {
-            $newAddress = new Address([
-                'country_id' => $countryId,
-                'is_default' => $address->is_default,
-            ]);
-            $newAddress->id = $address->id;
-            $address = $newAddress;
+            $address = $this->empty($address, $countryId);
         }
 
         return $this->prepare($address->country)
@@ -71,5 +66,16 @@ class AddressForm
             case 240: return 'State';
             default: return '';
         }
+    }
+
+    private function empty(Address $address, int $countryId): Address
+    {
+        $newAddress = new Address([
+            'country_id' => $countryId,
+            'is_default' => $address->is_default,
+        ]);
+        $newAddress->id = $address->id;
+
+        return $newAddress;
     }
 }

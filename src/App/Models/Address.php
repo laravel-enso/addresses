@@ -15,7 +15,7 @@ class Address extends Model
 
     protected $fillable = [
         'addressable_id', 'addressable_type', 'country_id', 'region_id', 'locality_id',
-        'city', 'street', 'additional', 'postal_area', 'lat', 'long', 'obs', 'is_default',
+        'city', 'street', 'additional', 'postcode', 'lat', 'long', 'notes', 'is_default',
     ];
 
     protected $casts = ['is_default' => 'boolean'];

@@ -16,10 +16,10 @@ $factory->define(Address::class, function (Faker $faker) {
         'city' => $faker->city,
         'street' => $faker->streetAddress,
         'additional' => null,
-        'postal_area' => $faker->randomNumber(5),
+        'postcode' => $faker->randomNumber(5),
         'lat' => $faker->latitude,
         'long' => $faker->longitude,
-        'obs' => $faker->realText(),
+        'notes' => $faker->realText(),
         'is_default' => true,
     ];
 });
