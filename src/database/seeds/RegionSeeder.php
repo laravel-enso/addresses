@@ -15,8 +15,8 @@ class RegionSeeder extends Seeder
 
         if ($romania) {
             $this->regions()
-                ->map(fn($region) => $region + ['is_active' => true, 'country_id' => $romania->id])
-                ->each(fn($region) => Region::create($region));
+                ->map(fn ($region) => $region + ['is_active' => true, 'country_id' => $romania->id])
+                ->each(fn ($region) => Region::create($region));
         }
     }
 

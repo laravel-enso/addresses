@@ -4,7 +4,6 @@ namespace LaravelEnso\Addresses\App\Forms\Builders;
 
 use Illuminate\Support\Facades\Config;
 use LaravelEnso\Addresses\App\Models\Address;
-use LaravelEnso\Addresses\App\Models\Region;
 use LaravelEnso\Countries\App\Models\Country;
 use LaravelEnso\Forms\App\Services\Form;
 
@@ -32,7 +31,7 @@ class AddressForm
 
     public function edit(Address $address, ?int $countryId)
     {
-        if($countryId) {
+        if ($countryId) {
             $newAddress = new Address([
                 'country_id' => $countryId,
                 'is_default' => $address->is_default,

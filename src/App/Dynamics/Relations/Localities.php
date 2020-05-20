@@ -9,7 +9,6 @@ use LaravelEnso\DynamicMethods\App\Contracts\Method;
 
 class Localities implements Method
 {
-
     public function name(): string
     {
         return 'localities';

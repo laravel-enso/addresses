@@ -14,18 +14,18 @@ class ValidateAddressRequest extends ValidateAddressFetch
         $hasRegions = $country->regions()->exists();
 
         return parent::rules() + [
-                'country_id' => 'required',
-                'region_id' => ['nullable', 'exists:regions,id', $this->required($hasRegions)],
-                'locality_id' => ['nullable', 'exists:localities,id', $this->required($hasLocalities)],
-                'city' => ['nullable', 'string', 'max:255', $this->required(! $hasLocalities)],
-                'street' => 'required|string|max:255',
-                'is_default' => 'nullable|boolean',
-                'additional' => 'nullable|string|max:255',
-                'postal_area' => 'nullable',
-                'obs' => 'nullable',
-                'lat' => ['nullable', new Latitude()],
-                'long' => ['nullable', new Longitude()],
-            ];
+            'country_id' => 'required',
+            'region_id' => ['nullable', 'exists:regions,id', $this->required($hasRegions)],
+            'locality_id' => ['nullable', 'exists:localities,id', $this->required($hasLocalities)],
+            'city' => ['nullable', 'string', 'max:255', $this->required(! $hasLocalities)],
+            'street' => 'required|string|max:255',
+            'is_default' => 'nullable|boolean',
+            'additional' => 'nullable|string|max:255',
+            'postal_area' => 'nullable',
+            'obs' => 'nullable',
+            'lat' => ['nullable', new Latitude()],
+            'long' => ['nullable', new Longitude()],
+        ];
     }
 
     private function required(bool $hasLocalities)

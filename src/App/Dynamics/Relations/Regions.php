@@ -8,7 +8,6 @@ use LaravelEnso\DynamicMethods\App\Contracts\Method;
 
 class Regions implements Method
 {
-
     public function name(): string
     {
         return 'regions';
