@@ -12,7 +12,7 @@ class CreateStructureForAddresses extends Migration
         ['name' => 'core.addresses.makeDefault', 'description' => 'Make Address as default', 'is_default' => false],
         ['name' => 'core.addresses.edit', 'description' => 'Get Edit Form', 'is_default' => false],
         ['name' => 'core.addresses.create', 'description' => 'Get Create Form', 'is_default' => false],
-        ['name' => 'core.addresses.localitiesOptions', 'description' => 'Get localities for the select', 'is_default' => false],
-        ['name' => 'core.addresses.regionsOptions', 'description' => 'Get regions for the select', 'is_default' => false],
+        ['name' => 'core.addresses.localities', 'description' => 'Get localities for the select', 'is_default' => false],
+        ['name' => 'core.addresses.regions', 'description' => 'Get regions for the select', 'is_default' => false],
     ];
 }

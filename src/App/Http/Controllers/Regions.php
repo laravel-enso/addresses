@@ -3,17 +3,17 @@
 namespace LaravelEnso\Addresses\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use LaravelEnso\Addresses\App\Models\Locality;
+use LaravelEnso\Addresses\App\Models\Region;
 use LaravelEnso\Select\App\Traits\OptionsBuilder;
 
-class LocalityOptions extends Controller
+class Regions extends Controller
 {
     use OptionsBuilder;
 
-    protected $queryAttributes = ['name', 'siruta', 'township'];
+    protected $queryAttributes = ['name', 'abbreviation'];
 
     public function query()
     {
-        return Locality::active();
+        return Region::active();
     }
 }

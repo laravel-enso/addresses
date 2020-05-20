@@ -42,7 +42,7 @@
                         "custom": true,
                         "type": "select",
                         "multiple": false,
-                        "source": "core.addresses.localitiesOptions",
+                        "source": "core.addresses.localities",
                         "options": [],
                         "label": "label",
                         "hidden": false

@@ -24,6 +24,8 @@ class AddressForm
         $country = Country::find($countryId);
 
         return $this->prepare($country)
+            ->value('is_default', true)
+            ->meta('is_default', 'disabled', true)
             ->title('Create')
             ->actions('store')
             ->create();
