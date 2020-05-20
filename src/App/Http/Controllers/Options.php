@@ -15,7 +15,7 @@ class Options extends Controller
     protected $resource = OneLiner::class;
 
     protected $queryAttributes = [
-        'street', 'additional', 'locality.name', 'region.name'
+        'street', 'additional', 'locality.name', 'region.name',
     ];
 
     public function query(Request $request)
