@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Addresses\App\Models\Region;
 use LaravelEnso\Countries\App\Models\Country;
 use LaravelEnso\Helpers\App\Classes\JsonReader;
