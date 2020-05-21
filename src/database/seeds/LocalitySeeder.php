@@ -14,8 +14,6 @@ class LocalitySeeder extends Seeder
 
     public function run()
     {
-        Auth::onceUsingId(1);
-
         $this->counties()->each(fn ($county) => DB::table('localities')
             ->insert($this->localities($county)));
     }

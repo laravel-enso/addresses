@@ -12,7 +12,6 @@ class StateSeeder extends Seeder
 
     public function run()
     {
-        Auth::onceUsingId(1);
         $us = Country::whereName('United States')->first();
 
         if ($us) {

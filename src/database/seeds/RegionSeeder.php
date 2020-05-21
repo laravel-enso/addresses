@@ -12,7 +12,6 @@ class RegionSeeder extends Seeder
 
     public function run()
     {
-        Auth::onceUsingId(1);
         $romania = Country::whereName('Romania')->first();
 
         if ($romania) {
