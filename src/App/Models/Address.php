@@ -47,11 +47,6 @@ class Address extends Model
         return $this->is_default;
     }
 
-    public function getLabelAttribute()
-    {
-        return $this->label();
-    }
-
     public function getLocalityNameAttribute()
     {
         return optional($this->locality)->name;
