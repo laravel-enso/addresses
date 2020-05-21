@@ -20,6 +20,8 @@ class CreateRegionsTable extends Migration
 
             $table->boolean('is_active');
 
+            $table->unique(['country_id', 'abbreviation']);
+
             $table->timestamps();
         });
     }
