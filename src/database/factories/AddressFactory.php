@@ -16,7 +16,7 @@ $factory->define(Address::class, function (Faker $faker) {
         'city' => $faker->city,
         'street' => $faker->streetAddress,
         'additional' => null,
-        'postcode' => $faker->randomNumber(5),
+        'postcode' => $faker->postcode,
         'lat' => $faker->latitude,
         'long' => $faker->longitude,
         'notes' => $faker->realText(),
