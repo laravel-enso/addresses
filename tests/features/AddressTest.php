@@ -102,11 +102,10 @@ class AddressTest extends TestCase
     /** @test */
     public function can_get_create_address_form()
     {
-        $r = $this->get(
+        $this->get(
             route('core.addresses.create', $this->testModel->id, false),
             $this->testModel->toArray()
-        );
-            $r->assertStatus(200)
+        )->assertStatus(200)
             ->assertJsonStructure(['form' => 'form']);
     }
 
@@ -130,18 +129,6 @@ class AddressTest extends TestCase
         )->assertStatus(200);
 
         $this->assertNull($this->testModel->fresh());
-    }
-
-    /** @test */
-    public function can_get_label_attribute()
-    {
-        $attributes = (new Collection(Config::get('enso.addresses.label.attributes')))
-            ->map(fn ($attribute) => $this->testModel->{$attribute});
-
-        $this->assertEquals(
-            $attributes->implode(Config::get('enso.addresses.label.separator')),
-            $this->testModel->label()
-        );
     }
 
     /** @test */

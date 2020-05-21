@@ -59,10 +59,11 @@ class Address extends Model
 
     public function label()
     {
-        return (new Collection(config('enso.addresses.label.attributes')))
-            ->map(fn ($attribute) => $this->$attribute)
-            ->filter()
-            ->implode(config('enso.addresses.label.separator'));
+        $region = $this->relationLoaded('region') ? $this->region : '';
+        $locality = $this->relationLoaded('locality') ? $this->locality : $this->city;
+
+        return (new Collection([$region, $locality, $this->street]))
+            ->filter()->implode(', ');
     }
 
     public function scopeDefault($query)

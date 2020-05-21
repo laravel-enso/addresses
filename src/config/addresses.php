@@ -5,11 +5,5 @@ return [
     'loggableMorph' => [
         'addressable' => [],
     ],
-    'label' => [
-        'separator' => ' - ',
-        'attributes' => [
-            'locality', 'street',
-        ],
-    ],
     'defaultCountryId' => 184,
 ];

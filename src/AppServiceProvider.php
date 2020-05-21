@@ -25,18 +25,14 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/database/factories' => database_path('factories'),
-        ], 'addresses-factory');
+        ], ['addresses-factory', 'enso-factories']);
 
         $this->publishes([
-            __DIR__.'/database/factories' => database_path('factories'),
-        ], 'enso-factories');
-
-        $this->publishes([
-            __DIR__.'/config' => config_path('enso'),
-        ], 'addresses-config');
+            __DIR__.'/database/seeds' => database_path('seeds'),
+        ], ['addresses-seeds', 'enso-seeds']);
 
         $this->publishes([
             __DIR__.'/config' => config_path('enso'),
-        ], 'enso-config');
+        ], ['addresses-config', 'enso-config']);
     }
 }
