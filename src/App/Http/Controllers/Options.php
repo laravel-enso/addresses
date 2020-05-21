@@ -23,7 +23,7 @@ class Options extends Controller
         $params = json_decode($request->get('customParams'));
 
         return Address::for($params->addressable_id, $params->addressable_type)
-            ->with(['country', 'region', 'locality'])
+            ->with(['region', 'locality'])
             ->ordered();
     }
 }

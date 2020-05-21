@@ -11,15 +11,14 @@ class OneLiner extends JsonResource
         return [
             'id' => $this->id,
             'label' => $this->whenRelationsLoaded()
-                ? $this->label
+                ? $this->label()
                 : '',
         ];
     }
 
     private function whenRelationsLoaded()
     {
-        return $this->relationLoaded('country')
-            && $this->relationLoaded('region')
+        return $this->relationLoaded('region')
             && $this->relationLoaded('locality');
     }
 }
