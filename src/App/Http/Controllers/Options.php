@@ -2,7 +2,6 @@
 
 namespace LaravelEnso\Addresses\App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Addresses\App\Http\Resources\OneLiner;
 use LaravelEnso\Addresses\App\Models\Address;
@@ -18,12 +17,8 @@ class Options extends Controller
         'street', 'additional', 'locality.name', 'region.name',
     ];
 
-    public function query(Request $request)
+    public function query()
     {
-        $params = json_decode($request->get('customParams'));
-
-        return Address::with('region', 'locality')
-            ->for($params->addressable_id, $params->addressable_type)
-            ->ordered();
+        return Address::with('region', 'locality')->ordered();
     }
 }
