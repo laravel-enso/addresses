@@ -32,12 +32,15 @@ class AddressTest extends TestCase
         $this->createTestTable();
 
         $this->faker = Factory::create();
+        $country = Country::first();
 
         $this->testModel = factory(Address::class)->create([
             'addressable_id' => AddressableTestModel::create(['name' => 'addressable'])->id,
-            'country_id' => Country::first()->id,
+            'country_id' => $country->id,
             'addressable_type' => AddressableTestModel::class,
         ]);
+
+        Config::set('enso.addresses.defaultCountryId', $country->id);
     }
 
     /** @test */
@@ -99,10 +102,11 @@ class AddressTest extends TestCase
     /** @test */
     public function can_get_create_address_form()
     {
-        $this->get(
+        $r = $this->get(
             route('core.addresses.create', $this->testModel->id, false),
             $this->testModel->toArray()
-        )->assertStatus(200)
+        );
+            $r->assertStatus(200)
             ->assertJsonStructure(['form' => 'form']);
     }
 
@@ -131,8 +135,8 @@ class AddressTest extends TestCase
     /** @test */
     public function can_get_label_attribute()
     {
-        $attributes = (new Collection(Config::get('enso.addresses.label.attributes')));
-        $attributes->each(fn ($attribute) => ($this->testModel->{$attribute} = $attribute));
+        $attributes = (new Collection(Config::get('enso.addresses.label.attributes')))
+            ->map(fn ($attribute) => $this->testModel->{$attribute});
 
         $this->assertEquals(
             $attributes->implode(Config::get('enso.addresses.label.separator')),

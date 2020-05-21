@@ -10,20 +10,14 @@ class Address extends JsonResource
     {
         return [
             'id' => $this->id,
-            'country' => optional($this->country)->name,
-            'administrativeArea' => $this->administrative_area,
+            'country' => $this->country->name,
+            'region' => optional($this->region)->name,
+            'locality' => optional($this->locality)->name,
             'city' => $this->city,
-            'subAdministrativeArea' => $this->sub_administrative_area,
-            'streetType' => $this->street_type,
             'street' => $this->street,
-            'number' => $this->number,
-            'building' => $this->building,
-            'entry' => $this->entry,
-            'floor' => $this->floor,
-            'apartment' => $this->apartment,
-            'buildingType' => $this->building_type,
-            'postalArea' => $this->postal_area,
-            'obs' => $this->obs,
+            'additional' => $this->resource->additional,
+            'postcode' => $this->postcode,
+            'notes' => $this->notes,
             'isDefault' => $this->is_default,
         ];
     }
