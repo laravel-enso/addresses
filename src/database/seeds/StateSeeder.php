@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Addresses\App\Models\Region;
 use LaravelEnso\Countries\App\Models\Country;
 use LaravelEnso\Helpers\App\Classes\JsonReader;
@@ -11,6 +12,7 @@ class StateSeeder extends Seeder
 
     public function run()
     {
+        Auth::onceUsingId(1);
         $us = Country::whereName('United States')->first();
 
         if ($us) {
