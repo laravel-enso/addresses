@@ -38,6 +38,7 @@ trait Addressable
     public function defaultAddress()
     {
         return $this->addresses()
+            ->with(['region', 'locality'])
             ->default()
             ->first();
     }
