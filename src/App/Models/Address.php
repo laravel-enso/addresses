@@ -62,6 +62,7 @@ class Address extends Model
         $region = $this->relationLoaded('region')
             ? optional($this->region)->name
             : '';
+
         $locality = $this->relationLoaded('locality')
             ? optional($this->locality)->name
             : $this->city;
