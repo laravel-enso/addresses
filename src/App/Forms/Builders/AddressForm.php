@@ -45,14 +45,13 @@ class AddressForm
     {
         $hasLocalities = $country->localities()->exists();
         $regions = $country->regions()->active()->get(['name', 'id']);
-
         $regionLabel = $this->regionLabel($country);
 
         return $this->form->value('country_id', $country->id)
             ->options('region_id', $regions)
             ->label('region_id', $regionLabel)
             ->columns('region_id', $regionLabel ? 2 : 1)
-            ->meta('region_id', 'hidden', ! $country->regions()->exists())
+            ->meta('region_id', 'hidden', $regions->isEmpty())
             ->meta('locality_id', 'hidden', ! $hasLocalities)
             ->meta('city', 'hidden', $hasLocalities);
     }
