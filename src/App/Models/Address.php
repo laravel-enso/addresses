@@ -8,10 +8,11 @@ use Illuminate\Support\Facades\DB;
 use LaravelEnso\Countries\App\Models\Country;
 use LaravelEnso\Helpers\App\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Helpers\App\Traits\UpdatesOnTouch;
+use LaravelEnso\Rememberable\App\Traits\Rememberable;
 
 class Address extends Model
 {
-    use AvoidsDeletionConflicts, UpdatesOnTouch;
+    use AvoidsDeletionConflicts, UpdatesOnTouch, Rememberable;
 
     protected $fillable = [
         'addressable_id', 'addressable_type', 'country_id', 'region_id', 'locality_id',
