@@ -60,15 +60,9 @@ class Address extends Model
 
     public function label()
     {
-        $region = $this->relationLoaded('region')
-            ? optional($this->region)->name
-            : '';
+        $locality = optional($this->locality)->name ?? $this->city;
 
-        $locality = $this->relationLoaded('locality')
-            ? optional($this->locality)->name
-            : $this->city;
-
-        return (new Collection([$region, $locality, $this->street]))
+        return (new Collection([optional($this->region)->name, $locality, $this->street]))
             ->filter()->implode(', ');
     }
 
