@@ -14,7 +14,7 @@ class Coordinates
         $apiUrl = Config::get('enso.addresses.googleMaps.url');
         $apiKey = Config::get('enso.addresses.googleMaps.key');
 
-        if (! $apiUrl || !$apiKey) {
+        if (! $apiUrl || ! $apiKey) {
             throw new EnsoException(__('Localisation credentials not set'));
         }
 
