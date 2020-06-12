@@ -2,9 +2,9 @@
 
 namespace LaravelEnso\Addresses\App\Http\Controllers;
 
-use LaravelEnso\Addresses\App\Services\Coordinates;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Addresses\App\Models\Address;
+use LaravelEnso\Addresses\App\Services\Coordinates;
 
 class Localize extends Controller
 {
@@ -15,7 +15,7 @@ class Localize extends Controller
         if ($coordinates['lat'] && $coordinates['lng']) {
             $address->update([
                 'lat' => $coordinates['lat'],
-                'long' => $coordinates['lng']
+                'long' => $coordinates['lng'],
             ]);
         }
 

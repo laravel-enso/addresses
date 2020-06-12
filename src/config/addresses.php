@@ -9,5 +9,5 @@ return [
     'googleMaps' => [
         'key' => env('GOOGLE_MAPS_KEY'),
         'url' => 'https://maps.googleapis.com/maps/api/geocode/json',
-    ]
+    ],
 ];
