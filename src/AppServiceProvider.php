@@ -14,9 +14,11 @@ class AppServiceProvider extends ServiceProvider
 
     private function load()
     {
-        $this->mergeConfigFrom(__DIR__.'/config/addresses.php', 'enso.addresses');
-        $this->loadRoutesFrom(__DIR__.'/routes/api.php');
-        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->mergeConfigFrom(__DIR__.'/../config/addresses.php', 'enso.addresses');
+
+        $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
+
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         return $this;
     }
@@ -24,15 +26,15 @@ class AppServiceProvider extends ServiceProvider
     private function publish()
     {
         $this->publishes([
-            __DIR__.'/database/factories' => database_path('factories'),
+            __DIR__.'/../database/factories' => database_path('factories'),
         ], ['addresses-factory', 'enso-factories']);
 
         $this->publishes([
-            __DIR__.'/database/seeds' => database_path('seeds'),
+            __DIR__.'/../database/seeds' => database_path('seeds'),
         ], ['addresses-seeds', 'enso-seeds']);
 
         $this->publishes([
-            __DIR__.'/config' => config_path('enso'),
+            __DIR__.'/../config' => config_path('enso'),
         ], ['addresses-config', 'enso-config']);
     }
 }

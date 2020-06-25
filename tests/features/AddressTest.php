@@ -4,13 +4,12 @@ use Faker\Factory;
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
-use LaravelEnso\Addresses\App\Models\Address;
-use LaravelEnso\Addresses\App\Traits\Addressable;
-use LaravelEnso\Core\App\Models\User;
-use LaravelEnso\Countries\App\Models\Country;
+use LaravelEnso\Addresses\Models\Address;
+use LaravelEnso\Addresses\Traits\Addressable;
+use LaravelEnso\Core\Models\User;
+use LaravelEnso\Countries\Models\Country;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 use Tests\TestCase;
 

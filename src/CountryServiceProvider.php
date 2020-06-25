@@ -3,10 +3,10 @@
 namespace LaravelEnso\Addresses;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelEnso\Addresses\App\Dynamics\Relations\Localities;
-use LaravelEnso\Addresses\App\Dynamics\Relations\Regions;
-use LaravelEnso\Countries\App\Models\Country;
-use LaravelEnso\DynamicMethods\App\Services\Methods;
+use LaravelEnso\Addresses\DynamicRelations\Localities;
+use LaravelEnso\Addresses\DynamicRelations\Regions;
+use LaravelEnso\Countries\Models\Country;
+use LaravelEnso\DynamicMethods\Services\Methods;
 
 class CountryServiceProvider extends ServiceProvider
 {

@@ -8,18 +8,17 @@
     ],
     "type": "library",
     "require": {
-        "laravel-enso/core": "4.8.*",
-        "laravel-enso/countries": "1.1.*",
-        "laravel-enso/enums": "1.2.*",
-        "laravel-enso/forms": "3.4.*",
-        "laravel-enso/helpers": "1.15.*",
-        "laravel-enso/migrator": "1.1.*",
-        "laravel-enso/rememberable": "2.2.*",
-        "laravel-enso/select": "3.3.*"
+        "laravel-enso/core": "^5.0",
+        "laravel-enso/countries": "^2.0",
+        "laravel-enso/enums": "^2.0",
+        "laravel-enso/forms": "^4.0",
+        "laravel-enso/helpers": "^2.0",
+        "laravel-enso/migrator": "^2.0",
+        "laravel-enso/rememberable": "^3.0",
+        "laravel-enso/select": "^4.0"
     },
     "license": "MIT",
-    "authors": [
-        {
+    "authors": [{
             "name": "Mihai",
             "email": "mihai.ocneanu@gmail.com",
             "role": "Developer"
@@ -41,8 +40,7 @@
             "providers": [
                 "LaravelEnso\\Addresses\\AppServiceProvider",
                 "LaravelEnso\\Addresses\\CountryServiceProvider"
-            ],
-            "aliases": {}
+            ]
         }
     }
 }
