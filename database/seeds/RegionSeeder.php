@@ -7,7 +7,7 @@ use LaravelEnso\Helpers\Services\JsonReader;
 
 class RegionSeeder extends Seeder
 {
-    private const Regions = __DIR__.'/../../vendor/laravel-enso/addresses/src/database/regions.json';
+    private const Regions = __DIR__.'/../../vendor/laravel-enso/addresses/database/regions.json';
 
     public function run()
     {

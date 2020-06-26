@@ -7,6 +7,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use LaravelEnso\Addresses\Models\Address;
+use LaravelEnso\Addresses\Models\Locality;
+use LaravelEnso\Addresses\Models\Region;
 use LaravelEnso\Addresses\Traits\Addressable;
 use LaravelEnso\Core\Models\User;
 use LaravelEnso\Countries\Models\Country;
@@ -35,6 +37,8 @@ class AddressTest extends TestCase
 
         $this->testModel = factory(Address::class)->create([
             'addressable_id' => AddressableTestModel::create(['name' => 'addressable'])->id,
+            'region_id' => optional(Region::first())->id,
+            'locality_id' => optional(Locality::first())->id,
             'country_id' => $country->id,
             'addressable_type' => AddressableTestModel::class,
         ]);

@@ -7,7 +7,7 @@ use LaravelEnso\Helpers\Services\JsonReader;
 
 class StateSeeder extends Seeder
 {
-    private const States = __DIR__.'/../../vendor/laravel-enso/addresses/src/database/states.json';
+    private const States = __DIR__.'/../../vendor/laravel-enso/addresses/database/states.json';
 
     public function run()
     {
