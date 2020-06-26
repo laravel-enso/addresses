@@ -137,7 +137,7 @@ class AddressTest extends TestCase
 
         $this->delete(
             route('core.addresses.destroy', $this->testModel->id, false)
-        )->assertStatus(555)
+        )->assertStatus(488)
             ->assertJsonStructure(['message']);
 
         $this->assertNotNull($this->testModel->fresh());
