@@ -123,7 +123,7 @@ class Address extends Model
             && $this->addressable->address()->where('id', '<>', $this->id)->exists();
     }
 
-    public function isLocalized()
+    public function isLocalized(): bool
     {
         return $this->lat !== null && $this->long !== null;
     }
