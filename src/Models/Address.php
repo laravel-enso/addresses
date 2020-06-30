@@ -120,6 +120,11 @@ class Address extends Model
             && $this->addressable->address()->where('id', '<>', $this->id)->exists();
     }
 
+    public function isLocalized(): bool
+    {
+        return $this->lat !== null && $this->long !== null;
+    }
+
     private function canBeMultiple(): bool
     {
         return method_exists($this->addressable, 'addresses');
