@@ -30,12 +30,12 @@ trait Addressable
 
     public function address()
     {
-        return $this->morphOne(Address::class, 'addressable');
+        return $this->morphOne(Address::class, 'addressable')
+            ->whereIsDefault(true);
     }
 
     public function addresses()
     {
-        return $this->morphMany(Address::class, 'addressable')
-            ->whereIsDefault(true);
+        return $this->morphMany(Address::class, 'addressable');
     }
 }
