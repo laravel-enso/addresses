@@ -184,6 +184,8 @@ class AddressTest extends TestCase
     {
         return factory(Address::class)->make([
             'addressable_id' => $this->testModel->addressable_id,
+            'region_id' => optional(Region::first())->id,
+            'locality_id' => optional(Locality::first())->id,
             'addressable_type' => AddressableTestModel::class,
         ])->toArray();
     }

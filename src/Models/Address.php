@@ -117,7 +117,7 @@ class Address extends Model
     public function isNotSingle(): bool
     {
         return $this->canBeMultiple()
-            && $this->addressable->address()->where('id', '<>', $this->id)->exists();
+            && $this->addressable->addresses()->where('id', '<>', $this->id)->exists();
     }
 
     public function isLocalized(): bool
