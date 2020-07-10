@@ -1,5 +1,6 @@
 # Addresses
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f03e2b973e274d71b50843b8efb3503d)](https://app.codacy.com/gh/laravel-enso/addresses?utm_source=github.com&utm_medium=referral&utm_content=laravel-enso/addresses&utm_campaign=Badge_Grade_Settings)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9d92f0155608491583aa6ae4a7c6ec72)](https://www.codacy.com/gh/laravel-enso/addresses?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=laravel-enso/addresses&amp;utm_campaign=Badge_Grade)
 [![StyleCI](https://github.styleci.io/repos/113445673/shield?branch=master)](https://github.styleci.io/repos/113445673)
 [![License](https://poser.pugx.org/laravel-enso/addresses/license)](https://packagist.org/packages/laravel-enso/addresses)
