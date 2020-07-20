@@ -21,6 +21,9 @@ class Store extends Controller
 
         $address->save();
 
-        return ['message' => __('The address was successfully created')];
+        return [
+            'message' => __('The address was successfully created'),
+            'address_id' => $address->id
+        ];
     }
 }
