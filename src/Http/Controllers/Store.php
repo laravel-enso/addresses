@@ -23,7 +23,7 @@ class Store extends Controller
 
         return [
             'message' => __('The address was successfully created'),
-            'address_id' => $address->id
+            'address_id' => $address->id,
         ];
     }
 }
