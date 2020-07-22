@@ -19,6 +19,9 @@ class Address extends JsonResource
             'postcode' => $this->postcode,
             'notes' => $this->notes,
             'isDefault' => $this->is_default,
+            'label' => $this->relationLoaded('region') && $this->relationLoaded('locality')
+                ? $this->label()
+                : null,
         ];
     }
 }
