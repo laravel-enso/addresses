@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Addresses\Models\Region;
 use LaravelEnso\Addresses\Models\Postcode;
+use LaravelEnso\Addresses\Models\Region;
 use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Helpers\Services\JsonReader;
 
