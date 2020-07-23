@@ -12,6 +12,7 @@ Route::middleware(['api', 'auth', 'core'])
         Route::get('create', 'Create')->name('create');
         Route::post('', 'Store')->name('store');
         Route::get('options', 'Options')->name('options');
+        Route::get('postcode', 'Postcode')->name('postcode');
         Route::get('{address}/edit', 'Edit')->name('edit');
         Route::get('{address}/localize', 'Localize')->name('localize');
         Route::patch('{address}', 'Update')->name('update');
