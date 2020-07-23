@@ -19,8 +19,12 @@ class CreatePostcodesTable extends Migration
             $table->foreign('region_id')->references('id')->on('regions')
                 ->onUpdate('restrict')->onDelete('restrict');
 
-            $table->string('code', 5);
-            $table->string('city');
+            $table->unsignedInteger('locality_id')->index()->nullable();
+            $table->foreign('locality_id')->references('id')->on('localities')
+                ->onUpdate('restrict')->onDelete('restrict');
+
+            $table->string('code');
+            $table->string('city')->nullable();
 
             $table->float('lat', 10, 6)->nullable();
             $table->float('long', 10, 6)->nullable();
