@@ -15,7 +15,7 @@ class Postcode extends Controller
             ->first();
 
         return [
-            'postcode' => new Resource($postcode)
+            'postcode' => new Resource($postcode),
         ];
     }
 }
