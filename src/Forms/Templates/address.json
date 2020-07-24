@@ -98,7 +98,8 @@
                     "meta": {
                         "type": "input",
                         "content": "text",
-                        "disabled": false
+                        "disabled": false,
+                        "custom": true
                     }
                 },
                 {
