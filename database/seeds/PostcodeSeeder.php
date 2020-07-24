@@ -64,7 +64,7 @@ class PostcodeSeeder extends Seeder
     {
         return (new Collection([
             base_path('vendor/laravel-enso/addresses/database/postcodes'),
-            ...$path
+            ...$path,
         ]))->implode(DIRECTORY_SEPARATOR);
     }
 }

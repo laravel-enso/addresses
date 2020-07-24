@@ -48,7 +48,7 @@ class RegionSeeder extends Seeder
     {
         return (new Collection([
             base_path('vendor/laravel-enso/addresses/database/regions'),
-            ...$path
+            ...$path,
         ]))->implode(DIRECTORY_SEPARATOR);
     }
 }
