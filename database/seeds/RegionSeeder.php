@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -24,6 +25,8 @@ class RegionSeeder extends Seeder
             ->map(fn ($region) => (new Collection($region))
                 ->mapWithKeys(fn ($value, $key) => [Str::snake($key) => $value])
                 ->put('country_id', $country->id)
+                ->put('created_at', Carbon::now())
+                ->put('updated_at', Carbon::now())
                 ->toArray())
             ->chunk(250)
             ->each(fn ($regions) => Region::insert($regions->toArray()));
