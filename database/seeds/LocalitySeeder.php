@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -33,6 +34,8 @@ class LocalitySeeder extends Seeder
         return (new JsonReader($fileName))->collection()
             ->map(fn ($locality) => (new Collection($locality))
                 ->mapWithKeys(fn ($value, $key) => [Str::snake($key) => $value])
+                ->put('created_at', Carbon::now())
+                ->put('updated_at', Carbon::now())
                 ->toArray())
             ->toArray();
     }
