@@ -47,7 +47,7 @@ class LocalitySeeder extends Seeder
     {
         return (new Collection([
             base_path('vendor/laravel-enso/addresses/database/cities'),
-            ...$path
+            ...$path,
         ]))->implode(DIRECTORY_SEPARATOR);
     }
 }
