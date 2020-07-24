@@ -11,8 +11,6 @@ use LaravelEnso\Helpers\Services\JsonReader;
 
 class RegionSeeder extends Seeder
 {
-    private const Regions = __DIR__.'/../../vendor/laravel-enso/addresses/database/regions';
-
     public function run()
     {
         DB::transaction(fn () => $this->countries()
@@ -34,17 +32,23 @@ class RegionSeeder extends Seeder
 
     private function regions(Country $country): Collection
     {
-        $fileName = self::Regions.DIRECTORY_SEPARATOR."{$country->iso_3166_3}.json";
-
-        return (new JsonReader($fileName))
+        return (new JsonReader($this->path(["{$country->iso_3166_3}.json"])))
             ->collection()
             ->unique(fn ($region) => $region['abbreviation']);
     }
 
     private function countries(): Collection
     {
-        return (new Collection(File::files(self::Regions)))
+        return (new Collection(File::files($this->path())))
             ->map(fn (SplFileInfo $file) => Country::where('iso_3166_3', $file->getBasename('.json'))->first())
             ->filter();
+    }
+
+    private function path(array $path = []): string
+    {
+        return (new Collection([
+            base_path('vendor/laravel-enso/addresses/database/regions'),
+            ...$path,
+        ]))->implode(DIRECTORY_SEPARATOR);
     }
 }

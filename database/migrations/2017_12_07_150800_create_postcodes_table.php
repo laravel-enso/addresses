@@ -25,6 +25,7 @@ class CreatePostcodesTable extends Migration
 
             $table->string('code');
             $table->string('city')->nullable();
+            $table->string('street')->nullable();
 
             $table->float('lat', 10, 6)->nullable();
             $table->float('long', 10, 6)->nullable();

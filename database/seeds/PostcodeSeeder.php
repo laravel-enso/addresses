@@ -13,8 +13,6 @@ use Symfony\Component\Finder\SplFileInfo;
 
 class PostcodeSeeder extends Seeder
 {
-    private const Localities = __DIR__.'/../../vendor/laravel-enso/addresses/database/postcodes';
-
     public function run()
     {
         DB::transaction(fn () => $this->countries()
@@ -23,7 +21,7 @@ class PostcodeSeeder extends Seeder
 
     private function countries(): Collection
     {
-        return (new Collection(File::files(self::Localities)))
+        return (new Collection(File::files($this->path())))
             ->map(fn (SplFileInfo $file) => Country::where('iso_3166_3', $file->getBasename('.json'))->first())
             ->filter();
     }
@@ -39,28 +37,32 @@ class PostcodeSeeder extends Seeder
 
         $this->postcodes($country)
             ->filter(fn ($postcode) => isset($regions[$postcode['region']]))
-            ->map(fn ($postcode) => [
-                'city' => $postcode['city'] ?? null,
-                'long' => $postcode['long'] ?? null,
-                'lat' => $postcode['lat'] ?? null,
-                'code' => $postcode['code'],
-                'locality_id' => isset($postcode['locality'])
+            ->map(fn ($postcode) => (new Collection($postcode))
+                ->put('locality_id', isset($postcode['locality'])
                     ? $localities->get("{$regions[$postcode['region']]}_{$postcode['locality']}")
-                    : null,
-                'country_id' => $country->id,
-                'region_id' => $regions[$postcode['region']],
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ])->chunk(250)
+                    : null)
+                ->put('country_id', $country->id)
+                ->put('region_id', $regions[$postcode['region']])
+                ->put('created_at', Carbon::now())
+                ->put('updated_at', Carbon::now())
+                ->forget(['locality', 'region'])
+                ->toArray())
+            ->chunk(250)
             ->each(fn ($postcodes) => Postcode::insert($postcodes->toArray()));
     }
 
     private function postcodes(Country $country): Collection
     {
-        $fileName = self::Localities.DIRECTORY_SEPARATOR."{$country->iso_3166_3}.json";
-
-        return (new JsonReader($fileName))
+        return (new JsonReader($this->path(["{$country->iso_3166_3}.json"])))
             ->collection()
             ->unique(fn ($postcode) => $postcode['code']);
+    }
+
+    private function path(array $path = []): string
+    {
+        return (new Collection([
+            base_path('vendor/laravel-enso/addresses/database/postcodes'),
+            ...$path,
+        ]))->implode(DIRECTORY_SEPARATOR);
     }
 }

@@ -12,8 +12,6 @@ use LaravelEnso\Helpers\Services\JsonReader;
 
 class LocalitySeeder extends Seeder
 {
-    const Localities = __DIR__.'/../../vendor/laravel-enso/addresses/database/cities';
-
     public function run()
     {
         $this->countries()->each(fn (Country $country) => $this->counties($country)
@@ -23,15 +21,13 @@ class LocalitySeeder extends Seeder
 
     private function counties(Country $country): Collection
     {
-        return (new Collection(File::files(self::Localities.DIRECTORY_SEPARATOR.$country->iso_3166_3)))
+        return (new Collection(File::files($this->path([$country->iso_3166_3]))))
             ->when(App::runningUnitTests(), fn ($counties) => $counties->slice(0, 1));
     }
 
     private function localities(Country $country, $county): array
     {
-        $fileName = self::Localities.DIRECTORY_SEPARATOR.$country->iso_3166_3.DIRECTORY_SEPARATOR.$county->getFileName();
-
-        return (new JsonReader($fileName))->collection()
+        return (new JsonReader($this->path([$country->iso_3166_3, $county->getFileName()])))->collection()
             ->map(fn ($locality) => (new Collection($locality))
                 ->mapWithKeys(fn ($value, $key) => [Str::snake($key) => $value])
                 ->put('created_at', Carbon::now())
@@ -42,8 +38,16 @@ class LocalitySeeder extends Seeder
 
     private function countries(): Collection
     {
-        return (new Collection(File::directories(self::Localities)))
+        return (new Collection(File::directories($this->path())))
             ->map(fn ($dir) => Country::where('iso_3166_3', basename($dir))->first())
             ->filter();
+    }
+
+    private function path(array $path = []): string
+    {
+        return (new Collection([
+            base_path('vendor/laravel-enso/addresses/database/cities'),
+            ...$path,
+        ]))->implode(DIRECTORY_SEPARATOR);
     }
 }
