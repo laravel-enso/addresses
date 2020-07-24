@@ -38,6 +38,7 @@ class PostcodeSeeder extends Seeder
             ->mapWithKeys(fn ($locality) => ["{$locality->region_id}_{$locality->name}" => $locality->id]);
 
         $this->postcodes($country)
+            ->filter(fn ($postcode) => isset($regions[$postcode['region']]))
             ->map(fn ($postcode) => [
                 'city' => $postcode['city'] ?? null,
                 'long' => $postcode['long'] ?? null,

@@ -5,30 +5,43 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Helpers\Services\JsonReader;
 
 class LocalitySeeder extends Seeder
 {
-    const Localities = __DIR__.'/../../vendor/laravel-enso/addresses/database/localities';
+    const Localities = __DIR__.'/../../vendor/laravel-enso/addresses/database/cities';
 
     public function run()
     {
-        $this->counties()->each(fn ($county) => DB::table('localities')
-            ->insert($this->localities($county)));
+        $this->countries()->each(fn (Country $country) => $this->counties($country)
+            ->each(fn ($county) => DB::table('localities')
+                ->insert($this->localities($country, $county))))
+        ;
     }
 
-    private function counties(): Collection
+    private function counties(Country $country): Collection
     {
-        return (new Collection(File::files(self::Localities)))
+        return (new Collection(File::files(self::Localities.DIRECTORY_SEPARATOR.$country->iso_3166_3)))
             ->when(App::runningUnitTests(), fn ($counties) => $counties->slice(0, 1));
     }
 
-    private function localities($county): array
+    private function localities(Country $country, $county): array
     {
-        $fileName = self::Localities.DIRECTORY_SEPARATOR.$county->getFileName();
+        $fileName = self::Localities.DIRECTORY_SEPARATOR.$country->iso_3166_3.DIRECTORY_SEPARATOR.$county->getFileName();
 
         return (new JsonReader($fileName))->collection()
-            ->map(fn ($locality) => ['is_active' => true] + $locality)
+            ->map(fn ($locality) => (new Collection($locality))
+                ->mapWithKeys(fn ($value, $key) => [Str::snake($key) => $value])
+                ->toArray())
             ->toArray();
+    }
+
+    private function countries(): Collection
+    {
+        return (new Collection(File::directories(self::Localities)))
+            ->map(fn ($dir) => Country::where('iso_3166_3', basename($dir))->first())
+            ->filter();
     }
 }
