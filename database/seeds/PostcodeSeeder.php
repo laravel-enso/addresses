@@ -13,8 +13,6 @@ use Symfony\Component\Finder\SplFileInfo;
 
 class PostcodeSeeder extends Seeder
 {
-    private const Localities = __DIR__.'/../../vendor/laravel-enso/addresses/database/postcodes';
-
     public function run()
     {
         DB::transaction(fn () => $this->countries()
@@ -23,7 +21,7 @@ class PostcodeSeeder extends Seeder
 
     private function countries(): Collection
     {
-        return (new Collection(File::files(self::Localities)))
+        return (new Collection(File::files($this->path())))
             ->map(fn (SplFileInfo $file) => Country::where('iso_3166_3', $file->getBasename('.json'))->first())
             ->filter();
     }
@@ -57,10 +55,16 @@ class PostcodeSeeder extends Seeder
 
     private function postcodes(Country $country): Collection
     {
-        $fileName = self::Localities.DIRECTORY_SEPARATOR."{$country->iso_3166_3}.json";
-
-        return (new JsonReader($fileName))
+        return (new JsonReader($this->path(["{$country->iso_3166_3}.json"])))
             ->collection()
             ->unique(fn ($postcode) => $postcode['code']);
+    }
+
+    private function path(array $path = []): string
+    {
+        return (new Collection([
+            base_path('vendor/laravel-enso/addresses/database/postcodes'),
+            ...$path
+        ]))->implode(DIRECTORY_SEPARATOR);
     }
 }
