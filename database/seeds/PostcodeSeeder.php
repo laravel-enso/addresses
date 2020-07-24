@@ -37,19 +37,17 @@ class PostcodeSeeder extends Seeder
 
         $this->postcodes($country)
             ->filter(fn ($postcode) => isset($regions[$postcode['region']]))
-            ->map(fn ($postcode) => [
-                'city' => $postcode['city'] ?? null,
-                'long' => $postcode['long'] ?? null,
-                'lat' => $postcode['lat'] ?? null,
-                'code' => $postcode['code'],
-                'locality_id' => isset($postcode['locality'])
+            ->map(fn ($postcode) => (new Collection($postcode))
+                ->put('locality_id', isset($postcode['locality'])
                     ? $localities->get("{$regions[$postcode['region']]}_{$postcode['locality']}")
-                    : null,
-                'country_id' => $country->id,
-                'region_id' => $regions[$postcode['region']],
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ])->chunk(250)
+                    : null)
+                ->put('country_id', $country->id)
+                ->put('region_id', $regions[$postcode['region']])
+                ->put('created_at', Carbon::now())
+                ->put('updated_at', Carbon::now())
+                ->forget(['locality', 'region'])
+                ->toArray())
+            ->chunk(250)
             ->each(fn ($postcodes) => Postcode::insert($postcodes->toArray()));
     }
 
