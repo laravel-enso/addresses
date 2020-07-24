@@ -18,8 +18,7 @@ class LocalitySeeder extends Seeder
     {
         $this->countries()->each(fn (Country $country) => $this->counties($country)
             ->each(fn ($county) => DB::table('localities')
-                ->insert($this->localities($country, $county))))
-        ;
+                ->insert($this->localities($country, $county))));
     }
 
     private function counties(Country $country): Collection
