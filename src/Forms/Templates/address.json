@@ -113,6 +113,26 @@
                     }
                 },
                 {
+                    "label": "Billing",
+                    "name": "is_billing",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox",
+                        "disabled": true
+                    }
+                },
+                {
+                    "label": "Shipping",
+                    "name": "is_shipping",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox",
+                        "disabled": true
+                    }
+                },
+                {
                     "label": "Lat",
                     "name": "lat",
                     "value": "",

@@ -85,6 +85,31 @@ class Address extends Model
         return $query->orderByDesc('is_default');
     }
 
+    public function toggleShipping()
+    {
+        $this->update(['is_shipping' => ! $this->is_shipping]);
+    }
+
+    public function toggleBilling()
+    {
+        if (! $this->is_billing) {
+            return $this->makeBilling();
+        }
+
+        return $this->update(['is_billing' => false]);
+    }
+
+    private function makeBilling()
+    {
+        DB::transaction(function () {
+            $this->addressable->addresses()
+                ->whereIsBilling(true)
+                ->update(['is_billing' => false]);
+
+            $this->update(['is_billing' => true]);
+        });
+    }
+
     public function makeDefault()
     {
         DB::transaction(function () {
