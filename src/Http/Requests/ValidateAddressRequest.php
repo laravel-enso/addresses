@@ -20,6 +20,8 @@ class ValidateAddressRequest extends ValidateAddressFetch
             'city' => ['nullable', 'string', 'max:255', $this->required(! $hasLocalities)],
             'street' => 'required|string|max:255',
             'is_default' => 'required|boolean',
+            'is_billing' => 'required|boolean',
+            'is_shipping' => 'required|boolean',
             'additional' => 'nullable|string|max:255',
             'postcode' => 'nullable',
             'notes' => 'nullable',

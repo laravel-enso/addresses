@@ -34,6 +34,18 @@ trait Addressable
             ->whereIsDefault(true);
     }
 
+    public function billingAddress()
+    {
+        return $this->morphOne(Address::class, 'addressable')
+            ->whereIsBilling(true);
+    }
+
+    public function shippingAddresses()
+    {
+        return $this->morphMany(Address::class, 'addressable')
+            ->whereIsShipping(true);
+    }
+
     public function addresses()
     {
         return $this->morphMany(Address::class, 'addressable');

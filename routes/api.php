@@ -19,5 +19,8 @@ Route::middleware(['api', 'auth', 'core'])
         Route::delete('{address}', 'Destroy')->name('destroy');
 
         Route::patch('makeDefault/{address}', 'MakeDefault')->name('makeDefault');
+        Route::patch('makeBilling/{address}', 'MakeBilling')->name('makeBilling');
+        Route::patch('makeShipping/{address}', 'MakeShipping')->name('makeShipping');
+
         Route::get('{address}', 'Show')->name('show');
     });

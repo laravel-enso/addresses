@@ -32,6 +32,8 @@ class CreateAddressesTable extends Migration
             $table->float('long', 10, 6)->nullable();
 
             $table->boolean('is_default');
+            $table->boolean('is_billing');
+            $table->boolean('is_shipping');
 
             $table->timestamps();
         });
