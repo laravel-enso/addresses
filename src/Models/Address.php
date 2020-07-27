@@ -17,7 +17,10 @@ class Address extends Model
 
     protected $guarded = ['id'];
 
-    protected $casts = ['is_default' => 'boolean'];
+    protected $casts = [
+        'is_default' => 'boolean', 'is_billing' => 'boolean',
+        'is_shipping' => 'boolean',
+    ];
 
     protected $touches = ['addressable'];
 
