@@ -13,6 +13,9 @@ class OneLiner extends JsonResource
             'label' => $this->relationLoaded('region') && $this->relationLoaded('locality')
                 ? $this->label()
                 : null,
+            'isDefault' => $this->is_default,
+            'isBilling' => $this->is_billing,
+            'isShipping' => $this->is_shipping,
         ];
     }
 }
