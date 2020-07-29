@@ -88,6 +88,27 @@ class Address extends Model
         return $query->orderByDesc('is_default');
     }
 
+    public function store()
+    {
+        DB::transaction(function () {
+            $defaultAddress = $this->addressable->address;
+
+            if ($this->is_default) {
+                optional($defaultAddress)->update(['is_default' => false]);
+            } elseif (! $defaultAddress) {
+                $this->is_default = true;
+            }
+
+            if ($this->is_billing) {
+                $this->addressable->addresses()
+                    ->whereIsBilling(true)
+                    ->update(['is_billing' => false]);
+            }
+
+            $this->save();
+        });
+    }
+
     public function toggleShipping()
     {
         $this->update(['is_shipping' => ! $this->is_shipping]);
@@ -100,17 +121,6 @@ class Address extends Model
         }
 
         return $this->update(['is_billing' => false]);
-    }
-
-    private function makeBilling()
-    {
-        DB::transaction(function () {
-            $this->addressable->addresses()
-                ->whereIsBilling(true)
-                ->update(['is_billing' => false]);
-
-            $this->update(['is_billing' => true]);
-        });
     }
 
     public function makeDefault()
@@ -151,6 +161,17 @@ class Address extends Model
     public function isLocalized(): bool
     {
         return $this->lat !== null && $this->long !== null;
+    }
+
+    private function makeBilling()
+    {
+        DB::transaction(function () {
+            $this->addressable->addresses()
+                ->whereIsBilling(true)
+                ->update(['is_billing' => false]);
+
+            $this->update(['is_billing' => true]);
+        });
     }
 
     private function canBeMultiple(): bool

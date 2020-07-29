@@ -93,8 +93,7 @@
             "value": false,
             "meta": {
                 "type": "input",
-                "content": "checkbox",
-                "disabled": true
+                "content": "checkbox"
             }
         }, {
             "label": "Billing",
@@ -102,8 +101,7 @@
             "value": false,
             "meta": {
                 "type": "input",
-                "content": "checkbox",
-                "disabled": true
+                "content": "checkbox"
             }
         }, {
             "label": "Shipping",
@@ -111,8 +109,7 @@
             "value": false,
             "meta": {
                 "type": "input",
-                "content": "checkbox",
-                "disabled": true
+                "content": "checkbox"
             }
         }]
     }, {
