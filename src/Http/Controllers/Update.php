@@ -10,7 +10,7 @@ class Update extends Controller
 {
     public function __invoke(ValidateAddressRequest $request, Address $address)
     {
-        $address->update($request->validated());
+        $address->fill($request->validated())->store();
 
         return ['message' => __('The address has been successfully updated')];
     }

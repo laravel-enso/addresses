@@ -123,17 +123,6 @@ class Address extends Model
         return $this->update(['is_billing' => false]);
     }
 
-    public function makeBilling()
-    {
-        DB::transaction(function () {
-            $this->addressable->addresses()
-                ->whereIsBilling(true)
-                ->update(['is_billing' => false]);
-
-            $this->update(['is_billing' => true]);
-        });
-    }
-
     public function makeDefault()
     {
         DB::transaction(function () {
@@ -172,6 +161,17 @@ class Address extends Model
     public function isLocalized(): bool
     {
         return $this->lat !== null && $this->long !== null;
+    }
+
+    private function makeBilling()
+    {
+        DB::transaction(function () {
+            $this->addressable->addresses()
+                ->whereIsBilling(true)
+                ->update(['is_billing' => false]);
+
+            $this->update(['is_billing' => true]);
+        });
     }
 
     private function canBeMultiple(): bool
