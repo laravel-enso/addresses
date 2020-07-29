@@ -102,7 +102,7 @@ class Address extends Model
         return $this->update(['is_billing' => false]);
     }
 
-    private function makeBilling()
+    public function makeBilling()
     {
         DB::transaction(function () {
             $this->addressable->addresses()
