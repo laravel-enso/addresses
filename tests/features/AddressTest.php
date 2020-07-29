@@ -103,6 +103,38 @@ class AddressTest extends TestCase
     }
 
     /** @test */
+    public function can_set_billing_address()
+    {
+        $secondaryAddress = $this->createSecondaryAddress();
+
+        $this->patch(
+            route('core.addresses.makeBilling', $secondaryAddress->id, false)
+        )->assertStatus(200);
+
+        $this->assertFalse(
+            $this->testModel->fresh()->is_billing
+        );
+
+        $this->assertTrue(
+            $secondaryAddress->fresh()->is_billing
+        );
+    }
+
+    /** @test */
+    public function can_set_shipping_address()
+    {
+        $secondaryAddress = $this->createSecondaryAddress();
+
+        $this->patch(
+            route('core.addresses.makeShipping', $secondaryAddress->id, false)
+        )->assertStatus(200);
+
+        $this->assertTrue(
+            $secondaryAddress->fresh()->is_shipping
+        );
+    }
+
+    /** @test */
     public function can_get_create_address_form()
     {
         $this->get(
@@ -201,6 +233,8 @@ class AddressTest extends TestCase
             'addressable_id' => $this->testModel->addressable_id,
             'addressable_type' => AddressableTestModel::class,
             'is_default' => false,
+            'is_billing' => false,
+            'is_shipping' => false,
         ]);
     }
 }

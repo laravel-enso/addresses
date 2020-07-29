@@ -17,9 +17,7 @@ class Store extends Controller
             throw Exception::cannotHaveMultiple();
         }
 
-        $address->is_default = ! $address->addressable->address()->exists();
-
-        $address->save();
+        $address->store();
 
         return [
             'message' => __('The address was successfully created'),
