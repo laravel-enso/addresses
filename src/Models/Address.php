@@ -109,9 +109,15 @@ class Address extends Model
         });
     }
 
-    public function toggleShipping()
+    public function makeDefault()
     {
-        $this->update(['is_shipping' => ! $this->is_shipping]);
+        DB::transaction(function () {
+            $this->addressable->addresses()
+                ->whereIsDefault(true)
+                ->update(['is_default' => false]);
+
+            $this->update(['is_default' => true]);
+        });
     }
 
     public function toggleBilling()
@@ -123,15 +129,20 @@ class Address extends Model
         return $this->update(['is_billing' => false]);
     }
 
-    public function makeDefault()
+    public function makeBilling()
     {
         DB::transaction(function () {
             $this->addressable->addresses()
-                ->whereIsDefault(true)
-                ->update(['is_default' => false]);
+                ->whereIsBilling(true)
+                ->update(['is_billing' => false]);
 
-            $this->update(['is_default' => true]);
+            $this->update(['is_billing' => true]);
         });
+    }
+
+    public function toggleShipping()
+    {
+        $this->update(['is_shipping' => ! $this->is_shipping]);
     }
 
     public function localize()
@@ -161,17 +172,6 @@ class Address extends Model
     public function isLocalized(): bool
     {
         return $this->lat !== null && $this->long !== null;
-    }
-
-    private function makeBilling()
-    {
-        DB::transaction(function () {
-            $this->addressable->addresses()
-                ->whereIsBilling(true)
-                ->update(['is_billing' => false]);
-
-            $this->update(['is_billing' => true]);
-        });
     }
 
     private function canBeMultiple(): bool
