@@ -15,6 +15,7 @@ class Options extends Controller
 
     protected $queryAttributes = [
         'street', 'additional', 'locality.name', 'region.name',
+        'region.abbreviation',
     ];
 
     public function query()

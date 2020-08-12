@@ -293,5 +293,20 @@
         "abbreviation":"WY",
         "name": "Wyoming",
         "isActive": 1
+    },
+    {
+        "abbreviation":"FPO",
+        "name": "Fleet Post Office",
+        "isActive": 1
+    },
+    {
+        "abbreviation":"APO",
+        "name": "Army Post Office",
+        "isActive": 1
+    },
+    {
+        "abbreviation":"DPO",
+        "name": "Diplomatic Post Office",
+        "isActive": 1
     }
 ]
