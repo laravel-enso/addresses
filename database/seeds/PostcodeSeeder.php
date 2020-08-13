@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use LaravelEnso\Addresses\Models\Locality;
 use LaravelEnso\Addresses\Models\Postcode;
 use LaravelEnso\Addresses\Models\Region;
@@ -32,20 +33,27 @@ class PostcodeSeeder extends Seeder
             ->mapWithKeys(fn ($region) => [$region->abbreviation => $region->id]);
 
         $localities = Locality::whereHas('region', fn ($query) => $query->whereCountryId($country->id))
-            ->get()
-            ->mapWithKeys(fn ($locality) => ["{$locality->region_id}_{$locality->name}" => $locality->id]);
+            ->get()->mapWithKeys(fn ($locality) => [
+                Locality::whereRegionId($locality->region_id)
+                    ->whereName($locality->name)
+                    ->count() >= 2 && $locality->township
+                    ? $this->clean("{$locality->region_id}_{$locality->township}_{$locality->name}")
+                    : $this->clean("{$locality->region_id}_{$locality->name}") => $locality->id,
+            ]);
 
         $this->postcodes($country)
             ->filter(fn ($postcode) => isset($regions[$postcode['region']]))
             ->map(fn ($postcode) => (new Collection($postcode))
                 ->put('locality_id', isset($postcode['locality'])
-                    ? $localities->get("{$regions[$postcode['region']]}_{$postcode['locality']}")
+                    ? $localities->get($postcode['township']
+                        ? $this->clean("{$regions[$postcode['region']]}_{$postcode['township']}_{$postcode['locality']}")
+                        : $this->clean("{$regions[$postcode['region']]}_{$postcode['locality']}"))
                     : null)
                 ->put('country_id', $country->id)
                 ->put('region_id', $regions[$postcode['region']])
                 ->put('created_at', Carbon::now())
                 ->put('updated_at', Carbon::now())
-                ->forget(['locality', 'region'])
+                ->forget(['locality', 'region', 'township'])
                 ->toArray())
             ->chunk(250)
             ->each(fn ($postcodes) => Postcode::insert($postcodes->toArray()));
@@ -64,5 +72,12 @@ class PostcodeSeeder extends Seeder
             base_path('vendor/laravel-enso/addresses/database/postcodes'),
             ...$path,
         ]))->implode(DIRECTORY_SEPARATOR);
+    }
+
+    private function clean($string)
+    {
+        $string = str_replace(' ', '-', Str::lower($string));
+
+        return preg_replace('/[^A-Za-z0-9\-]/', '', $string);
     }
 }
