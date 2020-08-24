@@ -21,14 +21,15 @@ class Locality extends Model implements Activatable
         return $this->belongsTo(Region::class);
     }
 
+    public function township()
+    {
+        return $this->belongsTo(Township::class);
+    }
+
     public function getLabelAttribute()
     {
-        $label = $this->siruta
-            ? $this->name.' - '.$this->siruta
+        return $this->township_id
+            ? $this->name.' ('.$this->township->name.')'
             : $this->name;
-
-        return $this->township
-            ? $label.' ('.$this->township.')'
-            : $label;
     }
 }
