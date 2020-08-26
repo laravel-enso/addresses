@@ -1,866 +1,854 @@
 [
     {
-        "regionId": 10,
-        "township": "",
-        "name": "Bertestii de Jos",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Bordei Verde",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
+        "region_id": 10,
+        "township_id": 651,
         "name": "Braila",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "",
-        "name": "Baraganul",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Cazasu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Chiscani",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Ciocile",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Ciresu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Dudesti",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Frecatei",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
+        "region_id": 10,
+        "township_id": 652,
         "name": "Faurei",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "",
-        "name": "Galbenu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Gemenele",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Gradistea",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Gropeni",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Ianca",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Jirlau",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Mircea Voda",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Movila Miresii",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Marasu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Maxineni",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Racovita",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Romanu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Rosiori",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Ramnicelu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Salcia Tudor",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Scortaru Nou",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Silistea",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Stancuta",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Surdila-Greci",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Surdila-Gaiseanca",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Tichilesti",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Traian",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Tudor Vladimirescu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Tufesti",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Ulmu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Unirea",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Victoria",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Viziru",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Visani",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Vadeni",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Zavoaia",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Insuratei",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "",
-        "name": "Sutesti",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Bertestii De Jos",
-        "name": "Bertestii de Sus",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Bertestii De Jos",
-        "name": "Gura Calmatui",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Bertestii De Jos",
-        "name": "Gura Garlutei",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Bertestii De Jos",
-        "name": "Nicolesti",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Bertestii De Jos",
-        "name": "Spiru Haret",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Bordei Verde",
-        "name": "Constantin Gabrielescu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Bordei Verde",
-        "name": "Filiu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Bordei Verde",
-        "name": "Liscoteanca",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Chiscani",
-        "name": "Lacu Sarat",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Chiscani",
-        "name": "Varsatura",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Ciocile",
-        "name": "Chichinetu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Ciocile",
-        "name": "Chioibasesti",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Ciocile",
-        "name": "Odaieni",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Ciresu",
-        "name": "Batogu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Ciresu",
-        "name": "Ionesti",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Ciresu",
-        "name": "Scarlatesti",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Ciresu",
-        "name": "Vultureni",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Dudesti",
-        "name": "Bumbacari",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Dudesti",
-        "name": "Tataru",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Frecatei",
-        "name": "Agaua",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Frecatei",
-        "name": "Cistia",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Frecatei",
-        "name": "Salcia",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Frecatei",
-        "name": "Stoienesti",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Frecatei",
-        "name": "Titcov",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Galbenu",
-        "name": "Drogu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Galbenu",
-        "name": "Pantecani",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Galbenu",
-        "name": "Satuc",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Galbenu",
-        "name": "Zamfiresti",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Gemenele",
-        "name": "Gavani",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Gradistea",
-        "name": "Ibrianu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Gradistea",
-        "name": "Maraloiu",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Ianca",
+        "region_id": 10,
+        "township_id": 653,
         "name": "Berlesti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Ianca",
+        "region_id": 10,
+        "township_id": 653,
         "name": "Gara Ianca",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Ianca",
+        "region_id": 10,
+        "township_id": 653,
+        "name": "Ianca",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 653,
         "name": "Oprisenesti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Ianca",
+        "region_id": 10,
+        "township_id": 653,
         "name": "Perisoru",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Ianca",
+        "region_id": 10,
+        "township_id": 653,
         "name": "Plopu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Ianca",
+        "region_id": 10,
+        "township_id": 653,
         "name": "Tarlele Filiu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Insuratei",
+        "region_id": 10,
+        "township_id": 654,
+        "name": "Insuratei",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 654,
         "name": "Lacu Rezii",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Insuratei",
+        "region_id": 10,
+        "township_id": 654,
         "name": "Maru Rosu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Insuratei",
+        "region_id": 10,
+        "township_id": 654,
         "name": "Valea Calmatuiului",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Jirlau",
+        "region_id": 10,
+        "township_id": 655,
+        "name": "Baraganul",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 656,
+        "name": "Bertestii de Jos",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 656,
+        "name": "Bertestii de Sus",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 656,
+        "name": "Gura Calmatui",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 656,
+        "name": "Gura Garlutei",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 656,
+        "name": "Nicolesti",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 656,
+        "name": "Spiru Haret",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 657,
+        "name": "Bordei Verde",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 657,
+        "name": "Constantin Gabrielescu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 657,
+        "name": "Filiu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 657,
+        "name": "Liscoteanca",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 658,
+        "name": "Cazasu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 659,
+        "name": "Chiscani",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 659,
+        "name": "Lacu Sarat",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 659,
+        "name": "Varsatura",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 660,
+        "name": "Chichinetu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 660,
+        "name": "Chioibasesti",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 660,
+        "name": "Ciocile",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 660,
+        "name": "Odaieni",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 661,
+        "name": "Batogu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 661,
+        "name": "Ciresu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 661,
+        "name": "Ionesti",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 661,
+        "name": "Scarlatesti",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 661,
+        "name": "Vultureni",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 662,
+        "name": "Bumbacari",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 662,
+        "name": "Dudesti",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 662,
+        "name": "Tataru",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 663,
+        "name": "Agaua",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 663,
+        "name": "Cistia",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 663,
+        "name": "Frecatei",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 663,
+        "name": "Salcia",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 663,
+        "name": "Stoienesti",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 663,
+        "name": "Titcov",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 664,
+        "name": "Drogu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 664,
+        "name": "Galbenu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 664,
+        "name": "Pantecani",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 664,
+        "name": "Satuc",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 664,
+        "name": "Zamfiresti",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 665,
+        "name": "Gavani",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 665,
+        "name": "Gemenele",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 666,
+        "name": "Gradistea",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 666,
+        "name": "Ibrianu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 666,
+        "name": "Maraloiu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 667,
+        "name": "Gropeni",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 668,
         "name": "Bradeanca",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Marasu",
+        "region_id": 10,
+        "township_id": 668,
+        "name": "Jirlau",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 669,
         "name": "Bandoiu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Marasu",
+        "region_id": 10,
+        "township_id": 669,
         "name": "Magureni",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Marasu",
-        "name": "Nedelcu",
-        "isActive": 1
+        "region_id": 10,
+        "township_id": 669,
+        "name": "Marasu",
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Marasu",
+        "region_id": 10,
+        "township_id": 669,
+        "name": "Nedeicu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 669,
         "name": "Plopi",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Marasu",
+        "region_id": 10,
+        "township_id": 669,
         "name": "Tacau",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Maxineni",
+        "region_id": 10,
+        "township_id": 670,
         "name": "Corbu Nou",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Maxineni",
+        "region_id": 10,
+        "township_id": 670,
         "name": "Corbu Vechi",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Maxineni",
+        "region_id": 10,
+        "township_id": 670,
         "name": "Latinu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Maxineni",
+        "region_id": 10,
+        "township_id": 670,
+        "name": "Maxineni",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 670,
         "name": "Voinesti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Mircea Voda",
+        "region_id": 10,
+        "township_id": 671,
         "name": "Dedulesti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Movila Miresii",
+        "region_id": 10,
+        "township_id": 671,
+        "name": "Mircea Voda",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 672,
         "name": "Esna",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Movila Miresii",
+        "region_id": 10,
+        "township_id": 672,
+        "name": "Movila Miresii",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 672,
         "name": "Tepes Voda",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Racovita",
+        "region_id": 10,
+        "township_id": 673,
         "name": "Corbeni",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Racovita",
+        "region_id": 10,
+        "township_id": 673,
         "name": "Custura",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Ramnicelu",
+        "region_id": 10,
+        "township_id": 673,
+        "name": "Racovita",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 674,
         "name": "Boarca",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Ramnicelu",
+        "region_id": 10,
+        "township_id": 674,
         "name": "Constantinesti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Ramnicelu",
+        "region_id": 10,
+        "township_id": 674,
         "name": "Mihail Kogalniceanu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Romanu",
+        "region_id": 10,
+        "township_id": 674,
+        "name": "Ramnicelu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 675,
         "name": "Oancea",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Rosiori",
+        "region_id": 10,
+        "township_id": 675,
+        "name": "Romanu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 676,
         "name": "Coltea",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Rosiori",
+        "region_id": 10,
+        "township_id": 676,
         "name": "Florica",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Rosiori",
+        "region_id": 10,
+        "township_id": 676,
         "name": "Pribeagu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Salcia Tudor",
+        "region_id": 10,
+        "township_id": 676,
+        "name": "Rosiori",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 677,
         "name": "Ariciu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Salcia Tudor",
+        "region_id": 10,
+        "township_id": 677,
         "name": "Cuza Voda",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Salcia Tudor",
+        "region_id": 10,
+        "township_id": 677,
         "name": "Gulianca",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Salcia Tudor",
+        "region_id": 10,
+        "township_id": 677,
         "name": "Olaneasca",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Scortaru Nou",
+        "region_id": 10,
+        "township_id": 677,
+        "name": "Salcia Tudor",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 678,
         "name": "Desirati",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Scortaru Nou",
+        "region_id": 10,
+        "township_id": 678,
         "name": "Gurguieti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Scortaru Nou",
+        "region_id": 10,
+        "township_id": 678,
         "name": "Nicolae Balcescu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Scortaru Nou",
+        "region_id": 10,
+        "township_id": 678,
         "name": "Pitulati",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Scortaru Nou",
+        "region_id": 10,
+        "township_id": 678,
+        "name": "Scortaru Nou",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 678,
         "name": "Sihleanu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Silistea",
+        "region_id": 10,
+        "township_id": 679,
         "name": "Cotu Lung",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Silistea",
+        "region_id": 10,
+        "township_id": 679,
         "name": "Cotu Mihalea",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Silistea",
-        "name": "Muchea",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Silistea",
+        "region_id": 10,
+        "township_id": 679,
         "name": "Martacesti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Silistea",
+        "region_id": 10,
+        "township_id": 679,
+        "name": "Muchea",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 679,
+        "name": "Silistea",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 679,
         "name": "Vamesu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Stancuta",
-        "name": "Cuza Voda",
-        "isActive": 1
-    },
-    {
-        "regionId": 10,
-        "township": "Stancuta",
+        "region_id": 10,
+        "township_id": 680,
         "name": "Polizesti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Stancuta",
+        "region_id": 10,
+        "township_id": 680,
         "name": "Stanca",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Surdila-Gaiseanca",
+        "region_id": 10,
+        "township_id": 680,
+        "name": "Stancuta",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 681,
         "name": "Filipesti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Surdila-Greci",
+        "region_id": 10,
+        "township_id": 681,
+        "name": "Surdila-Gaiseanca",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 682,
         "name": "Bratesu Vechi",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Surdila-Greci",
+        "region_id": 10,
+        "township_id": 682,
         "name": "Faurei Sat",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Surdila-Greci",
+        "region_id": 10,
+        "township_id": 682,
         "name": "Horia",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Sutesti",
-        "name": "Mihail Kogalniceanu",
-        "isActive": 1
+        "region_id": 10,
+        "township_id": 682,
+        "name": "Surdila-Greci",
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Tichilesti",
+        "region_id": 10,
+        "township_id": 683,
+        "name": "Sutesti",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 684,
         "name": "Albina",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Traian",
+        "region_id": 10,
+        "township_id": 684,
+        "name": "Tichilesti",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 685,
         "name": "Caldarusa",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Traian",
+        "region_id": 10,
+        "township_id": 685,
         "name": "Silistraru",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Traian",
+        "region_id": 10,
+        "township_id": 685,
+        "name": "Traian",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 685,
         "name": "Urleasca",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Tudor Vladimirescu",
+        "region_id": 10,
+        "township_id": 686,
         "name": "Comaneasca",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Tudor Vladimirescu",
+        "region_id": 10,
+        "township_id": 686,
         "name": "Scortaru Vechi",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Ulmu",
+        "region_id": 10,
+        "township_id": 686,
+        "name": "Tudor Vladimirescu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 687,
+        "name": "Tufesti",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 688,
         "name": "Jugureanu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Unirea",
+        "region_id": 10,
+        "township_id": 688,
+        "name": "Ulmu",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 689,
         "name": "Morotesti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Unirea",
+        "region_id": 10,
+        "township_id": 689,
+        "name": "Unirea",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 689,
         "name": "Valea Canepii",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Vadeni",
+        "region_id": 10,
+        "township_id": 690,
         "name": "Baldovinesti",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Vadeni",
+        "region_id": 10,
+        "township_id": 690,
         "name": "Pietroiu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Victoria",
+        "region_id": 10,
+        "township_id": 690,
+        "name": "Vadeni",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 691,
         "name": "Mihai Bravu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Visani",
+        "region_id": 10,
+        "township_id": 691,
+        "name": "Victoria",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 692,
         "name": "Caineni-Bai",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Visani",
+        "region_id": 10,
+        "township_id": 692,
         "name": "Plasoiu",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Viziru",
+        "region_id": 10,
+        "township_id": 692,
+        "name": "Visani",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 693,
         "name": "Lanurile",
-        "isActive": 1
+        "is_active": true
     },
     {
-        "regionId": 10,
-        "township": "Zavoaia",
+        "region_id": 10,
+        "township_id": 693,
+        "name": "Viziru",
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 694,
         "name": "Dudescu",
-        "isActive": 1
+        "is_active": true
+    },
+    {
+        "region_id": 10,
+        "township_id": 694,
+        "name": "Zavoaia",
+        "is_active": true
     }
 ]

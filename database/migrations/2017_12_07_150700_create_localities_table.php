@@ -12,12 +12,10 @@ class CreateLocalitiesTable extends Migration
             $table->increments('id');
 
             $table->integer('region_id')->unsigned()->index();
-            $table->foreign('region_id')->references('id')->on('regions')
-                ->onUpdate('no action')->onDelete('no action');
+            $table->foreign('region_id')->references('id')->on('regions');
 
             $table->integer('township_id')->nullable()->unsigned()->index();
-            $table->foreign('township_id')->references('id')->on('townships')
-                ->onUpdate('no action')->onDelete('no action');
+            $table->foreign('township_id')->references('id')->on('townships');
 
             $table->string('name');
 
