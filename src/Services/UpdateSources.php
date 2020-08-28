@@ -5,6 +5,7 @@ namespace LaravelEnso\Addresses\Services;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 use LaravelEnso\Addresses\Models\Locality;
+use LaravelEnso\Addresses\Models\Postcode;
 use LaravelEnso\Addresses\Models\Region;
 use LaravelEnso\Addresses\Models\Township;
 use LaravelEnso\Countries\Models\Country;
@@ -16,7 +17,8 @@ class UpdateSources
         $this->countries()->each(fn (Country $country) => $this
             ->refreshRegions($country)
             ->refreshTownships($country)
-            ->refreshLocalities($country));
+            ->refreshLocalities($country)
+            ->refreshPostcodes($country));
     }
 
     private function refreshRegions(Country $country): self
@@ -61,10 +63,26 @@ class UpdateSources
         return $this;
     }
 
+    private function refreshPostcodes(Country $country): self
+    {
+        $postcodes = Postcode::query()
+            ->whereCountryId($country->id)
+            ->select(['id', 'code', 'region_id'])
+            ->when(
+                $country->id === 1,
+                fn ($query) => $query->addSelect(['township_id', 'locality_id', 'street']),
+                fn ($query) => $query->addSelect(['city', 'lat', 'long']),
+            )->get()->sort()->values()->toJson();
+
+        File::put($this->path('postcodes', "{$country->iso_3166_3}.json"), $postcodes);
+
+        return $this;
+    }
+
     private function localities(string $abbreviaton): Collection
     {
         return Locality::whereHas('region', fn ($query) => $query->whereAbbreviation($abbreviaton))
-            ->get(['region_id', 'township_id', 'name', 'is_active'])
+            ->get(['id', 'region_id', 'township_id', 'name', 'is_active'])
             ->sort()->values();
     }
 
