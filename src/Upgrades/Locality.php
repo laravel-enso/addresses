@@ -4,7 +4,6 @@ namespace LaravelEnso\Addresses\Upgrades;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Str;
 use LaravelEnso\Addresses\Models\Locality as Model;
 use LaravelEnso\Addresses\Models\Township;
 use LaravelEnso\Upgrade\Contracts\MigratesPostDataMigration;
@@ -14,7 +13,7 @@ class Locality implements MigratesTable, MigratesPostDataMigration
 {
     public function isMigrated(): bool
     {
-        return !Schema::hasTable('localities') ||
+        return ! Schema::hasTable('localities') ||
             Schema::hasColumn('localities', 'township_id');
     }
 
@@ -39,6 +38,3 @@ class Locality implements MigratesTable, MigratesPostDataMigration
         });
     }
 }
-
-
-
