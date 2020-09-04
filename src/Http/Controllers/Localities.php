@@ -10,7 +10,7 @@ class Localities extends Controller
 {
     use OptionsBuilder;
 
-    protected $queryAttributes = ['name', 'siruta', 'township'];
+    protected $queryAttributes = ['name', 'township_id'];
 
     public function query()
     {
