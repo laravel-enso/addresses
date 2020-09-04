@@ -34,6 +34,7 @@ class Locality implements MigratesTable, MigratesPostDataMigration
                 ->update(['township_id' => $township->id]));
 
         Schema::table('localities', function (Blueprint $table) {
+            $table->dropColumn(['siruta']);
             $table->dropColumn(['township']);
         });
     }
