@@ -13,7 +13,7 @@ class CreateTownshipsTable extends Migration
 
             $table->integer('region_id')->unsigned()->index();
             $table->foreign('region_id')->references('id')->on('regions')
-                ->onUpdate('no action')->onDelete('no action');
+                ->onUpdate('restrict')->onDelete('restrict');
 
             $table->string('name');
 
