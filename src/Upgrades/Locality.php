@@ -6,15 +6,20 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use LaravelEnso\Addresses\Models\Locality as Model;
 use LaravelEnso\Addresses\Models\Township;
+use LaravelEnso\Upgrade\Contracts\Applicable;
 use LaravelEnso\Upgrade\Contracts\MigratesPostDataMigration;
 use LaravelEnso\Upgrade\Contracts\MigratesTable;
 
-class Locality implements MigratesTable, MigratesPostDataMigration
+class Locality implements MigratesTable, MigratesPostDataMigration, Applicable
 {
+    public function applicable(): bool
+    {
+        return Schema::hasTable('localities');
+    }
+
     public function isMigrated(): bool
     {
-        return ! Schema::hasTable('localities') ||
-            Schema::hasColumn('localities', 'township_id');
+        return Schema::hasColumn('localities', 'township_id');
     }
 
     public function migrateTable(): void
@@ -33,8 +38,6 @@ class Locality implements MigratesTable, MigratesPostDataMigration
                 ->whereTownship($township->name)
                 ->update(['township_id' => $township->id]));
 
-        Schema::table('localities', function (Blueprint $table) {
-            $table->dropColumn(['siruta']);
-        });
+        Schema::table('localities', fn (Blueprint $table) => $table->dropColumn(['siruta']));
     }
 }

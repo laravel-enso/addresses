@@ -6,16 +6,21 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use LaravelEnso\Addresses\Models\Locality;
 use LaravelEnso\Addresses\Models\Postcode as Model;
+use LaravelEnso\Upgrade\Contracts\Applicable;
 use LaravelEnso\Upgrade\Contracts\MigratesPostDataMigration;
 use LaravelEnso\Upgrade\Contracts\MigratesTable;
 use LaravelEnso\Upgrade\Contracts\Prioritization;
 
-class Postcode implements MigratesPostDataMigration, Prioritization, MigratesTable
+class Postcode implements MigratesPostDataMigration, Prioritization, MigratesTable, Applicable
 {
+    public function applicable(): bool
+    {
+        return Schema::hasTable('postcodes');
+    }
+
     public function isMigrated(): bool
     {
-        return ! Schema::hasTable('postcodes') ||
-            Schema::hasColumn('postcodes', 'township_id');
+        return Schema::hasColumn('postcodes', 'township_id');
     }
 
     public function priority(): int
