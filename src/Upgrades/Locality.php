@@ -9,8 +9,9 @@ use LaravelEnso\Addresses\Models\Township;
 use LaravelEnso\Upgrade\Contracts\Applicable;
 use LaravelEnso\Upgrade\Contracts\MigratesPostDataMigration;
 use LaravelEnso\Upgrade\Contracts\MigratesTable;
+use LaravelEnso\Upgrade\Contracts\Prioritization;
 
-class Locality implements MigratesTable, MigratesPostDataMigration, Applicable
+class Locality implements Applicable, MigratesTable, MigratesPostDataMigration, Prioritization
 {
     public function applicable(): bool
     {
@@ -20,6 +21,11 @@ class Locality implements MigratesTable, MigratesPostDataMigration, Applicable
     public function isMigrated(): bool
     {
         return Schema::hasColumn('localities', 'township_id');
+    }
+
+    public function priority(): int
+    {
+        return 200;
     }
 
     public function migrateTable(): void

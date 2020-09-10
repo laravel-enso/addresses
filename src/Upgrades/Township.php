@@ -8,7 +8,7 @@ use LaravelEnso\Addresses\Models\Township as Model;
 use LaravelEnso\Upgrade\Contracts\Applicable;
 use LaravelEnso\Upgrade\Contracts\MigratesData;
 
-class Township implements MigratesData, Applicable
+class Township implements Applicable, MigratesData
 {
     public function applicable(): bool
     {

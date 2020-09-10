@@ -11,7 +11,7 @@ use LaravelEnso\Upgrade\Contracts\MigratesPostDataMigration;
 use LaravelEnso\Upgrade\Contracts\MigratesTable;
 use LaravelEnso\Upgrade\Contracts\Prioritization;
 
-class Postcode implements MigratesPostDataMigration, Prioritization, MigratesTable, Applicable
+class Postcode implements Applicable, MigratesPostDataMigration, Prioritization, MigratesTable
 {
     public function applicable(): bool
     {
