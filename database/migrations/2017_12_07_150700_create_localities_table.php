@@ -13,11 +13,13 @@ class CreateLocalitiesTable extends Migration
 
             $table->integer('region_id')->unsigned()->index();
             $table->foreign('region_id')->references('id')->on('regions')
-                ->onUpdate('no action')->onDelete('no action');
+                ->onUpdate('restrict')->onDelete('restrict');
 
-            $table->string('township')->nullable();
+            $table->integer('township_id')->nullable()->unsigned()->index();
+            $table->foreign('township_id')->references('id')->on('townships')
+                ->onUpdate('restrict')->onDelete('restrict');
+
             $table->string('name');
-            $table->string('siruta')->nullable();
 
             $table->float('lat', 10, 6)->nullable();
             $table->float('long', 10, 6)->nullable();
