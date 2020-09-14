@@ -44,6 +44,9 @@ class Locality implements Applicable, MigratesTable, MigratesPostDataMigration, 
                 ->whereTownship($township->name)
                 ->update(['township_id' => $township->id]));
 
-        Schema::table('localities', fn (Blueprint $table) => $table->dropColumn(['siruta']));
+        Schema::table('localities', function (Blueprint $table) {
+            $table->renameColumn('township', 'township_name');
+            $table->dropColumn(['siruta']);
+        });
     }
 }
