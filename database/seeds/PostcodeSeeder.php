@@ -40,7 +40,7 @@ class PostcodeSeeder extends Seeder
     private function importPostCodes()
     {
         $this->countries
-            ->each(fn($postcodes, $countryId) => $postcodes
+            ->each(fn ($postcodes, $countryId) => $postcodes
                 ->map(fn ($township) => (new Collection($township))
                     ->mapWithKeys(fn ($value, $key) => [Str::snake($key) => $value])
                     ->put('country_id', $countryId)
