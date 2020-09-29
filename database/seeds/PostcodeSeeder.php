@@ -22,7 +22,8 @@ class PostcodeSeeder extends Seeder
     public function run()
     {
         DB::transaction(fn () => $this->init()
-            ->importPostCodes());
+            ->importPostCodes()
+            ->end());
     }
 
     private function init(): self
@@ -37,7 +38,7 @@ class PostcodeSeeder extends Seeder
         return $this;
     }
 
-    private function importPostCodes()
+    private function importPostCodes(): self
     {
         $this->countries
             ->each(fn ($postcodes, $countryId) => $postcodes
@@ -52,9 +53,11 @@ class PostcodeSeeder extends Seeder
                     Postcode::insert($townships->toArray());
                     $this->advance();
                 }));
+
+        return $this;
     }
 
-    private function postcodes(Country $country)
+    private function postcodes(Country $country): Collection
     {
         return (new JsonReader($this->path(["{$country->iso_3166_3}.json"])))
             ->collection()
