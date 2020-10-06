@@ -1,5 +1,7 @@
 <?php
 
+namespace LaravelEnso\Addresses\Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;

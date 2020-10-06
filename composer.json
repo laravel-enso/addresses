@@ -8,11 +8,11 @@
     ],
     "type": "library",
     "require": {
-        "laravel-enso/core": "^5.0",
+        "laravel-enso/core": "^6.0",
         "laravel-enso/countries": "^2.0",
         "laravel-enso/enums": "^2.0",
         "laravel-enso/forms": "^4.0",
-        "laravel-enso/helpers": "^2.0",
+        "laravel-enso/helpers": "^3.0",
         "laravel-enso/migrator": "^2.0",
         "laravel-enso/rememberable": "^3.0",
         "laravel-enso/select": "^4.0"
@@ -32,7 +32,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "LaravelEnso\\Addresses\\": "src/"
+            "LaravelEnso\\Addresses\\": "src/",
+            "LaravelEnso\\Addresses\\Database\\Factories\\": "database/factories/",
+            "LaravelEnso\\Addresses\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "extra": {

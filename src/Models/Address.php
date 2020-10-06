@@ -8,12 +8,13 @@ use Illuminate\Support\Facades\DB;
 use LaravelEnso\Addresses\Services\Coordinates;
 use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Helpers\Traits\HasFactory;
 use LaravelEnso\Helpers\Traits\UpdatesOnTouch;
 use LaravelEnso\Rememberable\Traits\Rememberable;
 
 class Address extends Model
 {
-    use AvoidsDeletionConflicts, UpdatesOnTouch, Rememberable;
+    use AvoidsDeletionConflicts, HasFactory, UpdatesOnTouch, Rememberable;
 
     protected $guarded = ['id'];
 
