@@ -1,22 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use LaravelEnso\Addresses\Http\Controllers\Localities;
-use LaravelEnso\Addresses\Http\Controllers\Regions;
-use LaravelEnso\Addresses\Http\Controllers\Index;
 use LaravelEnso\Addresses\Http\Controllers\Create;
-use LaravelEnso\Addresses\Http\Controllers\Store;
+use LaravelEnso\Addresses\Http\Controllers\Destroy;
+use LaravelEnso\Addresses\Http\Controllers\Edit;
+use LaravelEnso\Addresses\Http\Controllers\Index;
+use LaravelEnso\Addresses\Http\Controllers\Localities;
+use LaravelEnso\Addresses\Http\Controllers\Localize;
+use LaravelEnso\Addresses\Http\Controllers\MakeBilling;
+use LaravelEnso\Addresses\Http\Controllers\MakeDefault;
+use LaravelEnso\Addresses\Http\Controllers\MakeShipping;
 use LaravelEnso\Addresses\Http\Controllers\Options;
 use LaravelEnso\Addresses\Http\Controllers\Postcode;
-use LaravelEnso\Addresses\Http\Controllers\Edit;
-use LaravelEnso\Addresses\Http\Controllers\Localize;
-use LaravelEnso\Addresses\Http\Controllers\Update;
-use LaravelEnso\Addresses\Http\Controllers\Destroy;
+use LaravelEnso\Addresses\Http\Controllers\Regions;
 use LaravelEnso\Addresses\Http\Controllers\Show;
-use LaravelEnso\Addresses\Http\Controllers\MakeDefault;
-use LaravelEnso\Addresses\Http\Controllers\MakeBilling;
-use LaravelEnso\Addresses\Http\Controllers\MakeShipping;
-
+use LaravelEnso\Addresses\Http\Controllers\Store;
+use LaravelEnso\Addresses\Http\Controllers\Update;
 
 Route::middleware(['api', 'auth', 'core'])
     ->prefix('api/core/addresses')->as('core.addresses.')
