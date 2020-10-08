@@ -2,13 +2,13 @@
 
 namespace LaravelEnso\Addresses\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use LaravelEnso\Addresses\Services\Coordinates;
 use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Helpers\Traits\HasFactory;
 use LaravelEnso\Helpers\Traits\UpdatesOnTouch;
 use LaravelEnso\Rememberable\Traits\Rememberable;
 
