@@ -35,7 +35,7 @@ class AddressTest extends TestCase
         $this->faker = Factory::create();
         $country = Country::first();
 
-        $this->testModel = factory(Address::class)->create([
+        $this->testModel = Address::factory()->create([
             'addressable_id' => AddressableTestModel::create(['name' => 'addressable'])->id,
             'region_id' => optional(Region::first())->id,
             'locality_id' => optional(Locality::first())->id,
@@ -214,7 +214,7 @@ class AddressTest extends TestCase
 
     private function postParams()
     {
-        return factory(Address::class)->make([
+        return Address::factory()->make([
             'addressable_id' => $this->testModel->addressable_id,
             'region_id' => optional(Region::first())->id,
             'locality_id' => optional(Locality::first())->id,
@@ -229,7 +229,7 @@ class AddressTest extends TestCase
 
     private function createSecondaryAddress()
     {
-        return factory(Address::class)->create([
+        return Address::factory()->create([
             'addressable_id' => $this->testModel->addressable_id,
             'addressable_type' => AddressableTestModel::class,
             'is_default' => false,
