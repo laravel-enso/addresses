@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use LaravelEnso\Addresses\Models\Region;
 use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Helpers\Services\JsonReader;
+use Symfony\Component\Finder\SplFileInfo;
 
 class RegionSeeder extends Seeder
 {
