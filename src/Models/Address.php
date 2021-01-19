@@ -15,7 +15,7 @@ use LaravelEnso\TrackWho\Traits\CreatedBy;
 
 class Address extends Model
 {
-    use AvoidsDeletionConflicts, HasFactory, UpdatesOnTouch, Rememberable, CreatedBy;
+    use AvoidsDeletionConflicts, CreatedBy, HasFactory, UpdatesOnTouch, Rememberable;
 
     protected $guarded = ['id'];
 
