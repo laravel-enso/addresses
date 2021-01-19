@@ -11,10 +11,11 @@ use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Helpers\Traits\UpdatesOnTouch;
 use LaravelEnso\Rememberable\Traits\Rememberable;
+use LaravelEnso\TrackWho\Traits\CreatedBy;
 
 class Address extends Model
 {
-    use AvoidsDeletionConflicts, HasFactory, UpdatesOnTouch, Rememberable;
+    use AvoidsDeletionConflicts, HasFactory, UpdatesOnTouch, Rememberable, CreatedBy;
 
     protected $guarded = ['id'];
 
