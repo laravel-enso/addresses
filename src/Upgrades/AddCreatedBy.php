@@ -18,7 +18,7 @@ class AddCreatedBy implements MigratesTable
     {
         Schema::table('addresses', function (Blueprint $table) {
             $table->integer('created_by')->unsigned()->index()->nullable()
-                ->after('is_shipping');
+                ->after('long');
             $table->foreign('created_by')->references('id')->on('users');
         });
     }
