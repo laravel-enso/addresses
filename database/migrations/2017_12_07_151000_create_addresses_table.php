@@ -35,6 +35,9 @@ class CreateAddressesTable extends Migration
             $table->boolean('is_billing');
             $table->boolean('is_shipping');
 
+            $table->integer('created_by')->unsigned()->index()->nullable();
+            $table->foreign('created_by')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
