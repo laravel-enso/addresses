@@ -2,13 +2,14 @@
 
 namespace LaravelEnso\Addresses\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Helpers\Contracts\Activatable;
 use LaravelEnso\Helpers\Traits\ActiveState;
 
 class Locality extends Model implements Activatable
 {
-    use ActiveState;
+    use ActiveState, HasFactory;
 
     protected $guarded = ['id'];
 
