@@ -16,6 +16,6 @@ class Addresss implements Method
     public function closure(): Closure
     {
         return fn () => $this->morphOne(Address::class, 'addressable')
-            ->whereIsDefault(true);;
+            ->whereIsDefault(true);
     }
 }
