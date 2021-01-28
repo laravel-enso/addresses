@@ -178,6 +178,10 @@ class Address extends Model
 
     private function canBeMultiple(): bool
     {
-        return method_exists($this->addressable, 'addresses');
+        $hasDynamicRelation = method_exists($this->addressable, 'hasMethod')
+            && $this->addressable->hasMethod('addresses');
+
+        return $hasDynamicRelation
+            || method_exists($this->addressable, 'addresses');
     }
 }
