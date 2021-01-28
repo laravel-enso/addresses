@@ -3,7 +3,6 @@
 namespace LaravelEnso\Addresses\Observers;
 
 use Illuminate\Support\Facades\Config;
-use LaravelEnso\Comments\Exceptions\CommentConflict;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 class Observer
