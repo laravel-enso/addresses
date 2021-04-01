@@ -37,10 +37,10 @@ class AddressTest extends TestCase
 
         $this->testModel = Address::factory()->create([
             'addressable_id' => AddressableTestModel::create(['name' => 'addressable'])->id,
+            'addressable_type' => AddressableTestModel::class,
             'region_id' => optional(Region::first())->id,
             'locality_id' => optional(Locality::first())->id,
             'country_id' => $country->id,
-            'addressable_type' => AddressableTestModel::class,
         ]);
 
         Config::set('enso.addresses.defaultCountryId', $country->id);

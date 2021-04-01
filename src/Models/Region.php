@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Helpers\Contracts\Activatable;
 use LaravelEnso\Helpers\Traits\ActiveState;
+use LaravelEnso\Rememberable\Traits\Rememberable;
 
 class Region extends Model implements Activatable
 {
-    use ActiveState, HasFactory;
+    use ActiveState, HasFactory, Rememberable;
 
     protected $guarded = ['id'];
+
+    protected $rememberableKeys = ['id', 'name'];
 
     public function country()
     {
