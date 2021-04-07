@@ -96,12 +96,14 @@ class Address extends Model
             $defaultAddress = $this->addressable->address;
 
             if ($this->is_default) {
-                optional($defaultAddress)->update(['is_default' => false]);
+                if (! $this->is($defaultAddress)) {
+                    optional($defaultAddress)->update(['is_default' => false]);
+                }
             } elseif (! $defaultAddress) {
                 $this->is_default = true;
             }
 
-            if ($this->is_billing) {
+            if ($this->is_billing && ! $this->is($defaultAddress)) {
                 $this->addressable->addresses()
                     ->whereIsBilling(true)
                     ->update(['is_billing' => false]);
