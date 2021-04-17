@@ -64,9 +64,10 @@ class Address extends Model
     public function label()
     {
         $locality = optional($this->locality)->name ?? $this->city;
+        $region = $this->region ? __('County').' '.$this->region->name : null;
+        $attrs = [$locality, $this->street, $region];
 
-        return (new Collection([optional($this->region)->name, $locality, $this->street]))
-            ->filter()->implode(', ');
+        return (new Collection($attrs))->filter()->implode(', ');
     }
 
     public function scopeDefault($query)
