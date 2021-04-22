@@ -21,7 +21,7 @@ class Address extends Model
 
     protected $casts = [
         'is_default' => 'boolean', 'is_billing' => 'boolean',
-        'is_shipping' => 'boolean',
+        'is_shipping' => 'boolean', 'addressable_id' => 'integer',
     ];
 
     protected $touches = ['addressable'];
