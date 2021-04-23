@@ -104,12 +104,6 @@ class Address extends Model
                 $this->is_default = true;
             }
 
-            if ($this->is_billing && ! $this->is($defaultAddress)) {
-                $this->addressable->addresses()
-                    ->whereIsBilling(true)
-                    ->update(['is_billing' => false]);
-            }
-
             $this->save();
         });
     }
@@ -127,22 +121,12 @@ class Address extends Model
 
     public function toggleBilling()
     {
-        if (! $this->is_billing) {
-            return $this->makeBilling();
-        }
-
-        return $this->update(['is_billing' => false]);
+        return $this->update(['is_billing' => ! $this->is->billing]);
     }
 
     public function makeBilling()
     {
-        DB::transaction(function () {
-            $this->addressable->addresses()
-                ->whereIsBilling(true)
-                ->update(['is_billing' => false]);
-
-            $this->update(['is_billing' => true]);
-        });
+        return $this->update(['is_billing' => true]);
     }
 
     public function toggleShipping()
