@@ -111,10 +111,6 @@ class AddressTest extends TestCase
             route('core.addresses.makeBilling', $secondaryAddress->id, false)
         )->assertStatus(200);
 
-        $this->assertFalse(
-            $this->testModel->fresh()->is_billing
-        );
-
         $this->assertTrue(
             $secondaryAddress->fresh()->is_billing
         );

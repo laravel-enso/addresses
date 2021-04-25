@@ -121,7 +121,7 @@ class Address extends Model
 
     public function toggleBilling()
     {
-        return $this->update(['is_billing' => ! $this->is->billing]);
+        return $this->update(['is_billing' => ! $this->is_billing]);
     }
 
     public function makeBilling()
