@@ -65,7 +65,7 @@ class Address extends Model
     {
         $locality = optional($this->locality)->name ?? $this->city;
         $region = $this->region ? __('County').' '.$this->region->name : null;
-        $attrs = [$locality, $this->street, $region];
+        $attrs = [$locality, $this->street, $this->postcode, $region];
 
         return (new Collection($attrs))->filter()->implode(', ');
     }
