@@ -2,14 +2,17 @@
 
 namespace LaravelEnso\Addresses\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use LaravelEnso\Addresses\Services\Coordinates;
+use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Helpers\Traits\UpdatesOnTouch;
+use LaravelEnso\People\Models\Person;
 use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\TrackWho\Traits\CreatedBy;
 
@@ -80,7 +83,17 @@ class Address extends Model
         return $query->whereIsDefault(false);
     }
 
-    public function scopeFor($query, int $addressable_id, string $addressable_type)
+    public function scopeForPerson(Builder $query, $personId): Builder
+    {
+        return $query->for($query, $personId, Person::morphMapKey());
+    }
+
+    public function scopeForCompany(Builder $query, $companyId): Builder
+    {
+        return $query->for($query, $companyId, Company::morphMapKey());
+    }
+
+    public function scopeFor(Builder $query, int $addressable_id, string $addressable_type): Builder
     {
         return $query->whereAddressableId($addressable_id)
             ->whereAddressableType($addressable_type);

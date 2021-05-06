@@ -41,7 +41,8 @@
         "laravel": {
             "providers": [
                 "LaravelEnso\\Addresses\\AppServiceProvider",
-                "LaravelEnso\\Addresses\\CountryServiceProvider"
+                "LaravelEnso\\Addresses\\CountryServiceProvider",
+                "LaravelEnso\\Addresses\\UserServiceProvider"
             ]
         }
     }

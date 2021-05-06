@@ -11,8 +11,10 @@ class Postcode extends Controller
 {
     public function __invoke(ValidatePostcodeRequest $request)
     {
-        $postcode = Model::for($request->get('country_id'), $request->get('postcode'))
-            ->first();
+        $postcode = Model::for(
+            $request->get('country_id'),
+            $request->get('postcode')
+        )->first();
 
         return [
             'postcode' => new Resource($postcode),

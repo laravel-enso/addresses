@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Addresses\DynamicRelations;
+namespace LaravelEnso\Addresses\Dynamics\Relations\Country;
 
 use Closure;
 use LaravelEnso\Addresses\Models\Region;
