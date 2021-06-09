@@ -13,7 +13,7 @@ class Region extends Model implements Activatable
 {
     use ActiveState, HasFactory, Rememberable;
 
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     protected $rememberableKeys = ['id', 'name'];
 

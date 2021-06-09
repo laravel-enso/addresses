@@ -32,7 +32,11 @@ class AddressForm
     public function edit(Address $address, ?int $countryId)
     {
         if ($countryId) {
-            $address = $this->empty($address, $countryId);
+            $address = new Address([
+                'id' => $address->id,
+                'country_id' => $countryId,
+                'is_default' => $address->is_default,
+            ]);
         }
 
         return $this->prepare($address->country)
@@ -54,16 +58,5 @@ class AddressForm
             ->meta('region_id', 'hidden', $regions->isEmpty())
             ->meta('locality_id', 'hidden', ! $hasLocalities)
             ->meta('city', 'hidden', $hasLocalities);
-    }
-
-    private function empty(Address $address, int $countryId): Address
-    {
-        $newAddress = new Address([
-            'country_id' => $countryId,
-            'is_default' => $address->is_default,
-        ]);
-        $newAddress->id = $address->id;
-
-        return $newAddress;
     }
 }

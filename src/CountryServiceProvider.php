@@ -10,13 +10,8 @@ use LaravelEnso\DynamicMethods\Services\Methods;
 
 class CountryServiceProvider extends ServiceProvider
 {
-    public $methods = [
-        Regions::class,
-        Localities::class,
-    ];
-
     public function boot()
     {
-        Methods::bind(Country::class, $this->methods);
+        Methods::bind(Country::class, [Regions::class, Localities::class]);
     }
 }

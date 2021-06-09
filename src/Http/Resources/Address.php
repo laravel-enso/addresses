@@ -2,28 +2,19 @@
 
 namespace LaravelEnso\Addresses\Http\Resources;
 
-use Illuminate\Http\Resources\Json\JsonResource;
-
-class Address extends JsonResource
+class Address extends OneLiner
 {
     public function toArray($request)
     {
-        return [
-            'id' => $this->id,
+        return parent::toArray($request) + [
             'country' => $this->relationLoaded('country') ? $this->country->name : null,
-            'region' => $this->relationLoaded('region') ? optional($this->region)->name : null,
-            'locality' => $this->relationLoaded('locality') ? optional($this->locality)->name : null,
+            'region' => $this->relationLoaded('region') ? $this->region?->name : null,
+            'locality' => $this->relationLoaded('locality') ? $this->locality?->name : null,
             'city' => $this->city,
             'street' => $this->street,
-            'additional' => $this->resource->additional,
+            'additional' => $this->additional,
             'postcode' => $this->postcode,
             'notes' => $this->notes,
-            'isDefault' => $this->is_default,
-            'isShipping' => $this->is_shipping,
-            'isBilling' => $this->is_billing,
-            'label' => $this->relationLoaded('region') && $this->relationLoaded('locality')
-                ? $this->label()
-                : null,
         ];
     }
 }

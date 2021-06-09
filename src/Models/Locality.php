@@ -12,9 +12,7 @@ class Locality extends Model implements Activatable
 {
     use ActiveState, HasFactory, Rememberable;
 
-    protected $guarded = ['id'];
-
-    protected $appends = ['label'];
+    protected $guarded = [];
 
     protected $casts = ['is_active' => 'boolean'];
 
@@ -28,12 +26,5 @@ class Locality extends Model implements Activatable
     public function township()
     {
         return $this->belongsTo(Township::class);
-    }
-
-    public function getLabelAttribute()
-    {
-        return $this->township_id
-            ? $this->name.' ('.$this->township->name.')'
-            : $this->name;
     }
 }

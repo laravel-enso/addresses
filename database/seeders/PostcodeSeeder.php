@@ -5,7 +5,6 @@ namespace LaravelEnso\Addresses\Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelEnso\Addresses\Models\Postcode;
@@ -23,9 +22,9 @@ class PostcodeSeeder extends Seeder
 
     public function run()
     {
-        DB::transaction(fn () => $this->init()
+        $this->init()
             ->importPostCodes()
-            ->end());
+            ->end();
     }
 
     private function init(): self
@@ -44,7 +43,7 @@ class PostcodeSeeder extends Seeder
     {
         $this->countries
             ->each(fn ($postcodes, $countryId) => $postcodes
-                ->map(fn ($township) => (new Collection($township))
+                ->map(fn ($township) => Collection::wrap($township)
                     ->mapWithKeys(fn ($value, $key) => [Str::snake($key) => $value])
                     ->put('country_id', $countryId)
                     ->put('created_at', Carbon::now())
@@ -69,16 +68,15 @@ class PostcodeSeeder extends Seeder
 
     private function countries(): Collection
     {
-        return (new Collection(File::files($this->path())))
+        return Collection::wrap(File::files($this->path()))
             ->map(fn (SplFileInfo $file) => Country::where('iso_3166_3', $file->getBasename('.json'))->first())
             ->filter();
     }
 
     private function path(array $path = []): string
     {
-        return (new Collection([
-            base_path('vendor/laravel-enso/addresses/database/postcodes'),
-            ...$path,
-        ]))->implode(DIRECTORY_SEPARATOR);
+        return Collection::wrap([
+            base_path('vendor/laravel-enso/addresses/database/postcodes'), ...$path,
+        ])->implode(DIRECTORY_SEPARATOR);
     }
 }

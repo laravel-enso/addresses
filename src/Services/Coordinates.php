@@ -34,14 +34,18 @@ class Coordinates
             throw Localize::wrongApiKey();
         }
 
-        if (
-            empty($geocodeData) || $geocodeData['status'] === 'ZERO_RESULTS'
-            || ! isset($geocodeData['results'], $geocodeData['results'][0])
-        ) {
+        if ($this->failed($geocodeData)) {
             throw Localize::failed();
         }
 
         return $geocodeData['results'][0]['geometry']['location'];
+    }
+
+    private function failed($geocodeData): bool
+    {
+        return empty($geocodeData)
+            || $geocodeData['status'] === 'ZERO_RESULTS'
+            || ! isset($geocodeData['results'][0]);
     }
 
     private function apiCall(): array

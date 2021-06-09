@@ -20,7 +20,7 @@ class Address extends Model
 {
     use AvoidsDeletionConflicts, CreatedBy, HasFactory, UpdatesOnTouch, Rememberable;
 
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     protected $casts = [
         'is_default' => 'boolean', 'is_billing' => 'boolean',
@@ -49,36 +49,26 @@ class Address extends Model
         return $this->morphTo();
     }
 
-    public function isDefault()
+    public function isDefault(): bool
     {
         return $this->is_default;
     }
 
-    public function getLocalityNameAttribute()
+    public function label(): ?string
     {
-        return optional($this->locality)->name;
-    }
-
-    public function getCountyNameAttribute()
-    {
-        return optional($this->region)->name;
-    }
-
-    public function label()
-    {
-        $locality = optional($this->locality)->name ?? $this->city;
+        $locality = $this->locality?->name ?? $this->city;
         $region = $this->region ? __('County').' '.$this->region->name : null;
         $attrs = [$locality, $this->street, $this->postcode, $region];
 
-        return (new Collection($attrs))->filter()->implode(', ');
+        return Collection::wrap($attrs)->filter()->implode(', ');
     }
 
-    public function scopeDefault($query)
+    public function scopeDefault(Builder $query): Builder
     {
         return $query->whereIsDefault(true);
     }
 
-    public function scopeNotDefault($query)
+    public function scopeNotDefault(Builder $query): Builder
     {
         return $query->whereIsDefault(false);
     }
@@ -99,19 +89,19 @@ class Address extends Model
             ->whereAddressableType($addressable_type);
     }
 
-    public function scopeOrdered($query)
+    public function scopeOrdered(Builder $query): Builder
     {
         return $query->orderByDesc('is_default');
     }
 
-    public function store()
+    public function store(): void
     {
         DB::transaction(function () {
             $defaultAddress = $this->addressable->address;
 
             if ($this->is_default) {
                 if (! $this->is($defaultAddress)) {
-                    optional($defaultAddress)->update(['is_default' => false]);
+                    $defaultAddress?->update(['is_default' => false]);
                 }
             } elseif (! $defaultAddress) {
                 $this->is_default = true;
@@ -121,7 +111,7 @@ class Address extends Model
         });
     }
 
-    public function makeDefault()
+    public function makeDefault(): void
     {
         DB::transaction(function () {
             $this->addressable->addresses()
@@ -132,31 +122,28 @@ class Address extends Model
         });
     }
 
-    public function toggleBilling()
+    public function toggleBilling(): void
     {
-        return $this->update(['is_billing' => ! $this->is_billing]);
+        $this->update(['is_billing' => ! $this->is_billing]);
     }
 
-    public function makeBilling()
+    public function makeBilling(): void
     {
-        return $this->update(['is_billing' => true]);
+        $this->update(['is_billing' => true]);
     }
 
-    public function toggleShipping()
+    public function toggleShipping(): void
     {
         $this->update(['is_shipping' => ! $this->is_shipping]);
     }
 
-    public function localize()
+    public function localize(): array
     {
-        $this->update((new Coordinates($this))->get());
+        $coordinates = (new Coordinates($this))->get();
 
-        return $this;
-    }
+        $this->update($coordinates);
 
-    public function getLoggableMorph()
-    {
-        return config('enso.addresses.loggableMorph');
+        return $coordinates;
     }
 
     public function shouldBeSingle(): bool

@@ -8,7 +8,7 @@
     ],
     "type": "library",
     "require": {
-        "laravel-enso/core": "^6.0",
+        "laravel-enso/core": "^7.0",
         "laravel-enso/countries": "^2.0",
         "laravel-enso/enums": "^2.0",
         "laravel-enso/forms": "^4.0",
@@ -18,7 +18,8 @@
         "laravel-enso/select": "^4.0"
     },
     "license": "MIT",
-    "authors": [{
+    "authors": [
+        {
             "name": "Mihai",
             "email": "mihai.ocneanu@gmail.com",
             "role": "Developer"

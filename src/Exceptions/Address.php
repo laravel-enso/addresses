@@ -15,8 +15,6 @@ class Address extends EnsoException
 
     public static function cannotHaveMultiple()
     {
-        return new static(__(
-            'You cannot add multiple addresses to this entity'
-        ));
+        return new static(__('You cannot add multiple addresses to this entity'));
     }
 }

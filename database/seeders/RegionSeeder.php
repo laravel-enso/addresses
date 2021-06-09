@@ -5,7 +5,6 @@ namespace LaravelEnso\Addresses\Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelEnso\Addresses\Models\Region;
@@ -17,14 +16,14 @@ class RegionSeeder extends Seeder
 {
     public function run()
     {
-        DB::transaction(fn () => $this->countries()
-            ->each(fn (Country $country) => $this->importRegions($country)));
+        $this->countries()
+            ->each(fn (Country $country) => $this->importRegions($country));
     }
 
     private function importRegions(Country $country)
     {
         $this->regions($country)
-            ->map(fn ($region) => (new Collection($region))
+            ->map(fn ($region) => Collection::wrap($region)
                 ->mapWithKeys(fn ($value, $key) => [Str::snake($key) => $value])
                 ->put('country_id', $country->id)
                 ->put('created_at', Carbon::now())
@@ -43,16 +42,15 @@ class RegionSeeder extends Seeder
 
     private function countries(): Collection
     {
-        return (new Collection(File::files($this->path())))
+        return Collection::wrap(File::files($this->path()))
             ->map(fn (SplFileInfo $file) => Country::where('iso_3166_3', $file->getBasename('.json'))->first())
             ->filter();
     }
 
     private function path(array $path = []): string
     {
-        return (new Collection([
-            base_path('vendor/laravel-enso/addresses/database/regions'),
-            ...$path,
-        ]))->implode(DIRECTORY_SEPARATOR);
+        return Collection::wrap([
+            base_path('vendor/laravel-enso/addresses/database/regions'), ...$path,
+        ])->implode(DIRECTORY_SEPARATOR);
     }
 }

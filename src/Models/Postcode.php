@@ -8,7 +8,7 @@ use LaravelEnso\Countries\Models\Country;
 
 class Postcode extends Model
 {
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     public function region()
     {
@@ -20,9 +20,9 @@ class Postcode extends Model
         return $this->belongsTo(Country::class);
     }
 
-    public function scopeFor(Builder $builder, int $countryId, string $code)
+    public function scopeFor(Builder $builder, int $countryId, string $code): Builder
     {
-        $builder->whereCountryId($countryId)
+        return $builder->whereCountryId($countryId)
             ->whereCode($code);
     }
 }
