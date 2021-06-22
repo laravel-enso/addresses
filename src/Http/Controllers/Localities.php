@@ -14,7 +14,6 @@ class Localities extends Controller
     protected $queryAttributes = ['name', 'township_id'];
     protected $resource = Resource::class;
 
-
     public function query()
     {
         return Locality::with('township')
