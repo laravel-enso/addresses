@@ -12,7 +12,7 @@ class Address extends OneLiner
             'locality' => $this->relationLoaded('locality') ? $this->locality?->name : null,
             'city' => $this->city,
             'street' => $this->street,
-            'additional' => $this->additional,
+            'additional' => $this->resource->additional,
             'postcode' => $this->postcode,
             'notes' => $this->notes,
         ];
