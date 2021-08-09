@@ -2,10 +2,10 @@
 
 namespace LaravelEnso\Addresses\Services;
 
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use LaravelEnso\Addresses\Exceptions\Localize;
 use LaravelEnso\Addresses\Models\Address;
+use LaravelEnso\Google\Models\Settings;
 
 class Coordinates
 {
@@ -64,7 +64,7 @@ class Coordinates
 
     private function apiUrl(): string
     {
-        $url = Config::get('enso.addresses.googleMaps.url');
+        $url = Settings::mapsURL();
 
         if (! $url) {
             throw Localize::missingApiUrl();
@@ -75,7 +75,7 @@ class Coordinates
 
     private function apiKey(): string
     {
-        $key = Config::get('enso.addresses.googleMaps.key');
+        $key = Settings::mapsKey();
 
         if (! $key) {
             throw Localize::missingApiKey();
