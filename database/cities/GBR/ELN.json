@@ -1,0 +1,527 @@
+[
+    {
+        "id": 13359,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Aberlady",
+        "is_active": true
+    },
+    {
+        "id": 14098,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Archerfield The Village",
+        "is_active": true
+    },
+    {
+        "id": 14567,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Athelstaneford",
+        "is_active": true
+    },
+    {
+        "id": 14978,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Ballencrieff",
+        "is_active": true
+    },
+    {
+        "id": 15887,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Belhaven",
+        "is_active": true
+    },
+    {
+        "id": 16631,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Blackdykes",
+        "is_active": true
+    },
+    {
+        "id": 17063,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Bolton",
+        "is_active": true
+    },
+    {
+        "id": 18578,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Broxburn",
+        "is_active": true
+    },
+    {
+        "id": 19601,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Camptoun",
+        "is_active": true
+    },
+    {
+        "id": 19745,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Carfrae",
+        "is_active": true
+    },
+    {
+        "id": 21502,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Cockenzie and Port Seton",
+        "is_active": true
+    },
+    {
+        "id": 22493,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Craigielaw",
+        "is_active": true
+    },
+    {
+        "id": 23223,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Cuthill",
+        "is_active": true
+    },
+    {
+        "id": 23906,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Dirleton",
+        "is_active": true
+    },
+    {
+        "id": 24008,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Dolphingstone",
+        "is_active": true
+    },
+    {
+        "id": 24240,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Drem",
+        "is_active": true
+    },
+    {
+        "id": 24454,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Dunbar",
+        "is_active": true
+    },
+    {
+        "id": 24959,
+        "region_id": 255,
+        "township_id": null,
+        "name": "East Linton",
+        "is_active": true
+    },
+    {
+        "id": 25025,
+        "region_id": 255,
+        "township_id": null,
+        "name": "East Saltoun",
+        "is_active": true
+    },
+    {
+        "id": 25566,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Elphinstone",
+        "is_active": true
+    },
+    {
+        "id": 25614,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Elvingston",
+        "is_active": true
+    },
+    {
+        "id": 26234,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Fenton Barns",
+        "is_active": true
+    },
+    {
+        "id": 26435,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Fisherrow",
+        "is_active": true
+    },
+    {
+        "id": 27374,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Garvald",
+        "is_active": true
+    },
+    {
+        "id": 27522,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Gifford",
+        "is_active": true
+    },
+    {
+        "id": 27535,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Gilchriston",
+        "is_active": true
+    },
+    {
+        "id": 27613,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Gladsmuir",
+        "is_active": true
+    },
+    {
+        "id": 28833,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Gullane",
+        "is_active": true
+    },
+    {
+        "id": 28965,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Haddington",
+        "is_active": true
+    },
+    {
+        "id": 31838,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Humbie",
+        "is_active": true
+    },
+    {
+        "id": 31910,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Huntington",
+        "is_active": true
+    },
+    {
+        "id": 32208,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Innerwick",
+        "is_active": true
+    },
+    {
+        "id": 32245,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Inveresk",
+        "is_active": true
+    },
+    {
+        "id": 33101,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Kingston",
+        "is_active": true
+    },
+    {
+        "id": 33557,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Knowes",
+        "is_active": true
+    },
+    {
+        "id": 34360,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Levenhall",
+        "is_active": true
+    },
+    {
+        "id": 35782,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Longniddry",
+        "is_active": true
+    },
+    {
+        "id": 36433,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Luggate Burn",
+        "is_active": true
+    },
+    {
+        "id": 36631,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Macmerry",
+        "is_active": true
+    },
+    {
+        "id": 36964,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Markle",
+        "is_active": true
+    },
+    {
+        "id": 37255,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Meadowmill",
+        "is_active": true
+    },
+    {
+        "id": 38158,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Monktonhall",
+        "is_active": true
+    },
+    {
+        "id": 38695,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Musselburgh",
+        "is_active": true
+    },
+    {
+        "id": 39277,
+        "region_id": 255,
+        "township_id": null,
+        "name": "New Town",
+        "is_active": true
+    },
+    {
+        "id": 39302,
+        "region_id": 255,
+        "township_id": null,
+        "name": "New Winton",
+        "is_active": true
+    },
+    {
+        "id": 39425,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Newhailes",
+        "is_active": true
+    },
+    {
+        "id": 39847,
+        "region_id": 255,
+        "township_id": null,
+        "name": "North Berwick",
+        "is_active": true
+    },
+    {
+        "id": 39908,
+        "region_id": 255,
+        "township_id": null,
+        "name": "North Elphinstone",
+        "is_active": true
+    },
+    {
+        "id": 40672,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Oldhamstocks",
+        "is_active": true
+    },
+    {
+        "id": 40762,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Ormiston",
+        "is_active": true
+    },
+    {
+        "id": 41576,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Pencaitland",
+        "is_active": true
+    },
+    {
+        "id": 41758,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Penston",
+        "is_active": true
+    },
+    {
+        "id": 41984,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Phantassie",
+        "is_active": true
+    },
+    {
+        "id": 42125,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Pinkie Braes",
+        "is_active": true
+    },
+    {
+        "id": 42822,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Preston",
+        "is_active": true
+    },
+    {
+        "id": 42864,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Prestonpans",
+        "is_active": true
+    },
+    {
+        "id": 44685,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Saltcoats",
+        "is_active": true
+    },
+    {
+        "id": 44731,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Samuelston",
+        "is_active": true
+    },
+    {
+        "id": 45265,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Seton",
+        "is_active": true
+    },
+    {
+        "id": 45266,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Seton Mains",
+        "is_active": true
+    },
+    {
+        "id": 46406,
+        "region_id": 255,
+        "township_id": null,
+        "name": "South Elphinstone",
+        "is_active": true
+    },
+    {
+        "id": 46768,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Spittal",
+        "is_active": true
+    },
+    {
+        "id": 46791,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Spott",
+        "is_active": true
+    },
+    {
+        "id": 47466,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Stenton",
+        "is_active": true
+    },
+    {
+        "id": 47774,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Stoneybank",
+        "is_active": true
+    },
+    {
+        "id": 49243,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Thorntonloch",
+        "is_active": true
+    },
+    {
+        "id": 49984,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Tranent",
+        "is_active": true
+    },
+    {
+        "id": 49991,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Traprain",
+        "is_active": true
+    },
+    {
+        "id": 50715,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Tyninghame",
+        "is_active": true
+    },
+    {
+        "id": 51529,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Wallyford",
+        "is_active": true
+    },
+    {
+        "id": 52210,
+        "region_id": 255,
+        "township_id": null,
+        "name": "West Barns",
+        "is_active": true
+    },
+    {
+        "id": 52515,
+        "region_id": 255,
+        "township_id": null,
+        "name": "West Saltoun",
+        "is_active": true
+    },
+    {
+        "id": 52641,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Wester Broomhouse",
+        "is_active": true
+    },
+    {
+        "id": 53101,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Whitecraig",
+        "is_active": true
+    },
+    {
+        "id": 53152,
+        "region_id": 255,
+        "township_id": null,
+        "name": "Whitekirk",
+        "is_active": true
+    }
+]

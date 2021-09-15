@@ -1,0 +1,576 @@
+[
+    {
+        "id": 13323,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Abercorn",
+        "is_active": true
+    },
+    {
+        "id": 13496,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Adambrae",
+        "is_active": true
+    },
+    {
+        "id": 13503,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Addiewell",
+        "is_active": true
+    },
+    {
+        "id": 13807,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Almondvale",
+        "is_active": true
+    },
+    {
+        "id": 14224,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Armadale",
+        "is_active": true
+    },
+    {
+        "id": 14979,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Ballencrieff Toll",
+        "is_active": true
+    },
+    {
+        "id": 15211,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Barbauchlaw",
+        "is_active": true
+    },
+    {
+        "id": 15553,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Bathgate",
+        "is_active": true
+    },
+    {
+        "id": 15557,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Bathville",
+        "is_active": true
+    },
+    {
+        "id": 15940,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Bellsquarry",
+        "is_active": true
+    },
+    {
+        "id": 15976,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Belvedere",
+        "is_active": true
+    },
+    {
+        "id": 16045,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Bents",
+        "is_active": true
+    },
+    {
+        "id": 16620,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Blackburn",
+        "is_active": true
+    },
+    {
+        "id": 16704,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Blackridge",
+        "is_active": true
+    },
+    {
+        "id": 17008,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Boghall",
+        "is_active": true
+    },
+    {
+        "id": 17838,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Breich",
+        "is_active": true
+    },
+    {
+        "id": 17967,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Bridgend",
+        "is_active": true
+    },
+    {
+        "id": 18577,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Broxburn",
+        "is_active": true
+    },
+    {
+        "id": 19048,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Burnside",
+        "is_active": true
+    },
+    {
+        "id": 22514,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Craigshill",
+        "is_active": true
+    },
+    {
+        "id": 22775,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Croftmalloch",
+        "is_active": true
+    },
+    {
+        "id": 23629,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Deans",
+        "is_active": true
+    },
+    {
+        "id": 23643,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Dechmont",
+        "is_active": true
+    },
+    {
+        "id": 23648,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Dedridge",
+        "is_active": true
+    },
+    {
+        "id": 24814,
+        "region_id": 275,
+        "township_id": null,
+        "name": "East Calder",
+        "is_active": true
+    },
+    {
+        "id": 25066,
+        "region_id": 275,
+        "township_id": null,
+        "name": "East Whitburn",
+        "is_active": true
+    },
+    {
+        "id": 25263,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Ecclesmachan",
+        "is_active": true
+    },
+    {
+        "id": 25472,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Eliburn",
+        "is_active": true
+    },
+    {
+        "id": 25975,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Falside",
+        "is_active": true
+    },
+    {
+        "id": 26101,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Faucheldean",
+        "is_active": true
+    },
+    {
+        "id": 26105,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Fauldhouse",
+        "is_active": true
+    },
+    {
+        "id": 26956,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Freeport Village",
+        "is_active": true
+    },
+    {
+        "id": 27745,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Glenmavis",
+        "is_active": true
+    },
+    {
+        "id": 28516,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Greenburn",
+        "is_active": true
+    },
+    {
+        "id": 28591,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Greenrigg",
+        "is_active": true
+    },
+    {
+        "id": 28817,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Guildiehaugh",
+        "is_active": true
+    },
+    {
+        "id": 29400,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Harburn",
+        "is_active": true
+    },
+    {
+        "id": 31733,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Howden",
+        "is_active": true
+    },
+    {
+        "id": 33042,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Kingscavil",
+        "is_active": true
+    },
+    {
+        "id": 33310,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Kirkhill",
+        "is_active": true
+    },
+    {
+        "id": 33338,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Kirknewton",
+        "is_active": true
+    },
+    {
+        "id": 33358,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Kirkton",
+        "is_active": true
+    },
+    {
+        "id": 33407,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Kirton Campus",
+        "is_active": true
+    },
+    {
+        "id": 33489,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Knightsridge",
+        "is_active": true
+    },
+    {
+        "id": 33649,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Ladywell",
+        "is_active": true
+    },
+    {
+        "id": 34358,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Leven Seat",
+        "is_active": true
+    },
+    {
+        "id": 34501,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Linburn",
+        "is_active": true
+    },
+    {
+        "id": 34557,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Linlithgow",
+        "is_active": true
+    },
+    {
+        "id": 34558,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Linlithgow Bridge",
+        "is_active": true
+    },
+    {
+        "id": 34987,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Little Vantage",
+        "is_active": true
+    },
+    {
+        "id": 35103,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Livingston",
+        "is_active": true
+    },
+    {
+        "id": 35104,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Livingston Village",
+        "is_active": true
+    },
+    {
+        "id": 35633,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Loganlea",
+        "is_active": true
+    },
+    {
+        "id": 35790,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Longridge",
+        "is_active": true
+    },
+    {
+        "id": 37215,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Mayfield",
+        "is_active": true
+    },
+    {
+        "id": 37542,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Mid Calder",
+        "is_active": true
+    },
+    {
+        "id": 37597,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Middle Strath",
+        "is_active": true
+    },
+    {
+        "id": 38673,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Murieston",
+        "is_active": true
+    },
+    {
+        "id": 39465,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Newlands",
+        "is_active": true
+    },
+    {
+        "id": 39552,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Newton",
+        "is_active": true
+    },
+    {
+        "id": 40343,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Oakbank",
+        "is_active": true
+    },
+    {
+        "id": 40592,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Old Philpstoun",
+        "is_active": true
+    },
+    {
+        "id": 41384,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Paulville",
+        "is_active": true
+    },
+    {
+        "id": 41999,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Philpstoun",
+        "is_active": true
+    },
+    {
+        "id": 42343,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Polbeth",
+        "is_active": true
+    },
+    {
+        "id": 42981,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Pumpherston",
+        "is_active": true
+    },
+    {
+        "id": 45128,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Seafield",
+        "is_active": true
+    },
+    {
+        "id": 47775,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Stoneyburn",
+        "is_active": true
+    },
+    {
+        "id": 49346,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Threemiletown",
+        "is_active": true
+    },
+    {
+        "id": 49792,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Torphichen",
+        "is_active": true
+    },
+    {
+        "id": 50855,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Uphall",
+        "is_active": true
+    },
+    {
+        "id": 50857,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Uphall Station",
+        "is_active": true
+    },
+    {
+        "id": 52244,
+        "region_id": 275,
+        "township_id": null,
+        "name": "West Calder",
+        "is_active": true
+    },
+    {
+        "id": 52642,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Wester Dechmont",
+        "is_active": true
+    },
+    {
+        "id": 52677,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Westfield",
+        "is_active": true
+    },
+    {
+        "id": 52818,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Westrigg",
+        "is_active": true
+    },
+    {
+        "id": 53026,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Whitburn",
+        "is_active": true
+    },
+    {
+        "id": 53182,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Whiteside",
+        "is_active": true
+    },
+    {
+        "id": 53455,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Wilkieston",
+        "is_active": true
+    },
+    {
+        "id": 53587,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Winchburgh",
+        "is_active": true
+    },
+    {
+        "id": 53639,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Windyknowe",
+        "is_active": true
+    },
+    {
+        "id": 54019,
+        "region_id": 275,
+        "township_id": null,
+        "name": "Woodend",
+        "is_active": true
+    }
+]

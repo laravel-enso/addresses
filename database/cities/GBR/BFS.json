@@ -1,0 +1,135 @@
+[
+    {
+        "id": 15040,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Ballymacarret",
+        "is_active": true
+    },
+    {
+        "id": 15082,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Balmoral",
+        "is_active": true
+    },
+    {
+        "id": 15877,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Belfast",
+        "is_active": true
+    },
+    {
+        "id": 21304,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Cliftonville",
+        "is_active": true
+    },
+    {
+        "id": 26358,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Finaghy",
+        "is_active": true
+    },
+    {
+        "id": 28518,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Greencastle",
+        "is_active": true
+    },
+    {
+        "id": 33498,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Knock",
+        "is_active": true
+    },
+    {
+        "id": 34227,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Legoniel",
+        "is_active": true
+    },
+    {
+        "id": 40757,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Ormeau",
+        "is_active": true
+    },
+    {
+        "id": 43120,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Queens Island",
+        "is_active": true
+    },
+    {
+        "id": 45340,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Shankill",
+        "is_active": true
+    },
+    {
+        "id": 45956,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Skegoniel",
+        "is_active": true
+    },
+    {
+        "id": 46814,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Springfield",
+        "is_active": true
+    },
+    {
+        "id": 47819,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Stormont",
+        "is_active": true
+    },
+    {
+        "id": 47903,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Stranmillis",
+        "is_active": true
+    },
+    {
+        "id": 48453,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Sydenham",
+        "is_active": true
+    },
+    {
+        "id": 53149,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Whitehouse Lower",
+        "is_active": true
+    },
+    {
+        "id": 53150,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Whitehouse Upper",
+        "is_active": true
+    },
+    {
+        "id": 53624,
+        "region_id": 110,
+        "township_id": null,
+        "name": "Windsor",
+        "is_active": true
+    }
+]

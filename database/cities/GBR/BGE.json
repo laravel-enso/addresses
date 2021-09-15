@@ -1,0 +1,597 @@
+[
+    {
+        "id": 13347,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Abergarw",
+        "is_active": true
+    },
+    {
+        "id": 13358,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Aberkenfig",
+        "is_active": true
+    },
+    {
+        "id": 16170,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Bettws",
+        "is_active": true
+    },
+    {
+        "id": 16678,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Blackmill",
+        "is_active": true
+    },
+    {
+        "id": 16765,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Blaengarw",
+        "is_active": true
+    },
+    {
+        "id": 17510,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Brackla",
+        "is_active": true
+    },
+    {
+        "id": 17975,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Bridgend/Pen-y-Bont ar-ogwr",
+        "is_active": true
+    },
+    {
+        "id": 18677,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Bryncethin",
+        "is_active": true
+    },
+    {
+        "id": 18679,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Bryncoch",
+        "is_active": true
+    },
+    {
+        "id": 18692,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Brynheulog",
+        "is_active": true
+    },
+    {
+        "id": 18699,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Brynmenyn",
+        "is_active": true
+    },
+    {
+        "id": 18712,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Bryntirion",
+        "is_active": true
+    },
+    {
+        "id": 19311,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Byeastwood",
+        "is_active": true
+    },
+    {
+        "id": 19382,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Caerau",
+        "is_active": true
+    },
+    {
+        "id": 20177,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Cefn Cribwr",
+        "is_active": true
+    },
+    {
+        "id": 20178,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Cefn Cross",
+        "is_active": true
+    },
+    {
+        "id": 20181,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Cefn Glas",
+        "is_active": true
+    },
+    {
+        "id": 21591,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Coity",
+        "is_active": true
+    },
+    {
+        "id": 21809,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Colychurch",
+        "is_active": true
+    },
+    {
+        "id": 22307,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Court Colman",
+        "is_active": true
+    },
+    {
+        "id": 22415,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Coychurch",
+        "is_active": true
+    },
+    {
+        "id": 22419,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Coytrahên",
+        "is_active": true
+    },
+    {
+        "id": 23290,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Cwmfelin",
+        "is_active": true
+    },
+    {
+        "id": 23324,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Cymdda",
+        "is_active": true
+    },
+    {
+        "id": 23795,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Derwen",
+        "is_active": true
+    },
+    {
+        "id": 24673,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Dyffryn",
+        "is_active": true
+    },
+    {
+        "id": 25789,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Evanstown",
+        "is_active": true
+    },
+    {
+        "id": 26294,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Ffordd-y-Gyfraith",
+        "is_active": true
+    },
+    {
+        "id": 26811,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Fountain",
+        "is_active": true
+    },
+    {
+        "id": 27349,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Garth",
+        "is_active": true
+    },
+    {
+        "id": 27800,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Glynllan",
+        "is_active": true
+    },
+    {
+        "id": 27803,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Glynogwr",
+        "is_active": true
+    },
+    {
+        "id": 30310,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Heol-laethog",
+        "is_active": true
+    },
+    {
+        "id": 30311,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Heol-las",
+        "is_active": true
+    },
+    {
+        "id": 30312,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Heol-y-Cyw",
+        "is_active": true
+    },
+    {
+        "id": 31028,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Hirwaun Common",
+        "is_active": true
+    },
+    {
+        "id": 32612,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Kenfig",
+        "is_active": true
+    },
+    {
+        "id": 32613,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Kenfig Hill",
+        "is_active": true
+    },
+    {
+        "id": 34384,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Lewistown",
+        "is_active": true
+    },
+    {
+        "id": 34619,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Litchard",
+        "is_active": true
+    },
+    {
+        "id": 35322,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Llangeinor",
+        "is_active": true
+    },
+    {
+        "id": 35331,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Llangewydd Court",
+        "is_active": true
+    },
+    {
+        "id": 35368,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Llangynwyd",
+        "is_active": true
+    },
+    {
+        "id": 35504,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Lletty Brongu",
+        "is_active": true
+    },
+    {
+        "id": 35515,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Llwydarth",
+        "is_active": true
+    },
+    {
+        "id": 36674,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Maesteg",
+        "is_active": true
+    },
+    {
+        "id": 37184,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Mawdlam",
+        "is_active": true
+    },
+    {
+        "id": 37474,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Merthyr Mawr",
+        "is_active": true
+    },
+    {
+        "id": 38800,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Nant-y-moel",
+        "is_active": true
+    },
+    {
+        "id": 38816,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Nantyffyllon",
+        "is_active": true
+    },
+    {
+        "id": 39389,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Newcastle",
+        "is_active": true
+    },
+    {
+        "id": 39571,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Newton",
+        "is_active": true
+    },
+    {
+        "id": 39882,
+        "region_id": 114,
+        "township_id": null,
+        "name": "North Cornelly",
+        "is_active": true
+    },
+    {
+        "id": 40256,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Nottage",
+        "is_active": true
+    },
+    {
+        "id": 40480,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Ogmore Vale",
+        "is_active": true
+    },
+    {
+        "id": 41168,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Pant-y-pyllau",
+        "is_active": true
+    },
+    {
+        "id": 41169,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Pant-yr-awel",
+        "is_active": true
+    },
+    {
+        "id": 41530,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Pen-y-cae",
+        "is_active": true
+    },
+    {
+        "id": 41537,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Pen-y-fai",
+        "is_active": true
+    },
+    {
+        "id": 41558,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Pen-yr-heol",
+        "is_active": true
+    },
+    {
+        "id": 41582,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Pencoed",
+        "is_active": true
+    },
+    {
+        "id": 41604,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Pendre",
+        "is_active": true
+    },
+    {
+        "id": 41715,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Penprysg",
+        "is_active": true
+    },
+    {
+        "id": 42424,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Pont Rhyd-y-cyff",
+        "is_active": true
+    },
+    {
+        "id": 42442,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Pont-y-rhyl",
+        "is_active": true
+    },
+    {
+        "id": 42487,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Pontycymer",
+        "is_active": true
+    },
+    {
+        "id": 42602,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Porthcawl",
+        "is_active": true
+    },
+    {
+        "id": 42872,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Price Town",
+        "is_active": true
+    },
+    {
+        "id": 43646,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Rhiwceiliog",
+        "is_active": true
+    },
+    {
+        "id": 44879,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Sarn",
+        "is_active": true
+    },
+    {
+        "id": 45460,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Shelf",
+        "is_active": true
+    },
+    {
+        "id": 45798,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Shwt",
+        "is_active": true
+    },
+    {
+        "id": 46388,
+        "region_id": 114,
+        "township_id": null,
+        "name": "South Cornelly",
+        "is_active": true
+    },
+    {
+        "id": 46735,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Spelter",
+        "is_active": true
+    },
+    {
+        "id": 49712,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Tondu",
+        "is_active": true
+    },
+    {
+        "id": 50182,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Tremains",
+        "is_active": true
+    },
+    {
+        "id": 50660,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Ty'n-y-garn",
+        "is_active": true
+    },
+    {
+        "id": 50688,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Tylagwyn",
+        "is_active": true
+    },
+    {
+        "id": 50730,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Tythegston",
+        "is_active": true
+    },
+    {
+        "id": 51941,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Waun y Gilfach",
+        "is_active": true
+    },
+    {
+        "id": 52169,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Wern Tarw",
+        "is_active": true
+    },
+    {
+        "id": 53179,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Whiterock",
+        "is_active": true
+    },
+    {
+        "id": 53378,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Wig Fach",
+        "is_active": true
+    },
+    {
+        "id": 53433,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Wild Mill",
+        "is_active": true
+    },
+    {
+        "id": 54532,
+        "region_id": 114,
+        "township_id": null,
+        "name": "Wyndham",
+        "is_active": true
+    }
+]

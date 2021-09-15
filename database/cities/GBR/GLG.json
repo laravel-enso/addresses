@@ -1,0 +1,730 @@
+[
+    {
+        "id": 14000,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Anniesland",
+        "is_active": true
+    },
+    {
+        "id": 14119,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Arden",
+        "is_active": true
+    },
+    {
+        "id": 14616,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Auchinairn",
+        "is_active": true
+    },
+    {
+        "id": 14881,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Baillieston",
+        "is_active": true
+    },
+    {
+        "id": 15107,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Balornock",
+        "is_active": true
+    },
+    {
+        "id": 15285,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Barlanark",
+        "is_active": true
+    },
+    {
+        "id": 15315,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Barmulloch",
+        "is_active": true
+    },
+    {
+        "id": 15388,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Barrachnie",
+        "is_active": true
+    },
+    {
+        "id": 15578,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Battlefield",
+        "is_active": true
+    },
+    {
+        "id": 15904,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Bellahouston",
+        "is_active": true
+    },
+    {
+        "id": 17633,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Braidfauld",
+        "is_active": true
+    },
+    {
+        "id": 17980,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Bridgeton",
+        "is_active": true
+    },
+    {
+        "id": 18472,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Broomhouse",
+        "is_active": true
+    },
+    {
+        "id": 19516,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Calton",
+        "is_active": true
+    },
+    {
+        "id": 19730,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Cardonald",
+        "is_active": true
+    },
+    {
+        "id": 19815,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Carmunnock",
+        "is_active": true
+    },
+    {
+        "id": 19816,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Carmyle",
+        "is_active": true
+    },
+    {
+        "id": 19856,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Carntyne",
+        "is_active": true
+    },
+    {
+        "id": 19857,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Carnwadric",
+        "is_active": true
+    },
+    {
+        "id": 20012,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Castlemilk",
+        "is_active": true
+    },
+    {
+        "id": 20067,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Cathcart",
+        "is_active": true
+    },
+    {
+        "id": 22370,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Cowlairs",
+        "is_active": true
+    },
+    {
+        "id": 22475,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Craigend",
+        "is_active": true
+    },
+    {
+        "id": 22518,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Craigton",
+        "is_active": true
+    },
+    {
+        "id": 22550,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Cranhill",
+        "is_active": true
+    },
+    {
+        "id": 22772,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Croftfoot",
+        "is_active": true
+    },
+    {
+        "id": 22825,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Crookston",
+        "is_active": true
+    },
+    {
+        "id": 22931,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Crossmyloof",
+        "is_active": true
+    },
+    {
+        "id": 23406,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Dalmarnock",
+        "is_active": true
+    },
+    {
+        "id": 23728,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Dennistoun",
+        "is_active": true
+    },
+    {
+        "id": 24122,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Dowanhill",
+        "is_active": true
+    },
+    {
+        "id": 24293,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Drumchapel",
+        "is_active": true
+    },
+    {
+        "id": 24436,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Dumbreck",
+        "is_active": true
+    },
+    {
+        "id": 25130,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Easterhouse",
+        "is_active": true
+    },
+    {
+        "id": 27111,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Fullarton",
+        "is_active": true
+    },
+    {
+        "id": 27224,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Gallowhill",
+        "is_active": true
+    },
+    {
+        "id": 27330,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Garrowhill",
+        "is_active": true
+    },
+    {
+        "id": 27355,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Garthamlock",
+        "is_active": true
+    },
+    {
+        "id": 27361,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Gartloch",
+        "is_active": true
+    },
+    {
+        "id": 27495,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Germiston",
+        "is_active": true
+    },
+    {
+        "id": 27662,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Glasgow",
+        "is_active": true
+    },
+    {
+        "id": 27957,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Gorbals",
+        "is_active": true
+    },
+    {
+        "id": 28056,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Govan",
+        "is_active": true
+    },
+    {
+        "id": 28057,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Govanhill",
+        "is_active": true
+    },
+    {
+        "id": 28528,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Greenfield",
+        "is_active": true
+    },
+    {
+        "id": 29008,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Haghill",
+        "is_active": true
+    },
+    {
+        "id": 30914,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Hillington",
+        "is_active": true
+    },
+    {
+        "id": 31101,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Hogganfield",
+        "is_active": true
+    },
+    {
+        "id": 31941,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Hurlet",
+        "is_active": true
+    },
+    {
+        "id": 31982,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Hutchesontown",
+        "is_active": true
+    },
+    {
+        "id": 32051,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Ibrox",
+        "is_active": true
+    },
+    {
+        "id": 32447,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Jordanhill",
+        "is_active": true
+    },
+    {
+        "id": 32574,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Kelvindale",
+        "is_active": true
+    },
+    {
+        "id": 32575,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Kelvinside",
+        "is_active": true
+    },
+    {
+        "id": 32636,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Kennishead",
+        "is_active": true
+    },
+    {
+        "id": 33028,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Kings Park",
+        "is_active": true
+    },
+    {
+        "id": 33490,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Knightswood",
+        "is_active": true
+    },
+    {
+        "id": 33707,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Lambhill",
+        "is_active": true
+    },
+    {
+        "id": 33899,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Langside",
+        "is_active": true
+    },
+    {
+        "id": 35588,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Lochwood",
+        "is_active": true
+    },
+    {
+        "id": 36843,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Mansewood",
+        "is_active": true
+    },
+    {
+        "id": 37122,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Maryhill",
+        "is_active": true
+    },
+    {
+        "id": 37839,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Millerston",
+        "is_active": true
+    },
+    {
+        "id": 37914,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Milton",
+        "is_active": true
+    },
+    {
+        "id": 38435,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Mosspark",
+        "is_active": true
+    },
+    {
+        "id": 38522,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Mount Vernon",
+        "is_active": true
+    },
+    {
+        "id": 38572,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Mt Florida",
+        "is_active": true
+    },
+    {
+        "id": 38623,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Muirend",
+        "is_active": true
+    },
+    {
+        "id": 39464,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Newlands",
+        "is_active": true
+    },
+    {
+        "id": 39729,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Nitshill",
+        "is_active": true
+    },
+    {
+        "id": 40419,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Oatlands",
+        "is_active": true
+    },
+    {
+        "id": 40493,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Old Balornock",
+        "is_active": true
+    },
+    {
+        "id": 41286,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Parkhead",
+        "is_active": true
+    },
+    {
+        "id": 41324,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Partick",
+        "is_active": true
+    },
+    {
+        "id": 42369,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Pollok",
+        "is_active": true
+    },
+    {
+        "id": 42370,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Pollokshaws",
+        "is_active": true
+    },
+    {
+        "id": 42371,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Pollokshields",
+        "is_active": true
+    },
+    {
+        "id": 42373,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Polmadie",
+        "is_active": true
+    },
+    {
+        "id": 42548,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Port Dundas",
+        "is_active": true
+    },
+    {
+        "id": 42681,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Possil Park",
+        "is_active": true
+    },
+    {
+        "id": 42884,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Priesthill",
+        "is_active": true
+    },
+    {
+        "id": 42943,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Provanmill",
+        "is_active": true
+    },
+    {
+        "id": 43125,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Queenslie",
+        "is_active": true
+    },
+    {
+        "id": 43798,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Riddrie",
+        "is_active": true
+    },
+    {
+        "id": 43981,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Robroyston",
+        "is_active": true
+    },
+    {
+        "id": 44403,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Royston",
+        "is_active": true
+    },
+    {
+        "id": 44419,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Ruchazie",
+        "is_active": true
+    },
+    {
+        "id": 44420,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Ruchill",
+        "is_active": true
+    },
+    {
+        "id": 44552,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Rutherglen",
+        "is_active": true
+    },
+    {
+        "id": 45059,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Scotstoun",
+        "is_active": true
+    },
+    {
+        "id": 45409,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Shawlands",
+        "is_active": true
+    },
+    {
+        "id": 45568,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Shettleston",
+        "is_active": true
+    },
+    {
+        "id": 45580,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Shieldhall",
+        "is_active": true
+    },
+    {
+        "id": 45839,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Sighthill",
+        "is_active": true
+    },
+    {
+        "id": 46811,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Springboig",
+        "is_active": true
+    },
+    {
+        "id": 46813,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Springburn",
+        "is_active": true
+    },
+    {
+        "id": 47927,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Strathbungo",
+        "is_active": true
+    },
+    {
+        "id": 48162,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Summerston",
+        "is_active": true
+    },
+    {
+        "id": 48434,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Swinton",
+        "is_active": true
+    },
+    {
+        "id": 48745,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Temple",
+        "is_active": true
+    },
+    {
+        "id": 49938,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Townhead",
+        "is_active": true
+    },
+    {
+        "id": 53151,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Whiteinch",
+        "is_active": true
+    },
+    {
+        "id": 54684,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Yoker",
+        "is_active": true
+    },
+    {
+        "id": 54692,
+        "region_id": 133,
+        "township_id": null,
+        "name": "Yorkhill",
+        "is_active": true
+    }
+]
