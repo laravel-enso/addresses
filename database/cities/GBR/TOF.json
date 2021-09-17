@@ -1,0 +1,429 @@
+[
+    {
+        "id": 13372,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Abersychan",
+        "is_active": true
+    },
+    {
+        "id": 16759,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Blaenavon",
+        "is_active": true
+    },
+    {
+        "id": 18097,
+        "region_id": 168,
+        "township_id": null,
+        "name": "British",
+        "is_active": true
+    },
+    {
+        "id": 19955,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Castell-y-bwch",
+        "is_active": true
+    },
+    {
+        "id": 20198,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Cefn-y-Crib",
+        "is_active": true
+    },
+    {
+        "id": 21557,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Coed Eva",
+        "is_active": true
+    },
+    {
+        "id": 21571,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Coedcae",
+        "is_active": true
+    },
+    {
+        "id": 22756,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Croes-y-mwyalch",
+        "is_active": true
+    },
+    {
+        "id": 22762,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Croesyceiliog",
+        "is_active": true
+    },
+    {
+        "id": 23248,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Cwm Ffrwd-oer",
+        "is_active": true
+    },
+    {
+        "id": 23259,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Cwm-Fields",
+        "is_active": true
+    },
+    {
+        "id": 23270,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Cwmavon",
+        "is_active": true
+    },
+    {
+        "id": 23315,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Cwmynyscoy",
+        "is_active": true
+    },
+    {
+        "id": 25946,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Fairwater",
+        "is_active": true
+    },
+    {
+        "id": 26732,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Forge Hammer",
+        "is_active": true
+    },
+    {
+        "id": 26733,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Forge Side",
+        "is_active": true
+    },
+    {
+        "id": 27231,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Gallowsgreen",
+        "is_active": true
+    },
+    {
+        "id": 27309,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Garn-yr-erw",
+        "is_active": true
+    },
+    {
+        "id": 27311,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Garndiffaith",
+        "is_active": true
+    },
+    {
+        "id": 27893,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Golynos",
+        "is_active": true
+    },
+    {
+        "id": 28583,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Greenmeadow",
+        "is_active": true
+    },
+    {
+        "id": 28682,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Griffithstown",
+        "is_active": true
+    },
+    {
+        "id": 30281,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Henllys",
+        "is_active": true
+    },
+    {
+        "id": 30282,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Henllys Vale",
+        "is_active": true
+    },
+    {
+        "id": 31246,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Hollybush",
+        "is_active": true
+    },
+    {
+        "id": 35297,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Llanfrechfa",
+        "is_active": true
+    },
+    {
+        "id": 35440,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Llantarnam",
+        "is_active": true
+    },
+    {
+        "id": 35488,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Llanyrafon",
+        "is_active": true
+    },
+    {
+        "id": 36203,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Lower New Inn",
+        "is_active": true
+    },
+    {
+        "id": 36229,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Lower Race",
+        "is_active": true
+    },
+    {
+        "id": 36361,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Lowlands",
+        "is_active": true
+    },
+    {
+        "id": 39202,
+        "region_id": 168,
+        "township_id": null,
+        "name": "New Inn",
+        "is_active": true
+    },
+    {
+        "id": 40166,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Northville",
+        "is_active": true
+    },
+    {
+        "id": 40359,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Oakfield",
+        "is_active": true
+    },
+    {
+        "id": 40544,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Old Furnace",
+        "is_active": true
+    },
+    {
+        "id": 41173,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Panteg",
+        "is_active": true
+    },
+    {
+        "id": 41180,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Pantygasseg",
+        "is_active": true
+    },
+    {
+        "id": 41514,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Pen-twyn",
+        "is_active": true
+    },
+    {
+        "id": 41818,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Pentre-Piod",
+        "is_active": true
+    },
+    {
+        "id": 41868,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Penygarn",
+        "is_active": true
+    },
+    {
+        "id": 41879,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Penyrheol",
+        "is_active": true
+    },
+    {
+        "id": 42474,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Pontnewydd",
+        "is_active": true
+    },
+    {
+        "id": 42475,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Pontnewynydd",
+        "is_active": true
+    },
+    {
+        "id": 42478,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Pontrhydyrun",
+        "is_active": true
+    },
+    {
+        "id": 42491,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Pontymoel",
+        "is_active": true
+    },
+    {
+        "id": 42492,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Pontypool\/Pont-y-pwl",
+        "is_active": true
+    },
+    {
+        "id": 43838,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Rifle Green",
+        "is_active": true
+    },
+    {
+        "id": 45176,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Sebastopol",
+        "is_active": true
+    },
+    {
+        "id": 46214,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Snatchwood",
+        "is_active": true
+    },
+    {
+        "id": 46662,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Southville",
+        "is_active": true
+    },
+    {
+        "id": 46914,
+        "region_id": 168,
+        "township_id": null,
+        "name": "St Dials",
+        "is_active": true
+    },
+    {
+        "id": 48569,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Talywain",
+        "is_active": true
+    },
+    {
+        "id": 49032,
+        "region_id": 168,
+        "township_id": null,
+        "name": "The Square",
+        "is_active": true
+    },
+    {
+        "id": 49194,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Thornhill",
+        "is_active": true
+    },
+    {
+        "id": 49983,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Tranch",
+        "is_active": true
+    },
+    {
+        "id": 50302,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Trevethin",
+        "is_active": true
+    },
+    {
+        "id": 50941,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Upper Cwmbran",
+        "is_active": true
+    },
+    {
+        "id": 51083,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Upper Race",
+        "is_active": true
+    },
+    {
+        "id": 51288,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Varteg",
+        "is_active": true
+    },
+    {
+        "id": 51405,
+        "region_id": 168,
+        "township_id": null,
+        "name": "Wainfelin",
+        "is_active": true
+    },
+    {
+        "id": 52496,
+        "region_id": 168,
+        "township_id": null,
+        "name": "West Pontnewydd",
+        "is_active": true
+    }
+]

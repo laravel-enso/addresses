@@ -1,0 +1,856 @@
+[
+    {
+        "id": 13560,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ahoghill",
+        "is_active": true
+    },
+    {
+        "id": 13580,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Aird",
+        "is_active": true
+    },
+    {
+        "id": 13654,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Aldergrove",
+        "is_active": true
+    },
+    {
+        "id": 14032,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Antrim",
+        "is_active": true
+    },
+    {
+        "id": 14233,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Armoy",
+        "is_active": true
+    },
+    {
+        "id": 14997,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballintoy",
+        "is_active": true
+    },
+    {
+        "id": 15014,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballybogy",
+        "is_active": true
+    },
+    {
+        "id": 15015,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballycarry",
+        "is_active": true
+    },
+    {
+        "id": 15017,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballycastle",
+        "is_active": true
+    },
+    {
+        "id": 15018,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballyclare",
+        "is_active": true
+    },
+    {
+        "id": 15020,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballycloghan",
+        "is_active": true
+    },
+    {
+        "id": 15023,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballydivity",
+        "is_active": true
+    },
+    {
+        "id": 15027,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballyeaston",
+        "is_active": true
+    },
+    {
+        "id": 15029,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballygalley",
+        "is_active": true
+    },
+    {
+        "id": 15030,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballygally",
+        "is_active": true
+    },
+    {
+        "id": 15035,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballyhackamore",
+        "is_active": true
+    },
+    {
+        "id": 15039,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballylumford",
+        "is_active": true
+    },
+    {
+        "id": 15041,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballymaconnelly",
+        "is_active": true
+    },
+    {
+        "id": 15046,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballymena",
+        "is_active": true
+    },
+    {
+        "id": 15048,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballymoney",
+        "is_active": true
+    },
+    {
+        "id": 15058,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballynure",
+        "is_active": true
+    },
+    {
+        "id": 15063,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Ballyvoy",
+        "is_active": true
+    },
+    {
+        "id": 15103,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Balnamore",
+        "is_active": true
+    },
+    {
+        "id": 15903,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Bellahill",
+        "is_active": true
+    },
+    {
+        "id": 15974,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Beltoy",
+        "is_active": true
+    },
+    {
+        "id": 16319,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Billy",
+        "is_active": true
+    },
+    {
+        "id": 18502,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Broughshane",
+        "is_active": true
+    },
+    {
+        "id": 19218,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Bushmills",
+        "is_active": true
+    },
+    {
+        "id": 19664,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Cape Castle",
+        "is_active": true
+    },
+    {
+        "id": 19747,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Cargan",
+        "is_active": true
+    },
+    {
+        "id": 19807,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Carmavy",
+        "is_active": true
+    },
+    {
+        "id": 19833,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Carncastle",
+        "is_active": true
+    },
+    {
+        "id": 19835,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Carneatly",
+        "is_active": true
+    },
+    {
+        "id": 19848,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Carnlough",
+        "is_active": true
+    },
+    {
+        "id": 19849,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Carnmoney",
+        "is_active": true
+    },
+    {
+        "id": 19886,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Carrickfergus",
+        "is_active": true
+    },
+    {
+        "id": 20140,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Causeway Head",
+        "is_active": true
+    },
+    {
+        "id": 20373,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Chapeltown",
+        "is_active": true
+    },
+    {
+        "id": 21341,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Clogh",
+        "is_active": true
+    },
+    {
+        "id": 21342,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Clogh Mills",
+        "is_active": true
+    },
+    {
+        "id": 21953,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Connor",
+        "is_active": true
+    },
+    {
+        "id": 21956,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Conogher",
+        "is_active": true
+    },
+    {
+        "id": 22104,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Corkey",
+        "is_active": true
+    },
+    {
+        "id": 22509,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Craigs",
+        "is_active": true
+    },
+    {
+        "id": 22510,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Craigs Lower",
+        "is_active": true
+    },
+    {
+        "id": 22511,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Craigs Middle",
+        "is_active": true
+    },
+    {
+        "id": 22512,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Craigs Upper",
+        "is_active": true
+    },
+    {
+        "id": 23050,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Crumlin",
+        "is_active": true
+    },
+    {
+        "id": 23132,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Cullybackey",
+        "is_active": true
+    },
+    {
+        "id": 23213,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Cushendall",
+        "is_active": true
+    },
+    {
+        "id": 23214,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Cushendun",
+        "is_active": true
+    },
+    {
+        "id": 23784,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Derrykeighan",
+        "is_active": true
+    },
+    {
+        "id": 23793,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Dervock",
+        "is_active": true
+    },
+    {
+        "id": 23935,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Doagh",
+        "is_active": true
+    },
+    {
+        "id": 24407,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Duffstown",
+        "is_active": true
+    },
+    {
+        "id": 24447,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Dunadry",
+        "is_active": true
+    },
+    {
+        "id": 24525,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Dunloy",
+        "is_active": true
+    },
+    {
+        "id": 24561,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Dunseverick",
+        "is_active": true
+    },
+    {
+        "id": 25292,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Eden",
+        "is_active": true
+    },
+    {
+        "id": 26404,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Finvoy",
+        "is_active": true
+    },
+    {
+        "id": 27208,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Galdanagh",
+        "is_active": true
+    },
+    {
+        "id": 27211,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Galgorm",
+        "is_active": true
+    },
+    {
+        "id": 27331,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Garryduff",
+        "is_active": true
+    },
+    {
+        "id": 27703,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Glenariff",
+        "is_active": true
+    },
+    {
+        "id": 27704,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Glenarm",
+        "is_active": true
+    },
+    {
+        "id": 27733,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Glengormley",
+        "is_active": true
+    },
+    {
+        "id": 27748,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Glenoe",
+        "is_active": true
+    },
+    {
+        "id": 27802,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Glynn",
+        "is_active": true
+    },
+    {
+        "id": 28077,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Gracehill",
+        "is_active": true
+    },
+    {
+        "id": 28150,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Gransha",
+        "is_active": true
+    },
+    {
+        "id": 28571,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Greenisland",
+        "is_active": true
+    },
+    {
+        "id": 29992,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Headwood",
+        "is_active": true
+    },
+    {
+        "id": 32028,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Hyde Park",
+        "is_active": true
+    },
+    {
+        "id": 32309,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Irish Omerbane",
+        "is_active": true
+    },
+    {
+        "id": 32450,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Jordanstown",
+        "is_active": true
+    },
+    {
+        "id": 32549,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Kells",
+        "is_active": true
+    },
+    {
+        "id": 32840,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Killead",
+        "is_active": true
+    },
+    {
+        "id": 32922,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Kilraghts",
+        "is_active": true
+    },
+    {
+        "id": 32925,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Kilroot",
+        "is_active": true
+    },
+    {
+        "id": 33505,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Knockanully",
+        "is_active": true
+    },
+    {
+        "id": 33530,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Knocknacarry",
+        "is_active": true
+    },
+    {
+        "id": 33970,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Larne",
+        "is_active": true
+    },
+    {
+        "id": 34599,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Lisnagunogue",
+        "is_active": true
+    },
+    {
+        "id": 34602,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Lisrodden",
+        "is_active": true
+    },
+    {
+        "id": 36617,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Macfinn Lower",
+        "is_active": true
+    },
+    {
+        "id": 36690,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Magheralane",
+        "is_active": true
+    },
+    {
+        "id": 36693,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Magheramorne",
+        "is_active": true
+    },
+    {
+        "id": 37878,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Milltown",
+        "is_active": true
+    },
+    {
+        "id": 38245,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Moorfields",
+        "is_active": true
+    },
+    {
+        "id": 38415,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Moss-side",
+        "is_active": true
+    },
+    {
+        "id": 38567,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Moyarget",
+        "is_active": true
+    },
+    {
+        "id": 38587,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Muckamore",
+        "is_active": true
+    },
+    {
+        "id": 39168,
+        "region_id": 277,
+        "township_id": null,
+        "name": "New Ferry",
+        "is_active": true
+    },
+    {
+        "id": 39679,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Newtown Crommelin",
+        "is_active": true
+    },
+    {
+        "id": 39686,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Newtownabbey",
+        "is_active": true
+    },
+    {
+        "id": 40320,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Nutts Corner",
+        "is_active": true
+    },
+    {
+        "id": 41274,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Parkgate",
+        "is_active": true
+    },
+    {
+        "id": 41985,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Pharis",
+        "is_active": true
+    },
+    {
+        "id": 42591,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Portglenone",
+        "is_active": true
+    },
+    {
+        "id": 43313,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Randalstown",
+        "is_active": true
+    },
+    {
+        "id": 43335,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Rasharkin",
+        "is_active": true
+    },
+    {
+        "id": 43352,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Rathkenny",
+        "is_active": true
+    },
+    {
+        "id": 43356,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Rathsherry",
+        "is_active": true
+    },
+    {
+        "id": 44004,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Rock Port",
+        "is_active": true
+    },
+    {
+        "id": 45024,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Scolboa",
+        "is_active": true
+    },
+    {
+        "id": 46830,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Springmount",
+        "is_active": true
+    },
+    {
+        "id": 47119,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Staffordstown",
+        "is_active": true
+    },
+    {
+        "id": 47888,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Straid",
+        "is_active": true
+    },
+    {
+        "id": 47904,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Stranocum",
+        "is_active": true
+    },
+    {
+        "id": 48729,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Teeshan",
+        "is_active": true
+    },
+    {
+        "id": 48775,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Templepatrick",
+        "is_active": true
+    },
+    {
+        "id": 48901,
+        "region_id": 277,
+        "township_id": null,
+        "name": "The Drones",
+        "is_active": true
+    },
+    {
+        "id": 49025,
+        "region_id": 277,
+        "township_id": null,
+        "name": "The Sheddings",
+        "is_active": true
+    },
+    {
+        "id": 49045,
+        "region_id": 277,
+        "township_id": null,
+        "name": "The Trench",
+        "is_active": true
+    },
+    {
+        "id": 49713,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Tonduff",
+        "is_active": true
+    },
+    {
+        "id": 49742,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Toome",
+        "is_active": true
+    },
+    {
+        "id": 49743,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Toor",
+        "is_active": true
+    },
+    {
+        "id": 49798,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Torr",
+        "is_active": true
+    },
+    {
+        "id": 53087,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Whiteabbey",
+        "is_active": true
+    },
+    {
+        "id": 53130,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Whitehead",
+        "is_active": true
+    },
+    {
+        "id": 53183,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Whitesides Corner",
+        "is_active": true
+    },
+    {
+        "id": 53994,
+        "region_id": 277,
+        "township_id": null,
+        "name": "Woodburn",
+        "is_active": true
+    }
+]

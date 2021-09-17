@@ -1,0 +1,443 @@
+[
+    {
+        "id": 14248,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Arno's Vale",
+        "is_active": true
+    },
+    {
+        "id": 14399,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Ashley Down",
+        "is_active": true
+    },
+    {
+        "id": 14435,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Ashton Gate",
+        "is_active": true
+    },
+    {
+        "id": 14440,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Ashton Vale",
+        "is_active": true
+    },
+    {
+        "id": 14700,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Avonmouth",
+        "is_active": true
+    },
+    {
+        "id": 15474,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Barton Hill",
+        "is_active": true
+    },
+    {
+        "id": 15783,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Bedminster",
+        "is_active": true
+    },
+    {
+        "id": 15784,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Bedminster Down",
+        "is_active": true
+    },
+    {
+        "id": 16534,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Bishopston",
+        "is_active": true
+    },
+    {
+        "id": 16542,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Bishopsworth",
+        "is_active": true
+    },
+    {
+        "id": 16799,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Blaise Hamlet",
+        "is_active": true
+    },
+    {
+        "id": 17393,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Bower Ashton",
+        "is_active": true
+    },
+    {
+        "id": 17859,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Brentry",
+        "is_active": true
+    },
+    {
+        "id": 18085,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Brislington",
+        "is_active": true
+    },
+    {
+        "id": 18088,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Bristol",
+        "is_active": true
+    },
+    {
+        "id": 18434,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Broom Hill",
+        "is_active": true
+    },
+    {
+        "id": 18467,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Broomhill",
+        "is_active": true
+    },
+    {
+        "id": 21148,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Clay Hill",
+        "is_active": true
+    },
+    {
+        "id": 21293,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Clifton",
+        "is_active": true
+    },
+    {
+        "id": 22011,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Coombe Dingle",
+        "is_active": true
+    },
+    {
+        "id": 22212,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Cotham",
+        "is_active": true
+    },
+    {
+        "id": 22666,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Crew's Hole",
+        "is_active": true
+    },
+    {
+        "id": 25140,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Eastfield",
+        "is_active": true
+    },
+    {
+        "id": 25177,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Easton",
+        "is_active": true
+    },
+    {
+        "id": 25202,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Eastville",
+        "is_active": true
+    },
+    {
+        "id": 26356,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Filwood Park",
+        "is_active": true
+    },
+    {
+        "id": 26452,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Fishponds",
+        "is_active": true
+    },
+    {
+        "id": 27864,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Golden Hill",
+        "is_active": true
+    },
+    {
+        "id": 29598,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Hartcliffe",
+        "is_active": true
+    },
+    {
+        "id": 29984,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Headley Park",
+        "is_active": true
+    },
+    {
+        "id": 30227,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Henbury",
+        "is_active": true
+    },
+    {
+        "id": 30258,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Hengrove",
+        "is_active": true
+    },
+    {
+        "id": 30259,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Hengrove Park",
+        "is_active": true
+    },
+    {
+        "id": 30263,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Henleaze",
+        "is_active": true
+    },
+    {
+        "id": 30773,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Highridge",
+        "is_active": true
+    },
+    {
+        "id": 30898,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Hillfields",
+        "is_active": true
+    },
+    {
+        "id": 31531,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Horfield",
+        "is_active": true
+    },
+    {
+        "id": 31670,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Hotwells",
+        "is_active": true
+    },
+    {
+        "id": 33570,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Knowle",
+        "is_active": true
+    },
+    {
+        "id": 34051,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Lawrence Weston",
+        "is_active": true
+    },
+    {
+        "id": 35600,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Lockleaze",
+        "is_active": true
+    },
+    {
+        "id": 36170,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Lower Knowle",
+        "is_active": true
+    },
+    {
+        "id": 38178,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Montpelier",
+        "is_active": true
+    },
+    {
+        "id": 38948,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Netham",
+        "is_active": true
+    },
+    {
+        "id": 40266,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Novers Park",
+        "is_active": true
+    },
+    {
+        "id": 43514,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Redland",
+        "is_active": true
+    },
+    {
+        "id": 43816,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Ridgeway",
+        "is_active": true
+    },
+    {
+        "id": 45111,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Sea Mills",
+        "is_active": true
+    },
+    {
+        "id": 45651,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Shirehampton",
+        "is_active": true
+    },
+    {
+        "id": 46230,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Sneyd Park",
+        "is_active": true
+    },
+    {
+        "id": 46640,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Southmead",
+        "is_active": true
+    },
+    {
+        "id": 46727,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Speedwell",
+        "is_active": true
+    },
+    {
+        "id": 46868,
+        "region_id": 115,
+        "township_id": null,
+        "name": "St Anne's Park",
+        "is_active": true
+    },
+    {
+        "id": 46934,
+        "region_id": 115,
+        "township_id": null,
+        "name": "St George",
+        "is_active": true
+    },
+    {
+        "id": 47357,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Stapleton",
+        "is_active": true
+    },
+    {
+        "id": 47603,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Stockwood",
+        "is_active": true
+    },
+    {
+        "id": 47624,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Stoke Bishop",
+        "is_active": true
+    },
+    {
+        "id": 50625,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Two Mile Hill",
+        "is_active": true
+    },
+    {
+        "id": 52613,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Westbury on Trym",
+        "is_active": true
+    },
+    {
+        "id": 52614,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Westbury Park",
+        "is_active": true
+    },
+    {
+        "id": 53122,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Whitehall",
+        "is_active": true
+    },
+    {
+        "id": 53620,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Windmill Hill",
+        "is_active": true
+    },
+    {
+        "id": 53845,
+        "region_id": 115,
+        "township_id": null,
+        "name": "Withywood",
+        "is_active": true
+    }
+]
