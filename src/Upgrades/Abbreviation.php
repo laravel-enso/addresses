@@ -6,12 +6,13 @@ use Illuminate\Support\Facades\Schema;
 use LaravelEnso\Addresses\Models\Region;
 use LaravelEnso\Upgrade\Contracts\MigratesData;
 use LaravelEnso\Upgrade\Contracts\MigratesTable;
+use LaravelEnso\Upgrade\Helpers\Column;
 
 class Abbreviation implements MigratesTable, MigratesData
 {
     public function isMigrated(): bool
     {
-        return Region::whereAbbreviation('CORN')->exists();
+        return Column::getLength('regions', 'abbreviation') > 3;
     }
 
     public function migrateTable(): void
