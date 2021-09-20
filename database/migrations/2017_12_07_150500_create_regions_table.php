@@ -15,7 +15,7 @@ class CreateRegionsTable extends Migration
             $table->foreign('country_id')->references('id')->on('countries')
                 ->onUpdate('restrict')->onDelete('restrict');
 
-            $table->string('abbreviation', 3);
+            $table->string('abbreviation', 4);
             $table->string('name');
 
             $table->boolean('is_active');
