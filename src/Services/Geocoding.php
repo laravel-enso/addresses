@@ -2,6 +2,7 @@
 
 namespace LaravelEnso\Addresses\Services;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use LaravelEnso\Addresses\Exceptions\Localize;
 use LaravelEnso\Google\Models\Settings;
@@ -12,31 +13,44 @@ class Geocoding
     {
     }
 
-    public function get(): array
+    public function components(): self
     {
-        return $this->geocodeData();
+        $this->payload = Collection::wrap($this->payload)
+            ->map(fn ($value, $key) => $key . ':' . $value)
+            ->implode('|');
+
+        return $this;
     }
 
-    private function geocodeData(): array
+    public function handle(): array
     {
-        $geocodeData = $this->apiCall();
+        $response = $this->apiCall();
 
-        if ($geocodeData['status'] === 'REQUEST_DENIED') {
+        if ($response['status'] === 'REQUEST_DENIED') {
             throw Localize::wrongApiKey();
         }
 
-        if ($this->failed($geocodeData)) {
-            throw Localize::failed();
+        if ($this->failed($response)) {
+            throw Localize::failed($response['error_message']);
         }
 
-        return $geocodeData['results'][0];
+        if ($this->noResults($response)) {
+            throw Localize::noResults();
+        }
+
+        return $response['results'][0];
     }
 
-    private function failed($geocodeData): bool
+    private function failed($response): bool
     {
-        return empty($geocodeData)
-            || $geocodeData['status'] === 'ZERO_RESULTS'
-            || ! isset($geocodeData['results'][0]);
+        return $response['status'] === 'REQUEST_DENIED'
+            || $response['status'] === 'INVALID_REQUEST';
+    }
+
+    private function noResults($response): bool
+    {
+        return empty($response)
+            || $response['status'] === 'ZERO_RESULTS';
     }
 
     private function apiCall(): array
@@ -46,7 +60,7 @@ class Geocoding
         ]);
 
         if ($response->failed()) {
-            throw Localize::wrongApiUrl();
+            throw Localize::failed($response['error_message'] ?? null);
         }
 
         return $response->json();

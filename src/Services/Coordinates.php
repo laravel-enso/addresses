@@ -22,10 +22,10 @@ class Coordinates
 
     private function location(): array
     {
-        $geocodeData = (new Geocoding([
+        $response = (new Geocoding([
             'address' => $this->address->label(),
-        ]))->get();
+        ]))->handle();
 
-        return $geocodeData['geometry']['location'];
+        return $response['geometry']['location'];
     }
 }

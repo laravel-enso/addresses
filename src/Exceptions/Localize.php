@@ -11,11 +11,6 @@ class Localize extends EnsoException
         return new static(__('Google maps api url is missing'));
     }
 
-    public static function wrongApiUrl()
-    {
-        return new static(__('Google maps api url is incorrect'));
-    }
-
     public static function missingApiKey()
     {
         return new static(__('Google maps api key is missing'));
@@ -26,8 +21,13 @@ class Localize extends EnsoException
         return new static(__('Google maps api key is incorrect'));
     }
 
-    public static function failed()
+    public static function noResults()
     {
-        return new static(__('Unable to localize this address'));
+        return new static(__('No results found'));
+    }
+
+    public static function failed(string $message)
+    {
+        return new static(__($message));
     }
 }
