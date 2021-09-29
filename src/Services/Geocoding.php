@@ -2,10 +2,8 @@
 
 namespace LaravelEnso\Addresses\Services;
 
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use LaravelEnso\Addresses\Exceptions\Localize;
-use LaravelEnso\Addresses\Models\Address;
 use LaravelEnso\Google\Models\Settings;
 
 class Geocoding
@@ -38,7 +36,7 @@ class Geocoding
     {
         return empty($geocodeData)
             || $geocodeData['status'] === 'ZERO_RESULTS'
-            || !isset($geocodeData['results'][0]);
+            || ! isset($geocodeData['results'][0]);
     }
 
     private function apiCall(): array
@@ -58,7 +56,7 @@ class Geocoding
     {
         $url = Settings::mapsURL();
 
-        if (!$url) {
+        if (! $url) {
             throw Localize::missingApiUrl();
         }
 
@@ -69,7 +67,7 @@ class Geocoding
     {
         $key = Settings::mapsKey();
 
-        if (!$key) {
+        if (! $key) {
             throw Localize::missingApiKey();
         }
 

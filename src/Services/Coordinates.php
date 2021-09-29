@@ -2,10 +2,7 @@
 
 namespace LaravelEnso\Addresses\Services;
 
-use Illuminate\Support\Facades\Http;
-use LaravelEnso\Addresses\Exceptions\Localize;
 use LaravelEnso\Addresses\Models\Address;
-use LaravelEnso\Google\Models\Settings;
 
 class Coordinates
 {
@@ -26,7 +23,7 @@ class Coordinates
     private function location(): array
     {
         $geocodeData = (new Geocoding([
-            "address" => $this->address->label()
+            'address' => $this->address->label(),
         ]))->get();
 
         return $geocodeData['geometry']['location'];
