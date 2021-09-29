@@ -15,9 +15,9 @@ class Geocoding
 
     public function components(): self
     {
-        $this->payload = Collection::wrap($this->payload)
-            ->map(fn ($value, $key) => $key.':'.$value)
-            ->implode('|');
+        $this->payload = ['components' => Collection::wrap($this->payload)
+            ->map(fn ($value, $key) => $key . ':' . $value)
+            ->implode('|')];
 
         return $this;
     }
