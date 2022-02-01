@@ -30,8 +30,8 @@ class AppServiceProvider extends ServiceProvider
         ], ['addresses-factory', 'enso-factories']);
 
         $this->publishes([
-            __DIR__.'/../database/seeds' => database_path('seeds'),
-        ], ['addresses-seeds', 'enso-seeds']);
+            __DIR__.'/../database/seeders' => database_path('seeders'),
+        ], ['addresses-seeder', 'enso-seeders']);
 
         $this->publishes([
             __DIR__.'/../config' => config_path('enso'),
