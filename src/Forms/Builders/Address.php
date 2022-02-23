@@ -9,7 +9,7 @@ use LaravelEnso\Forms\Services\Form;
 
 class Address
 {
-    protected const TemplatePath = __DIR__.'/../Templates/address.json';
+    private const TemplatePath = __DIR__.'/../Templates/address.json';
 
     protected Form $form;
 
