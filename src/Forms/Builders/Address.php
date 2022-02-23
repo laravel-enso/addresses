@@ -3,11 +3,11 @@
 namespace LaravelEnso\Addresses\Forms\Builders;
 
 use Illuminate\Support\Facades\Config;
-use LaravelEnso\Addresses\Models\Address;
+use LaravelEnso\Addresses\Models\Address as Model;
 use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Forms\Services\Form;
 
-class AddressForm
+class Address
 {
     protected const TemplatePath = __DIR__.'/../Templates/address.json';
 
@@ -15,7 +15,7 @@ class AddressForm
 
     public function __construct()
     {
-        $this->form = (new Form(static::TemplatePath));
+        $this->form = (new Form($this->templatePath()));
     }
 
     public function create(?int $countryId)
@@ -29,10 +29,10 @@ class AddressForm
             ->create();
     }
 
-    public function edit(Address $address, ?int $countryId)
+    public function edit(Model $address, ?int $countryId)
     {
         if ($countryId) {
-            $address = new Address([
+            $address = new Model([
                 'id' => $address->id,
                 'country_id' => $countryId,
                 'is_default' => $address->is_default,
@@ -43,6 +43,11 @@ class AddressForm
             ->title('Edit')
             ->actions('update')
             ->edit($address);
+    }
+
+    protected function templatePath(): string
+    {
+        return self::TemplatePath;
     }
 
     private function prepare(Country $country): Form
