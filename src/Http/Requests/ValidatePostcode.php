@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Exists;
 
-class ValidatePostcodeRequest extends FormRequest
+class ValidatePostcode extends FormRequest
 {
     public function rules()
     {
