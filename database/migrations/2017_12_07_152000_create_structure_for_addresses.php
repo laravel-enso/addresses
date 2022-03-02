@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForAddresses extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'core.addresses.update', 'description' => 'Update edited address', 'is_default' => false],
@@ -21,4 +21,4 @@ class CreateStructureForAddresses extends Migration
         ['name' => 'core.addresses.regions', 'description' => 'Get regions for the select', 'is_default' => false],
         ['name' => 'core.addresses.postcode', 'description' => 'Get address based on the postcode', 'is_default' => false],
     ];
-}
+};
