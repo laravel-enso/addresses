@@ -15,7 +15,7 @@ class Region extends Model implements Activatable
 
     protected $guarded = [];
 
-    protected $rememberableKeys = ['id', 'name'];
+    protected $rememberableKeys = ['id', 'name', 'abbreviation'];
 
     public function country()
     {
