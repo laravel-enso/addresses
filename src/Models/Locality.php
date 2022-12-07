@@ -10,7 +10,9 @@ use LaravelEnso\Rememberable\Traits\Rememberable;
 
 class Locality extends Model implements Activatable
 {
-    use ActiveState, HasFactory, Rememberable;
+    use ActiveState;
+    use HasFactory;
+    use Rememberable;
 
     protected $guarded = [];
 

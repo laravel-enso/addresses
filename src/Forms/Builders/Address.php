@@ -33,7 +33,7 @@ class Address
     {
         if ($countryId) {
             $address = new Model([
-                'id' => $address->id,
+                'id'         => $address->id,
                 'country_id' => $countryId,
                 'is_default' => $address->is_default,
             ]);
@@ -61,7 +61,7 @@ class Address
             ->label('region_id', $regionLabel)
             ->columns('city', $regions->isEmpty() ? 1 : 2)
             ->meta('region_id', 'hidden', $regions->isEmpty())
-            ->meta('locality_id', 'hidden', ! $hasLocalities)
+            ->meta('locality_id', 'hidden', !$hasLocalities)
             ->meta('city', 'hidden', $hasLocalities);
     }
 }
