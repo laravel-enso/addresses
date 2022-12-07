@@ -70,7 +70,7 @@ class Geocoding
     {
         $url = Settings::mapsURL();
 
-        if (! $url) {
+        if (!$url) {
             throw Localize::missingApiUrl();
         }
 
@@ -81,7 +81,7 @@ class Geocoding
     {
         $key = Settings::mapsKey();
 
-        if (! $key) {
+        if (!$key) {
             throw Localize::missingApiKey();
         }
 

@@ -8,7 +8,8 @@ use LaravelEnso\Rememberable\Traits\Rememberable;
 
 class Township extends Model
 {
-    use HasFactory, Rememberable;
+    use HasFactory;
+    use Rememberable;
 
     protected $guarded = [];
 

@@ -9,7 +9,7 @@ class MakeDefault extends Controller
 {
     public function __invoke(Address $address)
     {
-        if (! $address->isDefault()) {
+        if (!$address->isDefault()) {
             $address->makeDefault();
         }
     }

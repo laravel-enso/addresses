@@ -15,21 +15,21 @@ class AddressFactory extends Factory
     public function definition()
     {
         return [
-            'addressable_id' => null,
+            'addressable_id'   => null,
             'addressable_type' => null,
-            'country_id' => null,
-            'region_id' => null,
-            'locality_id' => null,
-            'city' => null,
-            'street' => null,
-            'additional' => null,
-            'postcode' => null,
-            'lat' => null,
-            'long' => null,
-            'notes' => null,
-            'is_default' => true,
-            'is_billing' => true,
-            'is_shipping' => true,
+            'country_id'       => null,
+            'region_id'        => null,
+            'locality_id'      => null,
+            'city'             => null,
+            'street'           => null,
+            'additional'       => null,
+            'postcode'         => null,
+            'lat'              => null,
+            'long'             => null,
+            'notes'            => null,
+            'is_default'       => true,
+            'is_billing'       => true,
+            'is_shipping'      => true,
         ];
     }
 

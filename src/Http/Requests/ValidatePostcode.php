@@ -12,7 +12,7 @@ class ValidatePostcode extends FormRequest
     {
         return [
             'country_id' => 'required|exists:countries,id',
-            'postcode' => ['required', $this->valid()],
+            'postcode'   => ['required', $this->valid()],
         ];
     }
 

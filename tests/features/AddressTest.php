@@ -34,10 +34,10 @@ class AddressTest extends TestCase
         $country = Country::factory()->create(['is_active' => true]);
 
         $this->model = Address::factory()->test()->create([
-            'addressable_id' => AddressableTestModel::create(['name' => 'addressable'])->id,
+            'addressable_id'   => AddressableTestModel::create(['name' => 'addressable'])->id,
             'addressable_type' => AddressableTestModel::class,
-            'country_id' => $country->id,
-            'is_default' => true,
+            'country_id'       => $country->id,
+            'is_default'       => true,
         ]);
 
         Config::set('enso.addresses.defaultCountryId', $country->id);
@@ -47,7 +47,7 @@ class AddressTest extends TestCase
     public function can_create_address()
     {
         $params = Address::factory()->test()->make([
-            'addressable_id' => $this->model->addressable_id,
+            'addressable_id'   => $this->model->addressable_id,
             'addressable_type' => AddressableTestModel::class,
         ])->toArray();
 
@@ -62,7 +62,7 @@ class AddressTest extends TestCase
     public function can_get_addresses_index()
     {
         $route = route('core.addresses.index', [
-            'addressable_id' => $this->model->id,
+            'addressable_id'   => $this->model->id,
             'addressable_type' => 'AddressableTestModel',
         ], false);
 
@@ -198,11 +198,11 @@ class AddressTest extends TestCase
     private function secondaryAddress()
     {
         return Address::factory()->test()->create([
-            'addressable_id' => $this->model->addressable_id,
+            'addressable_id'   => $this->model->addressable_id,
             'addressable_type' => AddressableTestModel::class,
-            'is_default' => false,
-            'is_billing' => false,
-            'is_shipping' => false,
+            'is_default'       => false,
+            'is_billing'       => false,
+            'is_shipping'      => false,
         ]);
     }
 }
