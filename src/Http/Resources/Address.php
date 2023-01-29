@@ -15,6 +15,8 @@ class Address extends OneLiner
             'additional' => $this->resource->additional,
             'postcode' => $this->postcode,
             'notes' => $this->notes,
+            'lat' => $this->lat,
+            'long' => $this->long,
         ];
     }
 }

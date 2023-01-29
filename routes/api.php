@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use LaravelEnso\Addresses\Http\Controllers\Coordinates;
 use LaravelEnso\Addresses\Http\Controllers\Create;
 use LaravelEnso\Addresses\Http\Controllers\Destroy;
 use LaravelEnso\Addresses\Http\Controllers\Edit;
@@ -30,6 +31,7 @@ Route::middleware(['api', 'auth', 'core'])
         Route::get('{address}/edit', Edit::class)->name('edit');
         Route::get('{address}/localize', Localize::class)->name('localize');
         Route::patch('{address}', Update::class)->name('update');
+        Route::patch('{address}/coordinates', Coordinates::class)->name('coordinates');
         Route::delete('{address}', Destroy::class)->name('destroy');
 
         Route::patch('makeDefault/{address}', MakeDefault::class)->name('makeDefault');
