@@ -2,7 +2,8 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-return new class extends Migration {
+return new class extends Migration
+{
     protected array $permissions = [
         ['name' => 'core.addresses.update', 'description' => 'Update edited address', 'is_default' => false],
         ['name' => 'core.addresses.store', 'description' => 'Store newly created address', 'is_default' => false],
