@@ -10,6 +10,21 @@ class Postcode extends Model
 {
     protected $guarded = [];
 
+    public function township()
+    {
+        return $this->belongsTo(Township::class);
+    }
+
+    public function locality()
+    {
+        return $this->belongsTo(Locality::class);
+    }
+
+    public function county()
+    {
+        return $this->belongsTo(County::class);
+    }
+
     public function region()
     {
         return $this->belongsTo(Region::class);
