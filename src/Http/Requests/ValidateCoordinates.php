@@ -8,8 +8,6 @@ class ValidateCoordinates extends FormRequest
 {
     public function rules()
     {
-        \Log::info($this->get('lat'));
-
         return [
             'lat' => new Latitude(),
             'long' => new Longitude(),

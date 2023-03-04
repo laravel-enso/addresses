@@ -79,7 +79,7 @@ class Geocoding
 
     private function apiKey(): string
     {
-        $key = Settings::mapsKey();
+        $key = Settings::geocodingKey();
 
         if (! $key) {
             throw Localize::missingApiKey();
