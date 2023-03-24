@@ -16,7 +16,6 @@ class Localities extends Controller
 
     public function query()
     {
-        return Locality::with('township')
-            ->active();
+        return Locality::with('township')->active();
     }
 }
