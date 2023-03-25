@@ -11,6 +11,7 @@ class Locality extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name(),
+            'locality' => $this->name,
         ];
     }
 
