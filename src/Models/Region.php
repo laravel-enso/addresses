@@ -26,4 +26,9 @@ class Region extends Model implements Activatable
     {
         return $this->hasMany(Locality::class);
     }
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
 }
