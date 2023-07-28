@@ -4,11 +4,12 @@ namespace LaravelEnso\Addresses\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\DynamicMethods\Traits\Abilities;
 use LaravelEnso\Rememberable\Traits\Rememberable;
 
 class Township extends Model
 {
-    use HasFactory, Rememberable;
+    use Abilities, HasFactory, Rememberable;
 
     protected $guarded = [];
 
