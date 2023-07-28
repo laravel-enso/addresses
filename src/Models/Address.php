@@ -59,7 +59,7 @@ class Address extends Model
     public function label(): ?string
     {
         $locality = $this->locality?->name ?? $this->city;
-        $region = $this->region ? __('County') . ' ' . $this->region->name : null;
+        $region = $this->region ? __('County').' '.$this->region->name : null;
         $attrs = [$locality, $this->street, $this->postcode, $region];
 
         return Collection::wrap($attrs)->filter()->implode(', ');
@@ -102,10 +102,10 @@ class Address extends Model
             $defaultAddress = $this->addressable->address;
 
             if ($this->is_default) {
-                if (!$this->is($defaultAddress)) {
+                if (! $this->is($defaultAddress)) {
                     $defaultAddress?->update(['is_default' => false]);
                 }
-            } elseif (!$defaultAddress) {
+            } elseif (! $defaultAddress) {
                 $this->is_default = true;
             }
 
@@ -126,7 +126,7 @@ class Address extends Model
 
     public function toggleBilling(): void
     {
-        $this->update(['is_billing' => !$this->is_billing]);
+        $this->update(['is_billing' => ! $this->is_billing]);
     }
 
     public function makeBilling(): void
@@ -136,7 +136,7 @@ class Address extends Model
 
     public function toggleShipping(): void
     {
-        $this->update(['is_shipping' => !$this->is_shipping]);
+        $this->update(['is_shipping' => ! $this->is_shipping]);
     }
 
     public function localize(): array
@@ -150,7 +150,7 @@ class Address extends Model
 
     public function shouldBeSingle(): bool
     {
-        return !$this->canBeMultiple()
+        return ! $this->canBeMultiple()
             && $this->addressable->address()->exists();
     }
 
