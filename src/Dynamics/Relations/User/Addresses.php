@@ -4,10 +4,15 @@ namespace LaravelEnso\Addresses\Dynamics\Relations\User;
 
 use Closure;
 use LaravelEnso\Addresses\Models\Address;
-use LaravelEnso\DynamicMethods\Contracts\Method;
+use LaravelEnso\DynamicMethods\Contracts\Relation;
+use LaravelEnso\Users\Models\User;
 
-class Addresses implements Method
+class Addresses implements Relation
 {
+    public function bindTo(): array
+    {
+        return [User::class];
+    }
     public function name(): string
     {
         return 'addresses';
@@ -15,6 +20,6 @@ class Addresses implements Method
 
     public function closure(): Closure
     {
-        return fn () => $this->hasMany(Address::class, 'created_by');
+        return fn (User $user) => $user->hasMany(Address::class, 'created_by');
     }
 }

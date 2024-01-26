@@ -5,10 +5,15 @@ namespace LaravelEnso\Addresses\Dynamics\Relations\Country;
 use Closure;
 use LaravelEnso\Addresses\Models\Locality;
 use LaravelEnso\Addresses\Models\Region;
-use LaravelEnso\DynamicMethods\Contracts\Method;
+use LaravelEnso\Countries\Models\Country;
+use LaravelEnso\DynamicMethods\Contracts\Relation;
 
-class Localities implements Method
+class Localities implements Relation
 {
+    public function bindTo(): array
+    {
+        return [Country::class];
+    }
     public function name(): string
     {
         return 'localities';
@@ -16,6 +21,6 @@ class Localities implements Method
 
     public function closure(): Closure
     {
-        return fn () => $this->hasManyThrough(Locality::class, Region::class);
+        return fn (Country $country) => $country->hasManyThrough(Locality::class, Region::class);
     }
 }
