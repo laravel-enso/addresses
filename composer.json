@@ -8,12 +8,12 @@
     ],
     "type": "library",
     "require": {
-        "laravel-enso/core": "^8.0",
+        "laravel-enso/core": "^9.0",
         "laravel-enso/countries": "^2.0",
         "laravel-enso/enums": "^2.0",
         "laravel-enso/forms": "^4.0",
         "laravel-enso/google": "^2.0",
-        "laravel-enso/helpers": "^2.0",
+        "laravel-enso/helpers": "^3.0",
         "laravel-enso/migrator": "^2.0",
         "laravel-enso/rememberable": "^3.0",
         "laravel-enso/select": "^4.0"
@@ -42,9 +42,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelEnso\\Addresses\\AppServiceProvider",
-                "LaravelEnso\\Addresses\\CountryServiceProvider",
-                "LaravelEnso\\Addresses\\UserServiceProvider"
+                "LaravelEnso\\Addresses\\AppServiceProvider"
             ]
         }
     }
