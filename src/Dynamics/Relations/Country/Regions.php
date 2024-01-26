@@ -13,6 +13,7 @@ class Regions implements Relation
     {
         return [Country::class];
     }
+
     public function name(): string
     {
         return 'regions';

@@ -14,6 +14,7 @@ class Localities implements Relation
     {
         return [Country::class];
     }
+
     public function name(): string
     {
         return 'localities';
