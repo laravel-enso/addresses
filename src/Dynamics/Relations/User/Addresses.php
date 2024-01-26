@@ -13,6 +13,7 @@ class Addresses implements Relation
     {
         return [User::class];
     }
+
     public function name(): string
     {
         return 'addresses';
