@@ -60,7 +60,7 @@ class Address extends Model
     {
         $locality = $this->locality?->name ?? $this->city;
         $region = $this->region ? __('County').' '.$this->region->name : null;
-        $attrs = [$locality, $this->street, $this->postcode, $region];
+        $attrs = [$locality, $this->street, $this->additional, $this->postcode, $region];
 
         return Collection::wrap($attrs)->filter()->implode(', ');
     }
