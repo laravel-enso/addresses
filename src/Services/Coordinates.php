@@ -3,7 +3,7 @@
 namespace LaravelEnso\Addresses\Services;
 
 use LaravelEnso\Addresses\Models\Address;
-use LaravelEnso\Google\Apis\Geocoding;
+use LaravelEnso\Google\APIs\Geocoding;
 
 class Coordinates
 {
