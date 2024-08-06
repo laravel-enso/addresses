@@ -30,7 +30,7 @@ class Locality extends Model implements Activatable
     protected function casts(): array
     {
         return [
-            'is_active' => 'boolean'
+            'is_active' => 'boolean',
         ];
     }
 }
