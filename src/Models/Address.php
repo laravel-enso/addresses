@@ -24,11 +24,6 @@ class Address extends Model
 
     protected $guarded = [];
 
-    protected $casts = [
-        'is_default' => 'boolean', 'is_billing' => 'boolean',
-        'is_shipping' => 'boolean', 'addressable_id' => 'integer',
-    ];
-
     protected $touches = ['addressable'];
 
     public function country()
@@ -163,6 +158,14 @@ class Address extends Model
     public function isLocalized(): bool
     {
         return $this->lat !== null && $this->long !== null;
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'is_default' => 'boolean', 'is_billing' => 'boolean',
+            'is_shipping' => 'boolean', 'addressable_id' => 'integer',
+        ];
     }
 
     private function canBeMultiple(): bool

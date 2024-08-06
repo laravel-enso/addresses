@@ -15,8 +15,6 @@ class Locality extends Model implements Activatable
 
     protected $guarded = [];
 
-    protected $casts = ['is_active' => 'boolean'];
-
     protected $rememberableKeys = ['id', 'name'];
 
     public function region()
@@ -27,5 +25,12 @@ class Locality extends Model implements Activatable
     public function township()
     {
         return $this->belongsTo(Township::class);
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'is_active' => 'boolean'
+        ];
     }
 }
