@@ -3,167 +3,210 @@
     "icon": "location-arrow",
     "method": null,
     "routePrefix": "core.addresses",
-    "sections": [{
-        "columns": 2,
-        "fields": [{
-            "label": "Country",
-            "name": "country_id",
-            "value": null,
-            "meta": {
-                "custom": true,
-                "type": "select",
-                "multiple": false,
-                "source": "core.countries.options"
-            }
-        }, {
-            "label": "Postal Area",
-            "name": "postcode",
-            "value": "",
-            "meta": {
-                "type": "input",
-                "content": "text",
-                "disabled": false,
-                "custom": true
-            }
-        }]
-    }, {
-        "columns": 2,
-        "fields": [{
-            "label": "Region",
-            "name": "region_id",
-            "value": null,
-            "meta": {
-                "custom": true,
-                "type": "select",
-                "multiple": false,
-                "options": []
-            }
-        }, {
-            "label": "Locality",
-            "name": "locality_id",
-            "value": null,
-            "meta": {
-                "custom": true,
-                "type": "select",
-                "multiple": false,
-                "source": "core.addresses.localities",
-                "options": [],
-                "hidden": false
-            }
-        }, {
-            "label": "City",
-            "name": "city",
-            "value": null,
-            "meta": {
-                "type": "input",
-                "content": "text",
-                "disabled": false,
-                "hidden": false
-            }
-        }]
-    }, {
-        "columns": 1,
-        "fields": [{
-            "label": "Street",
-            "name": "street",
-            "value": "",
-            "meta": {
-                "placeholder": "Street address, P.O. box, company name, c/o",
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        }, {
-            "label": "Additional",
-            "name": "additional",
-            "value": "",
-            "meta": {
-                "placeholder": "Apartment, suite, unit, building, floor, etc.",
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        }]
-    }, {
-        "columns": 3,
-        "fields": [{
-            "label": "Default",
-            "name": "is_default",
-            "value": false,
-            "meta": {
-                "type": "input",
-                "content": "checkbox"
-            }
-        }, {
-            "label": "Billing",
-            "name": "is_billing",
-            "value": false,
-            "meta": {
-                "type": "input",
-                "content": "checkbox"
-            }
-        }, {
-            "label": "Shipping",
-            "name": "is_shipping",
-            "value": false,
-            "meta": {
-                "type": "input",
-                "content": "checkbox"
-            }
-        }]
-    }, {
-        "columns": 2,
-        "fields": [{
-            "label": "Lat",
-            "name": "lat",
-            "value": "",
-            "meta": {
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        }, {
-            "label": "Long",
-            "name": "long",
-            "value": "",
-            "meta": {
-                "type": "input",
-                "content": "text",
-                "disabled": false
-            }
-        }]
-    }, {
-        "columns": 1,
-        "fields": [{
-            "label": "Notes",
-            "name": "notes",
-            "value": null,
-            "meta": {
-                "type": "textarea",
-                "rows": 2,
-                "disabled": false
-            }
-        }]
-    }, {
-        "columns": 1,
-        "fields": [{
-            "label": "",
-            "name": "addressable_id",
-            "value": "",
-            "meta": {
-                "type": "input",
-                "content": "text",
-                "hidden": true
-            }
-        }, {
-            "label": "",
-            "name": "addressable_type",
-            "value": "",
-            "meta": {
-                "type": "input",
-                "content": "text",
-                "hidden": true
-            }
-        }]
-    }]
+    "sections": [
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "Country",
+                    "name": "country_id",
+                    "value": null,
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "multiple": false,
+                        "source": "core.countries.options"
+                    }
+                },
+                {
+                    "label": "Postal Area",
+                    "name": "postcode",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text",
+                        "disabled": false,
+                        "custom": true
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "Region",
+                    "name": "region_id",
+                    "value": null,
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "multiple": false,
+                        "options": []
+                    }
+                },
+                {
+                    "label": "Locality",
+                    "name": "locality_id",
+                    "value": null,
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "multiple": false,
+                        "source": "core.addresses.localities",
+                        "options": [],
+                        "hidden": false
+                    }
+                },
+                {
+                    "label": "Sector",
+                    "name": "sector_id",
+                    "value": null,
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "multiple": false,
+                        "source": "core.addresses.sectors",
+                        "options": [],
+                        "hidden": true
+                    }
+                },
+                {
+                    "label": "City",
+                    "name": "city",
+                    "value": null,
+                    "meta": {
+                        "type": "input",
+                        "content": "text",
+                        "disabled": false,
+                        "hidden": false
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 1,
+            "fields": [
+                {
+                    "label": "Street",
+                    "name": "street",
+                    "value": "",
+                    "meta": {
+                        "placeholder": "Street address, P.O. box, company name, c/o",
+                        "type": "input",
+                        "content": "text",
+                        "disabled": false
+                    }
+                },
+                {
+                    "label": "Additional",
+                    "name": "additional",
+                    "value": "",
+                    "meta": {
+                        "placeholder": "Apartment, suite, unit, building, floor, etc.",
+                        "type": "input",
+                        "content": "text",
+                        "disabled": false
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 3,
+            "fields": [
+                {
+                    "label": "Default",
+                    "name": "is_default",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox"
+                    }
+                },
+                {
+                    "label": "Billing",
+                    "name": "is_billing",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox"
+                    }
+                },
+                {
+                    "label": "Shipping",
+                    "name": "is_shipping",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox"
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "Lat",
+                    "name": "lat",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text",
+                        "disabled": false
+                    }
+                },
+                {
+                    "label": "Long",
+                    "name": "long",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text",
+                        "disabled": false
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 1,
+            "fields": [
+                {
+                    "label": "Notes",
+                    "name": "notes",
+                    "value": null,
+                    "meta": {
+                        "type": "textarea",
+                        "rows": 2,
+                        "disabled": false
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 1,
+            "fields": [
+                {
+                    "label": "",
+                    "name": "addressable_id",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text",
+                        "hidden": true
+                    }
+                },
+                {
+                    "label": "",
+                    "name": "addressable_type",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text",
+                        "hidden": true
+                    }
+                }
+            ]
+        }
+    ]
 }

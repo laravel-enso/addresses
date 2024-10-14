@@ -12,6 +12,7 @@ class Locality extends JsonResource
             'id' => $this->id,
             'name' => $this->name(),
             'locality' => $this->name,
+            'hasSectors' => $this->sectors()->exists(),
         ];
     }
 

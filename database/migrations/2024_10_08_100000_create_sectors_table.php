@@ -6,12 +6,11 @@ use Illuminate\Support\Facades\Schema;
 use LaravelEnso\Addresses\Models\Sector;
 use LaravelEnso\Upgrade\Helpers\Table;
 
-return new class extends Migration
-{
+return new class extends Migration {
     public function up()
     {
         Schema::create('sectors', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
 
             $table->integer('locality_id')->unsigned()->index();
             $table->foreign('locality_id')->references('id')->on('localities');
@@ -22,8 +21,9 @@ return new class extends Migration
         });
 
         Schema::table('addresses', fn (Blueprint $table) => $table
-            ->foreignIdFor(Sector::class)->constrained()->nullable()
-            ->after('locality_id'));
+            ->foreignIdFor(Sector::class)->nullable()
+            ->after('locality_id')
+            ->constrained());
     }
 
     public function down()

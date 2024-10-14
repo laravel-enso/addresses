@@ -2,7 +2,9 @@
 
 namespace LaravelEnso\Addresses\Models;
 
-class Sector
+use Illuminate\Database\Eloquent\Model;
+
+class Sector extends Model
 {
-    protected $guards = [];
+    protected $guarded = [];
 }

@@ -4,6 +4,7 @@ namespace LaravelEnso\Addresses\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use LaravelEnso\DynamicMethods\Traits\Abilities;
 use LaravelEnso\Helpers\Contracts\Activatable;
 use LaravelEnso\Helpers\Traits\ActiveState;
@@ -17,14 +18,19 @@ class Locality extends Model implements Activatable
 
     protected $rememberableKeys = ['id', 'name'];
 
-    public function region()
+    public function region(): Relation
     {
         return $this->belongsTo(Region::class);
     }
 
-    public function township()
+    public function township(): Relation
     {
         return $this->belongsTo(Township::class);
+    }
+
+    public function sectors(): Relation
+    {
+        return $this->hasMany(Sector::class);
     }
 
     protected function casts(): array
