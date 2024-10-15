@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use LaravelEnso\Addresses\Models\Locality;
 
-class BucharestSectorSeeder extends Seeder
+class SectorSeeder extends Seeder
 {
     private const Bucharest = 'Bucuresti';
 

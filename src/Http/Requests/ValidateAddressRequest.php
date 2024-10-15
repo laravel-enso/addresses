@@ -19,10 +19,10 @@ class ValidateAddressRequest extends ValidateAddressFetch
 
         return parent::rules() + [
             'country_id' => 'required',
-            'region_id' => ['nullable', 'exists:regions,id', $this->required($hasRegions)],
-            'locality_id' => ['nullable', 'exists:localities,id', $this->required($hasLocalities)],
-            'sector_id' => ['nullable', 'exists:sectors,id', $this->required($hasSectors)],
-            'city' => ['nullable', 'string', 'max:255', $this->required(! $hasLocalities)],
+            'region_id' => ['nullable', 'exists:regions,id', Rule::requiredIf($hasRegions)],
+            'locality_id' => ['nullable', 'exists:localities,id', Rule::requiredIf($hasLocalities)],
+            'sector_id' => ['nullable', 'exists:sectors,id', Rule::requiredIf($hasSectors)],
+            'city' => ['nullable', 'string', 'max:255', Rule::requiredIf(! $hasLocalities)],
             'street' => 'required|string|max:255',
             'is_default' => 'required|boolean',
             'is_billing' => 'required|boolean',
@@ -33,10 +33,5 @@ class ValidateAddressRequest extends ValidateAddressFetch
             'lat' => ['nullable', new Latitude()],
             'long' => ['nullable', new Longitude()],
         ];
-    }
-
-    private function required(bool $hasLocalities)
-    {
-        return Rule::requiredIf($hasLocalities);
     }
 }
