@@ -11,19 +11,19 @@ return new class extends Migration
         Schema::create('postcodes', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->unsignedInteger('country_id')->index();
+            $table->integer('country_id')->unsigned()->index();
             $table->foreign('country_id')->references('id')->on('countries')
                 ->onUpdate('restrict')->onDelete('restrict');
 
-            $table->unsignedInteger('region_id')->index();
+            $table->integer('region_id')->unsigned()->index();
             $table->foreign('region_id')->references('id')->on('regions')
                 ->onUpdate('restrict')->onDelete('restrict');
 
-            $table->unsignedInteger('township_id')->nullable()->index();
+            $table->integer('township_id')->unsigned()->nullable()->index();
             $table->foreign('township_id')->references('id')->on('townships')
                 ->onUpdate('restrict')->onDelete('restrict');
 
-            $table->unsignedInteger('locality_id')->index()->nullable();
+            $table->integer('locality_id')->unsigned()->index()->nullable();
             $table->foreign('locality_id')->references('id')->on('localities')
                 ->onUpdate('restrict')->onDelete('restrict');
 
