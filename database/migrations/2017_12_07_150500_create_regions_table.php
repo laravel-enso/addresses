@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->unsignedInteger('country_id')->index();
+            $table->integer('country_id')->unsigned()->index();
             $table->foreign('country_id')->references('id')->on('countries')
                 ->onUpdate('restrict')->onDelete('restrict');
 
