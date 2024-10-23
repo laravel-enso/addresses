@@ -14,6 +14,7 @@ use LaravelEnso\Addresses\Http\Controllers\MakeShipping;
 use LaravelEnso\Addresses\Http\Controllers\Options;
 use LaravelEnso\Addresses\Http\Controllers\Postcode;
 use LaravelEnso\Addresses\Http\Controllers\Regions;
+use LaravelEnso\Addresses\Http\Controllers\Sectors;
 use LaravelEnso\Addresses\Http\Controllers\Show;
 use LaravelEnso\Addresses\Http\Controllers\Store;
 use LaravelEnso\Addresses\Http\Controllers\Update;
@@ -23,6 +24,7 @@ Route::middleware(['api', 'auth', 'core'])
     ->group(function () {
         Route::get('localities', Localities::class)->name('localities');
         Route::get('regions', Regions::class)->name('regions');
+        Route::get('sectors', Sectors::class)->name('sectors');
         Route::get('', Index::class)->name('index');
         Route::get('create', Create::class)->name('create');
         Route::post('', Store::class)->name('store');

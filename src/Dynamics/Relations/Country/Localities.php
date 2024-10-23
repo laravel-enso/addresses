@@ -22,6 +22,7 @@ class Localities implements Relation
 
     public function closure(): Closure
     {
-        return fn (Country $country) => $country->hasManyThrough(Locality::class, Region::class);
+        return fn (Country $country) => $country
+            ->hasManyThrough(Locality::class, Region::class);
     }
 }
