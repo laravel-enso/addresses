@@ -41,6 +41,11 @@ class Address extends Model
         return $this->belongsTo(Locality::class);
     }
 
+    public function sector()
+    {
+        return $this->belongsTo(Sector::class);
+    }
+
     public function addressable()
     {
         return $this->morphTo();
