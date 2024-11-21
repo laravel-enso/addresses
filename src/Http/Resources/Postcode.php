@@ -14,8 +14,9 @@ class Postcode extends JsonResource
             'country_id' => $this->country_id,
             'region_id' => $this->region_id,
             'locality_id' => $this->locality_id,
+            'sector_id' => $this->sector_id,
             'city' => $this->city,
-            'street' => $this->street,
+            'street' => $this->street(),
             'lat' => $this->lat,
             'long' => $this->long,
         ];

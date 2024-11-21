@@ -3,9 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use LaravelEnso\Addresses\Models\Sector;
 
-return new class extends Migration
-{
+return new class extends Migration {
     public function up()
     {
         Schema::create('postcodes', function (Blueprint $table) {
@@ -27,9 +27,13 @@ return new class extends Migration
             $table->foreign('locality_id')->references('id')->on('localities')
                 ->onUpdate('restrict')->onDelete('restrict');
 
+            $table->foreignIdFor(Sector::class)->nullable()->constrained();
+
             $table->string('code');
             $table->string('city')->nullable();
-            $table->string('street')->nullable();
+            $table->string('street_type')->nullable();
+            $table->string('street_name')->nullable();
+            $table->string('street_number')->nullable();
 
             $table->float('lat', 10, 6)->nullable();
             $table->float('long', 10, 6)->nullable();

@@ -25,6 +25,11 @@ class Postcode extends Model
         return $this->belongsTo(County::class);
     }
 
+    public function sector()
+    {
+        return $this->belongsTo(Sector::class);
+    }
+
     public function region()
     {
         return $this->belongsTo(Region::class);
@@ -33,6 +38,11 @@ class Postcode extends Model
     public function country()
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public function street(): string
+    {
+        return "{$this->street_type} {$this->street_name} {$this->street_number}";
     }
 
     public function scopeFor(Builder $builder, int $countryId, string $code): Builder
