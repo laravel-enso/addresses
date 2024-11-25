@@ -24,12 +24,23 @@ return new class extends Migration {
             ->foreignIdFor(Sector::class)->nullable()
             ->after('locality_id')
             ->constrained());
+
+        Schema::table('postcodes', fn (Blueprint $table) => $table
+            ->foreignIdFor(Sector::class)
+            ->after('locality_id')
+            ->nullable()
+            ->constrained());
     }
 
     public function down()
     {
         if (Table::hasColumn('addresses', 'sectory_id')) {
             Schema::table('addresses', fn (Blueprint $table) => $table
+                ->dropColumn('sector_id'));
+        }
+
+        if (Table::hasColumn('postcodes', 'sectory_id')) {
+            Schema::table('postcodes', fn (Blueprint $table) => $table
                 ->dropColumn('sector_id'));
         }
 

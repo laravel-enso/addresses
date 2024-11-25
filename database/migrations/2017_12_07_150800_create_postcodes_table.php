@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use LaravelEnso\Addresses\Models\Sector;
 
 return new class extends Migration {
     public function up()
@@ -26,8 +25,6 @@ return new class extends Migration {
             $table->integer('locality_id')->unsigned()->index()->nullable();
             $table->foreign('locality_id')->references('id')->on('localities')
                 ->onUpdate('restrict')->onDelete('restrict');
-
-            $table->foreignIdFor(Sector::class)->nullable()->constrained();
 
             $table->string('code');
             $table->string('city')->nullable();
