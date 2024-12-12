@@ -40,6 +40,7 @@ class Address
         }
 
         return $this->prepare($address->country)
+            ->meta('sector_id', 'hidden', ! $address->sector_id)
             ->title('Edit')
             ->actions('update')
             ->edit($address);
