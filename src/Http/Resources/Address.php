@@ -10,6 +10,7 @@ class Address extends OneLiner
             'country' => $this->relationLoaded('country') ? $this->country->name : null,
             'region' => $this->relationLoaded('region') ? $this->region?->name : null,
             'locality' => $this->relationLoaded('locality') ? $this->locality?->name : null,
+            'sector' => $this->relationLoaded('sector') ? $this->sector?->name : null,
             'city' => $this->city,
             'street' => $this->street,
             'additional' => $this->resource->additional,
