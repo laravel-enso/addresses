@@ -23,10 +23,14 @@ class Postcodes implements MigratesTable, ShouldRunManually
 
     public function migrateTable(): void
     {
-        Schema::table('postcodes', function (Blueprint $table) {
-            $table->foreignIdFor(Sector::class)->nullable()
+        if (! Table::hasColumn('postcodes', 'sector_id')) {
+            Schema::table('postcodes', fn (Blueprint $table) => $table
+                ->foreignIdFor(Sector::class)->nullable()
                 ->after('locality_id')
-                ->constrained();
+                ->constrained());
+        }
+
+        Schema::table('postcodes', function (Blueprint $table) {
             $table->string('street_type')->nullable()->after('city');
             $table->renameColumn('street', 'street_name');
             $table->string('street_number')->nullable()->after('street_name');
