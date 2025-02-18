@@ -10,4 +10,6 @@ class Sector extends Model
     use Rememberable;
 
     protected $guarded = [];
+
+    protected $rememberableKeys = ['id', 'name'];
 }
