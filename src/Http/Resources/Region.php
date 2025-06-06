@@ -11,6 +11,7 @@ class Region extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'abbreviation' => $this->abbreviation,
         ];
     }
 }
