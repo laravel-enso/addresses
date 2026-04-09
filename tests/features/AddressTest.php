@@ -12,6 +12,7 @@ use LaravelEnso\Countries\Models\Country;
 use LaravelEnso\Users\Models\User;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 use Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class AddressTest extends TestCase
 {
@@ -43,7 +44,7 @@ class AddressTest extends TestCase
         Config::set('enso.addresses.defaultCountryId', $country->id);
     }
 
-    /** @test */
+    #[Test]
     public function can_create_address()
     {
         $params = Address::factory()->test()->make([
@@ -58,7 +59,7 @@ class AddressTest extends TestCase
         $this->assertTrue(Address::whereStreet($params['street'])->exists());
     }
 
-    /** @test */
+    #[Test]
     public function can_get_addresses_index()
     {
         $route = route('core.addresses.index', [
@@ -71,7 +72,7 @@ class AddressTest extends TestCase
             ->assertJsonFragment(['street' => $this->model->street]);
     }
 
-    /** @test */
+    #[Test]
     public function can_update_address()
     {
         $route = route('core.addresses.update', $this->model->id, false);
@@ -84,7 +85,7 @@ class AddressTest extends TestCase
         $this->assertEquals($this->model->street, $this->model->fresh()->street);
     }
 
-    /** @test */
+    #[Test]
     public function can_set_default_address()
     {
         $secondaryAddress = $this->secondaryAddress();
@@ -97,7 +98,7 @@ class AddressTest extends TestCase
         $this->assertTrue($secondaryAddress->fresh()->is_default);
     }
 
-    /** @test */
+    #[Test]
     public function can_set_billing_address()
     {
         $secondaryAddress = $this->secondaryAddress();
@@ -108,7 +109,7 @@ class AddressTest extends TestCase
         $this->assertTrue($secondaryAddress->fresh()->is_billing);
     }
 
-    /** @test */
+    #[Test]
     public function can_set_shipping_address()
     {
         $secondaryAddress = $this->secondaryAddress();
@@ -119,7 +120,7 @@ class AddressTest extends TestCase
         $this->assertTrue($secondaryAddress->fresh()->is_shipping);
     }
 
-    /** @test */
+    #[Test]
     public function can_get_create_address_form()
     {
         $route = route('core.addresses.create', $this->model->id, false);
@@ -129,7 +130,7 @@ class AddressTest extends TestCase
             ->assertJsonStructure(['form' => 'form']);
     }
 
-    /** @test */
+    #[Test]
     public function can_get_edit_address_form()
     {
         $route = route('core.addresses.edit', $this->model->id, false);
@@ -139,7 +140,7 @@ class AddressTest extends TestCase
             ->assertJsonStructure(['form' => 'form']);
     }
 
-    /** @test */
+    #[Test]
     public function can_delete_address()
     {
         $route = route('core.addresses.destroy', $this->model->id, false);
@@ -149,7 +150,7 @@ class AddressTest extends TestCase
         $this->assertNull($this->model->fresh());
     }
 
-    /** @test */
+    #[Test]
     public function cannot_delete_a_default_address_while_having_secondary_address()
     {
         $route = route('core.addresses.destroy', $this->model->id, false);
@@ -164,7 +165,7 @@ class AddressTest extends TestCase
         $this->assertNotNull($secondaryAddress->fresh());
     }
 
-    /** @test */
+    #[Test]
     public function cannot_delete_an_addressable_while_having_restrict_address()
     {
         Config::set('enso.addresses.onDelete', 'restrict');
@@ -176,7 +177,7 @@ class AddressTest extends TestCase
         $this->assertNotNull($this->model->fresh());
     }
 
-    /** @test */
+    #[Test]
     public function can_delete_an_addressable_while_having_cascade_address()
     {
         Config::set('enso.addresses.onDelete', 'cascade');
