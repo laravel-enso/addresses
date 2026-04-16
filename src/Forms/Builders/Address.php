@@ -9,7 +9,7 @@ use LaravelEnso\Forms\Services\Form;
 
 class Address
 {
-    private const TemplatePath = __DIR__.'/../Templates/address.json';
+    private const TemplatePath = __DIR__ . '/../Templates/address.json';
 
     protected Form $form;
 
@@ -24,7 +24,7 @@ class Address
         $country = Country::find($countryId);
 
         return $this->prepare($country)
-            ->title('Create')
+            ->title('Create Address')
             ->actions('store')
             ->create();
     }
@@ -40,8 +40,8 @@ class Address
         }
 
         return $this->prepare($address->country)
-            ->meta('sector_id', 'hidden', ! $address->sector_id)
-            ->title('Edit')
+            ->meta('sector_id', 'hidden', !$address->sector_id)
+            ->title('Edit Address')
             ->actions('update')
             ->edit($address);
     }
@@ -62,7 +62,7 @@ class Address
             ->label('region_id', $regionLabel)
             ->columns('city', $regions->isEmpty() ? 1 : 2)
             ->meta('region_id', 'hidden', $regions->isEmpty())
-            ->meta('locality_id', 'hidden', ! $hasLocalities)
+            ->meta('locality_id', 'hidden', !$hasLocalities)
             ->meta('city', 'hidden', $hasLocalities);
     }
 }

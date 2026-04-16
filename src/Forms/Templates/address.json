@@ -112,12 +112,13 @@
             ]
         },
         {
-            "columns": 3,
+            "columns": "custom",
             "fields": [
                 {
                     "label": "Default",
                     "name": "is_default",
                     "value": false,
+                    "column": 6,
                     "meta": {
                         "type": "input",
                         "content": "checkbox"
@@ -127,6 +128,7 @@
                     "label": "Billing",
                     "name": "is_billing",
                     "value": false,
+                    "column": 3,
                     "meta": {
                         "type": "input",
                         "content": "checkbox"
@@ -136,6 +138,7 @@
                     "label": "Shipping",
                     "name": "is_shipping",
                     "value": false,
+                    "column": 3,
                     "meta": {
                         "type": "input",
                         "content": "checkbox"
