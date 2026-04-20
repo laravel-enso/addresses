@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use LaravelEnso\Addresses\Models\Sector;
 use LaravelEnso\Upgrade\Helpers\Table;
 
-return new class extends Migration
-{
+return new class() extends Migration {
     public function up()
     {
         Schema::create('sectors', function (Blueprint $table) {

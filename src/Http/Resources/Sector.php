@@ -9,7 +9,7 @@ class Sector extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
+            'id'   => $this->id,
             'name' => "Sector {$this->name}",
         ];
     }

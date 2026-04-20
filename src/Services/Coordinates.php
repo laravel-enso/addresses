@@ -16,7 +16,7 @@ class Coordinates
         $location = $this->location();
 
         return [
-            'lat' => round($location['lat'], 6),
+            'lat'  => round($location['lat'], 6),
             'long' => round($location['lng'], 6),
         ];
     }

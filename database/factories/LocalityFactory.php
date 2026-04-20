@@ -14,10 +14,10 @@ class LocalityFactory extends Factory
     public function definition()
     {
         return [
-            'region_id' => Region::factory(),
+            'region_id'   => Region::factory(),
             'township_id' => Township::factory(),
-            'name' => $this->faker->word,
-            'is_active' => $this->faker->boolean,
+            'name'        => $this->faker->word,
+            'is_active'   => $this->faker->boolean,
         ];
     }
 }

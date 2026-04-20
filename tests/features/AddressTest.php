@@ -44,17 +44,17 @@ class AddressTest extends TestCase
         ['region' => $region, 'locality' => $locality] = $this->geographyFor($this->country);
 
         $this->address = Address::create([
-            'addressable_id' => $this->addressable->id,
+            'addressable_id'   => $this->addressable->id,
             'addressable_type' => AddressableTestModel::class,
-            'country_id' => $this->country->id,
-            'region_id' => $region->id,
-            'locality_id' => $locality->id,
-            'street' => 'Main street 1',
-            'postcode' => '010101',
-            'is_default' => true,
-            'is_billing' => true,
-            'is_shipping' => true,
-            'created_by' => $this->user->id,
+            'country_id'       => $this->country->id,
+            'region_id'        => $region->id,
+            'locality_id'      => $locality->id,
+            'street'           => 'Main street 1',
+            'postcode'         => '010101',
+            'is_default'       => true,
+            'is_billing'       => true,
+            'is_shipping'      => true,
+            'created_by'       => $this->user->id,
         ]);
     }
 
@@ -64,12 +64,12 @@ class AddressTest extends TestCase
         ['region' => $region, 'locality' => $locality] = $this->geographyFor($this->country, 'Create Region', 'Create Locality');
 
         $params = $this->addressParams([
-            'addressable_id' => $this->addressable->id,
+            'addressable_id'   => $this->addressable->id,
             'addressable_type' => AddressableTestModel::class,
-            'country_id' => $this->country->id,
-            'region_id' => $region->id,
-            'locality_id' => $locality->id,
-            'street' => 'Created street',
+            'country_id'       => $this->country->id,
+            'region_id'        => $region->id,
+            'locality_id'      => $locality->id,
+            'street'           => 'Created street',
         ]);
 
         $this->post(route('core.addresses.store'), $params)
@@ -89,18 +89,18 @@ class AddressTest extends TestCase
         $otherAddressable = AddressableTestModel::create(['name' => 'other']);
 
         Address::create([
-            'addressable_id' => $otherAddressable->id,
+            'addressable_id'   => $otherAddressable->id,
             'addressable_type' => AddressableTestModel::class,
-            'country_id' => $this->country->id,
-            'street' => 'Other street',
-            'is_default' => true,
-            'is_billing' => false,
-            'is_shipping' => false,
-            'created_by' => $this->user->id,
+            'country_id'       => $this->country->id,
+            'street'           => 'Other street',
+            'is_default'       => true,
+            'is_billing'       => false,
+            'is_shipping'      => false,
+            'created_by'       => $this->user->id,
         ]);
 
         $route = route('core.addresses.index', [
-            'addressable_id' => $this->addressable->id,
+            'addressable_id'   => $this->addressable->id,
             'addressable_type' => AddressableTestModel::class,
         ], false);
 
@@ -116,12 +116,12 @@ class AddressTest extends TestCase
         $route = route('core.addresses.update', $this->address, false);
 
         $this->patch($route, array_merge($this->addressParams(), [
-            'addressable_id' => $this->addressable->id,
+            'addressable_id'   => $this->addressable->id,
             'addressable_type' => AddressableTestModel::class,
-            'country_id' => $this->country->id,
-            'region_id' => $this->address->region_id,
-            'locality_id' => $this->address->locality_id,
-            'street' => 'Edited street',
+            'country_id'       => $this->country->id,
+            'region_id'        => $this->address->region_id,
+            'locality_id'      => $this->address->locality_id,
+            'street'           => 'Edited street',
         ]))
             ->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -167,7 +167,7 @@ class AddressTest extends TestCase
     public function can_get_create_address_form()
     {
         $this->get(route('core.addresses.create', [], false), [
-            'addressable_id' => $this->addressable->id,
+            'addressable_id'   => $this->addressable->id,
             'addressable_type' => AddressableTestModel::class,
         ])
             ->assertStatus(200)
@@ -231,16 +231,16 @@ class AddressTest extends TestCase
         ['region' => $region, 'locality' => $locality] = $this->geographyFor($this->country, 'Default Region', 'Default Locality');
 
         $address = new Address([
-            'addressable_id' => $addressable->id,
+            'addressable_id'   => $addressable->id,
             'addressable_type' => AddressableTestModel::class,
-            'country_id' => $this->country->id,
-            'region_id' => $region->id,
-            'locality_id' => $locality->id,
-            'street' => 'First default street',
-            'is_default' => false,
-            'is_billing' => false,
-            'is_shipping' => false,
-            'created_by' => $this->user->id,
+            'country_id'       => $this->country->id,
+            'region_id'        => $region->id,
+            'locality_id'      => $locality->id,
+            'street'           => 'First default street',
+            'is_default'       => false,
+            'is_billing'       => false,
+            'is_shipping'      => false,
+            'created_by'       => $this->user->id,
         ]);
 
         $address->store();
@@ -253,35 +253,35 @@ class AddressTest extends TestCase
     {
         $region = Region::factory()->create([
             'country_id' => $this->country->id,
-            'name' => 'Ilfov',
-            'is_active' => true,
+            'name'       => 'Ilfov',
+            'is_active'  => true,
         ]);
         $township = Township::factory()->create(['region_id' => $region->id]);
         $locality = Locality::factory()->create([
-            'region_id' => $region->id,
+            'region_id'   => $region->id,
             'township_id' => $township->id,
-            'name' => 'Corbeanca',
-            'is_active' => true,
+            'name'        => 'Corbeanca',
+            'is_active'   => true,
         ]);
         $sector = Sector::create([
             'locality_id' => $locality->id,
-            'name' => '2',
+            'name'        => '2',
         ]);
 
         $address = Address::create([
-            'addressable_id' => $this->addressable->id,
+            'addressable_id'   => $this->addressable->id,
             'addressable_type' => AddressableTestModel::class,
-            'country_id' => $this->country->id,
-            'region_id' => $region->id,
-            'locality_id' => $locality->id,
-            'sector_id' => $sector->id,
-            'street' => 'Main street 5',
-            'additional' => 'Floor 1',
-            'postcode' => '077065',
-            'is_default' => false,
-            'is_billing' => false,
-            'is_shipping' => false,
-            'created_by' => $this->user->id,
+            'country_id'       => $this->country->id,
+            'region_id'        => $region->id,
+            'locality_id'      => $locality->id,
+            'sector_id'        => $sector->id,
+            'street'           => 'Main street 5',
+            'additional'       => 'Floor 1',
+            'postcode'         => '077065',
+            'is_default'       => false,
+            'is_billing'       => false,
+            'is_shipping'      => false,
+            'created_by'       => $this->user->id,
         ]);
 
         $this->assertSame(
@@ -297,36 +297,36 @@ class AddressTest extends TestCase
     public function returns_postcode_match_for_country_and_code()
     {
         $region = Region::factory()->create([
-            'country_id' => $this->country->id,
-            'name' => 'Ilfov',
+            'country_id'   => $this->country->id,
+            'name'         => 'Ilfov',
             'abbreviation' => 'IF',
-            'is_active' => true,
+            'is_active'    => true,
         ]);
         $township = Township::factory()->create(['region_id' => $region->id]);
         $locality = Locality::factory()->create([
-            'region_id' => $region->id,
+            'region_id'   => $region->id,
             'township_id' => $township->id,
-            'name' => 'Otopeni',
-            'is_active' => true,
+            'name'        => 'Otopeni',
+            'is_active'   => true,
         ]);
 
         Postcode::create([
-            'country_id' => $this->country->id,
-            'region_id' => $region->id,
+            'country_id'  => $this->country->id,
+            'region_id'   => $region->id,
             'locality_id' => $locality->id,
             'township_id' => $township->id,
-            'code' => '075100',
+            'code'        => '075100',
         ]);
 
         $this->get(route('core.addresses.postcode', [
             'country_id' => $this->country->id,
-            'postcode' => '075100',
+            'postcode'   => '075100',
         ], false))
             ->assertStatus(200)
             ->assertJsonFragment([
-                'code' => '075100',
+                'code'        => '075100',
                 'locality_id' => $locality->id,
-                'region_id' => $region->id,
+                'region_id'   => $region->id,
             ]);
     }
 
@@ -334,17 +334,17 @@ class AddressTest extends TestCase
     public function returns_regions_for_country()
     {
         $wanted = Region::factory()->create([
-            'country_id' => $this->country->id,
-            'name' => 'Wanted Region',
+            'country_id'   => $this->country->id,
+            'name'         => 'Wanted Region',
             'abbreviation' => 'WR',
-            'is_active' => true,
+            'is_active'    => true,
         ]);
         $otherCountry = Country::factory()->create(['is_active' => true]);
         Region::factory()->create([
-            'country_id' => $otherCountry->id,
-            'name' => 'Other Region',
+            'country_id'   => $otherCountry->id,
+            'name'         => 'Other Region',
             'abbreviation' => 'OR',
-            'is_active' => true,
+            'is_active'    => true,
         ]);
 
         $this->get(route('core.addresses.regions', [
@@ -360,28 +360,28 @@ class AddressTest extends TestCase
     {
         $region = Region::factory()->create([
             'country_id' => $this->country->id,
-            'name' => 'Locality Region',
-            'is_active' => true,
+            'name'       => 'Locality Region',
+            'is_active'  => true,
         ]);
         $township = Township::factory()->create(['region_id' => $region->id]);
         $wanted = Locality::factory()->create([
-            'region_id' => $region->id,
+            'region_id'   => $region->id,
             'township_id' => $township->id,
-            'name' => 'Wanted Locality',
-            'is_active' => true,
+            'name'        => 'Wanted Locality',
+            'is_active'   => true,
         ]);
         $otherCountry = Country::factory()->create(['is_active' => true]);
         $otherRegion = Region::factory()->create([
             'country_id' => $otherCountry->id,
-            'name' => 'Other Region',
-            'is_active' => true,
+            'name'       => 'Other Region',
+            'is_active'  => true,
         ]);
         $otherTownship = Township::factory()->create(['region_id' => $otherRegion->id]);
         Locality::factory()->create([
-            'region_id' => $otherRegion->id,
+            'region_id'   => $otherRegion->id,
             'township_id' => $otherTownship->id,
-            'name' => 'Other Locality',
-            'is_active' => true,
+            'name'        => 'Other Locality',
+            'is_active'   => true,
         ]);
 
         $this->get(route('core.addresses.localities', [
@@ -403,7 +403,7 @@ class AddressTest extends TestCase
     public function updates_coordinates_directly()
     {
         $this->patch(route('core.addresses.coordinates', $this->address, false), [
-            'lat' => 44.571234,
+            'lat'  => 44.571234,
             'long' => 26.078901,
         ])
             ->assertStatus(200)
@@ -419,7 +419,7 @@ class AddressTest extends TestCase
         $this->assertFalse($this->address->isLocalized());
 
         $this->patch(route('core.addresses.coordinates', $this->address, false), [
-            'lat' => 44.571234,
+            'lat'  => 44.571234,
             'long' => 26.078901,
         ])->assertStatus(200);
 
@@ -434,7 +434,7 @@ class AddressTest extends TestCase
 
         Http::fake([
             'https://maps.example.test*' => Http::response([
-                'status' => 'OK',
+                'status'  => 'OK',
                 'results' => [[
                     'geometry' => [
                         'location' => [
@@ -449,7 +449,7 @@ class AddressTest extends TestCase
         $this->get(route('core.addresses.localize', $this->address, false))
             ->assertStatus(200)
             ->assertExactJson([
-                'lat' => 44.571234,
+                'lat'  => 44.571234,
                 'long' => 26.078901,
             ]);
 
@@ -460,18 +460,18 @@ class AddressTest extends TestCase
     public function returns_address_options()
     {
         $secondary = $this->secondaryAddress([
-            'street' => 'Secondary street',
+            'street'     => 'Secondary street',
             'is_default' => false,
         ]);
 
         $this->get(route('core.addresses.options', [], false))
             ->assertStatus(200)
             ->assertJsonFragment([
-                'id' => $this->address->id,
+                'id'        => $this->address->id,
                 'isDefault' => true,
             ])
             ->assertJsonFragment([
-                'id' => $secondary->id,
+                'id'    => $secondary->id,
                 'label' => $secondary->fresh()->label(),
             ]);
     }
@@ -480,20 +480,20 @@ class AddressTest extends TestCase
     public function exposes_dynamic_relations_on_user_and_country()
     {
         $userAddress = $this->secondaryAddress([
-            'street' => 'User relation street',
+            'street'     => 'User relation street',
             'created_by' => $this->user->id,
         ]);
         $countryRegion = Region::factory()->create([
             'country_id' => $this->country->id,
-            'name' => 'Country Relation Region',
-            'is_active' => true,
+            'name'       => 'Country Relation Region',
+            'is_active'  => true,
         ]);
         $township = Township::factory()->create(['region_id' => $countryRegion->id]);
         $countryLocality = Locality::factory()->create([
-            'region_id' => $countryRegion->id,
+            'region_id'   => $countryRegion->id,
             'township_id' => $township->id,
-            'name' => 'Country Relation Locality',
-            'is_active' => true,
+            'name'        => 'Country Relation Locality',
+            'is_active'   => true,
         ]);
 
         $this->assertTrue($this->user->addresses()->whereKey($userAddress->id)->exists());
@@ -508,25 +508,25 @@ class AddressTest extends TestCase
         $single = SingleAddressableTestModel::create(['name' => 'single']);
 
         Address::create([
-            'addressable_id' => $single->id,
+            'addressable_id'   => $single->id,
             'addressable_type' => SingleAddressableTestModel::class,
-            'country_id' => $this->country->id,
-            'region_id' => $region->id,
-            'locality_id' => $locality->id,
-            'street' => 'Single street',
-            'is_default' => true,
-            'is_billing' => false,
-            'is_shipping' => false,
-            'created_by' => $this->user->id,
+            'country_id'       => $this->country->id,
+            'region_id'        => $region->id,
+            'locality_id'      => $locality->id,
+            'street'           => 'Single street',
+            'is_default'       => true,
+            'is_billing'       => false,
+            'is_shipping'      => false,
+            'created_by'       => $this->user->id,
         ]);
 
         $this->post(route('core.addresses.store'), $this->addressParams([
-            'addressable_id' => $single->id,
+            'addressable_id'   => $single->id,
             'addressable_type' => SingleAddressableTestModel::class,
-            'country_id' => $this->country->id,
-            'region_id' => $region->id,
-            'locality_id' => $locality->id,
-            'street' => 'Second single street',
+            'country_id'       => $this->country->id,
+            'region_id'        => $region->id,
+            'locality_id'      => $locality->id,
+            'street'           => 'Second single street',
         ]))
             ->assertStatus(488)
             ->assertJsonFragment([
@@ -555,19 +555,19 @@ class AddressTest extends TestCase
         string $localityName = 'Test Locality'
     ): array {
         $region = Region::factory()->create([
-            'country_id' => $country->id,
-            'name' => $regionName,
+            'country_id'   => $country->id,
+            'name'         => $regionName,
             'abbreviation' => strtoupper(substr($regionName, 0, 2)),
-            'is_active' => true,
+            'is_active'    => true,
         ]);
 
         $township = Township::factory()->create(['region_id' => $region->id]);
 
         $locality = Locality::factory()->create([
-            'region_id' => $region->id,
+            'region_id'   => $region->id,
             'township_id' => $township->id,
-            'name' => $localityName,
-            'is_active' => true,
+            'name'        => $localityName,
+            'is_active'   => true,
         ]);
 
         return compact('region', 'township', 'locality');
@@ -576,39 +576,39 @@ class AddressTest extends TestCase
     private function addressParams(array $overrides = []): array
     {
         return array_merge([
-            'addressable_id' => $this->addressable->id,
+            'addressable_id'   => $this->addressable->id,
             'addressable_type' => AddressableTestModel::class,
-            'country_id' => $this->country->id,
-            'region_id' => $this->address->region_id,
-            'locality_id' => $this->address->locality_id,
-            'sector_id' => null,
-            'city' => null,
-            'street' => 'Address street',
-            'additional' => null,
-            'postcode' => '010101',
-            'notes' => null,
-            'lat' => null,
-            'long' => null,
-            'is_default' => false,
-            'is_billing' => false,
-            'is_shipping' => false,
+            'country_id'       => $this->country->id,
+            'region_id'        => $this->address->region_id,
+            'locality_id'      => $this->address->locality_id,
+            'sector_id'        => null,
+            'city'             => null,
+            'street'           => 'Address street',
+            'additional'       => null,
+            'postcode'         => '010101',
+            'notes'            => null,
+            'lat'              => null,
+            'long'             => null,
+            'is_default'       => false,
+            'is_billing'       => false,
+            'is_shipping'      => false,
         ], $overrides);
     }
 
     private function secondaryAddress(array $overrides = []): Address
     {
         return Address::create(array_merge([
-            'addressable_id' => $this->addressable->id,
+            'addressable_id'   => $this->addressable->id,
             'addressable_type' => AddressableTestModel::class,
-            'country_id' => $this->country->id,
-            'region_id' => $this->address->region_id,
-            'locality_id' => $this->address->locality_id,
-            'street' => 'Secondary street',
-            'postcode' => '020202',
-            'is_default' => false,
-            'is_billing' => false,
-            'is_shipping' => false,
-            'created_by' => $this->user->id,
+            'country_id'       => $this->country->id,
+            'region_id'        => $this->address->region_id,
+            'locality_id'      => $this->address->locality_id,
+            'street'           => 'Secondary street',
+            'postcode'         => '020202',
+            'is_default'       => false,
+            'is_billing'       => false,
+            'is_shipping'      => false,
+            'created_by'       => $this->user->id,
         ], $overrides));
     }
 }

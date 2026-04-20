@@ -14,7 +14,7 @@ class TownshipFactory extends Factory
     {
         return [
             'region_id' => Region::factory(),
-            'name' => $this->faker->word,
+            'name'      => $this->faker->word,
         ];
     }
 }

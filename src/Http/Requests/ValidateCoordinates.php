@@ -9,7 +9,7 @@ class ValidateCoordinates extends FormRequest
     public function rules()
     {
         return [
-            'lat' => new Latitude(),
+            'lat'  => new Latitude(),
             'long' => new Longitude(),
         ];
     }
