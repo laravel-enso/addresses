@@ -15,10 +15,6 @@ It covers the full backend flow for storing, editing, localizing, and querying a
 
 The package is designed to work inside the Enso ecosystem and pairs naturally with the frontend address components from `@enso-ui/addresses`.
 
-![Addresses List](./.github/screenshots/addresses-list.png)
-
-![Addresses Edit Modal](./.github/screenshots/addresses-modal.png)
-
 ## Installation
 
 This package comes pre-installed in Laravel Enso applications that require address management.
