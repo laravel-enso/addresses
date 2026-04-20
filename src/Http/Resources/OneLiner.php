@@ -9,10 +9,10 @@ class OneLiner extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'label' => $this->label(),
-            'isDefault' => $this->is_default,
-            'isBilling' => $this->is_billing,
+            'id'         => $this->id,
+            'label'      => $this->label(),
+            'isDefault'  => $this->is_default,
+            'isBilling'  => $this->is_billing,
             'isShipping' => $this->is_shipping,
         ];
     }

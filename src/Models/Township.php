@@ -9,7 +9,9 @@ use LaravelEnso\Rememberable\Traits\Rememberable;
 
 class Township extends Model
 {
-    use Abilities, HasFactory, Rememberable;
+    use Abilities;
+    use HasFactory;
+    use Rememberable;
 
     protected $guarded = [];
 

@@ -9,9 +9,9 @@ class Locality extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name(),
-            'locality' => $this->name,
+            'id'         => $this->id,
+            'name'       => $this->name(),
+            'locality'   => $this->name,
             'hasSectors' => $this->relationLoaded('sectors')
                 ? $this->sectors->isNotEmpty()
                 : false,

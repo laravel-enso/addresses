@@ -22,7 +22,7 @@ class ValidateAddressFetch extends FormRequest
     public function rules()
     {
         return [
-            'addressable_id' => 'required',
+            'addressable_id'   => 'required',
             'addressable_type' => 'required|string',
         ];
     }

@@ -18,20 +18,20 @@ class ValidateAddressRequest extends ValidateAddressFetch
             ->exists();
 
         return parent::rules() + [
-            'country_id' => 'required',
-            'region_id' => ['nullable', 'exists:regions,id', Rule::requiredIf($hasRegions)],
+            'country_id'  => 'required',
+            'region_id'   => ['nullable', 'exists:regions,id', Rule::requiredIf($hasRegions)],
             'locality_id' => ['nullable', 'exists:localities,id', Rule::requiredIf($hasLocalities)],
-            'sector_id' => ['nullable', 'exists:sectors,id', Rule::requiredIf($hasSectors)],
-            'city' => ['nullable', 'string', 'max:255', Rule::requiredIf(! $hasLocalities)],
-            'street' => 'required|string|max:255',
-            'is_default' => 'required|boolean',
-            'is_billing' => 'required|boolean',
+            'sector_id'   => ['nullable', 'exists:sectors,id', Rule::requiredIf($hasSectors)],
+            'city'        => ['nullable', 'string', 'max:255', Rule::requiredIf(!$hasLocalities)],
+            'street'      => 'required|string|max:255',
+            'is_default'  => 'required|boolean',
+            'is_billing'  => 'required|boolean',
             'is_shipping' => 'required|boolean',
-            'additional' => 'nullable|string|max:255',
-            'postcode' => 'nullable',
-            'notes' => 'nullable',
-            'lat' => ['nullable', new Latitude()],
-            'long' => ['nullable', new Longitude()],
+            'additional'  => 'nullable|string|max:255',
+            'postcode'    => 'nullable',
+            'notes'       => 'nullable',
+            'lat'         => ['nullable', new Latitude()],
+            'long'        => ['nullable', new Longitude()],
         ];
     }
 }

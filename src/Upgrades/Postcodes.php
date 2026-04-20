@@ -23,7 +23,7 @@ class Postcodes implements MigratesTable, ShouldRunManually
 
     public function migrateTable(): void
     {
-        if (! Table::hasColumn('postcodes', 'sector_id')) {
+        if (!Table::hasColumn('postcodes', 'sector_id')) {
             Schema::table('postcodes', fn (Blueprint $table) => $table
                 ->foreignIdFor(Sector::class)->nullable()
                 ->after('locality_id')
@@ -38,7 +38,7 @@ class Postcodes implements MigratesTable, ShouldRunManually
 
         $bucharest = Locality::firstWhere('name', self::Bucharest);
 
-        if (! $bucharest->sectors()->exists()) {
+        if (!$bucharest->sectors()->exists()) {
             $seeder = 'LaravelEnso\Addresses\Database\Seeders\SectorSeeder';
             Artisan::call('db:seed', ['--force' => true, '--class' => $seeder]);
         }

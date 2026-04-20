@@ -19,8 +19,12 @@ use LaravelEnso\TrackWho\Traits\CreatedBy;
 
 class Address extends Model
 {
-    use Abilities, AvoidsDeletionConflicts, CreatedBy, HasFactory;
-    use UpdatesOnTouch, Rememberable;
+    use Abilities;
+    use AvoidsDeletionConflicts;
+    use CreatedBy;
+    use HasFactory;
+    use UpdatesOnTouch;
+    use Rememberable;
 
     protected $guarded = [];
 
@@ -103,10 +107,10 @@ class Address extends Model
             $defaultAddress = $this->addressable->address;
 
             if ($this->is_default) {
-                if (! $this->is($defaultAddress)) {
+                if (!$this->is($defaultAddress)) {
                     $defaultAddress?->update(['is_default' => false]);
                 }
-            } elseif (! $defaultAddress) {
+            } elseif (!$defaultAddress) {
                 $this->is_default = true;
             }
 
@@ -127,7 +131,7 @@ class Address extends Model
 
     public function toggleBilling(): void
     {
-        $this->update(['is_billing' => ! $this->is_billing]);
+        $this->update(['is_billing' => !$this->is_billing]);
     }
 
     public function makeBilling(): void
@@ -137,7 +141,7 @@ class Address extends Model
 
     public function toggleShipping(): void
     {
-        $this->update(['is_shipping' => ! $this->is_shipping]);
+        $this->update(['is_shipping' => !$this->is_shipping]);
     }
 
     public function localize(): array
@@ -151,7 +155,7 @@ class Address extends Model
 
     public function shouldBeSingle(): bool
     {
-        return ! $this->canBeMultiple()
+        return !$this->canBeMultiple()
             && $this->addressable->address()->exists();
     }
 
@@ -169,7 +173,7 @@ class Address extends Model
     protected function casts(): array
     {
         return [
-            'is_default' => 'boolean', 'is_billing' => 'boolean',
+            'is_default'  => 'boolean', 'is_billing' => 'boolean',
             'is_shipping' => 'boolean', 'addressable_id' => 'integer',
         ];
     }

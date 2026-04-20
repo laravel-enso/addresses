@@ -12,7 +12,10 @@ use LaravelEnso\Rememberable\Traits\Rememberable;
 
 class Region extends Model implements Activatable
 {
-    use Abilities, ActiveState, HasFactory, Rememberable;
+    use Abilities;
+    use ActiveState;
+    use HasFactory;
+    use Rememberable;
 
     protected $guarded = [];
 
