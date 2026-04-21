@@ -433,7 +433,7 @@ class AddressTest extends TestCase
         GoogleSettings::query()->updateOrCreate([
             'id' => Config::get('enso.google.settingsId'),
         ], [
-            'maps_url' => 'https://maps.example.test',
+            'maps_url'      => 'https://maps.example.test',
             'geocoding_key' => 'test-key',
         ]);
 
