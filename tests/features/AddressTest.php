@@ -13,6 +13,7 @@ use LaravelEnso\Addresses\Models\Sector;
 use LaravelEnso\Addresses\Models\Township;
 use LaravelEnso\Addresses\Traits\Addressable;
 use LaravelEnso\Countries\Models\Country;
+use LaravelEnso\Google\Models\Settings as GoogleSettings;
 use LaravelEnso\Users\Models\User;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
@@ -429,8 +430,12 @@ class AddressTest extends TestCase
     #[Test]
     public function localizes_address_via_geocoding()
     {
-        Config::set('enso.google.mapsUrl', 'https://maps.example.test');
-        Config::set('enso.google.geocodingKey', 'test-key');
+        GoogleSettings::query()->updateOrCreate([
+            'id' => Config::get('enso.google.settingsId'),
+        ], [
+            'maps_url' => 'https://maps.example.test',
+            'geocoding_key' => 'test-key',
+        ]);
 
         Http::fake([
             'https://maps.example.test*' => Http::response([
