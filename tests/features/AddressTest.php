@@ -286,10 +286,7 @@ class AddressTest extends TestCase
         ]);
 
         $this->assertSame(
-            sprintf(
-                'Corbeanca, Sector 2, Main street 5, Floor 1, 077065, %s Ilfov',
-                __('County')
-            ),
+            'Corbeanca, Sector 2, Main street 5, Floor 1, 077065, Ilfov',
             $address->label()
         );
     }
