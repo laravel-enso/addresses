@@ -38,7 +38,7 @@ class Postcodes implements MigratesTable, ShouldRunManually
 
         $bucharest = Locality::firstWhere('name', self::Bucharest);
 
-        if (!$bucharest->sectors()->exists()) {
+        if ($bucharest && !$bucharest->sectors()->exists()) {
             $seeder = 'LaravelEnso\Addresses\Database\Seeders\SectorSeeder';
             Artisan::call('db:seed', ['--force' => true, '--class' => $seeder]);
         }
