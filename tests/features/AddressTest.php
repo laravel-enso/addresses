@@ -37,12 +37,13 @@ class AddressTest extends TestCase
 
         $this->createTestTables();
 
-        $this->country = Country::factory()->create(['is_active' => true]);
+        $this->country = $this->country('ROU');
         Config::set('enso.addresses.defaultCountryId', $this->country->id);
 
         $this->addressable = AddressableTestModel::create(['name' => 'addressable']);
 
-        ['region' => $region, 'locality' => $locality] = $this->geographyFor($this->country);
+        ['region' => $region, 'locality' => $locality] = $this
+            ->geography($this->country);
 
         $this->address = Address::create([
             'addressable_id'   => $this->addressable->id,
@@ -252,18 +253,8 @@ class AddressTest extends TestCase
     #[Test]
     public function generates_label_from_available_location_parts()
     {
-        $region = Region::factory()->create([
-            'country_id' => $this->country->id,
-            'name'       => 'Ilfov',
-            'is_active'  => true,
-        ]);
-        $township = Township::factory()->create(['region_id' => $region->id]);
-        $locality = Locality::factory()->create([
-            'region_id'   => $region->id,
-            'township_id' => $township->id,
-            'name'        => 'Corbeanca',
-            'is_active'   => true,
-        ]);
+        ['region' => $region, 'locality' => $locality] = $this
+            ->geographyFor($this->country, 'Ilfov', 'Corbeanca');
         $sector = Sector::create([
             'locality_id' => $locality->id,
             'name'        => '2',
@@ -294,19 +285,11 @@ class AddressTest extends TestCase
     #[Test]
     public function returns_postcode_match_for_country_and_code()
     {
-        $region = Region::factory()->create([
-            'country_id'   => $this->country->id,
-            'name'         => 'Ilfov',
-            'abbreviation' => 'IF',
-            'is_active'    => true,
-        ]);
-        $township = Township::factory()->create(['region_id' => $region->id]);
-        $locality = Locality::factory()->create([
-            'region_id'   => $region->id,
-            'township_id' => $township->id,
-            'name'        => 'Otopeni',
-            'is_active'   => true,
-        ]);
+        [
+            'region' => $region,
+            'township' => $township,
+            'locality' => $locality,
+        ] = $this->geographyFor($this->country, 'Ilfov', 'Otopeni');
 
         Postcode::create([
             'country_id'  => $this->country->id,
@@ -331,70 +314,46 @@ class AddressTest extends TestCase
     #[Test]
     public function returns_regions_for_country()
     {
-        $wanted = Region::factory()->create([
-            'country_id'   => $this->country->id,
-            'name'         => 'Wanted Region',
-            'abbreviation' => 'WR',
-            'is_active'    => true,
-        ]);
-        $otherCountry = Country::factory()->create(['is_active' => true]);
-        Region::factory()->create([
-            'country_id'   => $otherCountry->id,
-            'name'         => 'Other Region',
-            'abbreviation' => 'OR',
-            'is_active'    => true,
-        ]);
+        ['region' => $wanted] = $this->geography($this->country);
+        $otherCountry = $this->country('GBR');
+        $other = Region::query()
+            ->where('country_id', $otherCountry->id)
+            ->first()
+            ?? $this->geographyFor($otherCountry, 'Other Region', 'Other Locality')['region'];
 
         $this->get(route('core.addresses.regions', [
             'params' => json_encode(['country_id' => $this->country->id], JSON_THROW_ON_ERROR),
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['id' => $wanted->id, 'name' => 'Wanted Region'])
-            ->assertJsonMissing(['name' => 'Other Region']);
+            ->assertJsonFragment(['id' => $wanted->id, 'name' => $wanted->name])
+            ->assertJsonMissing(['name' => $other->name]);
     }
 
     #[Test]
     public function returns_localities_for_region_or_country_context()
     {
-        $region = Region::factory()->create([
-            'country_id' => $this->country->id,
-            'name'       => 'Locality Region',
-            'is_active'  => true,
-        ]);
-        $township = Township::factory()->create(['region_id' => $region->id]);
-        $wanted = Locality::factory()->create([
-            'region_id'   => $region->id,
-            'township_id' => $township->id,
-            'name'        => 'Wanted Locality',
-            'is_active'   => true,
-        ]);
-        $otherCountry = Country::factory()->create(['is_active' => true]);
-        $otherRegion = Region::factory()->create([
-            'country_id' => $otherCountry->id,
-            'name'       => 'Other Region',
-            'is_active'  => true,
-        ]);
-        $otherTownship = Township::factory()->create(['region_id' => $otherRegion->id]);
-        Locality::factory()->create([
-            'region_id'   => $otherRegion->id,
-            'township_id' => $otherTownship->id,
-            'name'        => 'Other Locality',
-            'is_active'   => true,
-        ]);
+        ['region' => $region, 'locality' => $wanted] = $this
+            ->geography($this->country);
+        $otherCountry = $this->country('GBR');
+        ['locality' => $other] = $this->geographyFor(
+            $otherCountry,
+            'Other Region',
+            'Other Locality',
+        );
 
         $this->get(route('core.addresses.localities', [
             'params' => json_encode(['region_id' => $region->id], JSON_THROW_ON_ERROR),
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['id' => $wanted->id, 'locality' => 'Wanted Locality'])
-            ->assertJsonMissing(['locality' => 'Other Locality']);
+            ->assertJsonFragment(['id' => $wanted->id, 'locality' => $wanted->name])
+            ->assertJsonMissing(['locality' => $other->name]);
 
         $this->get(route('core.addresses.localities', [
             'pivotParams' => json_encode(['region' => ['country_id' => $this->country->id]], JSON_THROW_ON_ERROR),
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['id' => $wanted->id, 'locality' => 'Wanted Locality'])
-            ->assertJsonMissing(['locality' => 'Other Locality']);
+            ->assertJsonFragment(['id' => $wanted->id, 'locality' => $wanted->name])
+            ->assertJsonMissing(['locality' => $other->name]);
     }
 
     #[Test]
@@ -556,23 +515,51 @@ class AddressTest extends TestCase
         string $regionName = 'Test Region',
         string $localityName = 'Test Locality'
     ): array {
-        $region = Region::factory()->create([
-            'country_id'   => $country->id,
-            'name'         => $regionName,
+        $region = Region::query()->firstOrCreate([
+            'country_id' => $country->id,
+            'name' => $regionName,
+        ], [
             'abbreviation' => strtoupper(substr($regionName, 0, 2)),
-            'is_active'    => true,
+            'is_active' => true,
         ]);
 
-        $township = Township::factory()->create(['region_id' => $region->id]);
+        $township = Township::query()->where('region_id', $region->id)->first()
+            ?? Township::factory()->create(['region_id' => $region->id]);
 
-        $locality = Locality::factory()->create([
-            'region_id'   => $region->id,
+        $locality = Locality::query()->firstOrCreate([
+            'region_id' => $region->id,
+            'name' => $localityName,
+        ], [
             'township_id' => $township->id,
-            'name'        => $localityName,
-            'is_active'   => true,
+            'is_active' => true,
         ]);
 
         return compact('region', 'township', 'locality');
+    }
+
+    private function geography(Country $country): array
+    {
+        $locality = Locality::query()
+            ->whereHas('region', fn ($query) => $query
+                ->where('country_id', $country->id))
+            ->first();
+
+        return $locality
+            ? [
+                'region' => $locality->region,
+                'township' => $locality->township,
+                'locality' => $locality,
+            ]
+            : $this->geographyFor($country);
+    }
+
+    private function country(string $isoCode): Country
+    {
+        return Country::query()->where('iso_3166_3', $isoCode)->first()
+            ?? Country::factory()->create([
+                'iso_3166_3' => $isoCode,
+                'is_active' => true,
+            ]);
     }
 
     private function addressParams(array $overrides = []): array
